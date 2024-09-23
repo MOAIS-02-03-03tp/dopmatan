@@ -1,0 +1,252 @@
+{
+	// Place your sprav po matanu workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"posled x_n": {
+		"scope": "tex,latex",
+		"prefix": "pxn",
+		"body": [
+			"\\posl{x}{n}"
+		],
+		"description": "stuff for matan"
+	},
+	"adjwidth": {
+		"scope": "tex,latex",
+		"prefix": "adjwid",
+		"body": [
+			"\\begin{adjustwidth}{1.5em}{1.5em}",
+			"\t$0",
+			"\\end{adjustwidth}"
+		],
+		"description": "stuff for mat"
+	},
+	"usl koshi": {
+		"scope": "tex,latex",
+		"prefix": "usl_koshi",
+		"body": [
+			"\\exists \\text{ } n_0 \\text{ } \\big| \\text{ } \\forall m,n > n_0 \\text{ } |x_n - x_m| < \\varepsilon"
+		],
+		"description": "stuff for matan"
+	},
+	"opr koshi": {
+		"scope": "tex,latex",
+		"prefix": "lim_koshi",
+		"body": [
+			"\\forall \\varepsilon > 0 \\text{ } \\exists \\text{ } \\delta = \\delta(\\varepsilon) : |x - x_0| < \\delta \\implies |f(x) - f(x_0)| < \\varepsilon"
+		],
+		"description": "stuff for matan"
+	},
+	"proiz1": {
+		"scope": "tex,latex",
+		"prefix": "big_diff",
+		"body": [
+			"\\begin{matrix}$1\\\\\\\\\\\\\\\\\\end{matrix}\\Big|\\begin{matrix}\\\\\\\\$2\\\\\\\\\\\\end{matrix}$0"
+		],
+		"description": "stuff for matan"
+	},
+	"chtd": {
+		"scope": "tex,latex",
+		"prefix": "чтд",
+		"body": [
+			"\\begin{center}",
+			"\t\\textbf{Ч.т.д.}",
+			"\\end{center}$0",
+		],
+		"description": "stuff for mat"
+	},
+	"theorem": {
+		"scope": "tex,latex",
+		"prefix": "теорема",
+		"body": [
+			"\\subsubsection*{Теорема $1}\\label{th:$2}",
+			"$3\\par\\noindent",
+			"$0"
+		]
+	},
+	"dokazatelstvo": {
+		"scope": "tex,latex",
+		"prefix": "доказ",
+		"body": [
+			"\\underline{Доказательство:}",
+			"\\begin{adjustwidth}{1.5em}{1.5em}",
+			"\t$0",
+			"\\end{adjustwidth}"
+		],
+		"description": "stuff for mat"
+	},
+	"utverzhdenie": {
+		"scope": "tex,latex",
+		"prefix": "утвер",
+		"body": [
+			"\\textbf{Утверждение:}"
+		],
+		"description": "stuff for mat"
+	},
+	"sledstvie": {
+		"scope": "tex,latex",
+		"prefix": "следствие",
+		"body": [
+			"\\textbf{Следствие:}"
+		],
+		"description": "stuff for mat"
+	},
+	"lemma": {
+		"scope": "tex,latex",
+		"prefix": "лемма",
+		"body": [
+			"\\textbf{Лемма $1:}$0"
+		],
+		"description": "stuff for mat"
+	},
+	"zamechanie": {
+		"scope": "tex,latex",
+		"prefix": "замеч",
+		"body": [
+			"\\underline{Замечание:}"
+		],
+		"description": "stuff for mat"
+	},
+	"primer": {
+		"scope": "tex,latex",
+		"prefix": "пример",
+		"body": [
+			"\\underline{Пример:}"
+		],
+		"description": "stuff for mat"
+	},
+	"epslim": {
+		"scope": "tex,latex",
+		"prefix": "epslim",
+		"body": [
+			"\\forall \\varepsilon > 0 \\text{ } \\exists \\text{ } N = N(\\varepsilon) \\text{ } \\big| \\text{ } \\forall n > N \\text{ } |x_{n} - a| < \\varepsilon"
+		],
+		"description": "stuff for mat"
+	},
+	"sn1":{
+		"scope": "tex,latex",
+		"prefix": "sn1",
+		"body": [
+			"\\sum_{i=0}^{n-1}"
+		],
+		"description": "stuff for mat"
+	},
+	"us":{
+		"scope": "tex,latex",
+		"prefix": "us",
+		"body": [
+			"\\underline{S_R}"
+		],
+		"description": "stuff for mat"
+	},
+	"os":{
+		"scope": "tex,latex",
+		"prefix": "os",
+		"body": [
+			"\\overline{S_R}"
+		],
+		"description": "stuff for mat"
+	},
+	"lrlim":{
+		"scope": "tex,latex",
+		"prefix": "lrlim",
+		"body": [
+			"\\lim_{\\lambda_R \\to 0}"
+		],
+		"description": "stuff for mat"
+	},
+	"dxi":{
+		"scope": "tex,latex",
+		"prefix": "dxi",
+		"body": [
+			"\\Delta x_i"
+		],
+		"description": "stuff for mat"
+	},
+	"te":{
+		"scope": "tex,latex",
+		"prefix": "te",
+		"body": [
+			"Т.е. "
+		],
+		"description": "stuff for mat"
+	},
+	"opr":{
+		"scope": "tex,latex",
+		"prefix": "опр",
+		"body": [
+			"\\underline{Определение: }"
+		],
+		"description": "stuff for mat"
+	},
+	"xi":{
+		"scope": "tex,latex",
+		"prefix": "xi",
+		"body": [
+			"\\xi_i"
+		],
+		"description": "stuff for mat"
+	},
+	"sr":{
+		"scope": "tex,latex",
+		"prefix": "sr",
+		"body": [
+			"\\sigma_R"
+		],
+		"description": "stuff for mat"
+	},
+	"abint":{
+		"scope": "tex,latex",
+		"prefix": "abint",
+		"body": [
+			"\\int_{a}^{b}"
+		],
+		"description": "stuff for mat"
+	},
+	"img":{
+	  "scope": "tex,latex",
+	  "prefix": "img",
+	  "body": [
+		"\\begin{center}",
+		"\t\\includegraphics{$0}",
+		"\\end{center}"
+	  ],
+	  "description": "stuff for mat"
+	},
+	"diff_fnp": {
+		"scope": "tex,latex",
+		"prefix": "diff_fnp",
+		"body": [
+			"\\Delta z = A \\Delta x + B \\Delta y + \\varepsilon_1 \\Delta x + \\varepsilon_2 \\Delta y"
+		],
+		"description": "stuff for mat"
+	},
+	"op_nobla": {
+		"scope": "tex,latex",
+		"prefix": "nabla_op",
+		"body": [
+			"\\overline{\\nabla}"
+		],
+		"description": "stuff for mat"
+	},
+	"partproiz": {
+		"scope": "tex,latex",
+		"prefix": "partproiz",
+		"body": [
+			"\\frac{\\partial f}{\\partial $1}$0"
+		],
+		"description": "stuff for mat"
+	}
+}

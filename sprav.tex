@@ -1,0 +1,94 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, total={7in,10in}]{geometry}
+\usepackage{polyglossia}
+\usepackage{ragged2e}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{microtype}
+\usepackage{graphicx}
+\let\ORIincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{\ORIincludegraphics[scale=0.65,#1]{#2}}
+\usepackage{changepage}
+\usepackage{hyperref}
+\usepackage{cancel}
+\graphicspath{{./images/}}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\newfontfamily\russianfont[Script=Cyrillic]{Times New Roman}
+\newfontfamily\englishfont{Times New Roman}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{6pt}
+
+\def\posl#1#2{\{#1_{#2}\}}
+\DeclareMathOperator*{\sh-like}{\sinh-like}
+\DeclareMathOperator*{\ch-like}{\cosh-like}
+\DeclareMathOperator*{\th-like}{\tanh-like}
+\DeclareMathOperator*{\cth-like}{\coth-like}
+\DeclareMathOperator*{\tg-like}{\tan-like}
+\DeclareMathOperator*{\ctg-like}{\cot-like}
+\DeclareMathOperator*{\arctg-like}{\arctan-like}
+\DeclareMathOperator*{\arcctg-like}{\arctan-like}
+
+\setcounter{section}{7}
+
+\begin{document}
+    \justifying
+    \begin{titlepage}
+        \begin{center}
+            \hfill \break
+            \large{МИНОБРНАУКИ РОССИИ}\\
+            \footnotesize{ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ}\\ 
+            \footnotesize{ВЫСШЕГО ПРОФЕССИОНАЛЬНОГО ОБРАЗОВАНИЯ}\\
+            \small{\textbf{«Дальневосточный федеральный университет»}}\\
+            \hfill \break
+            \normalsize{ИНСТИТУТ МАТЕМАТИКИ И КОМПЬЮТЕРНЫХ ТЕХНОЛОГИЙ}\\
+             \hfill \break
+            \normalsize{Департамент программной инженерии и искусственного интеллекта}\\
+            \hfill\break
+            \hfill \break
+            \hfill \break
+            \hfill \break
+            \large{Лекции 2 курса по дисциплине}\\
+            \large{Математический Анализ}\\
+            \hfill \break
+            \hfill \break
+            \hfill \break
+            \begin{flushright}
+              Подготовлено студентами гр.\\
+              Б9123-02.03.03тп\\
+              Макевкин C.C.\\
+              Тарасенко Т.В.\\
+              \hfill \break
+            \end{flushright}
+            \begin{center}
+                Для\\
+              Зиновьева Павла Владимировича
+            \end{center}
+            \hfill \break
+            
+            \hfill \break
+            
+            \hfill \break
+            \hfill \break
+            \end{center}
+             
+            \hfill \break
+             
+            \normalsize{ 
+            
+            }
+            \begin{center} Владивосток \\ 2025 \end{center}
+            \thispagestyle{empty}
+    \end{titlepage}
+    \pagebreak
+    \tableofcontents
+    \pagebreak
+    \section{Криволинейные интегралы первого рода}
+    \underline{Определение: } Кривая $\overline{r}(t)=x(t)\overline{i}+y(t)\overline{j}+z(t)\overline{c}$ \;$a\leq t \leq b$
+    Называется непрерывной гладкой кривой, если x(t),y(t),z(t) непрерывна диф-мы на [a;b] и
+    $x(t)^2+y(t)^2+z(t)^2\not = 0$\\
+    \underline{Определение: } Кривая называется непрерывной кусочно-гладкой прямой, если она состоит из
+    конечного числа гладких прямых  \\
+    %%пикча надо нарисовать
+    $\exists $кривая имеет массу $\rho=\frac{kg}{m}$
+\end{document}
