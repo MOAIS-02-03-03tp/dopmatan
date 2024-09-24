@@ -83,12 +83,89 @@
     \pagebreak
     \tableofcontents
     \pagebreak
-    \section{Криволинейные интегралы первого рода}
+    \section{Криволинейные интегралы}
+    \subsection{Криволинейные интегралы первого рода}
     \underline{Определение: } Кривая $\overline{r}(t)=x(t)\overline{i}+y(t)\overline{j}+z(t)\overline{c}$ \;$a\leq t \leq b$
     Называется непрерывной гладкой кривой, если x(t),y(t),z(t) непрерывна диф-мы на [a;b] и
     $x(t)^2+y(t)^2+z(t)^2\not = 0$\\
     \underline{Определение: } Кривая называется непрерывной кусочно-гладкой прямой, если она состоит из
     конечного числа гладких прямых  \\
     %%пикча надо нарисовать
-    $\exists $кривая имеет массу $\rho=\frac{kg}{m}$
+    $\sqsupset  $кривая имеет массу $\rho=\frac{kg}{m}$
+    \begin{enumerate}
+      \item R
+      \item В каждой эл-ой $\Delta l$ выберем произвольно $M_i$
+      \item Возьмем $\rho(M_i)$
+      \item Считаем что на всей $\Delta l_i \; \rho=const=\rho(M_i)$
+      \item Составим $\sigma_r=\sum_{i=0}^{n-1} \rho(M_i)\Delta l_i$
+      \item $\lim_{\lambda_R \to 0}\sigma_R=w=\int_{(l)}\rho \alpha e$
+    \end{enumerate}
+    Рассмотрим функцию $Z=f(x,y)$ заданную вдоль непрерывной кусочно-гладкой кривой l\\
+    %опять пикча аааа(спиздить)%
+    \begin{enumerate}
+      \item R
+      \item Выберем произвольную (.) $M_i \in \Delta l_i (.)M_i(\xi_i,\eta_i)$
+      \item Выберем f($\xi_i,\eta_i$)
+      \item Составим $\sigma_R=\sum_{i=0}^{n-1}$
+      \item Вычислим $\lim_{\lambda_R \to 0}\sigma_R=\int_{(l)}f(x,y)dl$
+    \end{enumerate}
+    \underline{Определение: }Если существует конечный предел интегральной суммы $\sigma_R$ независящий от способа разбиения
+    кривой и от выбора (.)$M_i(\xi_i,\eta_i)$ то он называется криволинейный интеграл I-рода
+    от функции f(x,y) по кривой l \\
+    \underline{Замечание:}Если кривая (AB) не замкнута то интеграл по кривой \[\int_{(AB)}f(x,y)dl=
+    \int_{(BA)}f(x;y)dl\]\\
+    !!! При переходе к определенному интегралу пределы интегрирования ставятся по мере возрастания переменной
+    интегрирования\\
+    %пикчи опять%
+    \underline{Замечание:}Аналогично вводится интеграл по пространственной кривой.\\
+    \[\int_{(l)}f(x,y)dl\]
+    \subsection{Вычисление криволинейного интеграла I-рода}
+    \begin{math}
+      l=\begin{matrix}
+        x=x(t)\\
+        y=y(t)
+      \end{matrix} a\leq t \leq b\\
+      l(a)=0\\
+      l(t_i)=l_i\\
+      l(b)=l
+    \end{math}\\
+    Положение (.) $M_i$ однозначно определяется с помощью длины дуги, отсчитываемой от (.) A\\
+    %выпускал егорика спиздить часть надо%
+    \begin{enumerate}
+      \item Если кривая задана уравнением y=f(x) $a \leq x \leq b$\\
+      $\int_{(l)}g(x,y)dl=\int_{a}^{b}g(x,f(x))\underset{dl}{\sqrt{1+f'(x)^2}dx}$
+      \item Если кривая задана параметрически\\
+      \[\begin{matrix}
+        x=x(t)\\
+        y=y(t)
+      \end{matrix} \; t_1 \leq t \leq t_2 \; \int_{(l)}g(x,y)dl=\int_{t_1}^{t_2}g(x(t),y(t))
+      \sqrt{x'(t)^2+y'(t)^2}dt\]
+      \item  Если кривая задана $r=r(\varphi) \; \alpha \leq \varphi \leq \beta$\\
+      \[\int_{(l)}g(x,y)dl=\int_{\alpha}^{\beta}g(r(\varphi)cos(\varphi),r(\varphi)sin(\varphi))
+      \sqrt{r^2(\varphi)+r'(\varphi)^2}d\varphi\] 
+    \end{enumerate}
+    \subsection{Свойства криволинейных интегралов I-рода}
+    \begin{enumerate}
+      \item $\int_{(l)}dl=L$
+      \item m=$\int_{(l)}\rho dl$
+      \item \[x_c=\frac{M_y}{m}=\frac{\int_{(l)}\rho x dl}{\int_{(l)} \rho dl} \\
+      y_c=\frac{M_x}{m}=\frac{\int_{(l)}\rho y dl}{\int_{(l)}\rho dl}\]
+    \end{enumerate}
+    \subsection{Криволинейные интегралы II-рода}
+    $\sqsupset$ задана Z=f(x,y), которая определена в каждой (.) l
+    \begin{enumerate}
+      \item R
+      \item $M_i(\xi_i,\eta_i) \in \Delta l_i$
+      \item f($M_i$)=f($\xi_i,\eta_i$)
+      \item $\sum_{i=0}^{n-1}f(\xi_i,\eta_i)$
+      \item $\lim_{\lambda_R \to 0}\sigma_R=\int_{(l)}f(x,y)dx$
+    \end{enumerate}
+    \underline{Определение: }Если существует конечный предел интегральной суммы $\sigma_R$
+    независящий от способа разбиения кривой l и от выбора (.) $M_i$ то он называется криволинейным
+    интегралом II-рода от f(x;y) по кривой l\\
+    \underline{Замечание:} Аналогично вводится $\int_{(l)}f(x;y)dy$\\
+    Если вдоль кривой определены функции P(x,y),Q(x,y) и $\exists \int_{(AB)}P(x,y)dx$ и $\int_{(BA)}Q(x,y)dy$
+    то $\int_{(AB)}P(x,y)dx+Q(x,y)dy$ называется кривой интеграл II-рода общего вида\\
+    \underline{Замечание:}\[\int_{(AB)}f(x;y)dx=-\int_{(BA)}f(x;y)dx\]
+    %дописать не успел%
 \end{document}

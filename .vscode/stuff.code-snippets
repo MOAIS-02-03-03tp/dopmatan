@@ -248,5 +248,21 @@
 			"\\frac{\\partial f}{\\partial $1}$0"
 		],
 		"description": "stuff for mat"
+	},
+	"intl": {
+		"scope": "tex,latex",
+		"prefix": "intl",
+		"body": [
+			"\\int_{(l)}"
+		],
+		"description": "stuff for mat"
+	},
+	"fxy": {
+		"scope": "tex,latex",
+		"prefix": "fxy",
+		"body": [
+			"f(x;y)"
+		],
+		"description": "stuff for mat"
 	}
 }
