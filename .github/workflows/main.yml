@@ -1,0 +1,52 @@
+name: Merge and Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write   # This is required to create/push the new git tag
+
+jobs:
+  build_and_release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Build LaTeX sprav
+      run: |
+        docker pull smakevkin/latex-with-times-new-roman:latest
+        docker run --rm -v $(pwd):/app smakevkin/latex-with-times-new-roman
+
+    - name: Get commit message
+      id: commit
+      run: echo "::set-output name=message::$(git log --format=%B -n 1 ${{ github.event.after }})"
+  
+    - name: Get commit hash
+      id: hash
+      run: echo "::set-output name=sha::$(git rev-parse --short HEAD)"
+  
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.hash.outputs.sha }}
+        release_name: ${{ steps.commit.outputs.message }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Asset
+      id: upload-release-asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./sprav.pdf
+        asset_name: sprav.pdf
+        asset_content_type: application/pdf
