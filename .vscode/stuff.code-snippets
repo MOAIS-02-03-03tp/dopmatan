@@ -264,5 +264,56 @@
 			"f(x;y)"
 		],
 		"description": "stuff for mat"
+	},
+	"piklr": {
+		"scope": "tex,latex",
+		"prefix": "piklr",
+		"body": [
+			"\\begin{minipage}{0.45\\textwidth}",
+			"  \\includegraphics[scale=0.6]{}",
+			"\\end{minipage}",
+			"\\hspace{1em}",
+			"\\begin{minipage}{0.55\\textwidth}",
+			"  ",
+			"\\end{minipage}",
+			"\\vspace{1em}",
+			"\\par",
+		],
+		"description": "stuff for mat"
+	},
+	"space": {
+		"scope": "tex,latex",
+		"prefix": "space",
+		"body": [
+			"\\hspace{20pt}"
+		],
+		"description": "stuff for mat"
+	},
+	"xiietai": {
+		"scope": "tex,latex",
+		"prefix": "xiii",
+		"body": [
+			"(\\xi_i;\\eta_i)"
+		],
+		"description": "stuff for mat"
+	},
+	"fphitauipsitaui": {
+		"scope": "tex,latex",
+		"prefix": "fphitauipsitaui",
+		"body": [
+			"f(\\varphi(\\tau_i);\\psi(\\tau_i))"
+		],
+		"description": "stuff for mat"
+	},
+	"tiint": {
+		"scope": "tex,latex",
+		"prefix": "tiint",
+		"body": [
+			"\\int_{t_i}^{t_{i+1}}"
+		],
+		"description": "stuff for mat"
 	}
+
+
+	
 }
