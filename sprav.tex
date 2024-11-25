@@ -12,9 +12,14 @@
 \usepackage{cancel}
 \usepackage{wrapfig}
 \usepackage{needspace}
+\usepackage{mathtools}
+
+
 
 \let\ORIincludegraphics\includegraphics
 \renewcommand{\includegraphics}[2][]{\ORIincludegraphics[scale=0.65,#1]{#2}}
+\newcommand{\verteq}{\rotatebox{90}{$\,=$}}
+\newcommand{\equalto}[2]{\underset{\scriptstyle\overset{\mkern4mu\verteq}{#2}}{#1}}
 
 \graphicspath{{./images/}}
 \setmainlanguage{russian}
@@ -43,7 +48,7 @@
             \hfill \break
             \large{МИНОБРНАУКИ РОССИИ}\\
             \footnotesize{ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ}\\ 
-            \footnotesize{ВЫСШЕГО ПРОФЕССИОНАЛЬНОГО ОБРАЗОВАНИЯ}\\
+            \footnotesize{ВЫСШЕГО ОБРАЗОВАНИЯ}\\
             \small{\textbf{«Дальневосточный федеральный университет»}}\\
             \hfill \break
             \normalsize{ИНСТИТУТ МАТЕМАТИКИ И КОМПЬЮТЕРНЫХ ТЕХНОЛОГИЙ}\\
@@ -311,4 +316,269 @@
       \includegraphics{8.5.3.png}
   \end{flushleft}
   \subsection{Связь медлу криволинейными интегралами I и II рода}
+  Пусть кривая задана в виде $\overline{r}=\overline{r}(t) \hspace{20pt} a\leq t \leq b$\\
+  \begin{flushright}
+    $\overline{r}=\overline{r}(x(t^*);y(t^*))$
+  \end{flushright}
+  \begin{figure}[h!]
+    \centering
+    % Первая колонка (левая картинка)
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{8.6.1.png} % путь к первой картинке
+        \vspace{0.5em} % небольшой отступ между картинкой и текстом
+        $\Delta \overline{r}=\overline{r}(t_o+\Delta t)-\overline{r}(t_0)$\\
+        $\frac{\Delta \overline{r}}{\Delta t}=\frac{1}{\Delta t}*\Delta \overline{r}$\\
+        $\lim_{\Delta t \to 0} \frac{\Delta \overline{r}}{\Delta t}=r(t_0)$\\
+        $|\overline{r}'(t)|=l'(t)$
+    \end{minipage}
+    \hfill
+    % Вторая колонка (правая картинка)
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{8.6.2.png} % путь ко второй картинке
+        \vspace{0.5em} % небольшой отступ между картинкой и текстом
+        $\overline{r}'(t)=\overline{x'(t);y'(t)}$\\
+        $|\overline{r}'(t)=\sqrt{x'(t)^2+y'(t)^2}|$\\
+        $dl=\sqrt{x'(t)^2+y'(t)^2}dt|:dt$\\
+        $l'(t)=\sqrt{x'(t)^2+y'(t)^2}$
+    \end{minipage}
+  \end{figure}
+  \par
+  Пусть l-переменная длина дуги\\
+  \[\frac{d \overline{r}}{dl} = \frac{d \overline{r}}{dt}* \frac{dt}{dl}=\frac{\frac{d \overline{r}}{dt}}{\frac{dl}{dt}}
+  \hspace{20pt} \Big| \frac{d \overline{r}}{dt} \Big| = \Big| \frac{r'(t)}{l'(t)} \Big| = 1\]\\
+  \underline{Замечание:} Если $|\overline{a}|=1 \Rightarrow \overline{a}(\cos(\alpha),\cos(\beta),\cos(\gamma))
+  \hspace{20pt} \cos^2 \alpha+\cos^2 \beta+\cos^2 \gamma=1$\\
+  \[\frac{d \overline{r}}{dl}=(\overline{\cos \alpha; \cos \beta})=(\overline{\frac{dx}{dl};\frac{dy}{dl}})\]\\
+  \[\frac{dx}{dl}=\cos \alpha \hspace{20pt} dx=\cos \alpha dl\]\\
+  \[\frac{dy}{dl}=\cos \beta \hspace{20pt} dy=\cos \beta dl\]\\
+  Рассмотрим $\int_{(l)}f(x;y)dx=\int_{(l)}f(x;y)\cos \alpha dl$\\
+  В общем случае $\int_{(l)}P(x;y;z)dx+Q(x;y;z)dy+R(x;y;z)dz=$\\
+  \[\int_{(l)} [P(x;y;z)\cos \alpha + Q(x;y;z)\cos \beta + R(x;y;z)\cos \gamma]dl\]\\
+  \subsection*{Физический смысл криволинейным интеграла II рода}
+  Рассмотрим $\int_{(l)} Pdx+Qdy+Rdz$\\
+  Пусть F(P;Q;R) - сила, под действием которой (.) перемещается по кривой l.\\
+  d $\overline{S}(dx;dy;dz)$\\
+  Рассмотрим $\overline{F}*\overline{ds}=A$\\
+  Криволинейный интеграл II рода равен работе силы F по перемещению (.) по кривой l.
+  \subsection{Условие независисмости криволинейного интеграла от путей интегрирования.}
+  Рассмотрим $\begin{matrix}
+    P=P(x;y)\\
+    Q=Q(x;y)
+  \end{matrix}$\\
+  Рассмотрим $\int_{(AB)}Pdx+Qdy \boxed{1}$\\
+  Найти условия, при которых значение интеграла не зависит от вида кривой (AB) и однозначно определяется положением
+  (.) A и (.) B\\
+  Рассмотрим Pdx+Qdy \hspace{20pt} dF = $\frac{\delta F}{\delta x}dx + \frac{\delta F}{\delta y}dy$\\
+  Если $P=\frac{\delta F}{\delta x} \hspace{20pt} Q=\frac{\delta F}{\delta y}$, то Pdx+Qdy является полными
+  дифференциалом от некоторой F(x;y).\\
+  \subsubsection*{Теорема 8.7.1}\label{th:8.7.1}
+  \par\noindent
+  $\Leftrightarrow$ чтобы Pdx+Qdy было в рассматриваемой области дифференциалом от некоторой функции 
+  F(x;y)\\
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    $\Rightarrow$ пусть \boxed{1} не зависит от путей интегрирования \\
+    \hspace{1em}
+    \begin{minipage}{0.55\textwidth}
+      \[\int_{(AB)} Pdx+Qdy = \int_{(x_0;y_0)}^{(x_1;y_1)}Pdx+Qdy\]\\
+      \[\text{Рассмотрим F(x;y)=}\int_{(x_0;y_0)}^{(x;y)}Pdx+Qdy\]
+    \end{minipage}
+    \vspace{1em}
+    \begin{minipage}{0.45\textwidth}
+      \includegraphics[scale=0.6]{8.7.1.png}
+    \end{minipage}
+    \par
+    \[F(x;y)=\int_{(x_0;y_0)}^{(x_1;y_1)}Pdx+Qdy\]\\
+    \[F(x_1+\Delta x;y_1)=\int_{(x_0;y_0)}^{(x_1+\Delta x;y_1)}Pdx+Qdy=\int_{(AB)}Pdx+qdy+
+    \int_{(CD)}Pdx+Qdy\]\\
+    Рассмотрим $F(x_1+\Delta x,y_1)-F(x_1;y_1)=\int_{(BC)}Pdx=\int_{x_1}^{x_1+\Delta x}P(x;y_1)dx=
+    \Big| \text{\underline{Замечание:}} \int_{a}^{b}f(x)dx=f(\xi)(b-a)\Big| = \underset{\xi \in (x_1;x_1+\Delta x)}{P(\xi;y_1)}
+    \Delta x = \underset{0<\theta<1}{P(x_1+\theta \Delta x;y_1)}\Delta x$\\
+    \[\frac{F(x_1+\Delta x;y_1)-F(x_1;y_1)}{\Delta x} = P(x_1+\theta\Delta x;y_1)\]\\
+    \[\lim_{\Delta x \to 0} \frac{F(x_1+\Delta x;y_1)-F(x_1;y_1)}{\Delta x}=\frac{\delta F}{\delta x} \Big|_{(x_1;y_1)}
+    =P(x;y)\Big|_{(x_1;y_1)}\]\\
+    \[\forall x \in D \hspace{20pt} \frac{\delta F}{\delta x}=P(x;y)\]\\
+    Аналогично $\frac{\delta F}{\delta y}=Q(x;y)$\\
+    $\Leftarrow$ Пусть Pdx+Qdy=$\frac{\delta F}{\delta x}+\frac{\delta F}{\delta y}dy$\\
+    \[\int_{(l)}Pdx+Qdy= \begin{vmatrix}
+      x=\varphi(t) & \varphi(a)=x_a & \varphi(b)=x_b\\
+      y=\psi(t) & \psi(a)=y_a & \psi(b)=y_b  \\
+      dx=\varphi'(t)dt\\
+      dy=\psi'(t)dt
+    \end{vmatrix} = \int_{a}^{b}[P(\varphi(t);\psi(t))\varphi'(t)+Q(\varphi(t);\psi(t))\psi'(t)]dt=\]\\
+    \[=\int_{a}^{b}[\frac{\delta F}{\delta x}\varphi'(t)+\frac{\delta F}{\delta y}\psi'(t)]dt=\int_{a}^{b}
+    \frac{dF(\varphi(t);\psi(t))}{dt}dt=F(\varphi(t);\psi(t))\Big|^b_a= F(x_b;y_b)-F(x_a;y_a)\]
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+  \end{adjustwidth}
+  \begin{center}
+    Как установить, является ли выражение Pdx+Qdy полным дифференциалом?\\
+    $Pdx+Qdy \overset{?}{=} dF$\\
+    Если $\begin{matrix}
+      P=\frac{\delta F}{\delta x} & Q=\frac{\delta F}{\delta y}\\
+      \frac{\delta P}{\delta y}=\frac{\delta^2 F}{\delta y \delta x} & \frac{\delta Q}{\delta x}=\frac{\delta^2 F}{\delta x \delta y}
+    \end{matrix} \Rightarrow \frac{\delta P}{\delta y}= \frac{\delta Q}{\delta x}$
+  \end{center}
+  
+  
+  \begin{minipage}{0.55\textwidth}
+    \underline{Вопрос}: Как найти функцию F(x;y)?\\
+    \[\int_{(l)}dF=F(x;y)+C\]\\
+    Зафиксируем (.)$(x_0;y_0)$
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.6]{8.7.2.png}
+  \end{minipage}
+  \vspace{1em}
+  \par
+  $\begin{matrix}
+    \text{(x,y) - произвольная (.) области } & \hspace{20pt} & l_1: y=y_0 & dy=0\\
+    \text{Обозначим её} (x^*;y^*) & \hspace{20pt} & l_2:x=x^x & dx=0
+  \end{matrix}$\\
+  \[\int_{(l)}Pdx+Qdy=\int_{(l_1)}Pdx+Qdy+\int_{(l_2)}Pdx+Qdy+C = \int_{x_0}^{x^*}P(x;y_0)dx+
+  \int_{y_0}^{y^x}Q(x^*;y)dy+C=F(x^*;y^*)\]
+  \subsection{Интеграл по замкнутому контуру}
+  Рассмотрим $\int_{(l)}Pdx+Qdy$ L-замкнутый контур в положительном направлении.
+  \begin{center}
+    \underline{Вопрос:} При каких условиях интеграл по замкнутому контуру обращается в ноль?
+  \end{center}
+  \subsubsection*{Теорема 8.8.1}\label{th:8.8.1}
+  \par\noindent
+  Если $\int_{(AB)}Pdx+Qdy$ не зависит от пути интегрирования, то $\int_{(l)}Pdx+Qdy=0.$Верно и обратное утвержение.\\
+  \begin{minipage}{0.25\textwidth}
+    \includegraphics[scale=0.5]{8.8.1.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.75\textwidth}
+    \underline{Доказательство:}\\
+      $\Rightarrow : \int_{(AB)}Pdx+Qdy$ не зависит от пути интегрирования.\\
+      $\int_{(AMB)}=\int_{(AMB)} \Rightarrow \int_{(AMB)}-\int_{(AMB)}=0 \Rightarrow
+      \Rightarrow \int_{(AMB)}+\int_{(BNA)}=0 \Rightarrow \int_{(L)}=0$
+  \end{minipage}
+  \vspace{1em}
+  \par
+  $\Leftarrow:$ Пусть $\int_{(L)}=0$
+  \begin{center}
+    $\int_{(AMB)}+\int_{(BNA)}=0$\\
+    $\int_{(AMB)}=-\int_{(BNA)}$\\
+    $\int_{(AMB)}=\int_{(ANB)}$\\
+  \end{center}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+  \underline{Замечание:} Существует область, для которых условие $\frac{\delta P}{\delta y}=\frac{\delta Q}{\delta x}$
+  не является достаточным для того, чтобы криволинейный интеграл не зависел от пути интегрирования.\\
+  \par
+  \underline{Определение: } Область, для которой $\forall$ расположенный в ней замкнутый контур можно путём
+  непрерывной деформации стянуть в (.), не выходя за пределы области, называется односвязной. В противном
+  случаем - неодносвязной.\\
+  \par
+  \begin{minipage}{0.5\textwidth}
+    односвязный\\
+    \includegraphics[scale=0.6]{8.8.2.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.5\textwidth}
+      не односвязный\\
+    \includegraphics[scale=0.6]{8.8.3.png}
+  \end{minipage}
+  \vspace{1em}
+  \par
+  \textbf{Утверждение:} Для того, чтобы\\
+  \[\oint_{(L)} Pdx+Qdy=0 \text{ необходимо, а вслучае односвязной области достаточно, чтобы } \frac{\delta P}{\delta y}=\frac{\delta Q}{\delta x}\]
+  Рассмотрим контур, имеющий внутри себя особую точку\\
+  \textbf{Утверждение:} Пусть $\frac{\delta P}{\delta y}=\frac{\delta Q}{\delta x}$. Тогда
+  \begin{enumerate}
+    \item $\oint_{L}Pdx+Qdy$ может быть отличным от нуля.
+    \item Все интегралы взятые в "+" направлении, по $\forall$ замкнутому контуру, будут равны между собой.
+  \end{enumerate}
+  \underline{Доказательство:}\\
+  2)
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.6]{8.8.4.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    Рассмотрим \\
+    \[\begin{matrix}
+      \int_{(A_1M_1B_1)}+\int_{B_1B_2}+\int_{B_2M_2A_2}+\int_{A_1A_1} = 0\\
+      \int_{B_1N_1A_1}+\int_{A_1A_2}+\int_{A_2N_2B_2}+\int_{B_2B_1} =0 
+    \end{matrix} \Bigg\} \Rightarrow\] 
+    \[\Rightarrow \int_{A_1M_1B_1N_1A_1} + \int_{B_2M_2N_2N_2B_2} =0 \]
+    \[\int_{A_1M_1B_1N_1A_1}=-\int_{B_2M_2A_2N_2B_2}\]
+    \[\int_{(l_1)}=\int_{(l_2)}\]
+  \end{minipage}
+  \vspace{1em}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+  Рассмотрим $\oint_{(L)} Pdx+Qdy=\sigma$\\
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.6]{8.8.5.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.4\textwidth}
+    \[\int_{(AB)}Pdx+Qdy+\int_{(BA)}Pdx+Qdy=n\sigma\]
+    \[\int_{(AB)}Pdx+Qdy=\int_{(AB)}Pdx+Qdy+n\sigma\]
+  \end{minipage}
+  \vspace{1em}
+  \par
+  То есть интеграл зависит от пути интегрирования. В смысле прибавления кратного числа к цилической
+  постоянной.\\
+  Присоединив к кривой AB некоторое число петель, окружающих особую (.), можно добиться, чтобы криволинейный
+  интеграл принял значени, близкое к заданному.\\
+  \underline{Пример:} $\oint_{(L)} \frac{xdy-ydx}{x^2+y^2} \boxed{=} \hspace{20pt} L:x^2+y^2=a^2, r=a$\\
+  \begin{minipage}{0.2\textwidth}
+    \includegraphics[scale=0.4]{8.8.6.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.8\textwidth}
+    $P=\frac{-y}{x^2+y^2} \hspace{20pt} Q=\frac{x}{x^2+y^2} \hspace{10pt}$
+    $\begin{matrix}
+      x=r(\varphi)\cos(\varphi)=a\cos(\varphi) & dx=-a\sin(\varphi)d\varphi\\
+      y=a\sin(\varphi) & dy=a\cos(\varphi)d\varphi
+    \end{matrix}$
+  \end{minipage}
+  \vspace{1em}
+  \par
+  \[\boxed{=} \int_{0}^{2\pi} \frac{a^2\cos^2(\varphi)+a^2\sin^2(\varphi)}{a^2}d\varphi = 
+  \int_{0}^{2\pi}d\varphi=\varphi \Big|^{2\pi}_0 = 2\pi = \sigma\]
+  \begin{center}
+    В общем случае $\oint_{(L)} Pdx+Qdy=n_1\sigma_1+n_2\sigma_2+\dots+n_k\sigma_k$
+  \end{center}
+  \subsection{Трёхмерный случай}
+  Рассмотрим $\int_{(AB)}Pdx+Qdy+Rdz$\\
+  Он не зависит от пути интегрирования, если существует F(x;y;z):
+  \[\frac{\delta F}{\delta x}=P;\frac{\delta F}{\delta y}=Q;\frac{\delta F}{\delta Z}=R\]
+
+  \[\text{Пусть существует непрерывные производные } \frac{\delta P}{\delta y};
+  \frac{\delta P}{\delta z};\frac{\delta Q}{\delta x};\frac{\delta Q}{\delta z}
+  ;\frac{\delta R}{\delta x};\frac{\delta R}{\delta y}\]
+
+  \[\frac{\delta P}{\delta y}=\frac{\delta^2 F}{\delta y \delta x};
+  \frac{\delta P}{\delta z}=\frac{\delta^2 F}{\delta z \delta x};
+  \frac{\delta Q}{\delta x}=\frac{\delta^2 F}{\delta x \delta y};
+  \frac{\delta Q}{\delta z}=\frac{\delta^2 F}{\delta z \delta y};
+  \frac{\delta R}{\delta x}=\frac{\delta^2 F}{\delta x \delta z};
+  \frac{\delta R}{\delta y}=\frac{\delta^2 F}{\delta y \delta z}\]
+
+  \[\begin{matrix}
+    \frac{\delta P}{\delta y} = \frac{\delta Q}{\delta x}\\
+    \par \\
+    \frac{\delta P}{\delta z} = \frac{\delta R}{\delta x}\\
+    \par \\
+    \frac{\delta Q}{\delta z} = \frac{\delta R}{\delta y}
+  \end{matrix} \Bigg\} \text{- условие независимости криволинейного интеграла от пути интегрирования}\] 
+  $P=\frac{\delta F}{\delta x}$\\
+  Рассмотрим $\int_{x_0}^{x} P(x;y;z)dx=\int_{x_0}^{x}\frac{\delta F}{\delta x}dx = F(x;y;z)-F(x_0;y;z)$\\
+  Зафиксируем $x_0. \int_{y_0}^{y}Q(x_0;y;z)dy=\int_{y_0}^{y}\frac{\delta F}{\delta y|_{x=x_0}}
+  dy=F(x_0;y;z)-F(x_0;y_0;z)$\\
+  Зафиксируем $x_0,y_0. \int_{z_0}^{z}R(x;y;z)dz=\int_{z_0}^{z}\frac{\delta F}{\delta z |_{x_0,y_0}}dz=
+  F(x_0;y_0;z)-F(x_0;y_0;z_0)$
+  \[F(x;y;z)=\int_{x_0}^{x}P(x;y;z)dx+\int_{y_0}^{y}Q(x_0;y;z)dy+\int_{z_0}^{z}R(x_0;y_0;z)dz+\equalto{F(x_0;y_0;z_0)}{C}\]
+  \subsection{Кратные интегралы. Двойной интеграл в прямоугольной области.}
 \end{document}
