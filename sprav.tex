@@ -581,4 +581,57 @@
   F(x_0;y_0;z)-F(x_0;y_0;z_0)$
   \[F(x;y;z)=\int_{x_0}^{x}P(x;y;z)dx+\int_{y_0}^{y}Q(x_0;y;z)dy+\int_{z_0}^{z}R(x_0;y_0;z)dz+\equalto{F(x_0;y_0;z_0)}{C}\]
   \subsection{Кратные интегралы. Двойной интеграл в прямоугольной области.}
+  \begin{minipage}{0.25\textwidth}
+    Рассмотрим P: $\begin{matrix}
+      a\leq x \leq b\\
+      c \leq y \leq d
+    \end{matrix}$
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.6]{8.10.1.png}
+  \end{minipage}
+  \vspace{1em}
+  \par
+  \begin{enumerate}
+    \item R: $\begin{matrix}
+      a=x_0 < x_1 < \dots < x_n =b\\
+      c=y_0 <y_1 < \dots < y_n =d
+    \end{matrix}$
+    \item Выберем в каждом элементарном $P_{ij}$ произвольюную (.) $(\xi_i;\eta_i)$
+    \item Рассмотрим Z=f(x;y). Вычислим $f(\xi_i;\eta_i)$
+    \item Вычислим $f(\xi_i;\eta_i)S_{P_{ij}}$
+    \item Вычислим $\sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f (\xi_i;\eta_i)S_{P_{ij}}$
+    \item Обозначим $\lambda_R = max(d_{ij})$
+    \item $\lim_{\lambda_R \to 0}\sigma_R=\iint_P f(x;y)dxdy$
+  \end{enumerate}
+  \underline{Определение: } Если существует конечный $\lim_{\lambda_R \to 0} \sigma_R$, не зависящий
+  от способа разбиения R и выбора (.) $(\xi_i;\eta_i)$, то он называется двойным интегралом от f(x;y)
+  по прямоугольнику P.\\
+  \par\noindent
+  \underline{Определение: } I называется двойным интегралом от f(x;y) по P, если 
+  \[\forall \varepsilon > 0 \exists \delta =\delta(\varepsilon): \lambda_r < \delta \Rightarrow |I-\sigma_R| < \varepsilon\]
+
+  \subsection{Суммы Дарбу}
+  \[\overline{S}=\sum_{i=0}^{n-1} \sum_{j=0}^{m-1} M_{ij}\Delta x_i \Delta y_i = \sum_{i=1}^{n-1} \sum_{j=0}^{n-1}M_{ij}\Delta P_{ij}\]
+  \[\underline{S}=\sum_{i=0}^{n-1} \sum_{j=0}^{m-1} m_{ij}\Delta x_i \Delta y_i = \sum_{i=1}^{n-1} \sum_{j=0}^{n-1}m_{ij}\Delta P_{ij}\]
+  \[m_{ij} \leq f(x;y) \leq M_{ij} \hspace{20pt} \forall(x;y)\in P_{ij}\]
+  \[M_{ij}=\underset{(x;y) \in \Delta P_{ij}}{sup f(x;y)} \hspace{20pt} m_{ij}=\underset{(x;y) \in \Delta P_{ij}}{inf f(x;y)} \]
+  \subsection*{Свойства}
+  \begin{enumerate}
+    \item $\underline{S}\leq \sigma_R \leq \overline{S}, \forall R$
+    \item Пусть $R \sqsubset R'$\\
+    $\overline{S_{R'}}\leq \overline{S_{R}} \hspace{20pt} \underline{S_{R'}}\geq \underline{S_{R}}$
+    \item $\forall R_1,R_2 \hspace{20pt} \underline{S_{R_1}}\leq \overline{S_{R_2}}$
+    \item Множество верхних сумм Дарбу ограничено снизу.\par
+    Множество нижних сумм Дарбу ограниченно сверху.\\
+    $I_*=\underset{R}{sup \{\underline{S}\}} \hspace{20pt} I^*=\underset{R}{inf \{\underline{S}\}}$
+    \item Th. о существовании интеграла\\
+    f(x;y) интегрируема на P $\Leftrightarrow \lim_{\lambda_R \to 0} (\overline{S_R}-\underline{S_R})=0$\\
+    $I_*=I^*=I$
+  \end{enumerate}
+
+  \subsection{Двойной интеграл в произвольной области}
+  Пусть $\underset{\text{(квадратируема по Жордану)}}{\text{область D имеет конечную площадь}}$
+
 \end{document}
