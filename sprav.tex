@@ -12,9 +12,20 @@
 \usepackage{cancel}
 \usepackage{wrapfig}
 \usepackage{needspace}
+\usepackage{mathtools}
+
+
 
 \let\ORIincludegraphics\includegraphics
 \renewcommand{\includegraphics}[2][]{\ORIincludegraphics[scale=0.65,#1]{#2}}
+\newcommand{\verteq}{\rotatebox{90}{$\,=$}}
+\newcommand{\equalto}[2]{\underset{\scriptstyle\overset{\mkern4mu\verteq}{#2}}{#1}}
+\let\oldint\int
+\let\oldiint\iint
+\let\oldoint\oint
+\renewcommand{\int}{\oldint\limits}
+\renewcommand{\oint}{\oldoint\limits}
+\renewcommand{\iint}{\oldiint\limits}
 
 \graphicspath{{./images/}}
 \setmainlanguage{russian}
@@ -40,45 +51,38 @@
     \justifying
     \begin{titlepage}
         \begin{center}
-            \hfill \break
-            \large{МИНОБРНАУКИ РОССИИ}\\
+            \begin{center}
+              \includegraphics[scale=0.1]{logo.jpg}
+            \end{center}
+            \normalsize{МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ}\\
             \footnotesize{ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ}\\ 
-            \footnotesize{ВЫСШЕГО ПРОФЕССИОНАЛЬНОГО ОБРАЗОВАНИЯ}\\
+            \footnotesize{ВЫСШЕГО ОБРАЗОВАНИЯ}\\
             \small{\textbf{«Дальневосточный федеральный университет»}}\\
-            \hfill \break
-            \normalsize{ИНСТИТУТ МАТЕМАТИКИ И КОМПЬЮТЕРНЫХ ТЕХНОЛОГИЙ}\\
+            \noindent\rule{17cm}{0.4pt}\\
+            \large{\textbf{ИНСТИТУТ МАТЕМАТИКИ И КОМПЬЮТЕРНЫХ ТЕХНОЛОГИЙ}}\\
              \hfill \break
-            \normalsize{Департамент программной инженерии и искусственного интеллекта}\\
+            \large{\textbf{Департамент программной инженерии и искусственного интеллекта}}\\
             \hfill\break
             \hfill \break
             \hfill \break
             \hfill \break
-            \large{Лекции 2 курса по дисциплине}\\
-            \large{Математический Анализ}\\
+            \large{\textbf{ЛЕКЦИОННЫЙ МАТЕРИАЛ}}\\
+            \begin{center}
+              \normalsize{по дисциплине "Математический Анализ"}\\
+              \normalsize{по образовательной программе подготовки бакалавров по направлению}\\
+              \normalsize{02.03.03тп - Математическое Обеспечение и Администрирование Информационных систем}\\
+              \normalsize{семестры обучения III-IV}
+            \end{center}
             \hfill \break
             \hfill \break
             \hfill \break
             \begin{flushright}
-              Подготовлено студентами гр.\\
-              Б9123-02.03.03тп\\
-              Макевкин C.C.\\
-              Тарасенко Т.В.\\
-              \hfill \break
+                \includegraphics[scale=1.5]{rospis.png}
             \end{flushright}
-            \begin{center}
-                Для\\
-              Зиновьева Павла Владимировича
-            \end{center}
             \hfill \break
             
-            \hfill \break
-            
-            \hfill \break
-            \hfill \break
             \end{center}
-             
             \hfill \break
-             
             \normalsize{ 
             
             }
@@ -311,4 +315,564 @@
       \includegraphics{8.5.3.png}
   \end{flushleft}
   \subsection{Связь медлу криволинейными интегралами I и II рода}
+  Пусть кривая задана в виде $\overline{r}=\overline{r}(t) \hspace{20pt} a\leq t \leq b$\\
+  \begin{flushright}
+    $\overline{r}=\overline{r}(x(t^*);y(t^*))$
+  \end{flushright}
+  \begin{figure}[h!]
+    \centering
+    % Первая колонка (левая картинка)
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{8.6.1.png} % путь к первой картинке
+        \vspace{0.5em} % небольшой отступ между картинкой и текстом
+        $\Delta \overline{r}=\overline{r}(t_o+\Delta t)-\overline{r}(t_0)$\\
+        $\frac{\Delta \overline{r}}{\Delta t}=\frac{1}{\Delta t}*\Delta \overline{r}$\\
+        $\lim_{\Delta t \to 0} \frac{\Delta \overline{r}}{\Delta t}=r(t_0)$\\
+        $|\overline{r}'(t)|=l'(t)$
+    \end{minipage}
+    \hfill
+    % Вторая колонка (правая картинка)
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{8.6.2.png} % путь ко второй картинке
+        \vspace{0.5em} % небольшой отступ между картинкой и текстом
+        $\overline{r}'(t)=\overline{x'(t);y'(t)}$\\
+        $|\overline{r}'(t)=\sqrt{x'(t)^2+y'(t)^2}|$\\
+        $dl=\sqrt{x'(t)^2+y'(t)^2}dt|:dt$\\
+        $l'(t)=\sqrt{x'(t)^2+y'(t)^2}$
+    \end{minipage}
+  \end{figure}
+  \par
+  Пусть l-переменная длина дуги\\
+  \[\frac{d \overline{r}}{dl} = \frac{d \overline{r}}{dt}* \frac{dt}{dl}=\frac{\frac{d \overline{r}}{dt}}{\frac{dl}{dt}}
+  \hspace{20pt} \Big| \frac{d \overline{r}}{dt} \Big| = \Big| \frac{r'(t)}{l'(t)} \Big| = 1\]\\
+  \underline{Замечание:} Если $|\overline{a}|=1 \Rightarrow \overline{a}(\cos(\alpha),\cos(\beta),\cos(\gamma))
+  \hspace{20pt} \cos^2 \alpha+\cos^2 \beta+\cos^2 \gamma=1$\\
+  \[\frac{d \overline{r}}{dl}=(\overline{\cos \alpha; \cos \beta})=(\overline{\frac{dx}{dl};\frac{dy}{dl}})\]\\
+  \[\frac{dx}{dl}=\cos \alpha \hspace{20pt} dx=\cos \alpha dl\]\\
+  \[\frac{dy}{dl}=\cos \beta \hspace{20pt} dy=\cos \beta dl\]\\
+  Рассмотрим $\int_{(l)}f(x;y)dx=\int_{(l)}f(x;y)\cos \alpha dl$\\
+  В общем случае $\int_{(l)}P(x;y;z)dx+Q(x;y;z)dy+R(x;y;z)dz=$\\
+  \[\int_{(l)} [P(x;y;z)\cos \alpha + Q(x;y;z)\cos \beta + R(x;y;z)\cos \gamma]dl\]\\
+  \subsection*{Физический смысл криволинейным интеграла II рода}
+  Рассмотрим $\int_{(l)} Pdx+Qdy+Rdz$\\
+  Пусть F(P;Q;R) - сила, под действием которой (.) перемещается по кривой l.\\
+  d $\overline{S}(dx;dy;dz)$\\
+  Рассмотрим $\overline{F}*\overline{ds}=A$\\
+  Криволинейный интеграл II рода равен работе силы F по перемещению (.) по кривой l.
+  \subsection{Условие независисмости криволинейного интеграла от путей интегрирования.}
+  Рассмотрим $\begin{matrix}
+    P=P(x;y)\\
+    Q=Q(x;y)
+  \end{matrix}$\\
+  Рассмотрим $\int_{(AB)}Pdx+Qdy \boxed{1}$\\
+  Найти условия, при которых значение интеграла не зависит от вида кривой (AB) и однозначно определяется положением
+  (.) A и (.) B\\
+  Рассмотрим Pdx+Qdy \hspace{20pt} dF = $\frac{\delta F}{\delta x}dx + \frac{\delta F}{\delta y}dy$\\
+  Если $P=\frac{\delta F}{\delta x} \hspace{20pt} Q=\frac{\delta F}{\delta y}$, то Pdx+Qdy является полными
+  дифференциалом от некоторой F(x;y).\\
+  \subsubsection*{Теорема 8.7.1}\label{th:8.7.1}
+  \par\noindent
+  $\Leftrightarrow$ чтобы Pdx+Qdy было в рассматриваемой области дифференциалом от некоторой функции 
+  F(x;y)\\
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    $\Rightarrow$ пусть \boxed{1} не зависит от путей интегрирования \\
+    \hspace{1em}
+    \begin{minipage}{0.55\textwidth}
+      \[\int_{(AB)} Pdx+Qdy = \int_{(x_0;y_0)}^{(x_1;y_1)}Pdx+Qdy\]\\
+      \[\text{Рассмотрим F(x;y)=}\int_{(x_0;y_0)}^{(x;y)}Pdx+Qdy\]
+    \end{minipage}
+    \vspace{1em}
+    \begin{minipage}{0.45\textwidth}
+      \includegraphics[scale=0.6]{8.7.1.png}
+    \end{minipage}
+    \par
+    \[F(x;y)=\int_{(x_0;y_0)}^{(x_1;y_1)}Pdx+Qdy\]\\
+    \[F(x_1+\Delta x;y_1)=\int_{(x_0;y_0)}^{(x_1+\Delta x;y_1)}Pdx+Qdy=\int_{(AB)}Pdx+qdy+
+    \int_{(CD)}Pdx+Qdy\]\\
+    Рассмотрим $F(x_1+\Delta x,y_1)-F(x_1;y_1)=\int_{(BC)}Pdx=\int_{x_1}^{x_1+\Delta x}P(x;y_1)dx=
+    \Big| \text{\underline{Замечание:}} \int_{a}^{b}f(x)dx=f(\xi)(b-a)\Big| = \underset{\xi \in (x_1;x_1+\Delta x)}{P(\xi;y_1)}
+    \Delta x = \underset{0<\theta<1}{P(x_1+\theta \Delta x;y_1)}\Delta x$\\
+    \[\frac{F(x_1+\Delta x;y_1)-F(x_1;y_1)}{\Delta x} = P(x_1+\theta\Delta x;y_1)\]\\
+    \[\lim_{\Delta x \to 0} \frac{F(x_1+\Delta x;y_1)-F(x_1;y_1)}{\Delta x}=\frac{\delta F}{\delta x} \Big|_{(x_1;y_1)}
+    =P(x;y)\Big|_{(x_1;y_1)}\]\\
+    \[\forall x \in D \hspace{20pt} \frac{\delta F}{\delta x}=P(x;y)\]\\
+    Аналогично $\frac{\delta F}{\delta y}=Q(x;y)$\\
+    $\Leftarrow$ Пусть Pdx+Qdy=$\frac{\delta F}{\delta x}+\frac{\delta F}{\delta y}dy$\\
+    \[\int_{(l)}Pdx+Qdy= \begin{vmatrix}
+      x=\varphi(t) & \varphi(a)=x_a & \varphi(b)=x_b\\
+      y=\psi(t) & \psi(a)=y_a & \psi(b)=y_b  \\
+      dx=\varphi'(t)dt\\
+      dy=\psi'(t)dt
+    \end{vmatrix} = \int_{a}^{b}[P(\varphi(t);\psi(t))\varphi'(t)+Q(\varphi(t);\psi(t))\psi'(t)]dt=\]\\
+    \[=\int_{a}^{b}[\frac{\delta F}{\delta x}\varphi'(t)+\frac{\delta F}{\delta y}\psi'(t)]dt=\int_{a}^{b}
+    \frac{dF(\varphi(t);\psi(t))}{dt}dt=F(\varphi(t);\psi(t))\Big|^b_a= F(x_b;y_b)-F(x_a;y_a)\]
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+  \end{adjustwidth}
+  \begin{center}
+    Как установить, является ли выражение Pdx+Qdy полным дифференциалом?\\
+    $Pdx+Qdy \overset{?}{=} dF$\\
+    Если $\begin{matrix}
+      P=\frac{\delta F}{\delta x} & Q=\frac{\delta F}{\delta y}\\
+      \frac{\delta P}{\delta y}=\frac{\delta^2 F}{\delta y \delta x} & \frac{\delta Q}{\delta x}=\frac{\delta^2 F}{\delta x \delta y}
+    \end{matrix} \Rightarrow \frac{\delta P}{\delta y}= \frac{\delta Q}{\delta x}$
+  \end{center}
+  
+  
+  \begin{minipage}{0.55\textwidth}
+    \underline{Вопрос}: Как найти функцию F(x;y)?\\
+    \[\int_{(l)}dF=F(x;y)+C\]\\
+    Зафиксируем (.)$(x_0;y_0)$
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.6]{8.7.2.png}
+  \end{minipage}
+  \vspace{1em}
+  \par
+  $\begin{matrix}
+    \text{(x,y) - произвольная (.) области } & \hspace{20pt} & l_1: y=y_0 & dy=0\\
+    \text{Обозначим её} (x^*;y^*) & \hspace{20pt} & l_2:x=x^x & dx=0
+  \end{matrix}$\\
+  \[\int_{(l)}Pdx+Qdy=\int_{(l_1)}Pdx+Qdy+\int_{(l_2)}Pdx+Qdy+C = \int_{x_0}^{x^*}P(x;y_0)dx+
+  \int_{y_0}^{y^x}Q(x^*;y)dy+C=F(x^*;y^*)\]
+  \subsection{Интеграл по замкнутому контуру}
+  Рассмотрим $\int_{(l)}Pdx+Qdy$ L-замкнутый контур в положительном направлении.
+  \begin{center}
+    \underline{Вопрос:} При каких условиях интеграл по замкнутому контуру обращается в ноль?
+  \end{center}
+  \subsubsection*{Теорема 8.8.1}\label{th:8.8.1}
+  \par\noindent
+  Если $\int_{(AB)}Pdx+Qdy$ не зависит от пути интегрирования, то $\int_{(l)}Pdx+Qdy=0.$Верно и обратное утвержение.\\
+  \begin{minipage}{0.25\textwidth}
+    \includegraphics[scale=0.5]{8.8.1.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.75\textwidth}
+    \underline{Доказательство:}\\
+      $\Rightarrow : \int_{(AB)}Pdx+Qdy$ не зависит от пути интегрирования.\\
+      $\int_{(AMB)}=\int_{(AMB)} \Rightarrow \int_{(AMB)}-\int_{(AMB)}=0 \Rightarrow
+      \Rightarrow \int_{(AMB)}+\int_{(BNA)}=0 \Rightarrow \int_{(L)}=0$
+  \end{minipage}
+  \vspace{1em}
+  \par
+  $\Leftarrow:$ Пусть $\int_{(L)}=0$
+  \begin{center}
+    $\int_{(AMB)}+\int_{(BNA)}=0$\\
+    $\int_{(AMB)}=-\int_{(BNA)}$\\
+    $\int_{(AMB)}=\int_{(ANB)}$\\
+  \end{center}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+  \underline{Замечание:} Существует область, для которых условие $\frac{\delta P}{\delta y}=\frac{\delta Q}{\delta x}$
+  не является достаточным для того, чтобы криволинейный интеграл не зависел от пути интегрирования.\\
+  \par
+  \underline{Определение: } Область, для которой $\forall$ расположенный в ней замкнутый контур можно путём
+  непрерывной деформации стянуть в (.), не выходя за пределы области, называется односвязной. В противном
+  случаем - неодносвязной.\\
+  \par
+  \begin{minipage}{0.5\textwidth}
+    односвязный\\
+    \includegraphics[scale=0.6]{8.8.2.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.5\textwidth}
+      не односвязный\\
+    \includegraphics[scale=0.6]{8.8.3.png}
+  \end{minipage}
+  \vspace{1em}
+  \par
+  \textbf{Утверждение:} Для того, чтобы\\
+  \[\oint_{(L)} Pdx+Qdy=0 \text{ необходимо, а вслучае односвязной области достаточно, чтобы } \frac{\delta P}{\delta y}=\frac{\delta Q}{\delta x}\]
+  Рассмотрим контур, имеющий внутри себя особую точку\\
+  \textbf{Утверждение:} Пусть $\frac{\delta P}{\delta y}=\frac{\delta Q}{\delta x}$. Тогда
+  \begin{enumerate}
+    \item $\oint_{L}Pdx+Qdy$ может быть отличным от нуля.
+    \item Все интегралы взятые в "+" направлении, по $\forall$ замкнутому контуру, будут равны между собой.
+  \end{enumerate}
+  \underline{Доказательство:}\\
+  2)
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.6]{8.8.4.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    Рассмотрим \\
+    \[\begin{matrix}
+      \int_{(A_1M_1B_1)}+\int_{B_1B_2}+\int_{B_2M_2A_2}+\int_{A_1A_1} = 0\\
+      \int_{B_1N_1A_1}+\int_{A_1A_2}+\int_{A_2N_2B_2}+\int_{B_2B_1} =0 
+    \end{matrix} \Bigg\} \Rightarrow\] 
+    \[\Rightarrow \int_{A_1M_1B_1N_1A_1} + \int_{B_2M_2N_2N_2B_2} =0 \]
+    \[\int_{A_1M_1B_1N_1A_1}=-\int_{B_2M_2A_2N_2B_2}\]
+    \[\int_{(l_1)}=\int_{(l_2)}\]
+  \end{minipage}
+  \vspace{1em}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+  Рассмотрим $\oint_{(L)} Pdx+Qdy=\sigma$\\
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.6]{8.8.5.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.4\textwidth}
+    \[\int_{(AB)}Pdx+Qdy+\int_{(BA)}Pdx+Qdy=n\sigma\]
+    \[\int_{(AB)}Pdx+Qdy=\int_{(AB)}Pdx+Qdy+n\sigma\]
+  \end{minipage}
+  \vspace{1em}
+  \par
+  То есть интеграл зависит от пути интегрирования. В смысле прибавления кратного числа к цилической
+  постоянной.\\
+  Присоединив к кривой AB некоторое число петель, окружающих особую (.), можно добиться, чтобы криволинейный
+  интеграл принял значени, близкое к заданному.\\
+  \underline{Пример:} $\oint_{(L)} \frac{xdy-ydx}{x^2+y^2} \boxed{=} \hspace{20pt} L:x^2+y^2=a^2, r=a$\\
+  \begin{minipage}{0.2\textwidth}
+    \includegraphics[scale=0.4]{8.8.6.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.8\textwidth}
+    $P=\frac{-y}{x^2+y^2} \hspace{20pt} Q=\frac{x}{x^2+y^2} \hspace{10pt}$
+    $\begin{matrix}
+      x=r(\varphi)\cos(\varphi)=a\cos(\varphi) & dx=-a\sin(\varphi)d\varphi\\
+      y=a\sin(\varphi) & dy=a\cos(\varphi)d\varphi
+    \end{matrix}$
+  \end{minipage}
+  \vspace{1em}
+  \par
+  \[\boxed{=} \int_{0}^{2\pi} \frac{a^2\cos^2(\varphi)+a^2\sin^2(\varphi)}{a^2}d\varphi = 
+  \int_{0}^{2\pi}d\varphi=\varphi \Big|^{2\pi}_0 = 2\pi = \sigma\]
+  \begin{center}
+    В общем случае $\oint_{(L)} Pdx+Qdy=n_1\sigma_1+n_2\sigma_2+\dots+n_k\sigma_k$
+  \end{center}
+  \subsection{Трёхмерный случай}
+  Рассмотрим $\int_{(AB)}Pdx+Qdy+Rdz$\\
+  Он не зависит от пути интегрирования, если существует F(x;y;z):
+  \[\frac{\delta F}{\delta x}=P;\frac{\delta F}{\delta y}=Q;\frac{\delta F}{\delta Z}=R\]
+
+  \[\text{Пусть существует непрерывные производные } \frac{\delta P}{\delta y};
+  \frac{\delta P}{\delta z};\frac{\delta Q}{\delta x};\frac{\delta Q}{\delta z}
+  ;\frac{\delta R}{\delta x};\frac{\delta R}{\delta y}\]
+
+  \[\frac{\delta P}{\delta y}=\frac{\delta^2 F}{\delta y \delta x};
+  \frac{\delta P}{\delta z}=\frac{\delta^2 F}{\delta z \delta x};
+  \frac{\delta Q}{\delta x}=\frac{\delta^2 F}{\delta x \delta y};
+  \frac{\delta Q}{\delta z}=\frac{\delta^2 F}{\delta z \delta y};
+  \frac{\delta R}{\delta x}=\frac{\delta^2 F}{\delta x \delta z};
+  \frac{\delta R}{\delta y}=\frac{\delta^2 F}{\delta y \delta z}\]
+
+  \[\begin{matrix}
+    \frac{\delta P}{\delta y} = \frac{\delta Q}{\delta x}\\
+    \par \\
+    \frac{\delta P}{\delta z} = \frac{\delta R}{\delta x}\\
+    \par \\
+    \frac{\delta Q}{\delta z} = \frac{\delta R}{\delta y}
+  \end{matrix} \Bigg\} \text{- условие независимости криволинейного интеграла от пути интегрирования}\] 
+  $P=\frac{\delta F}{\delta x}$\\
+  Рассмотрим $\int_{x_0}^{x} P(x;y;z)dx=\int_{x_0}^{x}\frac{\delta F}{\delta x}dx = F(x;y;z)-F(x_0;y;z)$\\
+  Зафиксируем $x_0. \int_{y_0}^{y}Q(x_0;y;z)dy=\int_{y_0}^{y}\frac{\delta F}{\delta y|_{x=x_0}}
+  dy=F(x_0;y;z)-F(x_0;y_0;z)$\\
+  Зафиксируем $x_0,y_0. \int_{z_0}^{z}R(x;y;z)dz=\int_{z_0}^{z}\frac{\delta F}{\delta z |_{x_0,y_0}}dz=
+  F(x_0;y_0;z)-F(x_0;y_0;z_0)$
+  \[F(x;y;z)=\int_{x_0}^{x}P(x;y;z)dx+\int_{y_0}^{y}Q(x_0;y;z)dy+\int_{z_0}^{z}R(x_0;y_0;z)dz+\equalto{F(x_0;y_0;z_0)}{C}\]
+  \subsection{Кратные интегралы. Двойной интеграл в прямоугольной области.}
+  \begin{minipage}{0.25\textwidth}
+    Рассмотрим P: $\begin{matrix}
+      a\leq x \leq b\\
+      c \leq y \leq d
+    \end{matrix}$
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.6]{8.10.1.png}
+  \end{minipage}
+  \vspace{1em}
+  \par
+  \begin{enumerate}
+    \item R: $\begin{matrix}
+      a=x_0 < x_1 < \dots < x_n =b\\
+      c=y_0 <y_1 < \dots < y_n =d
+    \end{matrix}$
+    \item Выберем в каждом элементарном $P_{ij}$ произвольюную (.) $(\xi_i;\eta_i)$
+    \item Рассмотрим Z=f(x;y). Вычислим $f(\xi_i;\eta_i)$
+    \item Вычислим $f(\xi_i;\eta_i)S_{P_{ij}}$
+    \item Вычислим $\sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f (\xi_i;\eta_i)S_{P_{ij}}$
+    \item Обозначим $\lambda_R = max(d_{ij})$
+    \item $\lim_{\lambda_R \to 0}\sigma_R=\iint_P f(x;y)dxdy$
+  \end{enumerate}
+  \underline{Определение: } Если существует конечный $\lim_{\lambda_R \to 0} \sigma_R$, не зависящий
+  от способа разбиения R и выбора (.) $(\xi_i;\eta_i)$, то он называется двойным интегралом от f(x;y)
+  по прямоугольнику P.\\
+  \par\noindent
+  \underline{Определение: } I называется двойным интегралом от f(x;y) по P, если 
+  \[\forall \varepsilon > 0 \exists \delta =\delta(\varepsilon): \lambda_r < \delta \Rightarrow |I-\sigma_R| < \varepsilon\]
+
+  \subsection{Суммы Дарбу}
+  \[\overline{S}=\sum_{i=0}^{n-1} \sum_{j=0}^{m-1} M_{ij}\Delta x_i \Delta y_i = \sum_{i=1}^{n-1} \sum_{j=0}^{n-1}M_{ij}\Delta P_{ij}\]
+  \[\underline{S}=\sum_{i=0}^{n-1} \sum_{j=0}^{m-1} m_{ij}\Delta x_i \Delta y_i = \sum_{i=1}^{n-1} \sum_{j=0}^{n-1}m_{ij}\Delta P_{ij}\]
+  \[m_{ij} \leq f(x;y) \leq M_{ij} \hspace{20pt} \forall(x;y)\in P_{ij}\]
+  \[M_{ij}=\underset{(x;y) \in \Delta P_{ij}}{sup f(x;y)} \hspace{20pt} m_{ij}=\underset{(x;y) \in \Delta P_{ij}}{inf f(x;y)} \]
+  \subsection*{Свойства}
+  \begin{enumerate}
+    \item $\underline{S}\leq \sigma_R \leq \overline{S}, \forall R$
+    \item Пусть $R \sqsubset R'$\\
+    $\overline{S_{R'}}\leq \overline{S_{R}} \hspace{20pt} \underline{S_{R'}}\geq \underline{S_{R}}$
+    \item $\forall R_1,R_2 \hspace{20pt} \underline{S_{R_1}}\leq \overline{S_{R_2}}$
+    \item Множество верхних сумм Дарбу ограничено снизу.\par
+    Множество нижних сумм Дарбу ограниченно сверху.\\
+    $I_*=\underset{R}{sup \{\underline{S}\}} \hspace{20pt} I^*=\underset{R}{inf \{\underline{S}\}}$
+    \item Th. о существовании интеграла\\
+    f(x;y) интегрируема на P $\Leftrightarrow \lim_{\lambda_R \to 0} (\overline{S_R}-\underline{S_R})=0$\\
+    $I_*=I^*=I$
+  \end{enumerate}
+
+  \subsection{Двойной интеграл в произвольной области}
+  Пусть $\underset{\text{(квадратируема по Жордану)}}{\text{область D имеет конечную площадь}}$\\
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.7]{8.12.1.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    Пусть F(x;y)=$\begin{cases}
+      f(x;y) & (.)(x;y) \in D\\
+      0 & (.)(x;y) \not \in D
+    \end{cases}$\\
+    Если F(x;y) интегрируема в Р, то существует: \[\iint_{P} F(x;y)dxdy \]
+    \[\iint_{P} F(x;y dxdy=\iint_{D} f(x;y)dxdy)\]
+  \end{minipage}
+  \vspace{1em}
+  \par
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.6]{8.12.2.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    \begin{enumerate}
+      \item Разобьем D спрямляемыми кривыми(кривая имеющая конечную длину)
+      \item Выберем (.) $((\xi_i;\eta_i)) \in D_i$
+      \item Вычислим $f((\xi_i;\eta_i))\Delta D_i$
+      \item Составим $\sigma_R=\sum_{i=0}^{n-1}f((\xi_i;\eta_i))\Delta D_i$
+      \item Пусть $\lambda_R = \underset{M_1,M_2 \in D_i}{\max \rho(M_1,M_2)}$
+      \item Вычислим $\lim_{\lambda_R \to 0}\sigma_R=\iint_{D}f(x;y)dxdy$
+    \end{enumerate}
+  \end{minipage}
+  \vspace{1em}
+  \break
+  \underline{Определение: } Если существует конечный предел $\sigma_R$, при $\lambda_R \to 0$, не
+  зависящий от способа разбиения области D и выбора (.) $(\xi_i;\eta_i)$, то он называется двойным
+  интегралом от функции f(x;y) по области D\\
+  \subsection*{Свойства:}
+  \begin{enumerate}
+    \item $\iint_D dxdy=S_p$
+    \item Пусть $D=D_1 \lor D_2: D_1\land D_2 =0$\\
+    Если f(x;y) интегрируема в D, то она интегрируема в $D_1$ и $D_2$
+    \[\iint_D f(x;y) dxdy=\iint_{D_1}f(x;y)dxdy+\iint_{D_2}f(x;y)dxdy\]
+    \item Если f и g интегрируемы в D, то существует 
+    \[\iint_D [\alpha f(x;y)+ \beta g(x;y)]dxdy=\alpha \iint_D f(x;y)dxdy+ \beta \iint_D g(x;y)dxdy\]
+    \item Пусть f,g $\geq 0$ в D и $\forall (.) (x;y) \in D f\leq g$\\
+    \[\iint_D f(x;y)dxdy\leq \iint_D g(x;y)dxdy\]
+    \item Пусть f>0 $D_1 \subset D_2$
+    \[\iint_{D_1} f(x;y)dxdy<\iint_{D_2} f(x;y)dxdy\]
+    \item Если f интегрируема в D, то |f| тоже интегрируема в D
+    \[\Big| \iint_D f(x;y)dxdy \Big| \leq \iint|f(x;y)|dxdy\]
+    \item  
+    \subsubsection*{Теорема о среднем}\label{th:8.12.1}
+    \par\noindent
+    Пусть f и g ограничены и интегрируемы в D, g не меняет знак в D
+    \[m\leq f(x;y)\leq M. \text{ Тогда существует }\lambda: m\leq \lambda \leq M: 
+    \iint_D f(x;y) g(x;y)dxdy=\lambda \iint_D g(x;y)dxdy\]\\
+    Если дополнить f(x;y) непрерывна в D, то существует
+    \[(.) (\xi_i;\eta_i) \in D: \iint_D f(x;y)dxdy=f (\xi_i;\eta_i) \Delta D\]
+  \end{enumerate}
+  \break
+  \subsection{Вычисчение двойного интеграла(сведение двойного интеграла к повторному)}
+  Пусть f(x;y) задана в P = [a;b]x[c;d]. $\hspace{20pt}$ Рассмотрим F(x)=$\int_{a}^{c}f(x;y)dy$
+  \subsubsection*{Теорема 8.13.1}\label{th:8.13.1}
+  \par\noindent
+  Если f(x;y) непрерывна в P, то F(x) непрерывна на [a;b]\\
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Рассмотрим $F(x+\Delta x)-F(x)=\int_{c}^{d}[f(x+\Delta x)-f(x;y)]dy \hspace{20pt} x,x+\Delta x \in [a;b]$\\
+    По условию f(x;y) непрерывна в P $\Rightarrow f(x;y)$ будет равномерно непрерывна в P. \[\forall f(x;y)
+    ,(x+\Delta x;y)\in P: |\Delta x|<\delta \Rightarrow |f(x+\Delta x;y)-f(x;y)|< \frac{\varepsilon}{d-c}\]\\
+    То есть F(x) непрерывна в (.) x. Так как x-произвольная (.) $\in [a;b],$то F(x) непрерывна на [a;b]
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+  \end{adjustwidth}
+  \subsubsection*{Теорема 8.13.2}\label{th:8.13.2}
+  \par\noindent
+  Пусть $\iint_P f(x;y)dxdy$ существует. Тогда 
+  \[\iint_D f(x;y)dxdy=\int_{a}^{b}dx \int_{c}^{d} f(x;y)dy=\int_{c}^{d}dy \int_{a}^{b}f(x;y)dx\]
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    R:$\begin{cases}
+      a:x_0<x_1<\dots<x_n=b & m_{ij}\leq f(x;y) \leq M_{ij} \forall (x;y) \in P_{ij} (*)\\
+      c=y_0<y_1<\dots<y_k=d
+    \end{cases}$\\
+    Зафиксируем x=$\xi_i \in [x_i;x_{i+1}]$ и проинтегрируем (*) по переменной y
+    \[\int_{y_j}^{y_{j+1}}m_{ij}dy \leq \int_{y_j}^{y_{j+1}}f(\xi_i;y)dy \leq \int_{y_j}^{y_{j+1}} M_{ij}dy\]
+    \[m_{ij}\Delta y_j \leq \int_{y_j}^{y_{j+1}} f (\xi_i;y)dy \leq M_{ij}\Delta y_j\]
+    \[\sum_{j=0}^{k-1} m_{ij}\Delta y_j \leq \sum_{j=0}^{k-1}\int_{y_j}^{y_{j+1}}f (\xi_i;y)dy
+    \leq \sum_{j=0}^{k-1} M_{ij}\Delta y_j \Big| *\Delta x_i \text{ и проинтегрируем по } 
+    i=\overline{0,n-1}\]
+    \[\sum_{i=0}^{n-1}\sum_{j=0}^{k-1} m_{ij}\Delta x_j \Delta y_j \leq \sum_{i=0}^{n-1}
+    [\int_{c}^{d} \equalto{f (\xi_i;y)}{I(\xi_i)}]\Delta x_i \leq 
+    \sum_{i=0}^{n-1} \sum_{j=0}^{k-1} M_{ij} \Delta x_i \Delta y_j\]
+    \[\text{При }\lambda_R \to 0: m_{ij},M_{ij} \rightarrow I= \iint_P f(x;y) dxdy\]
+    %TODO:Найти способ как написать стрелку под текстом, пикча в Images лежит 
+    Тогда $\iint_P f(x;y) dxdy = \lim_{\lambda_R \to 0} \sum_{i=0}^{n-1}I(\xi_i)\Delta x_i =
+    \int_{a}^{b}I(x)dx=\int_{a}^{b}dx \int_{c}^{d}f(x;y)dy$\\
+    Аналогично $\iint_P f(x;y)dxdy=\int_{c}^{d}dy \int_{a}^{b}f(x;y)dx$
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+  \end{adjustwidth}
+  \subsection{Вычисление двойного интеграла по произвольной области}
+  \subsubsection*{Теорема 8.14.1}\label{th:8.14.1}
+  \par\noindent
+  Пусть $y_1(x)$ и $y_2(x)$ непрерывна на [a;b].\\
+  Рассмотрим D:
+  $\begin{cases}
+    a\leq x\leq b\\
+    y_1(x)\leq y \leq y_2(x)
+  \end{cases}$\\
+  Если f(x;y) задана в D и $\forall x \in [a;b]$ она интегрируема по y на $[y_1(x);y_2(x)]$ и
+  f(x;y) непрерывна в D, то F(x) = $\int_{y_1(x)}^{y_2(x)}f(x;y)dy$ непрерывна на [a;b].\\
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Замена $y=y_1(x)+(y_2(x)-y_1(x))t \hspace{20pt} 0\leq t\leq 1 \hspace{20pt} dy=(y_2(x)-y_1(x))dt$
+    \[F(x)=\int_{0}^{1} \underbrace{f(x;y_1(x)+(y_2(x)-y_1(x))t)(y_2(x)-y_1(x))}_{g(x;t)}dt=
+    \int_{0}^{1}g(x;t)dt\]
+    \begin{center}
+      g(x;t) определена в прямоугольнике\\
+      $a\leq x\leq b$\\
+      $0\leq t\leq1$
+    \end{center} 
+    Тогда F(x) непрерывна по \hyperref[th:8.13.1]{Теореме 8.13.1}
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+  \end{adjustwidth}
+  \subsubsection*{Теорема 8.14.2}\label{th:8.14.2}
+  \par\noindent
+  Пусть f(x;y) интегрируема и непрерывна в D и $\forall x \in [a;b]$ прямая || OY пересекает границу
+  D не более чем в $2^x$(.). То есть область D задана в виде D:
+  $\begin{cases}
+    a\leq x\leq b\\
+    y_1(x)\leq y\leq y_2(x)
+  \end{cases}$.\\
+  Тогда:
+  \[\iint_D f(x;y)dxdy = \int_{a}^{b}dx \int_{y_1(x)}^{y_2(x)}dy\]
+  \underline{Замечание:} Аналогично можно рассмотреть: $\iint_D f(x;y)dxdy = \int_{c}^{d}dy
+  \int_{x_1(y)}^{x_2(y)}f(x;y)dx$, если прямая || OX пересекает D не более чем в $2^x$(.).\\
+  \underline{Замечание:}Если контур пересекается не более чем в $2^x$(.) как прямыми || OY,
+  так и || OX, то справедливы обе формулы.\\
+  \underline{Замечание:} Если контур не подходит ни под один случай, то его разбивают на $D_1,D_2,\dots$\\
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    F(x) $\overset{\text{(на [a;b])}}{\text{непрерывна}}$ по \hyperref[th:8.14.1]{Теореме 8.14.1}. Тогда F(x)
+    интегрируема на [a;b]. То есть, существует: \[\int_{a}^{b}F(x)dx=\int_{a}^{b}dx \int_{y_1(x)}^{y_2(x)}
+    f(x;y)dy\]\\
+    Введем разбиение:
+    $\begin{cases}
+      \vspace{2pt}
+      x_i = a + \frac{b-a}{k}i \\
+      \vspace{2pt}
+      x_i-x_{i+1}=\frac{b-1}{k} \\
+      i=\overline{1,k}
+    \end{cases}$\\
+    Введем вспомогательные функции:
+    $\begin{cases}
+      \vspace{2pt}
+      \varphi_0(x)=y_1(x)\\
+      \vspace{2pt}
+      \varphi_1(x)=y_1(x)+\frac{y_2(x)-y_1(x)}{k}i\\
+      \vdots\\
+      \varphi_j(x)=y_1(x)+\frac{y_2(x)-y_1(x)}{k}j\\
+      \vspace{2pt}
+      \varphi_k(x)=y_1(x)+\frac{y_2(x)-y_1(x)}{k}k
+    \end{cases}$\\
+    Получим разбиение: 
+    \[E^{k}_{ij}=
+    \begin{cases}
+      x_{i-1}\leq x \leq x_i\\
+      \varphi_{j-1}\leq y\leq \varphi_j
+    \end{cases} \hspace{20pt} i,j = \overline{1,k}\]
+    \[m_{ij}=\underset{(x,y) \in E_{ij}^k}{\inf f(x;y)} \hspace{20pt} M_{ij}=\underset{(x,y) \in E_{ij}^k}{\sup f(x;y)}\]\\
+    \[ \text{Рассмотрим} 
+    \int_{a}^{b}dx+\int_{y_1(x)}^{y_2(x)}f(x;y)dy =
+    \sum_{i=1}^{k} \int_{x_{i-1}}^{x_i}dx \sum_{j=1}^{k} \int_{\varphi_{j-1}}^{\varphi_j}f(x;y)dy =
+    \sum_{i=1}^{k}\sum_{j=1}^{k} \int_{x_{i-1}}^{x_i} dx\int_{\varphi_{j-1}}^{\varphi_j}f(x;y)dy \leq\]
+    \[\leq \sum_{i=1}^{k}\sum_{j=1}^{k} M_{ij} \int_{x_{i-1}}^{x_i}dx \int_{\varphi_{j-1}}^{\varphi_j}dy=
+    \sum_{i=1}^{k}\sum_{j=1}^{k} M_{ij} M_{ij} \int_{x_{i-1}}^{x_i}dx[\varphi_j(x)-\varphi_{j_1}(x)]=
+    \sum_{i=1}^{k}\sum_{j=1}^{k} \overbrace{\Delta E_{ij}^k}^{\text{S площадь}}=
+    \overline{S}_R\]\\
+    Аналогично $\int_{a}^{b}dx \int_{y_1(x)}^{y_2(x)}f(x;y)dy \geq \underline{S}_R$\\
+    Получим $\underline{S}_R \leq \int_{a}^{b}dx \int_{y_1(x)}^{y_2(x)} f(x;y) dy \leq \overline{S}_R$
+    %TODO переделать стрелки, лежит images peredelat2
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+  \end{adjustwidth}
+  \subsection{Формула Грина}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=1]{8.15.1.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    \[\oint_{L}Pdx+Qdy\]
+  \end{minipage}
+  \vspace{1em}
+  \par
+
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.6]{8.15.2.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    Рассмотрим 
+    $\begin{cases}
+      PQ:y=y_1(x)\\
+      SR: y=y_2(x)\\
+      a\leq x \leq b\\
+      PS|OY, QR||OY
+    \end{cases}$\\
+  \end{minipage}
+  \vspace{1em}
+  \par
+  Пусть в области D задана P(x;y). P(x;y) непрерывна $\frac{\delta P}{\delta y}$ непрерывна.
+  \[\text{Рассмотрим }\] \[ \iint_D \frac{\delta P}{\delta y}dxdy= 
+  \int_{a}^{b}dx \int_{y_1(x)}^{y_2(x)} \frac{\delta P}{\delta y}dy=
+  \int_{a}^{b}dx \Big[P(x;y)\Big|_{y_1(x)}^{y_2(x)}\Big]=
+  \int_{a}^{b}dx \Big[P(x;y_2(x))-P(x;y_1(x))\Big] \boxed{=}\]
+  \[\text{Рассмотрим} \int_{a}^{b}P(x;y_2(x))dx=\int_{(SR)}P(x;y)dx\]
+  \[\text{Рассмотрим} \int_{a}^{b}P(x;y_1(x))dx=\int_{(PQ)}P(x;y)dx=-\int_{(QP)}P(x;y)dx\]
+  \[\boxed{=} \int_{(SR)}P(x;y)dx +\int_{(QP)}P(x;y)dx+\int_{(RQ)}P(x;y)dx+\int_{(PS)}P(x;y)dx \boxed{=}\]
+  Пусть L-контур в положительном направлении.
+  \[\boxed{=} - \int_{(L)}P(x;y)dx\]\\
+  \break
+  Аналогично:\\
+  \par
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.8]{8.15.3.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    \[0,\frac{\delta Q}{\delta x} \text{непрерывна в D}\]
+    \[\iint_P \frac{\delta Q}{\delta x}dxdy=\dots=\int_{(L)} Q(x;y)dy\] 
+  \end{minipage}
+  \vspace{1em}
+  \par
+  \begin{center}
+    Если область D удовлетворяет обоим случаям, тогда справедлива формула:
+    \[\boxed{\int_{(L)}Pdx+Qdy=\iint_D \Big[ \frac{\delta Q}{\delta x}-\frac{\delta P}{\delta y}\Big]dxdy}\]
+  \end{center}
+  \subsection{Замена переменных в двойном интеграле}
+  \subsection*{I Преобразование плоских областей.}
+  Рассмотрим 2 прямоугольных СК: xy и $\xi \eta$
 \end{document}

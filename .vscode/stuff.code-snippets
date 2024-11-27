@@ -270,7 +270,7 @@
 		"prefix": "piklr",
 		"body": [
 			"\\begin{minipage}{0.45\\textwidth}",
-			"  \\includegraphics[scale=0.6]{}",
+			"  \\includegraphics[scale=0.6]{8.1.1.png}",
 			"\\end{minipage}",
 			"\\hspace{1em}",
 			"\\begin{minipage}{0.55\\textwidth}",
@@ -310,6 +310,14 @@
 		"prefix": "tiint",
 		"body": [
 			"\\int_{t_i}^{t_{i+1}}"
+		],
+		"description": "stuff for mat"
+	},
+	"overr": {
+		"scope": "tex,latex",
+		"prefix": "overr",
+		"body": [
+			"\\overline{r}"
 		],
 		"description": "stuff for mat"
 	}
