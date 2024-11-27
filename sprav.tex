@@ -20,6 +20,12 @@
 \renewcommand{\includegraphics}[2][]{\ORIincludegraphics[scale=0.65,#1]{#2}}
 \newcommand{\verteq}{\rotatebox{90}{$\,=$}}
 \newcommand{\equalto}[2]{\underset{\scriptstyle\overset{\mkern4mu\verteq}{#2}}{#1}}
+\let\oldint\int
+\let\oldiint\iint
+\let\oldoint\oint
+\renewcommand{\int}{\oldint\limits}
+\renewcommand{\oint}{\oldoint\limits}
+\renewcommand{\iint}{\oldiint\limits}
 
 \graphicspath{{./images/}}
 \setmainlanguage{russian}
@@ -45,45 +51,38 @@
     \justifying
     \begin{titlepage}
         \begin{center}
-            \hfill \break
-            \large{МИНОБРНАУКИ РОССИИ}\\
+            \begin{center}
+              \includegraphics[scale=0.1]{logo.jpg}
+            \end{center}
+            \normalsize{МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ}\\
             \footnotesize{ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ}\\ 
             \footnotesize{ВЫСШЕГО ОБРАЗОВАНИЯ}\\
             \small{\textbf{«Дальневосточный федеральный университет»}}\\
-            \hfill \break
-            \normalsize{ИНСТИТУТ МАТЕМАТИКИ И КОМПЬЮТЕРНЫХ ТЕХНОЛОГИЙ}\\
+            \noindent\rule{17cm}{0.4pt}\\
+            \large{\textbf{ИНСТИТУТ МАТЕМАТИКИ И КОМПЬЮТЕРНЫХ ТЕХНОЛОГИЙ}}\\
              \hfill \break
-            \normalsize{Департамент программной инженерии и искусственного интеллекта}\\
+            \large{\textbf{Департамент программной инженерии и искусственного интеллекта}}\\
             \hfill\break
             \hfill \break
             \hfill \break
             \hfill \break
-            \large{Лекции 2 курса по дисциплине}\\
-            \large{Математический Анализ}\\
+            \large{\textbf{ЛЕКЦИОННЫЙ МАТЕРИАЛ}}\\
+            \begin{center}
+              \normalsize{по дисциплине "Математический Анализ"}\\
+              \normalsize{по образовательной программе подготовки бакалавров по направлению}\\
+              \normalsize{02.03.03тп - Математическое Обеспечение и Администрирование Информационных систем}\\
+              \normalsize{семестры обучения III-IV}
+            \end{center}
             \hfill \break
             \hfill \break
             \hfill \break
             \begin{flushright}
-              Подготовлено студентами гр.\\
-              Б9123-02.03.03тп\\
-              Макевкин C.C.\\
-              Тарасенко Т.В.\\
-              \hfill \break
+                \includegraphics[scale=1.5]{rospis.png}
             \end{flushright}
-            \begin{center}
-                Для\\
-              Зиновьева Павла Владимировича
-            \end{center}
             \hfill \break
             
-            \hfill \break
-            
-            \hfill \break
-            \hfill \break
             \end{center}
-             
             \hfill \break
-             
             \normalsize{ 
             
             }
@@ -632,6 +631,248 @@
   \end{enumerate}
 
   \subsection{Двойной интеграл в произвольной области}
-  Пусть $\underset{\text{(квадратируема по Жордану)}}{\text{область D имеет конечную площадь}}$
+  Пусть $\underset{\text{(квадратируема по Жордану)}}{\text{область D имеет конечную площадь}}$\\
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.7]{8.12.1.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    Пусть F(x;y)=$\begin{cases}
+      f(x;y) & (.)(x;y) \in D\\
+      0 & (.)(x;y) \not \in D
+    \end{cases}$\\
+    Если F(x;y) интегрируема в Р, то существует: \[\iint_{P} F(x;y)dxdy \]
+    \[\iint_{P} F(x;y dxdy=\iint_{D} f(x;y)dxdy)\]
+  \end{minipage}
+  \vspace{1em}
+  \par
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.6]{8.12.2.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    \begin{enumerate}
+      \item Разобьем D спрямляемыми кривыми(кривая имеющая конечную длину)
+      \item Выберем (.) $((\xi_i;\eta_i)) \in D_i$
+      \item Вычислим $f((\xi_i;\eta_i))\Delta D_i$
+      \item Составим $\sigma_R=\sum_{i=0}^{n-1}f((\xi_i;\eta_i))\Delta D_i$
+      \item Пусть $\lambda_R = \underset{M_1,M_2 \in D_i}{\max \rho(M_1,M_2)}$
+      \item Вычислим $\lim_{\lambda_R \to 0}\sigma_R=\iint_{D}f(x;y)dxdy$
+    \end{enumerate}
+  \end{minipage}
+  \vspace{1em}
+  \break
+  \underline{Определение: } Если существует конечный предел $\sigma_R$, при $\lambda_R \to 0$, не
+  зависящий от способа разбиения области D и выбора (.) $(\xi_i;\eta_i)$, то он называется двойным
+  интегралом от функции f(x;y) по области D\\
+  \subsection*{Свойства:}
+  \begin{enumerate}
+    \item $\iint_D dxdy=S_p$
+    \item Пусть $D=D_1 \lor D_2: D_1\land D_2 =0$\\
+    Если f(x;y) интегрируема в D, то она интегрируема в $D_1$ и $D_2$
+    \[\iint_D f(x;y) dxdy=\iint_{D_1}f(x;y)dxdy+\iint_{D_2}f(x;y)dxdy\]
+    \item Если f и g интегрируемы в D, то существует 
+    \[\iint_D [\alpha f(x;y)+ \beta g(x;y)]dxdy=\alpha \iint_D f(x;y)dxdy+ \beta \iint_D g(x;y)dxdy\]
+    \item Пусть f,g $\geq 0$ в D и $\forall (.) (x;y) \in D f\leq g$\\
+    \[\iint_D f(x;y)dxdy\leq \iint_D g(x;y)dxdy\]
+    \item Пусть f>0 $D_1 \subset D_2$
+    \[\iint_{D_1} f(x;y)dxdy<\iint_{D_2} f(x;y)dxdy\]
+    \item Если f интегрируема в D, то |f| тоже интегрируема в D
+    \[\Big| \iint_D f(x;y)dxdy \Big| \leq \iint|f(x;y)|dxdy\]
+    \item  
+    \subsubsection*{Теорема о среднем}\label{th:8.12.1}
+    \par\noindent
+    Пусть f и g ограничены и интегрируемы в D, g не меняет знак в D
+    \[m\leq f(x;y)\leq M. \text{ Тогда существует }\lambda: m\leq \lambda \leq M: 
+    \iint_D f(x;y) g(x;y)dxdy=\lambda \iint_D g(x;y)dxdy\]\\
+    Если дополнить f(x;y) непрерывна в D, то существует
+    \[(.) (\xi_i;\eta_i) \in D: \iint_D f(x;y)dxdy=f (\xi_i;\eta_i) \Delta D\]
+  \end{enumerate}
+  \break
+  \subsection{Вычисчение двойного интеграла(сведение двойного интеграла к повторному)}
+  Пусть f(x;y) задана в P = [a;b]x[c;d]. $\hspace{20pt}$ Рассмотрим F(x)=$\int_{a}^{c}f(x;y)dy$
+  \subsubsection*{Теорема 8.13.1}\label{th:8.13.1}
+  \par\noindent
+  Если f(x;y) непрерывна в P, то F(x) непрерывна на [a;b]\\
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Рассмотрим $F(x+\Delta x)-F(x)=\int_{c}^{d}[f(x+\Delta x)-f(x;y)]dy \hspace{20pt} x,x+\Delta x \in [a;b]$\\
+    По условию f(x;y) непрерывна в P $\Rightarrow f(x;y)$ будет равномерно непрерывна в P. \[\forall f(x;y)
+    ,(x+\Delta x;y)\in P: |\Delta x|<\delta \Rightarrow |f(x+\Delta x;y)-f(x;y)|< \frac{\varepsilon}{d-c}\]\\
+    То есть F(x) непрерывна в (.) x. Так как x-произвольная (.) $\in [a;b],$то F(x) непрерывна на [a;b]
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+  \end{adjustwidth}
+  \subsubsection*{Теорема 8.13.2}\label{th:8.13.2}
+  \par\noindent
+  Пусть $\iint_P f(x;y)dxdy$ существует. Тогда 
+  \[\iint_D f(x;y)dxdy=\int_{a}^{b}dx \int_{c}^{d} f(x;y)dy=\int_{c}^{d}dy \int_{a}^{b}f(x;y)dx\]
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    R:$\begin{cases}
+      a:x_0<x_1<\dots<x_n=b & m_{ij}\leq f(x;y) \leq M_{ij} \forall (x;y) \in P_{ij} (*)\\
+      c=y_0<y_1<\dots<y_k=d
+    \end{cases}$\\
+    Зафиксируем x=$\xi_i \in [x_i;x_{i+1}]$ и проинтегрируем (*) по переменной y
+    \[\int_{y_j}^{y_{j+1}}m_{ij}dy \leq \int_{y_j}^{y_{j+1}}f(\xi_i;y)dy \leq \int_{y_j}^{y_{j+1}} M_{ij}dy\]
+    \[m_{ij}\Delta y_j \leq \int_{y_j}^{y_{j+1}} f (\xi_i;y)dy \leq M_{ij}\Delta y_j\]
+    \[\sum_{j=0}^{k-1} m_{ij}\Delta y_j \leq \sum_{j=0}^{k-1}\int_{y_j}^{y_{j+1}}f (\xi_i;y)dy
+    \leq \sum_{j=0}^{k-1} M_{ij}\Delta y_j \Big| *\Delta x_i \text{ и проинтегрируем по } 
+    i=\overline{0,n-1}\]
+    \[\sum_{i=0}^{n-1}\sum_{j=0}^{k-1} m_{ij}\Delta x_j \Delta y_j \leq \sum_{i=0}^{n-1}
+    [\int_{c}^{d} \equalto{f (\xi_i;y)}{I(\xi_i)}]\Delta x_i \leq 
+    \sum_{i=0}^{n-1} \sum_{j=0}^{k-1} M_{ij} \Delta x_i \Delta y_j\]
+    \[\text{При }\lambda_R \to 0: m_{ij},M_{ij} \rightarrow I= \iint_P f(x;y) dxdy\]
+    %TODO:Найти способ как написать стрелку под текстом, пикча в Images лежит 
+    Тогда $\iint_P f(x;y) dxdy = \lim_{\lambda_R \to 0} \sum_{i=0}^{n-1}I(\xi_i)\Delta x_i =
+    \int_{a}^{b}I(x)dx=\int_{a}^{b}dx \int_{c}^{d}f(x;y)dy$\\
+    Аналогично $\iint_P f(x;y)dxdy=\int_{c}^{d}dy \int_{a}^{b}f(x;y)dx$
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+  \end{adjustwidth}
+  \subsection{Вычисление двойного интеграла по произвольной области}
+  \subsubsection*{Теорема 8.14.1}\label{th:8.14.1}
+  \par\noindent
+  Пусть $y_1(x)$ и $y_2(x)$ непрерывна на [a;b].\\
+  Рассмотрим D:
+  $\begin{cases}
+    a\leq x\leq b\\
+    y_1(x)\leq y \leq y_2(x)
+  \end{cases}$\\
+  Если f(x;y) задана в D и $\forall x \in [a;b]$ она интегрируема по y на $[y_1(x);y_2(x)]$ и
+  f(x;y) непрерывна в D, то F(x) = $\int_{y_1(x)}^{y_2(x)}f(x;y)dy$ непрерывна на [a;b].\\
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Замена $y=y_1(x)+(y_2(x)-y_1(x))t \hspace{20pt} 0\leq t\leq 1 \hspace{20pt} dy=(y_2(x)-y_1(x))dt$
+    \[F(x)=\int_{0}^{1} \underbrace{f(x;y_1(x)+(y_2(x)-y_1(x))t)(y_2(x)-y_1(x))}_{g(x;t)}dt=
+    \int_{0}^{1}g(x;t)dt\]
+    \begin{center}
+      g(x;t) определена в прямоугольнике\\
+      $a\leq x\leq b$\\
+      $0\leq t\leq1$
+    \end{center} 
+    Тогда F(x) непрерывна по \hyperref[th:8.13.1]{Теореме 8.13.1}
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+  \end{adjustwidth}
+  \subsubsection*{Теорема 8.14.2}\label{th:8.14.2}
+  \par\noindent
+  Пусть f(x;y) интегрируема и непрерывна в D и $\forall x \in [a;b]$ прямая || OY пересекает границу
+  D не более чем в $2^x$(.). То есть область D задана в виде D:
+  $\begin{cases}
+    a\leq x\leq b\\
+    y_1(x)\leq y\leq y_2(x)
+  \end{cases}$.\\
+  Тогда:
+  \[\iint_D f(x;y)dxdy = \int_{a}^{b}dx \int_{y_1(x)}^{y_2(x)}dy\]
+  \underline{Замечание:} Аналогично можно рассмотреть: $\iint_D f(x;y)dxdy = \int_{c}^{d}dy
+  \int_{x_1(y)}^{x_2(y)}f(x;y)dx$, если прямая || OX пересекает D не более чем в $2^x$(.).\\
+  \underline{Замечание:}Если контур пересекается не более чем в $2^x$(.) как прямыми || OY,
+  так и || OX, то справедливы обе формулы.\\
+  \underline{Замечание:} Если контур не подходит ни под один случай, то его разбивают на $D_1,D_2,\dots$\\
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    F(x) $\overset{\text{(на [a;b])}}{\text{непрерывна}}$ по \hyperref[th:8.14.1]{Теореме 8.14.1}. Тогда F(x)
+    интегрируема на [a;b]. То есть, существует: \[\int_{a}^{b}F(x)dx=\int_{a}^{b}dx \int_{y_1(x)}^{y_2(x)}
+    f(x;y)dy\]\\
+    Введем разбиение:
+    $\begin{cases}
+      \vspace{2pt}
+      x_i = a + \frac{b-a}{k}i \\
+      \vspace{2pt}
+      x_i-x_{i+1}=\frac{b-1}{k} \\
+      i=\overline{1,k}
+    \end{cases}$\\
+    Введем вспомогательные функции:
+    $\begin{cases}
+      \vspace{2pt}
+      \varphi_0(x)=y_1(x)\\
+      \vspace{2pt}
+      \varphi_1(x)=y_1(x)+\frac{y_2(x)-y_1(x)}{k}i\\
+      \vdots\\
+      \varphi_j(x)=y_1(x)+\frac{y_2(x)-y_1(x)}{k}j\\
+      \vspace{2pt}
+      \varphi_k(x)=y_1(x)+\frac{y_2(x)-y_1(x)}{k}k
+    \end{cases}$\\
+    Получим разбиение: 
+    \[E^{k}_{ij}=
+    \begin{cases}
+      x_{i-1}\leq x \leq x_i\\
+      \varphi_{j-1}\leq y\leq \varphi_j
+    \end{cases} \hspace{20pt} i,j = \overline{1,k}\]
+    \[m_{ij}=\underset{(x,y) \in E_{ij}^k}{\inf f(x;y)} \hspace{20pt} M_{ij}=\underset{(x,y) \in E_{ij}^k}{\sup f(x;y)}\]\\
+    \[ \text{Рассмотрим} 
+    \int_{a}^{b}dx+\int_{y_1(x)}^{y_2(x)}f(x;y)dy =
+    \sum_{i=1}^{k} \int_{x_{i-1}}^{x_i}dx \sum_{j=1}^{k} \int_{\varphi_{j-1}}^{\varphi_j}f(x;y)dy =
+    \sum_{i=1}^{k}\sum_{j=1}^{k} \int_{x_{i-1}}^{x_i} dx\int_{\varphi_{j-1}}^{\varphi_j}f(x;y)dy \leq\]
+    \[\leq \sum_{i=1}^{k}\sum_{j=1}^{k} M_{ij} \int_{x_{i-1}}^{x_i}dx \int_{\varphi_{j-1}}^{\varphi_j}dy=
+    \sum_{i=1}^{k}\sum_{j=1}^{k} M_{ij} M_{ij} \int_{x_{i-1}}^{x_i}dx[\varphi_j(x)-\varphi_{j_1}(x)]=
+    \sum_{i=1}^{k}\sum_{j=1}^{k} \overbrace{\Delta E_{ij}^k}^{\text{S площадь}}=
+    \overline{S}_R\]\\
+    Аналогично $\int_{a}^{b}dx \int_{y_1(x)}^{y_2(x)}f(x;y)dy \geq \underline{S}_R$\\
+    Получим $\underline{S}_R \leq \int_{a}^{b}dx \int_{y_1(x)}^{y_2(x)} f(x;y) dy \leq \overline{S}_R$
+    %TODO переделать стрелки, лежит images peredelat2
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+  \end{adjustwidth}
+  \subsection{Формула Грина}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=1]{8.15.1.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    \[\oint_{L}Pdx+Qdy\]
+  \end{minipage}
+  \vspace{1em}
+  \par
 
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.6]{8.15.2.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    Рассмотрим 
+    $\begin{cases}
+      PQ:y=y_1(x)\\
+      SR: y=y_2(x)\\
+      a\leq x \leq b\\
+      PS|OY, QR||OY
+    \end{cases}$\\
+  \end{minipage}
+  \vspace{1em}
+  \par
+  Пусть в области D задана P(x;y). P(x;y) непрерывна $\frac{\delta P}{\delta y}$ непрерывна.
+  \[\text{Рассмотрим }\] \[ \iint_D \frac{\delta P}{\delta y}dxdy= 
+  \int_{a}^{b}dx \int_{y_1(x)}^{y_2(x)} \frac{\delta P}{\delta y}dy=
+  \int_{a}^{b}dx \Big[P(x;y)\Big|_{y_1(x)}^{y_2(x)}\Big]=
+  \int_{a}^{b}dx \Big[P(x;y_2(x))-P(x;y_1(x))\Big] \boxed{=}\]
+  \[\text{Рассмотрим} \int_{a}^{b}P(x;y_2(x))dx=\int_{(SR)}P(x;y)dx\]
+  \[\text{Рассмотрим} \int_{a}^{b}P(x;y_1(x))dx=\int_{(PQ)}P(x;y)dx=-\int_{(QP)}P(x;y)dx\]
+  \[\boxed{=} \int_{(SR)}P(x;y)dx +\int_{(QP)}P(x;y)dx+\int_{(RQ)}P(x;y)dx+\int_{(PS)}P(x;y)dx \boxed{=}\]
+  Пусть L-контур в положительном направлении.
+  \[\boxed{=} - \int_{(L)}P(x;y)dx\]\\
+  \break
+  Аналогично:\\
+  \par
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.8]{8.15.3.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    \[0,\frac{\delta Q}{\delta x} \text{непрерывна в D}\]
+    \[\iint_P \frac{\delta Q}{\delta x}dxdy=\dots=\int_{(L)} Q(x;y)dy\] 
+  \end{minipage}
+  \vspace{1em}
+  \par
+  \begin{center}
+    Если область D удовлетворяет обоим случаям, тогда справедлива формула:
+    \[\boxed{\int_{(L)}Pdx+Qdy=\iint_D \Big[ \frac{\delta Q}{\delta x}-\frac{\delta P}{\delta y}\Big]dxdy}\]
+  \end{center}
+  \subsection{Замена переменных в двойном интеграле}
+  \subsection*{I Преобразование плоских областей.}
+  Рассмотрим 2 прямоугольных СК: xy и $\xi \eta$
 \end{document}
