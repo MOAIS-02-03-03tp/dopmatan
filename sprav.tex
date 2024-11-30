@@ -13,6 +13,7 @@
 \usepackage{wrapfig}
 \usepackage{needspace}
 \usepackage{mathtools}
+\usepackage{caption}
 
 
 
@@ -23,9 +24,13 @@
 \let\oldint\int
 \let\oldiint\iint
 \let\oldoint\oint
+\let\oldsum\sum
+\let\oldlim\lim
 \renewcommand{\int}{\oldint\limits}
 \renewcommand{\oint}{\oldoint\limits}
 \renewcommand{\iint}{\oldiint\limits}
+\renewcommand{\sum}{\oldsum\limits}
+\renewcommand{\lim}{\oldlim\limits}
 
 \graphicspath{{./images/}}
 \setmainlanguage{russian}
@@ -99,7 +104,7 @@
   на [a;b] и $x'(t)^2+y'(t)^2+z'(t)^2 \not = 0$\\
   \underline{Определение: } Кривая называется непрерывной кусочно-гладкой кривой, если она состроит из конечного числа
   гладких кривых.\\
-  Рассмотрим непрервную кусочно-гладкую кривую:\\
+  Рассмотрим непрерывную кусочно-гладкую кривую:\\
   \begin{minipage}{0.45\textwidth} % Левая колонка — для изображения
       \includegraphics[width=\linewidth]{8.1.1.png}
   \end{minipage}%
@@ -108,7 +113,7 @@
       Пусть кривая имеет массу $\rho=\frac{\mathrm{kg}}{\mathrm{m}}$.
       \begin{enumerate}
         \item R
-        \item В каждой элементарной $\Delta l_i$ выберем\\ произвольюную $M_i$ 
+        \item В каждой элементарной $\Delta l_i$ выберем\\ произвольную $M_i$ 
         \item Вычислим $\rho(M_i)$
         \item Считаем, что на всём $\Delta l_i \rho=const=\rho(M_i)$
         \item Составим $\sigma_R=\sum_{i=0}^{n-1}\rho(M_i)\Delta l_i$
@@ -116,7 +121,7 @@
       \end{enumerate}
   \end{minipage}
   \vspace{1em}
-  \par Рассмотрим функцию Z=f(x,y), заданную вдоль непрервывной кусочно-гладкой кривой l\\
+  \par Рассмотрим функцию Z=f(x,y), заданную вдоль непрерывной кусочно-гладкой кривой l\\
 
   \begin{minipage}{0.45\textwidth}
     \includegraphics[scale=0.6]{8.1.2.png}
@@ -126,7 +131,7 @@
       Пусть кривая имеет массу $\rho=\frac{\mathrm{kg}}{\mathrm{m}}$.
       \begin{enumerate}
         \item R
-        \item Выберем произвольюную (.) $M_i \in \Delta l_i$\\ (.)$M_i (\xi_i;\eta_i)$
+        \item Выберем произвольную (.) $M_i \in \Delta l_i$\\ (.)$M_i (\xi_i;\eta_i)$
         \item Вычислим $f(\xi_i;\eta_i)$
         \item Составим $\sigma_R = \sum_{i=0}^{n-1} f(\xi_i,\eta_i) \Delta l_i$
         \item Вычислим $\lim_{\lambda_R \to 0} \sigma_R = \int_{(l)} f(x;y) dl$
@@ -195,7 +200,7 @@
     $M_x$ - статический момент кривой относительно оси X
   \end{enumerate}
   \subsection{Криволинейные интегралы II рода}
-  Пусть задана Z=f(x;y), которая опрелена в каждой (.) l\\
+  Пусть задана Z=f(x;y), которая определена в каждой (.) l\\
   \begin{minipage}{0.45\textwidth}
     \includegraphics[scale=0.8]{8.3.1.png}
   \end{minipage}
@@ -314,7 +319,7 @@
   \begin{flushleft}
       \includegraphics{8.5.3.png}
   \end{flushleft}
-  \subsection{Связь медлу криволинейными интегралами I и II рода}
+  \subsection{Связь между криволинейными интегралами I и II рода}
   Пусть кривая задана в виде $\overline{r}=\overline{r}(t) \hspace{20pt} a\leq t \leq b$\\
   \begin{flushright}
     $\overline{r}=\overline{r}(x(t^*);y(t^*))$
@@ -361,7 +366,7 @@
   d $\overline{S}(dx;dy;dz)$\\
   Рассмотрим $\overline{F}*\overline{ds}=A$\\
   Криволинейный интеграл II рода равен работе силы F по перемещению (.) по кривой l.
-  \subsection{Условие независисмости криволинейного интеграла от путей интегрирования.}
+  \subsection{Условие независимости криволинейного интеграла от путей интегрирования.}
   Рассмотрим $\begin{matrix}
     P=P(x;y)\\
     Q=Q(x;y)
@@ -447,7 +452,7 @@
   \end{center}
   \subsubsection*{Теорема 8.8.1}\label{th:8.8.1}
   \par\noindent
-  Если $\int_{(AB)}Pdx+Qdy$ не зависит от пути интегрирования, то $\int_{(l)}Pdx+Qdy=0.$Верно и обратное утвержение.\\
+  Если $\int_{(AB)}Pdx+Qdy$ не зависит от пути интегрирования, то $\int_{(l)}Pdx+Qdy=0.$Верно и обратное утверждение.\\
   \begin{minipage}{0.25\textwidth}
     \includegraphics[scale=0.5]{8.8.1.png}
   \end{minipage}
@@ -488,7 +493,7 @@
   \vspace{1em}
   \par
   \textbf{Утверждение:} Для того, чтобы\\
-  \[\oint_{(L)} Pdx+Qdy=0 \text{ необходимо, а вслучае односвязной области достаточно, чтобы } \frac{\delta P}{\delta y}=\frac{\delta Q}{\delta x}\]
+  \[\oint_{(L)} Pdx+Qdy=0 \text{ необходимо, а в случае односвязной области достаточно, чтобы } \frac{\delta P}{\delta y}=\frac{\delta Q}{\delta x}\]
   Рассмотрим контур, имеющий внутри себя особую точку\\
   \textbf{Утверждение:} Пусть $\frac{\delta P}{\delta y}=\frac{\delta Q}{\delta x}$. Тогда
   \begin{enumerate}
@@ -526,10 +531,10 @@
   \end{minipage}
   \vspace{1em}
   \par
-  То есть интеграл зависит от пути интегрирования. В смысле прибавления кратного числа к цилической
+  То есть интеграл зависит от пути интегрирования. В смысле прибавления кратного числа к циклической
   постоянной.\\
   Присоединив к кривой AB некоторое число петель, окружающих особую (.), можно добиться, чтобы криволинейный
-  интеграл принял значени, близкое к заданному.\\
+  интеграл принял значение, близкое к заданному.\\
   \underline{Пример:} $\oint_{(L)} \frac{xdy-ydx}{x^2+y^2} \boxed{=} \hspace{20pt} L:x^2+y^2=a^2, r=a$\\
   \begin{minipage}{0.2\textwidth}
     \includegraphics[scale=0.4]{8.8.6.png}
@@ -597,7 +602,7 @@
       a=x_0 < x_1 < \dots < x_n =b\\
       c=y_0 <y_1 < \dots < y_n =d
     \end{matrix}$
-    \item Выберем в каждом элементарном $P_{ij}$ произвольюную (.) $(\xi_i;\eta_i)$
+    \item Выберем в каждом элементарном $P_{ij}$ произвольную (.) $(\xi_i;\eta_i)$
     \item Рассмотрим Z=f(x;y). Вычислим $f(\xi_i;\eta_i)$
     \item Вычислим $f(\xi_i;\eta_i)S_{P_{ij}}$
     \item Вычислим $\sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f (\xi_i;\eta_i)S_{P_{ij}}$
@@ -688,8 +693,7 @@
     Если дополнить f(x;y) непрерывна в D, то существует
     \[(.) (\xi_i;\eta_i) \in D: \iint_D f(x;y)dxdy=f (\xi_i;\eta_i) \Delta D\]
   \end{enumerate}
-  \break
-  \subsection{Вычисчение двойного интеграла(сведение двойного интеграла к повторному)}
+  \subsection{Вычисление двойного интеграла(сведение двойного интеграла к повторному)}
   Пусть f(x;y) задана в P = [a;b]x[c;d]. $\hspace{20pt}$ Рассмотрим F(x)=$\int_{a}^{c}f(x;y)dy$
   \subsubsection*{Теорема 8.13.1}\label{th:8.13.1}
   \par\noindent
@@ -872,7 +876,473 @@
     Если область D удовлетворяет обоим случаям, тогда справедлива формула:
     \[\boxed{\int_{(L)}Pdx+Qdy=\iint_D \Big[ \frac{\delta Q}{\delta x}-\frac{\delta P}{\delta y}\Big]dxdy}\]
   \end{center}
+  \break
   \subsection{Замена переменных в двойном интеграле}
   \subsection*{I Преобразование плоских областей.}
-  Рассмотрим 2 прямоугольных СК: xy и $\xi \eta$
+  Рассмотрим 2 прямоугольных СК: xy и $\xi \eta$\\
+  \begin{minipage}{0.5\textwidth}
+    \includegraphics[scale=0.8]{8.16.1.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.5\textwidth}
+    \includegraphics[scale=0.7]{8.16.2.png}
+  \end{minipage}
+  \vspace{1em}
+  \par
+  Пусть в области $\Delta$ задана системой непрерывных функций:
+  $\begin{cases}
+    x=x(\xi,\eta)\\
+    y=y(\xi,\eta)
+  \end{cases} (1)$\\
+  Если различными (.) $(\xi;\eta) \in \Delta$ отвечают различные (.) $(x,y) \in D,$ то система (1)
+  однозначно разрешима относительно $\xi$ и $\eta$.
+  $\begin{cases}
+    \xi=\xi(x;y)\\
+    \eta=\eta(x;y)
+  \end{cases} (2)$\\
+  \underline{Определение: } $\frac{D(x;y)}{D(\xi,\eta)}=
+  \begin{vmatrix}
+    \frac{\delta x}{\delta \xi} & \frac{\delta x}{\delta \eta}\\
+    \frac{\delta y}{\delta \xi} & \frac{\delta y}{\delta \eta}
+  \end{vmatrix}$ Якобиан перехода из КСК в ДСК.\\
+  \begin{itemize}
+    \item Если $\frac{D(x;y)}{D(\xi;\eta)} \not = 0,$ то внутренней (.) $\xi,\eta$ соответствует
+    внутренней (.) (x;y).\\Граничной (.) $(\xi,\eta)$ соответствует граничная (.) $(x;y)$
+    \item Если $\frac{D(x;y)}{D(\xi;\eta)} > 0$, то при переходе в ДСК, направление обхода не меняется.
+    \item Если $\frac{D(x;y)}{D(\xi;\eta)} < 0$, то при переходе в ДСК, направление обхода поменяется.
+    \item Если в $\Delta$ взять гладкую кривую, то с помощью (1):
+    $\begin{matrix}
+        \begin{cases}
+          \xi=\xi(t)\\
+          \eta=\eta(t)
+        \end{cases} \alpha\leq t\leq\beta\\
+        \begin{cases}
+          x=x(\xi(t);\eta(t))=x(t)\\
+          y=y(\xi(t);\eta(t))=y(t)
+        \end{cases} (3)
+      \end{matrix}$
+  \end{itemize}
+  \underline{Примеры:}\\
+  a)ПСК
+  \[\begin{matrix}
+    x=r\cos(\varphi) & r=\sqrt{x^2+y^2}\\
+    y=r\sin(\varphi) & \varphi=
+    \begin{cases}
+      \arcctg \frac{y}{x},(.) (x;y) \in \text{ I, II ч.}\\
+      \arcctg \frac{y}{x}+\pi,(.) (x;y) \in  \text{II,III ч.}\\
+    \end{cases}
+  \end{matrix}\]\\
+  \break
+  б) Семейство пересекающих парабол.
+  \[y^2 =2px \hspace{20pt} x^2=2qy\] 
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.6]{8.16.3.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    $\text{ Пусть } 2p=\xi \hspace{20pt} 2q=\eta$\\
+    $y^2=\xi x \hspace{20pt} x^2=\eta y$\\
+    $x^4=\eta^2y^2=\eta^2 \xi x$\\
+    $x^3=\eta^2 \xi$\\
+    $\begin{vmatrix}
+      x=\sqrt[3]{\eta^2 \xi}\\
+      y=\sqrt[3]{\xi^2 \eta}
+    \end{vmatrix} 
+    \begin{matrix}
+      \xi=\frac{x}{y^2}\\
+      \eta=\frac{y}{x^2}
+    \end{matrix}$
+  \end{minipage}
+  \vspace{1em}
+  \par
+  \subsection*{II Вычисление площади в криволинейной системе координат:}
+  Рассмотри область $D \in x;y,$ ограниченную кусочно-гладкую контуром L. Пусть существует (1) и (2).
+  Пусть существует $\frac{\delta^2 y}{\delta \xi \delta \eta}$ и она непрерывна. Найти $S_D$.\\
+  \[S_D =\int_{(L)}xdy=
+  \begin{vmatrix}
+    x=x(t)\\
+    y=y(t)\\
+    \alpha \leq t \leq \beta\\
+    \text{\underline{Замечание:} при изменении t от } \alpha \text{ до } \beta\\
+     \text{L - положительный контур.}
+  \end{vmatrix} 
+  = \int_{a}^{b} x(t)y'(t)dt \overset{(3)}{=} \] 
+  \[\overset{(3)}{=} \int_{\alpha}^{\beta} x(\xi(t),\eta(t))
+  \Big[ \frac{\delta y}{\delta \xi}\xi'(t)+\frac{\delta y}{\delta \eta}\eta'(t)\Big]dt \boxed{=}\]\\
+  Рассмотрим $\int_{\Sigma} x(\xi;\eta) \Big[\frac{\delta y}{\delta\xi}d\xi + \frac{\delta y}{\delta \eta}d \eta\Big]
+  \rightarrow \int_{\alpha}^{\beta}x(\xi(t);\eta(t))\Big[ \frac{\delta y}{\delta \xi} \xi'(t)+
+  \frac{\delta y}{\delta \eta}\eta'(t)\Big]dt$\\
+  \[\boxed{=} \pm \int_{\Sigma}x(\xi(t);\eta(t)) \Big[\frac{\delta y}{\delta\xi}d\xi + \frac{\delta y}{\delta \eta}d \eta\Big]
+  \boxed{=}
+  \begin{matrix}
+    \text{"+", если положительный обход у L соответствует} \\
+    \text{положительному обходу } \Sigma\\
+    \text{"-", если положительный обход у L соответствует} \\
+    \text{отрицательному обходу } \Sigma
+  \end{matrix}\]
+  \begin{center}
+    \includegraphics[scale=0.7]{8.16.4.png}
+  \end{center}
+  \subsection*{Формула Грина:}
+  \[\int_{(L)} Pdx+Qdy=\iint_D \Big[ \frac{\delta Q}{\delta x} - \frac{\delta P}{\delta y}\Big] dxdy\]
+  \[\int_{(\Sigma)}P(\xi;\eta)d\xi+Q(\xi;\eta)d\eta= \iint_{\Delta} \Big[\frac{\delta Q}{\delta \xi} -\frac{\delta P}{\delta \eta} d\xi d\eta \Big]\]
+  \[P(\xi;\eta)=x \frac{\delta y}{\delta \xi} \hspace{20pt} Q(\xi;\eta)=x \frac{\delta y}{\delta \eta}\]
+  \[\frac{\delta Q}{\delta \xi}=\frac{\delta}{\delta \xi}(x \frac{\delta y}{\delta \eta})=
+  \frac{\delta x}{\delta \xi}\frac{\delta y}{\delta \eta}+x\frac{\delta^2y}{\delta\xi \delta\eta}\]
+  \[\frac{\delta P}{\delta \eta}=\frac{\delta}{\delta \eta}(x \frac{\delta y}{\delta \xi})=
+  \frac{\delta x}{\delta \eta} \frac{\delta y}{\delta \xi}+x \frac{\delta^2 y}{\delta \eta \delta \xi}\]
+  \[\frac{\delta Q}{\delta \xi}-\frac{\delta P}{\delta \eta}=\frac{\delta x}{\delta \xi} \frac{\delta y}{\delta \eta}-
+  \frac{\delta x}{\delta \eta}\frac{\delta y}{\delta \xi}=
+  \begin{vmatrix}
+    \frac{\delta x}{\delta \xi} & \frac{\delta x}{\delta \eta}\\
+    \frac{\delta y}{\delta \xi} & \frac{\delta y}{\delta \eta}\\
+  \end{vmatrix} = \frac{D(x;y)}{D(\xi;\eta)}\]\\
+  \[\boxed{=} \pm \iint_\Delta \frac{D(x;y)}{D(\xi;\eta)}d\xi d\eta \overset{\text{опр Якобиана}}{=} 
+  \underbracket{\iint_\Delta \Big|\frac{D(x;y)}{D(\xi;\eta)}\Big|d\xi d\eta \boxed{=}}\]
+  Теорема Лагранжа:
+  \[f(b)-f(a)=f'(\xi)(b-a) \hspace{20pt} 
+  \begin{matrix}
+    \varepsilon = f'(\xi)\delta\\
+    \lim_{\lambda_R \to 0} \frac{\varepsilon}{\delta}=f'(\xi)
+  \end{matrix} \hspace{20pt} f'(\xi)=\frac{\varepsilon}{\delta}\]
+  $f'(\xi)$ является коэффициентом растяжение(сжатия) прямой x в прямоугольнике в данной её (.)($\xi$)\\
+  \[\overset{\hyperref[th:8.12.1]{\text{Теорема о среднем}}}{\boxed{=}}
+  \Big|\frac{D(x;y)}{D(\xi;\eta)} \Big|_{M \in \Delta} \hspace{20pt} S_\Delta=S_D\]
+  \[\iint_D f(x;y)dxdy=f(\xi;\eta)\iint_D dxdy = f(\xi;\eta)S_D\]
+  \[\Big| \frac{D(x;y)}{D(\xi;\eta)}\Big|_{M \in \Delta} = \lim_{\Delta \to M} \frac{S_D}{S_\Delta}\]
+  Модуль величины Якобиана в (.) есть коэффициент растяжения (сжатия) плоскости $\xi \eta$ при преобразовании
+  её в плоскость $xy$
+  \subsection*{III Замена переменных в двойном интеграле:}
+  Рассмотрим $\iint_{D} f(x;y)dxdy$\\
+  \begin{enumerate}
+    \item Разбиваем область D кусочно-гладкими кривыми
+    \item Разбиение R и так далее
+  \end{enumerate}
+  \[\sigma_R = \sum_{i=0}^{n-1} f(x_i;y_i)S_{D_i} =\sum_{i=0}^{n-1} f(x_i;y_i) \Big| I \Big| \Big|_{\overline{M_i}(\xi_i;\eta_i)}
+  * S_{\Delta_i} \boxed{=} \]
+  \begin{center}
+    Так как $(x_i;y_i)$ - произвольная (.), то выберем её так\\ 
+    чтобы в области $D_i$ ей соответствовала (.) $(\overline{\xi_i};\overline{\eta_i})$ в $\Delta_i$
+  \end{center}
+  \[\boxed{=} \sum_{i=0}^{n-1} f(x(\overline{\xi_i},\overline{\eta_i});y(\overline{\xi_i},\overline{\eta_i}))
+  |I|_{\overline{M_i}(\xi_i;\eta_i)}S_{\Delta_i}\]
+  \[\lim_{\lambda_R \to 0} \sigma_R \iint_D f(x(\xi;\eta);y(\xi;\eta))|I|d\xi d\eta\]
+  Для ПСК: 
+  $
+  \begin{matrix}
+    x=r\cos\varphi\\
+    y=r\sin\varphi
+  \end{matrix} \hspace{20pt}
+  I = \begin{vmatrix}
+    \frac{\delta x}{\delta r} & \frac{\delta x}{\delta \varphi}\\
+    \frac{\delta y}{\delta r} & \frac{\delta y}{\delta \varphi}
+  \end{vmatrix}=
+  \begin{vmatrix}
+    \cos\varphi & -r\sin\varphi\\
+    \sin \varphi & r\cos\varphi 
+  \end{vmatrix} = r\cos^2\varphi+r\sin^2\varphi=r
+  $
+  \[|I|=r\]
+  \subsection{Приложения двойных интегралов.}
+  \begin{enumerate}
+    \item \[S_D=\iint_D dxdy\]
+    \item \[V=\iint_D f(x;y)dxdy=\iint_{\overline{D}} f(x;z)dxdz = \iint_{\overline{\overline{D}}}f(y;z) dydz
+    =\iint_{\overline{\overline{\overline{D}}}}F(x(u;v);y(u;v);z(u;v))dudv\]
+    \item \[m=\iint_D \underbrace{\rho}_{\frac{kg}{m^2}}dxdy\]
+    \item \[
+    \begin{matrix}
+      M_x=\iint \rho y dxdy & M_y=\iint_{\rho}\rho xdxdy\\
+      x_c=\frac{M_y}{m} & y_c=\frac{M_x}{m}
+    \end{matrix}\]
+  \end{enumerate}
+  \subsection{Площадь поверхности.}
+  Пусть $Z=f(x;y)$. Можно говорить о верхней и нижней стороне поверхности. Если поверхность замкнута,
+  то можно говорить о внешней стороне поверхности и о внутренней. Возьмём на поверхности произвольную
+  (.) $m_0$, проведем в ней нормаль. И проведем из (.) $m_0$ замкнутый контур, начиная и заканчивая 
+  в (.) $m_0$(при этом нормаль изменяется непрерывно). При возврате в (.) $m_0$ можно получить 2 
+  варианта: 
+  \begin{enumerate}
+    \item вектор нормали сохранил своё направление;
+    \item вектор нормаль поменяет непрерывные на противоположные.
+  \end{enumerate}
+  \underline{Определение: } Если при обходе по контуру нормаль меняет направление на противоположное,
+  то поверхность называется односторонней. Если не поменяет по замкнутому контуру - двусторонней.\\
+  \begin{minipage}{0.54\textwidth}
+    \underline{Пример:} лист Мёбиуса - односторонняя поверхность. 
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.3\textwidth}
+    \includegraphics[scale=1]{8.18.1.png}
+  \end{minipage}
+  \vspace{1em}
+  \par
+  \underline{Определение: } Совокупность всех (.) поверхности с приписанными в них направлениями 
+  нормалей называется стороной поверхности.\\
+  \underline{Ориентация поверхностей}: 
+  \begin{itemize}
+    \item Верхняя сторона поверхности (острый угол с осью $OZ$) и замкнутую поверхность (внешняя сторона) 
+    будем считать положительно ориентированными(правая ориентация)
+    \item Нижняя сторона поверхности или внутренняя сторона(замкнутая поверхность) будем считать
+    отрицательной ориентацией(левая ориентация)
+  \end{itemize}
+  \underline{Площадь поверхности}: Рассмотрим не замкнутую гладкую поверхность $S$, ограниченную
+  кусочно-гладким контуром L.\\
+  Разложим эту поверхность на элементарные $S_1,\dots,S_n$\\
+  В каждой элементарной $S_i$ выберем произвольную (.) $M_i$ и в этой (.) проведем касательную
+  плоскость к $S_i$\\
+  \par
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.6]{8.18.2.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    Построим на границе области $S_i$ цилиндрическую поверхность с образующими || оси OZ.Пересечение
+    этого цилиндра с касательной плоскостью образует плоскую фигуру $T_i$.
+    \[\text{Тогда }S=\lim_{\lambda_R \to 0} \Sigma \Delta T_i\]
+  \end{minipage}
+  \vspace{1em}
+  \par
+  Пусть поверхность задана:
+  \[
+  \begin{matrix}
+    x=x(u;v)\\
+    y=y(u;v)\\
+    z=z(u;v)
+  \end{matrix} \hspace{20pt}
+  \begin{cases}
+    x=r\cos(u)\\
+    y=r\sin(u)\\
+    z=v
+  \end{cases} \text{ - цилиндрическая поверхность}
+  \]
+  Пусть $\mu' \in S \hspace{20pt} \mu'(x';y';z')$. Пересечем СК в (.) $\mu'$ и перейдем к новой
+  СК $\xi \eta \chi$.\\
+  \break
+  \underline{Формулы преобразования координат:}
+  \[\xi=(x-x')\cos(\alpha_1)+(y-y')\cos(\beta_1)+(z-z')\cos(\gamma_1)\]
+  \[\eta=(x-x')\cos(\alpha_2)+(y-y')\cos(\beta_2)+(z-z')\cos(\gamma_2)\]
+  \[\chi=(x-x')\cos(\alpha_3)+(y-y')\cos(\beta_3)+(z-z')\cos(\gamma_3)\]
+  \begin{tabular}{ p{10pt}|p{10pt}|p{10pt}|p{10pt} }
+    & X & Y & Z\\
+    \hline
+    $\xi$ & $\alpha_1$ & $\beta_1$ & $\gamma_1$\\
+    \hline
+    $\xi$ & $\alpha_2$ & $\beta_2$ & $\gamma_2$\\
+    \hline
+    $\xi$ & $\alpha$ & $\beta$ & $\gamma$\\
+  \end{tabular}
+  \hspace{20pt} $T_i = \iint_{D_{UV}}dudv=\iint_{D_{\xi \eta}}\Big| \frac{D(\xi;\eta)}{D(u;v)}\Big|
+  d \xi d \eta$
+  \[\frac{D(\xi;\eta)}{D(u;v)}=
+  \begin{vmatrix}
+    \frac{\delta \xi}{\delta u} &\frac{\delta \xi}{\delta V}\\
+    \frac{\delta\eta}{\delta u} &\frac{\delta \eta}{\delta V}
+  \end{vmatrix}=
+  \]
+  \[=\Big|
+  \begin{matrix}
+  \frac{\delta \xi}{\delta x}\frac{\delta x}{\delta u}+\frac{\delta \xi}{\delta y}\frac{\delta y}{\delta u}+
+  \frac{\delta \xi}{\delta z}\frac{\delta Z}{\delta u} = x'_u\cos(\alpha_1)+y'_u\cos(\beta_1)+z'_u\cos(\gamma_1) & x'_u\cos(\alpha_1)+y'_u\cos(\beta_1)+z'_u\cos(\gamma_1) \\
+  x'_v\cos(\alpha_2)+y'_v\cos(\beta_2)+z'_v\cos(\gamma_2) & x'_v\cos(\alpha_2)+y'_v\cos(\beta_2)+z'_v\cos(\gamma_2) 
+  \end{matrix}\Big| =
+  \]
+  \[\begin{vmatrix}
+    \begin{pmatrix}
+      x'_u & y'_u & z'_u\\
+      x'_v & y'_v & z'_v
+    \end{pmatrix}
+    \begin{pmatrix}
+      \cos(\alpha_1)& \cos(\alpha_2)\\
+      \cos(\beta_1)&\cos(\beta_2)\\
+      \cos(\gamma_1)&\cos(\gamma_2)
+    \end{pmatrix}
+  \end{vmatrix}=\]
+  \[=\underbrace{\begin{vmatrix}
+    y'_u & z'_u\\
+    y'_v & z'_v
+  \end{vmatrix}}_{A}
+  \underbrace{\begin{vmatrix}
+    \cos(\beta_1) & \cos(\gamma_1)\\
+    \cos(\beta_2) & \cos(\gamma_2)
+  \end{vmatrix}}_{\cos(\alpha)}
+  +
+  \underbrace{\begin{vmatrix}
+    z'_u&x'_u\\
+    z'_v&x'_v
+  \end{vmatrix}}_{B}
+  \underbrace{\begin{vmatrix}
+    \cos(\gamma_1) & \cos(\alpha_1)\\
+    \cos(\gamma_2)&\cos(\alpha_2)
+  \end{vmatrix}}_{\cos(\beta)}
+  +
+  \underbrace{\begin{vmatrix}
+    x'_u & y'_u\\
+    x'_v & y'_v
+  \end{vmatrix}}_{C}
+  \underbrace{\begin{vmatrix}
+    \cos(\alpha_1)&\cos(\beta_1)\\
+    \cos(\alpha_2)&\cos(\beta_2)
+  \end{vmatrix}}_{\cos(\gamma)}
+  \boxed{=}\]
+  \par
+  \underline{Замечание:} Каждый из координатных ортов ($\overline{\cos(\alpha_1);\cos(\beta_1);\cos(\gamma_1)}$),($\overline{\cos(\alpha_2);\cos(\beta_2);\cos(\gamma_2)}$)
+  ,($\overline{\cos(\alpha);\cos(\beta);\cos(\gamma)}$) взаимно перпендикулярны.
+  Поэтому:
+  \[(\overline{\cos(\alpha);\cos(\beta);\cos(\gamma)}) = 
+  \begin{vmatrix}
+    i&j&k\\
+    \cos(\alpha_1)&\cos(\beta_1)&\cos(\gamma_1)\\
+    \cos(\alpha_2)&\cos(\beta_2)&\cos(\gamma_2)
+  \end{vmatrix}=\]
+  \[= \overline{i}
+  \equalto{
+    \begin{vmatrix}
+    \cos(\beta_1)&\cos(\gamma_1)\\
+    \cos(\beta_2)&\cos(\gamma_2)
+    \end{vmatrix}
+  }{\cos(\alpha)}+ \overline{j}
+  \begin{vmatrix}
+    \cos(\alpha_1)&\cos(\gamma_1)\\
+    \cos(\alpha_2)&\cos(\gamma_2)
+  \end{vmatrix}
+  + \overline{k}
+  \begin{vmatrix}
+    \cos(\alpha_1)&\cos(\beta_1)\\
+    \cos(\alpha_2)&\cos(\beta_2)
+  \end{vmatrix}
+  \]
+  \[\boxed{=}A\cos(\alpha)+B\cos(\beta)+C\cos(\gamma)\boxed{=}\]
+  \underline{Определение: } Если поверхность задана $\begin{matrix}
+    x=x(u;v)\\
+    y=y(u;v)\\
+    z=z(u;v)
+  \end{matrix}$, то нормаль к поверхности задается$\begin{vmatrix}
+    \overline{i}&\overline{j}&\overline{k}\\
+    x'_u & y'_u & z'_u\\
+    x'_v & y'_v & z'_v
+  \end{vmatrix}=(n_x;n_y;n_z)=\overline{(A;B;C)}$\\
+  \underline{Пример:}\\
+  \[\begin{matrix}
+    \text{Рассмотрим } z=f(x;y)\\
+    u=x\\
+    v=y
+  \end{matrix}
+  \hspace{20pt}
+  \begin{vmatrix}
+    \overline{i}&\overline{j}&\overline{k}\\
+    1&0&z'_x\\
+    0&1&z'_y 
+  \end{vmatrix}=
+  \begin{matrix}
+    \overline{i}(-z'_x)-jz'_y+\overline{k}\\
+    (-z'_x;-z'_y;1) \text{ или }\\
+    (z'_x;z'_y;-1)
+  \end{matrix}\]
+  \underline{С другой стороны:}
+  \[
+  \cos(\alpha)=\frac{A}{\pm \sqrt{A^2+B^2+C^2}}\\
+  \cos(\beta)=\frac{B}{\pm \sqrt{A^2+B^2+C^2}}\\
+  \cos(\gamma)=\frac{C}{\pm \sqrt{A^2+B^2+C^2}}
+  \]
+  Пусть $A',B',C'$ - значения определителей $A,B,C$ в (.) $\mu'$
+  \[\boxed{=}
+  \frac{AA'+BB'+CC'}{\pm \sqrt{A^2+B^2+C^2}}
+  \boxed{=}\]
+  Если расстояние между (.) ($u;v$) и ($u';v'$) стремится к нулю, то $\frac{D(\xi;\eta)}{D(u;v)} = \sqrt{A'^2+B'^2+C'^2}+\varepsilon'$
+  \[
+  S_{T_i}=\iint_{D_{uv}}\sqrt{A^2+B^2+C^2}dudv+\varepsilon;S_\text{поверхности}=\lim_{\lambda_R \to 0}\Sigma S_{T_i}=\iint_{D_{uv}}\sqrt{A^2+B^2+C^2}dudv=S
+  \]
+  \[
+  \text{Рассмотрим }
+  \begin{pmatrix}
+    x_u & y'_u &z'_u\\
+    x'_v&y'_v&z'_v
+  \end{pmatrix}
+  \begin{pmatrix}
+    x'_u &x'_v\\
+    y'_u&y'_v\\
+    z'_u&z'_v
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    x'^2_u+y'^2_u+z'^2_u & x'_u x'_v+y'_u y'_v+ z'_u z'_v\\
+    \underbrace{x'_u x'_v+y'_u y'_v+ z'_u z'_v}_F & \underbrace{x'^2_v+y'^2_v+z'^2_v}_{G}
+  \end{pmatrix}
+  \]
+  \[
+  \text{Рассмотрим } \begin{vmatrix}
+    E & F\\
+    F & G
+  \end{vmatrix} =EG-F^2=A^2+B^2+C^2 \hspace{20pt} S=\iint_{D_{uv}}\sqrt{EG-F^2}dudv
+  \]
+  $\text{Рассмотрим } Z=f(x;y) \text{ уравнение поверхности}.
+  \begin{matrix}
+    u \sim x\\
+    v \sim y
+  \end{matrix}$ 
+  \[ A=
+  \begin{vmatrix}
+    y'_u & z'_u \\
+    y'_v & z'_v
+  \end{vmatrix} =\begin{vmatrix}
+    0 & z'_x\\
+    1 & z'_y
+  \end{vmatrix}=-z'_x\]
+  \[ B=
+  \begin{vmatrix}
+    z'_u & x'_u \\
+    z'_v & x'_v
+  \end{vmatrix} =\begin{vmatrix}
+    z'_x & 1\\
+    z'_y & 0
+  \end{vmatrix}=-z'_y\]
+  \[ C=
+  \begin{vmatrix}
+    x'_u & y'_x\\
+    x'_v & y'_y
+  \end{vmatrix} =\begin{vmatrix}
+    1 & 0\\
+    0 & 1
+  \end{vmatrix}=1\]
+  \[S=\iint_{D_{xy}}\sqrt{1 + z'^2_x + z'^2_y}dxdy\]
+  Рассмотрим $\cos(\gamma)=\frac{C}{\pm \sqrt{A^2+B^2+C^2}}=\frac{1}{\pm \sqrt{1+z'^2_x+z'^2_y}}$
+  \[S=\iint_{D_{xy}}\sqrt{1+z'^2_x+z'^2_y}dxdy=\iint_{D_{xy}}\frac{dxdy}{|\cos(\gamma)|} \hspace{20pt} \gamma - \forall \text{ угол}\]
+  \break
+  \subsection{Поверхностные интегралы I и II рода.}
+  Пусть в каждой (.) двусторонней гладкой(или кусочно-гладкой) поверхности, ограниченной кусочно-гладким контуром
+  определена функция f(x;y;z)
+  \begin{enumerate}
+    \item Производим разбиение R поверхности
+    \item Выберем (.) $\mu_i$ произвольно: $\mu_i \in S_i$
+    \item Вычислим $f(\mu_i) = f(x_i;y_i;z_i)$
+    \item Вычислим $f(x_i;y_i;z_i)\Delta S_i$
+    \item Составим $\sigma_R=\sum_{i=0}^{n-1}f(x_i;y_i;z_i)\Delta S_i$
+    \item Вычислим $\lim_{\lambda_R \to 0} \sigma_R = \iint_{S} f(x;y;z)dS$
+  \end{enumerate}
+  \underline{Определение: }Если существует конечный $\lim_{\lambda_R \to 0}$, не зависящий от способа разбиения поверхности
+  S и выбора (.) $\mu_i$ , то он называется поверхностным интегралом I рода от функции $f(x;y;z)$ по поверхности S.\\
+  \underline{Вычисление: } 
+  \[ \iint_S f(x;y;z)dS=\iint_{D_{xy}}f(x;y;z(x;y)) \sqrt{1+z'^2_x+z'^2_y}dxdy = 
+  \iint_{D_{uv}} f(x(u;v);y(u;v);z(u;v))\sqrt{EG-F^2}dudv\]
+  \subsection*{Поверхностные интегралы II рода:}
+  Пусть в каждой (.) двусторонней гладкой(или кусочно-гладкой) поверхности, ограниченной кусочно-гладким контуром
+  определена функция $f(x;y;z)$.\\ Выберем одну из сторон поверхности:
+  \begin{enumerate}
+    \item Произведем разбиение R к поверхности
+    \item Выберем (.) $\mu_i$ произвольно: $\mu_i \in S_i$
+    \item Вычислим $f(\mu_i)=f(x;y;z)$
+    \item Вычислим $f(x_i;y_i;z_i)\Delta D_i; \hspace{20pt} \Delta D_i$ - проекция $S_i$ на плоскость $Dy$\\
+    Проекция берется со знаком "+", если вектор нормали к поверхности образует острый угол с осью $OZ$. "-" если угол
+    между нормалью и $OZ$ тупой.
+    \item Составим $\sigma_R=\sum_{i=0}^{n-1}f(x_i;y_i;z_i)\Delta D_i$
+    \item $\lim_{\lambda_R \to 0}\sigma_R=\iint_S f(x;y;z)dxdy$
+  \end{enumerate}
+  \underline{Определение: }  Если существует конечный $\lim_{\lambda_R \to 0}$, не зависящий от способа разбиения
+  поверхности S и выбора (.) $\mu_i$, то он называется поверхностным интегралом II рода от функции $f(x;y;z)$ по 
+  поверхности S.\\
+   \[\text{Аналогично: }\iint_S f(x;y;z)dxdz, \iint_S f(x;y;z)dydz\]
+  \[\iint_S P(x;y;z)dydz+Q(x;y;z)dxdz+R(x;y;z)dxdy\text{ - поверхностный интеграл II рода общего вида}\]
+  \underline{Вычисление: }
+  \[\iint_S f(x;y;z)dxdy = \pm \iint_{D_{xy}} f(x;y;z(x;y))dxdy\]
+  \subsection{Связь между поверхностными интегралами}
 \end{document}
