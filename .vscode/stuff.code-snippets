@@ -265,6 +265,14 @@
 		],
 		"description": "stuff for mat"
 	},
+	"fxyz": {
+		"scope": "tex,latex",
+		"prefix": "fxyz",
+		"body": [
+			"f(x;y;z)"
+		],
+		"description": "stuff for mat"
+	},
 	"piklr": {
 		"scope": "tex,latex",
 		"prefix": "piklr",
@@ -318,6 +326,22 @@
 		"prefix": "overr",
 		"body": [
 			"\\overline{r}"
+		],
+		"description": "stuff for mat"
+	},
+	"те": {
+		"scope": "tex,latex",
+		"prefix": "те",
+		"body": [
+			"т.е."
+		],
+		"description": "stuff for mat"
+	},
+	"uv": {
+		"scope": "tex,latex",
+		"prefix": "uv",
+		"body": [
+			"(u;v)"
 		],
 		"description": "stuff for mat"
 	}
