@@ -13,8 +13,10 @@
 \usepackage{wrapfig}
 \usepackage{needspace}
 \usepackage{mathtools}
-\usepackage{caption}
-\usepackage{svg}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle, draw, inner sep=1pt, 
+        minimum height=12pt] (char) {#1};}}
 
 
 
@@ -1659,4 +1661,139 @@
   \vspace{1em}
   \par
   \underline{Некоторые приложения тройного интеграла:}
+  \begin{enumerate}
+    \item \[V=\iiint_V dxdydz\]
+    \item \[m=\iiint_V \rho(x;y;z)dxdydz\]
+    \item \[
+    \begin{matrix}
+      M_{yz} = \iiint_{V} x\rho dxdydz & M_{xz}=\iint_V y \rho dxdydz & M_{xy}=\iint_V z\rho dxdydz\\
+      x_c = \frac{M_{yz}}{m} & y_c=\frac{M_{xz}}{m} & z_c=\frac{M_{xy}}{m}
+    \end{matrix}
+    \]
+  \end{enumerate}
+  \subsection{n-кратные интегралы.}
+  Рассмотрим $
+  \begin{matrix}
+    a_1 &\leq &x_1 &\leq &b_1\\
+    a_2 &\leq &x_2 &\leq &b_2\\
+    \vdots & &\vdots & & \vdots\\
+    a_n &\leq &x_n &\leq &b_n
+  \end{matrix}
+  $
+  \[P_n=[a_1 b_1][a_2 b_2]x\dots x[a_n b_n] \text{- n-мерный параллелепипед}\]
+  Пусть в области V задана функция $y=f(x_1,\dots,x_n)$
+  \begin{enumerate}
+    \item Разбитие R объемного тела.
+    \item Произвольным образов выберем (.) $\varepsilon_1,\dots,\varepsilon_n$.
+    \item Вычислим $f(\varepsilon_1,\dots,\varepsilon_n)$
+    \item Составим $\sigma_R=\sum_{i=1}^{n} f(\varepsilon_1,\dots,\varepsilon_n)\Delta V$
+    \item $\lim_{\lambda_R \to 0} \sigma_R = \int \underset{V_n}{\dots} \int f(x_1,\dots,x_n)dx_1 \dots dx_n$
+  \end{enumerate}
+  \underline{Определение: } Если существует $\lim_{\lambda_R \to 0} \sigma_R$ независящей от R и выбора (.) $\varepsilon$,
+  то он называется n-кратным интегралом от $f(x_1,\dots,x_n)$ по объемному телу V.\\
+  \underline{Вычисление}\\
+  Пусть V представима в виде: 
+  \[\begin{matrix}
+    x_1^* &\leq& x_1& \leq& x_1^1\\
+    x_2^*(x_1) &\leq&x_2 &\leq&x_2^1(x_1)\\
+    x_3^*(x_1;x_2)&\leq& x_3 &\leq&x_3^1(x_1;x_2)\\
+                  &&\vdots&&\\
+    x_n^*(x_1,\dots,x_{n-1})&\leq&x_n&\leq&x_n^1(x_1;\dots;x_{n-1})
+  \end{matrix}\]
+  \[\text{Тогда } \int \underset{V_n}{\dots} \int f(x_1;\dots;x_n) dx_1 \dots dx_n=
+  \int_{x_1^*}^{x_1^1}dx_1 \int_{x_2^*(x_1)}^{x_2^1(x_1)}dx_2 \dots \int_{x_3^*(x_1;\dots;x_{n-1})}^{x_3^1(x_1;\dots;x_{n-1})}
+  [f(x_1;\dots;x_n)]\]
+  \underline{Замена переменных в n-кратном интеграле.}\\
+  Пусть заданы 2 n-мерные области
+  \[V_D \text{ и } V_\Delta\]
+  \begin{minipage}{0.45\textwidth}
+    \[\begin{cases}
+      x_1&=x_1(\xi_1;\dots;\xi_n)\\
+      \vdots&\\
+      x_n&=x_n(\xi_1;\dots;\xi_n)
+    \end{cases} \circled{1}\]
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    \[\begin{cases}
+      \varepsilon_1&=\varepsilon_1(x_1;\dots;x_n)\\
+      \vdots&\\
+      \varepsilon_n&=\varepsilon_n(x_1;\dots;x_n)
+    \end{cases} \circled{2}\]
+  \end{minipage}
+  \vspace{1em}
+  \par
+  \[\frac{D(x_1;\dots;x_n)}{D(\xi_1;\dots;\xi_n)}=I(\xi_1;\dots;\xi_n)
+  \begin{vmatrix}
+    \frac{\delta x_1}{\delta \xi_1}&\dots&\frac{\delta x_1}{\delta \xi_n}\\
+    \vdots &&\vdots \\
+    \frac{\delta x_n}{\delta \xi_1}&\dots&\frac{\delta x_n}{\delta \xi_n}
+  \end{vmatrix}\]
+  Пусть $I(\xi_1;\dots;\xi_n)\not =0$ и сохраняет знак в каждой (.).\\
+  Тогда 
+  \[\int \underset{V_D}{\dots} \int f(x_1;\dots;x_n)dx_1\dots dx_n = \int \underset{V_D}{\dots} \int 
+  f(x_1(\xi_1;\dots;\xi_n);\dots;x_n(\xi_1;\dots;\xi_n)|I|d\xi_1\dots d\xi_n)\]
+  \section{Теория Поля.}
+  \subsection{Основные понятия.}
+  \underline{Определения: }\\
+  Скаляр - величина характеризующиеся своим числовым значением.\\
+  Вектор - величина характеризующиеся числовым значением и направлением.\\
+  Если с каждой (.) m некоторой пространственной области связана некоторая скалярная или векторная величина то говорят что
+  задано поле этой величины. Заданное поле скалярной величины равносильно заданной скалярной функции и $(x;y;z)$.\\
+  Чтобы задать векторное поле необходимо задать:
+  \[A_x(x;y;z) \hspace{20pt} A_y(x;y;z) \hspace{20pt} A_z(x;y;z)\]
+  \[\overline{A}=\underbracket{A_x i}_{P}+\underbracket{A_y i}_{Q}+\underbracket{A_z k}_{R}\]
+  \underline{Определение: } Векторной линией называется кривая касательной которой в каждой ее (.) m совпадает
+  с направление $\overline{A}$ отвечающим этой (.).\\
+  \underline{Определение: } Поверхность составленной из векторных линий называется векторной поверхностью.
+  Характеризуется: в каждой ее (.) M. Соответствующий вектор $\overline{A}(M)$ лежит в касательной плоскости к
+  этой поверхности в этой (.).\\
+  Если взять в рассматриваемой области какую-нибудь линию отличную от векторной и через каждую ее
+  (.) провести векторную линию то геометрическое место этих линий задает векторную поверхность.\\
+  Если исходная линия была замкнутой, то полученная таким образом векторная поверхность называется 
+  векторной трубкой.
+  \break
+  \subsection{Градиент}
+  Пусть задана скалярное поле и $(x;y;z)$
+  \[\overline{grad u} = \Big(\frac{\delta u}{\delta x};\frac{\delta u}{\delta y};\frac{\delta u}{\delta z}\Big)\]
+  \[\frac{\delta u}{\delta l}=\overline{grad u} * \overline{l_0}=
+  \frac{\delta u}{\delta x}\cos(\alpha)+
+  \frac{\delta u}{\delta y}\cos(\beta)+
+  \frac{\delta u}{\delta z}\cos(\gamma)\]
+  max $\frac{\delta u}{\delta u}$ =  имеет в направлении градиента и $\overline{\triangledown}
+  \Big(\frac{\delta u}{\delta x};\frac{\delta u}{\delta y};\frac{\delta u}{\delta z}\Big)
+  \overline{\triangledown}$ - оператор Набла(оператор Гамильтона)
+  \[\overline{gradu}=\overline{\triangledown u}\]
+  \subsection*{Дифференциальные свойства градиента}
+  \begin{enumerate}
+    \item \[\overline{grad}(u_1+u_2)=\overline{grad u_1}+\overline{grad u_2}\]
+    \item \[\overline{grad(C_u)}=C\overline{grad u}, C=const\]
+    \item \[\overline{grad}(u_1;u_2)=u_1\overline{grad u_2}+u_2\overline{grad u_1}\]
+  \end{enumerate}
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \[\overline{grad}(u_1;u_2)=
+    \frac{\delta}{\delta x}(u_1;u_2)\overline{i}+\frac{\delta}{\delta y}(u_1;u_2)\overline{j}+\frac{\delta}{\delta z}(u_1;u_2)\overline{k}=\]\[
+    (u_1 \frac{\delta u_2}{\delta x}+u_2\frac{\delta u_1}{\delta x})\overline{i} + (u_1 \frac{\delta u_2}{\delta y}+u_2\frac{\delta u_1}{\delta y})\overline{j} + (u_1\frac{\delta u_2}{\delta z}+u_2\frac{\delta u_1}{\delta z})\overline{k}=\]
+  
+    \[u_1(\frac{\delta u_2}{\delta x}\overline{i} +\frac{\delta u_2}{\delta y}\overline{j}+\frac{\delta u_2}{\delta z}\overline{k})+
+  u_2(\frac{\delta u_1}{\delta x}\overline{i} +\frac{\delta u_1}{\delta y}\overline{j}+\frac{\delta u_1}{\delta z}\overline{k})=\
+  \]\[u_1 \overline{grad u_2}+u_2 \overline{grad u_1}\]
+  \end{adjustwidth}
+  \underline{Замечание:}
+  \begin{enumerate}
+    \item Направление вектора градиента совпадает с направлением вектора нормали к поверхности уровня
+    и $(x;y;z)=const.$
+    \item Скалярное поле и $(x;y;z)$ порождает векторное поле градиента и $(x;y;z) \hspace{20pt} \overline{grad u}(x;y;z)$
+  \end{enumerate}
+
+  \subsection{Поток вектора через поверхность.}
+  Пусть задано векторное поле $\overline{A}(M)$, т.е. заданы функциями
+  \[\begin{matrix}
+    A_x(x;y;z)=P(x;y;z)\\
+    A_y(x;y;z)=Q(x;y;z)\\
+    A_z(x;y;z)=R(x;y;z)
+  \end{matrix} \overline{A}(P;Q;R)\]
+  Возьмем некоторую поверхность S, выбрав определенную ее строку и обозначим $\overline{\cos(\alpha);\cos(\beta);\cos(\gamma)}=\overline{n_0}$\\
+  \underline{Определение: }
 \end{document}
