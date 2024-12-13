@@ -14,6 +14,7 @@
 \usepackage{needspace}
 \usepackage{mathtools}
 \usepackage{tikz}
+\usepackage{esint}
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
     \node[shape=circle, draw, inner sep=1pt, 
         minimum height=12pt] (char) {#1};}}
@@ -30,9 +31,11 @@
 \let\oldoint\oint
 \let\oldsum\sum
 \let\oldlim\lim
+\let\oldoiint\oiint
 \renewcommand{\int}{\oldint\limits}
 \renewcommand{\oint}{\oldoint\limits}
 \renewcommand{\iint}{\oldiint\limits}
+\renewcommand{\oiint}{\oldoiint\limits}
 \renewcommand{\iiint}{\oldiiint\limits}
 \renewcommand{\sum}{\oldsum\limits}
 \renewcommand{\lim}{\oldlim\limits}
@@ -104,7 +107,7 @@
     \pagebreak
   \section{Криволинейные, кратные и поверхностные интегралы}
   \subsection{Криволинейные интегралы I рода}
-  \underline{Определение: } Кривая $\overline{r}(t)=x(t)\overline{i}+y(t)\overline{j}$
+  \underline{Определение: } Кривая $\overline{r}(t)=x(t)\overline{i}+y(t)\overline{j}+z(t)\overline{k} \hspace{10pt}$
   $a \leq t \leq b$ называется непрерывной гладкой кривой, если x(t),y(t),z(t) непрерывно дифференцируемы
   на [a;b] и $x'(t)^2+y'(t)^2+z'(t)^2 \not = 0$\\
   \underline{Определение: } Кривая называется непрерывной кусочно-гладкой кривой, если она состроит из конечного числа
@@ -191,7 +194,7 @@
       y=y(t)
     \end{cases} t_1 \leq t \leq t_2 \hspace{20pt} \int_{(l)}g(x;y)dl=\int_{t_1}^{t_2}g(x(t);y(t))
     \sqrt{x'(t)^2+y'(t)^2}dt\]
-    \item Если кривая задана $r=r(\phi) \hspace{20pt} \alpha \leq \varphi \leq \beta$\\
+    \item Если кривая задана $r=r(\varphi) \hspace{20pt} \alpha \leq \varphi \leq \beta$\\
     \[\int_{(l)}g(x;y)dl = \int_{\alpha}^{\beta} g(r(\varphi)\cos(\varphi);r(\varphi)\sin(\varphi))
     \sqrt{r^2(\varphi)+r'(\varphi)^2}d\varphi\]
   \end{enumerate}
@@ -302,15 +305,15 @@
   \end{minipage}
   \hspace{1em}
   \begin{minipage}{0.55\textwidth}
-    Найти S(PSRQ)\\
-    \[S=\int_{a}^{b}y_2(x)dx-\int_{a}^{b}y_1(x)dx \boxed{=}\]\\
-     \[\text{Рассмотрим} \int_{a}^{b}y_2(x)dx=\int_{(SR)}ydx\]\\
-      \[\text{Рассмотрим}\int_{a}^{b}y_1(x)dx=\int_{(PQ)}ydx\]\\
-    $\boxed{=} \int_{(SR)}ydx-\int_{(PQ)}ydx=\int_{(SR)}ydx+\int_{(QP)}ydx+$ \\ 
-    \par
-    $\int_{(PS)}ydx+\int_{(RQ)}ydx=\int_{(PSRQP)}ydx \boxed{=}$
+    \begin{center}
+      Найти S(PSRQ)
+    \end{center}
+    \[S=\int_{a}^{b}y_2(x)dx-\int_{a}^{b}y_1(x)dx \boxed{=}\]
+     \[\text{Рассмотрим} \int_{a}^{b}y_2(x)dx=\int_{(SR)}ydx\]
+      \[\text{Рассмотрим}\int_{a}^{b}y_1(x)dx=\int_{(PQ)}ydx\]
   \end{minipage}
   \vspace{1em}
+  \[\boxed{=} \int_{(SR)}ydx-\int_{(PQ)}ydx=\int_{(SR)}ydx+\int_{(QP)}ydx+\int_{(PS)}ydx+\int_{(RQ)}ydx=\int_{(PSRQP)}ydx \boxed{=}\]
   \par
   Пусть L=(PQRSP) - контур взятый в положительном направлении. $\boxed{=}-\int_{(L)}ydx=S$\\
   Аналогично, если рассмотреть:
@@ -359,12 +362,12 @@
   \hspace{20pt} \Big| \frac{d \overline{r}}{dt} \Big| = \Big| \frac{r'(t)}{l'(t)} \Big| = 1\]\\
   \underline{Замечание:} Если $|\overline{a}|=1 \Rightarrow \overline{a}(\cos(\alpha),\cos(\beta),\cos(\gamma))
   \hspace{20pt} \cos^2 \alpha+\cos^2 \beta+\cos^2 \gamma=1$\\
-  \[\frac{d \overline{r}}{dl}=(\overline{\cos \alpha; \cos \beta})=(\overline{\frac{dx}{dl};\frac{dy}{dl}})\]\\
-  \[\frac{dx}{dl}=\cos \alpha \hspace{20pt} dx=\cos \alpha dl\]\\
-  \[\frac{dy}{dl}=\cos \beta \hspace{20pt} dy=\cos \beta dl\]\\
+  \[\frac{d \overline{r}}{dl}=(\overline{\cos \alpha; \cos \beta})=(\overline{\frac{dx}{dl};\frac{dy}{dl}})\]
+  \[\frac{dx}{dl}=\cos \alpha \hspace{20pt} dx=\cos \alpha dl\]
+  \[\frac{dy}{dl}=\cos \beta \hspace{20pt} dy=\cos \beta dl\]
   Рассмотрим $\int_{(l)}f(x;y)dx=\int_{(l)}f(x;y)\cos \alpha dl$\\
   В общем случае $\int_{(l)}P(x;y;z)dx+Q(x;y;z)dy+R(x;y;z)dz=$\\
-  \[\int_{(l)} [P(x;y;z)\cos \alpha + Q(x;y;z)\cos \beta + R(x;y;z)\cos \gamma]dl\]\\
+  \[\int_{(l)} [P(x;y;z)\cos \alpha + Q(x;y;z)\cos \beta + R(x;y;z)\cos \gamma]dl\]
   \subsection*{Физический смысл криволинейным интеграла II рода}
   Рассмотрим $\int_{(l)} Pdx+Qdy+Rdz$\\
   Пусть F(P;Q;R) - сила, под действием которой (.) перемещается по кривой l.\\
@@ -1795,5 +1798,74 @@
     A_z(x;y;z)=R(x;y;z)
   \end{matrix} \overline{A}(P;Q;R)\]
   Возьмем некоторую поверхность S, выбрав определенную ее строку и обозначим $\overline{\cos(\alpha);\cos(\beta);\cos(\gamma)}=\overline{n_0}$\\
+  \underline{Определение: } Потоком векторного поля $\overline{A}$ через поверхность S в сторону единичной нормали $\overline{n}(\cos(\alpha);\cos(\beta);\cos(\gamma))$ называется 
+  \[\iint_S (P\cos(\alpha)+Q\cos(\beta))+\cos(\gamma)dS=\iint_S \overline{A} \overline{n}dS = \oiint_S A_n dS=\text{ П}\]
+  Рассмотрим движение жидкости в пространстве. Движение нестационарное. Вычислим количество жидкости протекающее через поверхность S в направлении $\overline{n}$ за малый промежуток
+  времени dt. За время dt через dS протекает количество жидкости, которое заполняет собой цилиндр с основанием dS
+  и высотой $V_ndt$.
+  \[dm=\rho V = \rho dS V_n dt\]
+  \[m=dt\iint_{dS} \rho V_n dS\]
+  \[\underbracket{\frac{m}{dt}=\iint_{dS}P V_n dS}_{\rho \overline{v} \overline{n}}=Q.\text{ поток вектора }
+  \rho \overline{v} \text{ через поверхность S}\]
+  Q-количество жидкости в единицу времени.\\
+  Поток  - скалярная величина,знак зависит от угла.
+  Если $<\overline{A};\overline{n}> - \begin{matrix}
+  \text{острый } \Rightarrow \text{П>0}\\
+  \text{тупой } \Rightarrow \text{П<0}\\
+  \bot  \Rightarrow \text{П =0}
+  \end{matrix}$
+  \[\text{П = }\iint_S(P\cos(\alpha)+\cos(\beta)+\cos(\gamma))dS = \iiint_V 
+  (\frac{\delta P}{\delta x}+\frac{\delta Q}{\delta y}+\frac{\delta R}{\delta z})dxdydz\]
   \underline{Определение: }
+  Выражение $\frac{\delta P}{\delta x}+\frac{\delta Q}{\delta y}+\frac{\delta R}{\delta z}$ - называется дивергенцией
+  векторного поля A\\
+  \underline{Обозначение:} $div \overline{A}$
+  \[\text{П= } \iint_S \overline{A} \overline{n} dS=\iiint_V div \overline{A} dV\]
+  \underline{Замечание:}
+  Дивергенция - скаляр.
+  \[\text{П= }\iiint_V div \overline{A}dv\underset{\hyperref[th:8.12.1]{\text{Теорема о среднем}}}{=}
+  div \overline{A}\Big|_{(\xi;\eta;\chi)} \hspace{20pt}\iiint_V dv=div \overline{A}\Big|_{(\xi;\eta;\chi)}V\]
+  \[div \overline{A} = \lim_{V \to (\xi;\eta;\chi)}\frac{\text{П}}{V}\]
+  \underline{Физический смысл потока}
+  Пусть $\overline{A}$ - векторное поле скоростей несжимаемой жидкости при наличии источников (стоков).
+  \[\text{П=}\rho\iint_S \overline{V}\overline{n}dS\]
+  П>0, значит что из области V вытекает объем жидкости чем втекает, означает что внутри области V находятся источники.\\
+  П<0, значит вытекает меньше чем втекает внутри области М есть сток.\\
+  П=0  сколько вытекает столько и втекает.\\
+  \underline{Физический смысл дивергенции}.
+  Если источники(стоки) распределены непрерывно, то вводится понятие плотности потока.
+  \[div \overline{A}\Big|_M=\lim_{V \to M}\frac{\text{П}}{V} \text{ - плотность источника(стока)}\]
+  \[div \overline{A}>0.\hspace{20pt}\text{М источник.}\hspace{20pt} div \overline{A}\Big|_M<0 \hspace{20pt} \text{(.)M-сток}\]
+  \[div \overline{A} \Big|_M=0 \hspace{20pt}\text{(.) или источник или сток}\]
+  \underline{Свойства дивергенции.}
+  \begin{enumerate}
+    \item \[div(\overline{a}+\overline{b})=div \overline{a} + div \overline{b}\]
+    \item \[div \overline{c}=0 \hspace{20pt} \overline{c} = const\]
+    \item \[ div(f_{\overline{a}})=f div \overline{a}+\overline{a} \overline{grad f} \hspace{20pt} f=f(x;y;z)\]
+  \end{enumerate}
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \[div(f_{\overline{a}})=
+    \frac{\delta fP}{\delta x}+\frac{\delta f Q}{\delta y}+\frac{\delta f R}{\delta z}=
+    f\frac{\delta P}{\delta x}+P\frac{\delta f}{\delta x}+
+    f\frac{\delta Q}{\delta y}+Q\frac{\delta f}{\delta y}+
+    f\frac{\delta R}{\delta z}+R\frac{\delta f}{\delta z}=
+    f(\frac{\delta P}{\delta x}+\frac{\delta Q}{\delta y}+\frac{\delta R}{\delta z})+
+    P\frac{\delta f}{\delta x}+Q\frac{\delta f}{\delta y}+R\frac{\delta f}{\delta z}=
+    f div \overline{A} + \overline{A}\overline{gradf}\]
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \subsection{Циркуляция вектора}
+  Пусть задано векторно $\overline{A}(P;Q;R)$ и замкнутая кривая $l$ в пределах рассматриваемой области.\\
+  \underline{Определение: } $\int_{l} Pdx+Qdy+Rdz$ - называется циркуляцией векторного поля A вдоль кривой l.
+  \[\text{ц } =\oint_{(l)}Pdx+Qdy+Rdz=\oint_{(l)} [P\cos(\alpha)+Q\cos(\beta)+R\cos(\gamma)]dl=\]
+  \[\oint_{(l)} (\overline{P;Q;R}) (\overline{\cos(\alpha);\cos(\beta);\cos(\gamma)})dl=\oint_{(l)} \overline{A} \overline{e}dl\]
+  \begin{center}
+    $\overline{e}$ - вектор касательной к кривой в каждой (.)
+  \end{center}
+  \underline{Замечание:} Если А силовое поле то циркуляция равна работе этого поля, при перемещении точки по кривой l.
+  \[\text{ц= } \oint \overleftarrow{A} \overline e dl = \iint_S \]
 \end{document}

@@ -345,6 +345,15 @@
 		],
 		"description": "stuff for mat"
 	}
+	,
+	"oa": {
+		"scope": "tex,latex",
+		"prefix": "oa",
+		"body": [
+			"\\overline{A}"
+		],
+		"description": "stuff for mat"
+	}
 
 
 	
