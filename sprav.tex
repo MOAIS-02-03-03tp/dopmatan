@@ -1745,27 +1745,38 @@
   задано поле этой величины. Заданное поле скалярной величины равносильно заданной скалярной функции и $(x;y;z)$.\\
   Чтобы задать векторное поле необходимо задать:
   \[A_x(x;y;z) \hspace{20pt} A_y(x;y;z) \hspace{20pt} A_z(x;y;z)\]
-  \[\overline{A}=\underbracket{A_x i}_{P}+\underbracket{A_y i}_{Q}+\underbracket{A_z k}_{R}\]
-  \underline{Определение: } Векторной линией называется кривая касательной которой в каждой ее (.) m совпадает
+  \[\overline{A}=\underbracket{A_x i}_{P}+\underbracket{A_y j}_{Q}+\underbracket{A_z k}_{R}\]
+  
+  \begin{minipage}{0.55\textwidth}
+    \underline{Определение: } Векторной линией называется кривая касательной которой в каждой ее (.) m совпадает
   с направление $\overline{A}$ отвечающим этой (.).\\
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.6]{9.1.png}
+  \end{minipage}
+  \vspace{1em}
+  \par
   \underline{Определение: } Поверхность составленной из векторных линий называется векторной поверхностью.
   Характеризуется: в каждой ее (.) M. Соответствующий вектор $\overline{A}(M)$ лежит в касательной плоскости к
-  этой поверхности в этой (.).\\
+  этой поверхности в этой (.).
   Если взять в рассматриваемой области какую-нибудь линию отличную от векторной и через каждую ее
   (.) провести векторную линию то геометрическое место этих линий задает векторную поверхность.\\
   Если исходная линия была замкнутой, то полученная таким образом векторная поверхность называется 
   векторной трубкой.
   \break
   \subsection{Градиент}
-  Пусть задана скалярное поле и $(x;y;z)$
+  Пусть задана скалярное поле $u(x;y;z)$
   \[\overline{grad u} = \Big(\frac{\delta u}{\delta x};\frac{\delta u}{\delta y};\frac{\delta u}{\delta z}\Big)\]
   \[\frac{\delta u}{\delta l}=\overline{grad u} * \overline{l_0}=
   \frac{\delta u}{\delta x}\cos(\alpha)+
   \frac{\delta u}{\delta y}\cos(\beta)+
   \frac{\delta u}{\delta z}\cos(\gamma)\]
-  max $\frac{\delta u}{\delta u}$ =  имеет в направлении градиента и $\overline{\triangledown}
-  \Big(\frac{\delta u}{\delta x};\frac{\delta u}{\delta y};\frac{\delta u}{\delta z}\Big)
-  \overline{\triangledown}$ - оператор Набла(оператор Гамильтона)
+  \begin{center}
+  Максимальное значение $\frac{\delta u}{\delta l}$ имеет в направлении вектора $\overline{gradu}$ 
+  \end{center}
+  \[\overline{\triangledown}\Big(\frac{\delta u}{\delta x};\frac{\delta u}{\delta y};\frac{\delta u}{\delta z}\Big)
+  \overline{\triangledown} \text{- оператор Набла(оператор Гамильтона)}\]
   \[\overline{gradu}=\overline{\triangledown u}\]
   \subsection*{Дифференциальные свойства градиента}
   \begin{enumerate}
@@ -1783,12 +1794,8 @@
   u_2(\frac{\delta u_1}{\delta x}\overline{i} +\frac{\delta u_1}{\delta y}\overline{j}+\frac{\delta u_1}{\delta z}\overline{k})=\
   \]\[u_1 \overline{grad u_2}+u_2 \overline{grad u_1}\]
   \end{adjustwidth}
-  \underline{Замечание:}
-  \begin{enumerate}
-    \item Направление вектора градиента совпадает с направлением вектора нормали к поверхности уровня
-    и $(x;y;z)=const.$
-    \item Скалярное поле и $(x;y;z)$ порождает векторное поле градиента и $(x;y;z) \hspace{20pt} \overline{grad u}(x;y;z)$
-  \end{enumerate}
+  \underline{Замечание:}Направление вектора градиента совпадает с направлением вектора нормали к поверхности уровня $u(x;y;z)=const.$\\
+  \underline{Замечание:}Скалярное поле $u(x;y;z)$ порождает векторное поле градиента $\overline{grad u}(x;y;z)$
 
   \subsection{Поток вектора через поверхность.}
   Пусть задано векторное поле $\overline{A}(M)$, т.е. заданы функциями
@@ -1797,75 +1804,160 @@
     A_y(x;y;z)=Q(x;y;z)\\
     A_z(x;y;z)=R(x;y;z)
   \end{matrix} \overline{A}(P;Q;R)\]
-  Возьмем некоторую поверхность S, выбрав определенную ее строку и обозначим $\overline{\cos(\alpha);\cos(\beta);\cos(\gamma)}=\overline{n_0}$\\
-  \underline{Определение: } Потоком векторного поля $\overline{A}$ через поверхность S в сторону единичной нормали $\overline{n}(\cos(\alpha);\cos(\beta);\cos(\gamma))$ называется 
+  Возьмем некоторую поверхность S, выбрав определенную ее строку\\
+  \underline{Обозначение} $\overline{\cos(\alpha);\cos(\beta);\cos(\gamma)}=\overline{n_0}$\\
+  \underline{Определение: } Потоком векторного поля $\overline{A}$ через поверхность S в сторону единичной нормали\\
+  $\overline{n}(\cos(\alpha);\cos(\beta);\cos(\gamma))$ называется 
   \[\iint_S (P\cos(\alpha)+Q\cos(\beta))+\cos(\gamma)dS=\iint_S \overline{A} \overline{n}dS = \oiint_S A_n dS=\text{ П}\]
-  Рассмотрим движение жидкости в пространстве. Движение нестационарное. Вычислим количество жидкости протекающее через поверхность S в направлении $\overline{n}$ за малый промежуток
-  времени dt. За время dt через dS протекает количество жидкости, которое заполняет собой цилиндр с основанием dS
-  и высотой $V_ndt$.
-  \[dm=\rho V = \rho dS V_n dt\]
-  \[m=dt\iint_{dS} \rho V_n dS\]
-  \[\underbracket{\frac{m}{dt}=\iint_{dS}P V_n dS}_{\rho \overline{v} \overline{n}}=Q.\text{ поток вектора }
-  \rho \overline{v} \text{ через поверхность S}\]
-  Q-количество жидкости в единицу времени.\\
-  Поток  - скалярная величина,знак зависит от угла.
-  Если $<\overline{A};\overline{n}> - \begin{matrix}
-  \text{острый } \Rightarrow \text{П>0}\\
-  \text{тупой } \Rightarrow \text{П<0}\\
-  \bot  \Rightarrow \text{П =0}
-  \end{matrix}$
-  \[\text{П = }\iint_S(P\cos(\alpha)+\cos(\beta)+\cos(\gamma))dS = \iiint_V 
-  (\frac{\delta P}{\delta x}+\frac{\delta Q}{\delta y}+\frac{\delta R}{\delta z})dxdydz\]
-  \underline{Определение: }
-  Выражение $\frac{\delta P}{\delta x}+\frac{\delta Q}{\delta y}+\frac{\delta R}{\delta z}$ - называется дивергенцией
-  векторного поля A\\
+  Рассмотрим движение жидкости в пространстве. Движение нестационарное. Вычислим количество жидкости, протекающее
+  через поверхность S в направлении $\overline{n}$ за малый промежуток времени $dt$. За время $dt$ через $ds$ протечет
+  количество жидкости, которое заполняет собой цилиндр с основанием $ds$ и высотой $V_n dt$.\\
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[scale=0.6]{9.2.png}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    \[dm=\rho dV=\rho ds * V_n * dt\]
+    \[m=dt \iint_{ds} V_n * \rho * ds\]
+    \[\frac{m}{dt}=\iint_{ds} \rho V_n ds = Q\]
+  \end{minipage}
+  \vspace{1em}
+  \par
+  $Q$ - количество жидкости в единицу времени, поток вектора $\rho \overleftarrow{V_n}$ через поверхность S.\\
+  Поток - скалярная величина, если угол между $\overline{A},\overline{n}$:
+  \begin{itemize}
+    \item острый $\Rightarrow$ П>0
+    \item тупой $\Rightarrow$ П<0
+    \item $\varphi = \frac{\pi}{2} \Rightarrow $ П=0
+  \end{itemize}
+  \[\text{П=} \iint_S (P\cos(\alpha)+Q\cos(\beta)+R\cos(\gamma))ds=\iiint_V
+  (\frac{\delta P}{\delta x}+\frac{\delta Q}{\delta y}+\frac{\delta R}{\delta Z})dxdydz\]
+  \underline{Определение: } Выражение 
+  $\frac{\delta P}{\delta x}+\frac{\delta Q}{\delta y}+\frac{\delta R}{\delta Z}$ называется
+  дивергенцией(расходимостью) векторного поля $\overline{A}$\\
   \underline{Обозначение:} $div \overline{A}$
-  \[\text{П= } \iint_S \overline{A} \overline{n} dS=\iiint_V div \overline{A} dV\]
-  \underline{Замечание:}
-  Дивергенция - скаляр.
-  \[\text{П= }\iiint_V div \overline{A}dv\underset{\hyperref[th:8.12.1]{\text{Теорема о среднем}}}{=}
-  div \overline{A}\Big|_{(\xi;\eta;\chi)} \hspace{20pt}\iiint_V dv=div \overline{A}\Big|_{(\xi;\eta;\chi)}V\]
-  \[div \overline{A} = \lim_{V \to (\xi;\eta;\chi)}\frac{\text{П}}{V}\]
-  \underline{Физический смысл потока}
-  Пусть $\overline{A}$ - векторное поле скоростей несжимаемой жидкости при наличии источников (стоков).
-  \[\text{П=}\rho\iint_S \overline{V}\overline{n}dS\]
-  П>0, значит что из области V вытекает объем жидкости чем втекает, означает что внутри области V находятся источники.\\
-  П<0, значит вытекает меньше чем втекает внутри области М есть сток.\\
-  П=0  сколько вытекает столько и втекает.\\
-  \underline{Физический смысл дивергенции}.
-  Если источники(стоки) распределены непрерывно, то вводится понятие плотности потока.
-  \[div \overline{A}\Big|_M=\lim_{V \to M}\frac{\text{П}}{V} \text{ - плотность источника(стока)}\]
-  \[div \overline{A}>0.\hspace{20pt}\text{М источник.}\hspace{20pt} div \overline{A}\Big|_M<0 \hspace{20pt} \text{(.)M-сток}\]
-  \[div \overline{A} \Big|_M=0 \hspace{20pt}\text{(.) или источник или сток}\]
-  \underline{Свойства дивергенции.}
+  \[\text{П=} \iint_S \overline{A} \overline{n}dS=\iiint_V div \overline{A} dV\]
+  \underline{Замечание:} Дивергенция - скаляр 
+  \[\text{П=} \iiint_V div \overline{A} dV \underset{\hyperref[th:8.12.1]{\text{Th. о среднем}}}{=}
+  \overline{A}\Big|_{(\xi,\eta,\chi)} \iiint_V dV= div\overline{A}\Big|_{(\xi,\eta,\chi)} *V \]
+  \[div \overline{A} = \lim_{V \rightarrow (\xi,\eta,\chi)} \frac{\text{П}}{V}\]
+  \subsection*{Физический смысл потока}
+  Пусть $\overline{A}$ - векторное поле скоростей нестикаемой жидкости $(\rho = const)$ при наличии источников
+  (стоков)
+  \[\text{П} = \rho \iint_S \overline{V} \overline{n}dS\]
+  \begin{itemize}
+    \item П>0 - значит, что из области V, вытекает больше жидкости, чем втекает. Это означает, что внутри области
+    V есть источники.
+    \item П<0 - значит, что из области V вытекает меньше жидкости, чем втекает. Это означает что внутри области V есть стоки.
+    \item П=0 - сколько жидкости втекает, столько и вытекает.
+  \end{itemize}
+  \subsection*{Физический смысл дивергенции:}
+  Если источники(стоки) распределены непрерывно, то вводится понятие плотности источника(стока).
+  \[div \overline{A}\Big|_M = \lim_{V \to M} \frac{\text{П}}{V} \text{- плотность источников(стоков)}\]
+  \begin{itemize}
+    \item $div \overline{A}\Big|_M >0$ - (.) M - источник.
+    \item $div \overline{A}<0$ - (.) M - сток.
+    \item $div\overline{A}\Big|_M = 0$ - (.) M ни источник, ни сток.
+  \end{itemize}
+  \subsection*{Свойства дивергенции:}
   \begin{enumerate}
-    \item \[div(\overline{a}+\overline{b})=div \overline{a} + div \overline{b}\]
-    \item \[div \overline{c}=0 \hspace{20pt} \overline{c} = const\]
-    \item \[ div(f_{\overline{a}})=f div \overline{a}+\overline{a} \overline{grad f} \hspace{20pt} f=f(x;y;z)\]
+    \item $div(\overline{a}+\overline{b})=div\overline{a}+div\overline{b}(\overline{a},\overline{b} - \text{векторные поля})$
+    \item $div \overline{c} = 0, \overline{c} = const$
+    \item $div(f\overline{a}) = f div\overline{a}+\overline{a}*\overline{gradf},$ f - скалярная функция $f(x,y,z)$
   \end{enumerate}
   \underline{Доказательство:}
   \begin{adjustwidth}{1.5em}{1.5em}
-    \[div(f_{\overline{a}})=
-    \frac{\delta fP}{\delta x}+\frac{\delta f Q}{\delta y}+\frac{\delta f R}{\delta z}=
-    f\frac{\delta P}{\delta x}+P\frac{\delta f}{\delta x}+
-    f\frac{\delta Q}{\delta y}+Q\frac{\delta f}{\delta y}+
-    f\frac{\delta R}{\delta z}+R\frac{\delta f}{\delta z}=
-    f(\frac{\delta P}{\delta x}+\frac{\delta Q}{\delta y}+\frac{\delta R}{\delta z})+
-    P\frac{\delta f}{\delta x}+Q\frac{\delta f}{\delta y}+R\frac{\delta f}{\delta z}=
-    f div \overline{A} + \overline{A}\overline{gradf}\]
+    \[div(f\overline{a})=\frac{\delta fP}{\delta X}+\frac{\delta f Q}{\delta y}+\frac{\delta f R}{\delta Z}=
+    f\frac{\delta P}{\delta x}+P\frac{\delta f}{\delta x}+f \frac{\delta Q}{\delta y}+Q\frac{\delta f}{\delta y}+
+    f\frac{\delta R}{\delta Z}+R\frac{\delta f}{\delta z}=\]
+    \[f div \overline{a}+\overline{a}*\overline{gradf}\]
   \end{adjustwidth}
   \begin{center}
     \textbf{Ч.т.д.}
   \end{center}
+  \underline{Замечание:} 
+  \[\overline{\bigtriangledown} = \Big(\overline{\frac{\delta \underbracket{\hspace{10pt}}}{\delta x}
+  ;\frac{\delta \underbracket{\hspace{10pt}}}{\delta y};\frac{\delta \underbracket{\hspace{10pt}}}{\delta z}}\Big)
+  \text{ - оператор Гамильтона(оператор Набла)}\]
+  \[div \overline{A} = \overline{\bigtriangledown}*\overline{A}\]
+  \[\overline{\bigtriangledown} = \frac{\delta}{\delta x}\overline{i}+
+  \frac{\delta}{\delta y}\overline{j}+\frac{\delta}{\delta z}\overline{k}\]
 
   \subsection{Циркуляция вектора}
-  Пусть задано векторно $\overline{A}(P;Q;R)$ и замкнутая кривая $l$ в пределах рассматриваемой области.\\
-  \underline{Определение: } $\int_{l} Pdx+Qdy+Rdz$ - называется циркуляцией векторного поля A вдоль кривой l.
-  \[\text{ц } =\oint_{(l)}Pdx+Qdy+Rdz=\oint_{(l)} [P\cos(\alpha)+Q\cos(\beta)+R\cos(\gamma)]dl=\]
-  \[\oint_{(l)} (\overline{P;Q;R}) (\overline{\cos(\alpha);\cos(\beta);\cos(\gamma)})dl=\oint_{(l)} \overline{A} \overline{e}dl\]
-  \begin{center}
-    $\overline{e}$ - вектор касательной к кривой в каждой (.)
-  \end{center}
-  \underline{Замечание:} Если А силовое поле то циркуляция равна работе этого поля, при перемещении точки по кривой l.
-  \[\text{ц= } \oint \overleftarrow{A} \overline e dl = \iint_S \]
+  Пусть задано векторное поле $\overline{A}(P;Q;R)$ и замкнутая кривая $l$ в пределах рассматриваемой
+  области.\\
+  \underline{Определение: }$\int_{(l)} Pdx+Qdy+Rdz$ - называется \underline{циркуляцией} векторного поля
+  $\overline{A}$ вдоль кривой l.\\
+  \underline{Обозначение:} 
+  \[\text{ц} = \oint_{(l)} Pdx+Qdy+Rdz= \oint_{(l)}[P\cos(\alpha)+Q\cos(\beta)+R\cos(\gamma)]dl=\]
+  \[\oint_{(l)}(\overline{P;Q;R})(\overline{\cos(\alpha);\cos(\beta);\cos(\gamma)}dl=
+  \oint_{(l)})\overline{A}*\overline{e}\]
+  $\overline{e}$ - вектор, касательный к кривой в каждой(.)\\
+  \underline{Замечание:} Если $\overline{A}$ - силовое поле, то Ц равна работе сил этого поля по
+  перемещению (.) по кривой (l).
+  \[\text{Ц=} \oint_{(l)} \overline{A}*\overline{e}dl \underset{\text{Формула Стокса}}{=}
+  \iint_S \Big[\Big(\frac{\delta R}{\delta y}-\frac{\delta Q}{\delta z}\cos(\alpha)\Big)
+  + \Big(\frac{\delta P}{\delta Z} - \frac{\delta R}{\delta x}\Big)\cos(\beta)
+  + \Big(\frac{\delta Q}{\delta x}-\frac{\delta P}{\delta y}\cos(\gamma)\Big)\Big]dS\]
+  \[\overline(n)(\cos(\alpha);\cos(\beta);\cos(\gamma)) - \text{нормаль к поверхности}\]
+  \underline{Определение: } Вектор с координатами $\Big(\frac{\delta R}{\delta y}-\frac{\delta Q}{\delta z};
+  \frac{\delta P}{\delta z}-\frac{\delta R}{\delta x};\frac{\delta Q}{\delta x} - \frac{\delta P}{\delta y}\Big)$
+  называется ротором(вихрем) векторного поля $\overline{A}$.\\
+  \underline{Обозначение: } $\overline{rotA}$
+  \[\oint_{(l)}\overline{A}\overline{e}dl = \iint_S \overline{rotA}*\overline{n_0}dS = \text{ц}\]
+  То есть цикруляция векторного поля $\overline{A}$ вдоль замкнутого контура l равна потоку ротора этого поля
+  $\overline{rotA}$ через поверхность S, границей которого является l.
+  \[\overline{rotA} = \overline{\bigtriangledown} X \overline{A} = 
+  \begin{vmatrix}
+    \overline{i} & \overline{j} &\overline{k}\\
+    \frac{\delta}{\delta x} & \frac{\delta }{\delta y} & \frac{\delta }{\delta z}\\
+    P & Q & R
+  \end{vmatrix}\]
+  \subsection*{Свойство ротора:}
+  \begin{enumerate}
+    \item $\overline{rot}(\overline{a}+\overline{b}) = \overline{rota}+\overline{rotb}$
+    \item $\overline{rot}(f\overline{a}) = f\overline{rota}+\overline{gradf}X\overline{a}$
+  \end{enumerate}
+  \pagebreak
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \[\overline{rot}(f\overline{a}) = 
+    \begin{vmatrix}
+      \overline{i} & \overline{j} &\overline{k}\\
+      \frac{\delta}{\delta x} & \frac{\delta }{\delta y} & \frac{\delta }{\delta z}\\
+      fP & fQ & fR
+    \end{vmatrix} = 
+    i\Big(\frac{\delta fR}{\delta y} - \frac{\delta f Q}{\delta z}\Big) 
+   -j\Big(\frac{\delta fR}{\delta x} - \frac{\delta f P}{\delta z}\Big)
+   +k\Big(\frac{\delta fQ}{\delta x} - \frac{\delta f P}{\delta y}\Big)=\]
+    \[=i\Big(\frac{\delta f}{\delta y}R + f\frac{\delta R}{\delta y} - \frac{\delta f}{\delta z}Q-f\frac{\delta Q}{\delta z}\Big)-
+    j\Big(\frac{\delta f}{\delta x}R + \frac{\delta R}{\delta x}f - \frac{\delta f}{\delta z}P - f\frac{\delta P}{\delta z}\Big)+
+    k\Big(\frac{\delta f}{\delta x}Q+\frac{\delta Q}{\delta x}P - \frac{\delta f}{\delta y}P - f\frac{\delta P}{\delta y}\Big)=\]
+    \[f\Big(\frac{\delta R}{\delta y}-\frac{\delta Q}{\delta z};
+        \frac{\delta P}{\delta z}-\frac{\delta R}{\delta x};
+        \frac{\delta Q}{\delta x}-\frac{\delta P}{\delta y}\Big)=
+    \begin{vmatrix}
+      \overline{i} & \overline{j} &\overline{k}\\
+      \frac{\delta}{\delta x} & \frac{\delta }{\delta y} & \frac{\delta }{\delta z}\\
+      P & Q & R
+    \end{vmatrix}=\]
+    \[f * \overline{rot}\overline{a}+\overline{grad}f x \overline{a}\]
+  \end{adjustwidth}
+  \begin{enumerate}
+    \setcounter{enumi}{2}
+    \item Если $\overline{c}=const,\overline{rot} \overline{c}=\overline{0}$
+    \item Если $\overline{r}=x \overline{i}+y\overline{j}+z\overline{k},\overline{rot}\overline{r} = \overline{0}$
+  \end{enumerate}
+  \subsection*{Формула Стокса:}
+  \[\int_{(l)} = \overline{A}\overline{e}dl 
+  = \iint_S \overline{rot}\overline{A}*\overline{n_0} dS 
+  = \iint_S rot A_n dS
+  = rot A_n \Big|_{(\xi,\eta,\chi)} \iint_S dS\]
+  \[rot A_n = \lim_{(S) \to M} \frac{\int_{(l)} \overline{A}\overline{e}dl}{S}\]
+  Ротор - это вектор, проекция которого на каждое направление равна пределу отношения циркуляции векторного
+  поля по кривой l плоской площади, перпендикулярной к этому направлению, к площади этой площади, 
+  когда площадка стягивается в точку.\\
+  \underline{Замечание:} Если $\overline{A}$ - векторное поле скоростей, то 
+  $\overline{rot}\overline{A} = \overline{\omega}$ - угловая скорость.
+  \subsection*{Дифференциальные операции второго порядка:}
 \end{document}
