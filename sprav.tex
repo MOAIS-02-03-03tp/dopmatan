@@ -2043,12 +2043,67 @@
   A_y=\frac{\delta B_x}{\delta z}-\frac{\delta B_z}{\delta x};
   A_z=\frac{\delta B_y}{\delta x}-\frac{\delta B_x}{\delta y}\]
   $\overline{B}$ называется векторным потенциалом поля $\overline{A}$.\\
-  \underline{Утверждение: } Для того чтобы векторное поле было соленоидальным $\Leftrightarrow \boxed{\overline{div}\overline{A}=o}$\\
+  \underline{Утверждение: } Для того чтобы векторное поле было соленоидальным $\Leftrightarrow \boxed{\overline{div}\overline{A}=0}$\\
+  \pagebreak
   \underline{Доказательство:}
   \begin{adjustwidth}{1.5em}{1.5em}
     \circled{$\Rightarrow$} Поле соленоидальное, тогда по определению существует $\overline{B}:A=\overline{rot}\overline{B}$. 
-    Вычислим $div\overline{A}=div(\overline{rot}\overline{B})=o$\\
-    \circled{$\Leftarrow$} Пусть $div \overline{A}=o.$ Надо показать, что существует $\overline{B}:A=\overline{rot}\overline{B}$
-  \end{adjustwidth}
-\end{enumerate}
+    Вычислим $div\overline{A}=div(\overline{rot}\overline{B})=0$\\
+    \circled{$\Leftarrow$} Пусть $div \overline{A}=0.$ Надо показать, что существует $\overline{B}:A=\overline{rot}\overline{B}$
+    \[(\overline(A_x;A_y;A_z)) \text{ - известно} \hspace{20pt} 
+    (\overline{B_x;B_y;B_z}) \text{ - неизвестно}\]
+    Достаточно найти какое-нибудь одно частное решение.
+    Пусть $B_z=0$
+    \[A_x = - \frac{\delta B_y}{\delta B_z}; \hspace{10pt}
+      A_y = \frac{\delta B_x}{\delta B_z}; \hspace{20pt}
+      A_z = \frac{\delta B_y}{\delta x} - \frac{\delta B_x}{\delta y}\]
+    \[B_y = - \int_{z_0}^{z}A_x(x;y;z)dz+p(x;y) ; \hspace{20pt}
+      B_x = \int_{z_0}^{z}A_y(x;y;z)dz\]
+      Найдем $\varphi(x;y)$
+      \[\frac{\delta B_y}{\delta x}= - \int_{z_0}^{z}\frac{\delta A_x}{\delta x}dz+\varphi'_x(x;y) \hspace{20pt}
+      \frac{\delta B_x}{\delta y} = \int_{z_0}^{z}\frac{\delta A_y}{\delta y}dz\]
+      Тогда
+      \[A_z = - \int_{z_0}^{z}\Big[\frac{\delta A_x}{\delta x}+ \frac{\delta A_y}{\delta y}\Big]dz
+      +\varphi'_x(x;y)=
+      \begin{vmatrix}
+        \frac{\delta A_x}{\delta x}+\frac{\delta A_y}{\delta y}+\frac{\delta A_z}{\delta z}=0\\
+        \frac{\delta A_x}{\delta x }+\frac{\delta A_y}{\delta y}= -\frac{\delta A_z}{\delta z}
+      \end{vmatrix}=\]
+      \[=\int_{z_0}^{z}\frac{\delta A_z}{\delta z}dz + \varphi'_x(x;y)=A_z(x;y;z)-A_z(x;y;z_0)+\varphi'_x(x;y) \Rightarrow\]
+      \[\varphi'_x(x;y)=A_z(x;y;z_0) \hspace{20pt} \varphi(x;y)=\int_{x_0}^{x}A_z(x;y;z_0)dx+\psi(y)\]
+      \[B_x=\int_{z_0}^{z}A_y(x;y;z)dz \hspace{20pt} 
+      B_y = - \int_{z_0}^{z}A_x(x;y;z)dz+\int_{x_0}^{x}A_z(x;y;z_0)dx+\psi(y) \hspace{20pt}
+      B_z =0\]
+    \end{adjustwidth}
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+    \item Разложение произвольного векторного поля.\\
+    Пусть A - произвольное векторное поле.
+    \begin{itemize}
+      \item $\overline{A}=\overline{A}'+\overline{A}''$
+      \item $\overline{A}'$ - потенциальная составляющая($\overline{rot}\overline{A}=0$)
+      \item $\overline{A}''$ - соленоидальная составляющая ($div \overline{A}'=0$)
+    \end{itemize}
+    Пусть $F$ - скалярная функция. \hspace{20pt} $F-?$ \hspace{10pt} Пусть $\overline{A}' = \overline{gradF} \hspace{20pt} rotgradF=0$\\
+    Тогда $\overline{A}'' = \overline{A}-\overline{A}'$.
+    \[div \overline{A}'' = div\overline{A}' = div \overline{A}-divgradF=div \overline{A}-\Delta F=0 \hspace{10pt} \Delta F=divA\]
+    \clearpage
+    \underline{Алгоритм:}
+    \begin{enumerate}
+      \item[1.] $\Delta F = divA \Rightarrow F$
+      \item[2.] $\overline{A}' = gradF$
+      \item[3.] $\overline{A}'' = \overline{A} - \overline{A}'$
+    \end{enumerate}
+    \item Гармоническое поле\\
+    \underline{Определение: } Векторное поле $\overline{A}$ называется гармоническим, если оно и потенциальное и
+    соленоидальное одновременное; т.е.
+    \[div \overline{A} = 0 \hspace{20pt} \overline{rot}\overline{A}=0\]
+    Пусть $F$ - скалярная функция \hspace{20pt} $F-?$\\
+    Пусть $\overline{A} = \overline{grad}F(\overline{rot}\overline{A}=rot\overline{grad}F=0)$
+    \[div \overline{A} = div\overline{grad}F=0 \hspace{20pt} \Delta F=0\]
+    Алгоритм
+    \[\frac{\delta^2 F}{\delta x^2}+\frac{\delta^2 F}{\delta y^2}+\frac{\delta^2 F}{\delta z^2} = 0 \Rightarrow F\]
+    \[\overline{A}=\overline{grad}F\]
+  \end{enumerate}
 \end{document}
