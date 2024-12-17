@@ -1960,4 +1960,95 @@
   \underline{Замечание:} Если $\overline{A}$ - векторное поле скоростей, то 
   $\overline{rot}\overline{A} = \overline{\omega}$ - угловая скорость.
   \subsection*{Дифференциальные операции второго порядка:}
+  \begin{enumerate}
+    \item $div \overline{grad}u= \overline{\bigtriangledown}(\overline{\bigtriangledown} u) = 
+    \frac{\delta }{\delta x}*\frac{\delta u}{\delta x}+
+    \frac{\delta}{\delta y}*\frac{\delta  u}{\delta y}+
+    \frac{\delta}{\delta z}*\frac{\delta u}{\delta z}=
+    \frac{\delta^2 u}{\delta x^2}+\frac{\delta^2 u}{\delta y^2}+\frac{\delta^2 u}{\delta z^2}$
+    \[\text{Оператор }\bigtriangleup = 
+    \frac{\delta^2}{\delta x^2 }+\frac{\delta^2}{\delta y^2}+\frac{\delta^2}{\delta z^2} \text{ - оператор Лапласа}\]
+    \[div\overline{grad}u=\bigtriangleup u\]
+
+    \item $\overline{rot} \overline{gradu} = 
+    \begin{vmatrix}
+      i & j & k\\
+      \frac{\delta}{\delta x} & \frac{\delta}{\delta y} & \frac{\delta}{\delta z}\\
+      \frac{\delta u}{\delta x} & \frac{\delta u}{\delta y} & \frac{\delta u}{\delta z}
+    \end{vmatrix}
+    =i\Big(\frac{\delta^2 u}{\delta y \delta z}-\frac{\delta^2 u}{\delta y \delta z}\Big)
+    -j\Big(\frac{\delta^2 u}{\delta x \delta z}-\frac{\delta^2 u}{\delta x \delta z}\Big)
+    +k\Big(\frac{\delta^2 u}{\delta x \delta y}-\frac{\delta^2 u}{\delta x \delta y}\Big)=
+    \overline{o}$
+
+    \item $\overline{grad}div \overline{A}=\overline{\bigtriangledown}(\bigtriangledown A)=
+    \frac{\delta}{\delta x}\Big(\frac{\delta P}{\delta x}+\frac{\delta Q}{\delta y}+\frac{\delta R}{\delta z}\Big)\overline{i}
+  + \frac{\delta}{\delta y}\Big(\frac{\delta P}{\delta x}+\frac{\delta Q}{\delta y}+\frac{\delta R}{\delta z}\Big)\overline{j}
+  + \frac{\delta}{\delta z}\Big(\frac{\delta P}{\delta x}+\frac{\delta Q}{\delta y}+\frac{\delta R}{\delta z}\Big)\overline{k}
+  = \overline{i}\Big(\frac{\delta^2 P}{\delta x^2}+\frac{\delta^2 Q}{\delta x \delta y}+\frac{\delta^2 R}{\delta x \delta z}\Big)
+  + \overline{j}\Big(\frac{\delta^2 P}{\delta x \delta y}+\frac{\delta^2 Q}{\delta y^2}+\frac{\delta^2 R}{\delta x \delta z}\Big)
+  + \overline{k}\Big(\frac{\delta^2 P}{\delta x \delta y}+\frac{\delta^2 Q}{\delta y \delta z}+\frac{\delta^2 R}{\delta z^2}\Big)$
+    
+    \item $div \overline{rot}\overline{A} = \frac{\delta}{\delta x}\Big(\frac{\delta R}{\delta y}-\frac{\delta Q}{\delta z}\Big)
+    + \frac{\delta}{\delta y}\Big(\frac{\delta P}{\delta z} - \frac{\delta R}{\delta x}\Big)+
+    \frac{\delta}{\delta z }\Big(\frac{\delta Q}{\delta x} - \frac{\delta P}{\delta y}\Big)=0$
+
+    \item $\overline{rot}\overline{rotA} =
+    \begin{vmatrix}
+      \overline{i} & \overline{j} & \overline{k}\\
+      \frac{\delta}{\delta x} & \frac{\delta}{\delta y} & \frac{\delta}{\delta z}\\
+      \frac{\delta R}{\delta y} - \frac{\delta Q}{\delta z} & 
+      \frac{\delta P}{\delta z} - \frac{\delta R}{\delta x} &
+      \frac{\delta Q}{\delta x} - \frac{\delta P}{\delta y}
+    \end{vmatrix}
+    =\overline{i}\Big(\frac{\delta^2 Q}{\delta x \delta y} - \frac{\delta^2 R}{\delta y^2}-
+    \frac{\delta^2 P}{\delta z^2} + \frac{\delta^2 R}{\delta x \delta z}-\frac{\delta^2 P}{\delta x^2}+\frac{\delta^2 P}{\delta x^2}\Big)-
+    \overline{j}\Big(\frac{\delta^2 Q}{\delta x^2} - \frac{\delta^2 P}{\delta x \delta y} - \frac{\delta^2 R}{\delta y \delta z} +
+    \frac{\delta^2 Q}{\delta z^2}+\frac{\delta^2 Q}{\delta y^2}-\frac{\delta^2 Q}{\delta y^2}\Big)+
+    \overline{k}\Big(\frac{\delta^2 P}{\delta x \delta z} - \frac{\delta^2 R}{\delta x^2} - \frac{\delta^2 R}{\delta y^2}+
+    \frac{\delta^2 Q}{\delta y \delta z} - \frac{\delta^2 R}{\delta z^2}+ \frac{\delta^2 R}{\delta z^2}\Big)=
+    \overline{i}\Big(\frac{\delta^2 P}{\delta x^2}+\frac{\delta^2 Q}{\delta x \delta y}+\frac{\delta^2 R}{\delta x \delta z}\Big)+
+    \overline{j}\Big(\frac{\delta^2 Q}{\delta y^2}+\frac{\delta^2 P}{\delta x \delta y}+ \frac{\delta^2 R}{\delta y \delta z}\Big)+
+    \overline{k}\Big(\frac{\delta^2 R}{\delta z^2}+\frac{\delta^2 P}{\delta x \delta z} + \frac{\delta^2 Q}{\delta y \delta z}\Big)-
+    \overline{i}\Big(\frac{\delta^2 P}{\delta x^2}+\frac{\delta^2 P}{\delta y^2}+\frac{\delta^2 P}{\delta z^2}\Big)-
+    \overline{j}\Big(\frac{\delta^2 Q}{\delta x^2}+\frac{\delta^2 Q}{\delta y^2}+\frac{\delta^2 Q}{\delta z^2}\Big)-
+    \overline{j}\Big(\frac{\delta^2 R }{\delta x^2}+\frac{\delta^2 R}{\delta y^2}+\frac{\delta^2 R}{\delta z^2}\Big)=
+    \overline{grad}div \overline{A}=\overline{\bigtriangleup A}$
+    \[\overline{\bigtriangleup A}(\Delta P;\Delta Q;\Delta R)\]
+\end{enumerate}
+\subsection{Виды векторных полей}
+\begin{enumerate}
+  \item Потенциальное поле\\
+  \underline{Определение: } Векторное поле $\overline{A}$ называется потенциальным, если существует скалярная функция,
+  для которой $\overline{A}$ является градиентом.
+  \[\overline{A}=\overline{gradu},\text{т. е.}\]
+  \[P=\frac{\delta u}{\delta x};Q=\frac{\delta u}{\delta y}; R= \frac{\delta u}{\delta z}\]
+  \[Pdx+Qdy+Rdz=du\]
+  \underline{Определение: } Функция $u(x;y;z)$ называется потенциальной функцией поля $\overline{A}$.\\
+  \underline{Утверждение: } Для того чтобы поле $\overline{A}$ было потенциальным $\Leftrightarrow$ чтобы 
+  \[\frac{\delta R}{\delta y}=\frac{\delta Q}{\delta z};\frac{\delta P}{\delta z}=\frac{\delta R}{\delta x};
+  \frac{\delta Q}{\delta x}=\frac{\delta P}{\delta y} \Rightarrow \boxed{\overline{rot}\overline{A}=\overline{o}}\]
+  Потенциальное поля называют безвихревым полем.\\
+  Для потенциального поля справедливо:
+  \begin{itemize}
+    \item Циркуляция по простому замкунтому контуру всегда равна 0.
+    \item Интеграл по кривой, соединяющий две (.) поля, не зависит от формы кривой(не зависит от пути интегрирования).
+    \item  Скалярная функция u определяется с точностью до постоянной.
+  \end{itemize}
+  \item Соленоидальное поле\\
+  \underline{Определение: } Векторное поле А называется соленоидальным(трубчатым), если сущесствует
+  функция $\overline{B}$, для которой А служит ротом.
+  \[\overline{A}=\overline{rot}\overline{B}; 
+  A_x=\frac{\delta B_z}{\delta y}-\frac{\delta B_y}{\delta z};
+  A_y=\frac{\delta B_x}{\delta z}-\frac{\delta B_z}{\delta x};
+  A_z=\frac{\delta B_y}{\delta x}-\frac{\delta B_x}{\delta y}\]
+  $\overline{B}$ называется векторным потенциалом поля $\overline{A}$.\\
+  \underline{Утверждение: } Для того чтобы векторное поле было соленоидальным $\Leftrightarrow \boxed{\overline{div}\overline{A}=o}$\\
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \circled{$\Rightarrow$} Поле соленоидальное, тогда по определению существует $\overline{B}:A=\overline{rot}\overline{B}$. 
+    Вычислим $div\overline{A}=div(\overline{rot}\overline{B})=o$\\
+    \circled{$\Leftarrow$} Пусть $div \overline{A}=o.$ Надо показать, что существует $\overline{B}:A=\overline{rot}\overline{B}$
+  \end{adjustwidth}
+\end{enumerate}
 \end{document}
