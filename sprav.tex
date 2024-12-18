@@ -1905,7 +1905,7 @@
   называется ротором(вихрем) векторного поля $\overline{A}$.\\
   \underline{Обозначение: } $\overline{rotA}$
   \[\oint_{(l)}\overline{A}\overline{e}dl = \iint_S \overline{rotA}*\overline{n_0}dS = \text{ц}\]
-  То есть цикруляция векторного поля $\overline{A}$ вдоль замкнутого контура l равна потоку ротора этого поля
+  То есть циркуляция векторного поля $\overline{A}$ вдоль замкнутого контура l равна потоку ротора этого поля
   $\overline{rotA}$ через поверхность S, границей которого является l.
   \[\overline{rotA} = \overline{\bigtriangledown} X \overline{A} = 
   \begin{vmatrix}
@@ -2031,13 +2031,13 @@
   Потенциальное поля называют безвихревым полем.\\
   Для потенциального поля справедливо:
   \begin{itemize}
-    \item Циркуляция по простому замкунтому контуру всегда равна 0.
+    \item Циркуляция по простому замкнутому контуру всегда равна 0.
     \item Интеграл по кривой, соединяющий две (.) поля, не зависит от формы кривой(не зависит от пути интегрирования).
     \item  Скалярная функция u определяется с точностью до постоянной.
   \end{itemize}
   \item Соленоидальное поле\\
-  \underline{Определение: } Векторное поле А называется соленоидальным(трубчатым), если сущесствует
-  функция $\overline{B}$, для которой А служит ротом.
+  \underline{Определение: } Векторное поле А называется соленоидальным(трубчатым), если существует
+  функция $\overline{B}$, для которой А служит ротором.
   \[\overline{A}=\overline{rot}\overline{B}; 
   A_x=\frac{\delta B_z}{\delta y}-\frac{\delta B_y}{\delta z};
   A_y=\frac{\delta B_x}{\delta z}-\frac{\delta B_z}{\delta x};
@@ -2078,7 +2078,7 @@
     \begin{center}
       \textbf{Ч.т.д.}
     \end{center}
-    \item Разложение произвольного векторного поля.\\
+    \item Разложение произвольного векторного поля.\label{punkt3} \\
     Пусть A - произвольное векторное поле.
     \begin{itemize}
       \item $\overline{A}=\overline{A}'+\overline{A}''$
@@ -2105,5 +2105,45 @@
     Алгоритм
     \[\frac{\delta^2 F}{\delta x^2}+\frac{\delta^2 F}{\delta y^2}+\frac{\delta^2 F}{\delta z^2} = 0 \Rightarrow F\]
     \[\overline{A}=\overline{grad}F\]
+    \item Обратная задача векторного анализа\\
+    \underline{Задача}: Найти векторное поле $A$, если известно
+    \[div \overline{A} = F \hspace{20pt} \overline{rot}\overline{A}=\overline{B}\]
+    \underline{Решение}
+    \begin{center}
+      Решение ищем в виде: $\overline{A}=\overline{A'}+\overline{A''}$
+    \end{center}
+    \[(1):\begin{matrix}
+      \overline{rot}\overline{A'}=0\\
+      div \overline{A'}=F
+    \end{matrix}
+    \hspace{20pt} 
+    (2):\begin{matrix}
+      \overline{rot} \overline{A''}=\overline{B}\\
+      div \; A'' = 0
+    \end{matrix}\]
+    \begin{enumerate}
+      \item[(1):] Пусть Ф - скалярная функция. Тогда $\overline{A'}$ можно представить в виде
+      \[\overline{A'}=\overline{\text{gradФ}},\text{т.к. } \overline{rot}\overline{grad}\text{Ф}=0\]
+      Тогда $div \overline{A'}=div\overline{grad}\text{Ф}=\Delta \text{Ф}=F$\\
+      \underline{Алгоритм:}
+      \begin{enumerate}
+        \item[1.] $\Delta \text{Ф}=F \hspace{20pt} \text{Находим Ф}$
+        \item[2.] $\overline{A'}=\overline{grad}\text{Ф}$ 
+      \end{enumerate}
+      \item[(2):] $\overline{rot}\overline{A''}=\overline{B}$\\
+      $\overline{B}$ известно. Тогда из \hyperref[punkt3]{пункта 3} можно найти частное решение
+      $\overline{A_0''}$. Общее решение ищем в виде:
+      \[\overline{A''}=\overline{A_0''}+\overline{C},\text{где } 
+      \overline{C}=\overline{grad\tilde{\text{Ф}}}(\text{нужно, чтобы }
+      \overline{rot}\overline{C}=0)\]
+      \underline{Алгоритм:}
+      \begin{enumerate}
+        \item[1)] Решаем уравнение $\overline{rot}\overline{A''}=B$
+        \item[2)] Решаем $\Delta \tilde{\text{Ф}}=-div\overline{A_0''}$. Находим $\tilde{\text{Ф}}$
+        \item[3)] Находим $\overline{C}=grad \tilde{\text{Ф}}$
+        \item[4)] $\overline{A''}=\overline{A_0''}+\overline{C}$
+      \end{enumerate}
+    \end{enumerate}
   \end{enumerate}
+  %КОНЕЦ 3 СЕМЕСТРА ЛЮБИМОГО МАТ АНАЛИЗА ААААААААААААААААААААААА
 \end{document}
