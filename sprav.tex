@@ -2190,4 +2190,68 @@
       \not \exists, & |q|=-1
     \end{matrix}\]
 
+
+
+  \subsection{Свойства сходящихся рядов}
+  \subsubsection*{Теорема 10.2.1(Необходимое условие сходимости рядов)}\label{th:10.2.1}
+  \par\noindent
+  Если ряд $\sum_{n=1}^{\infty} U_n$ сходится, то $\lim_{n \to \infty} U_n =0$\\
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Пусть ряд $\sum_{n=1}^{\infty} U_n$ сходится $\Rightarrow \exists$ конечный $\lim_{n \to \infty} S_n =S$.\\
+     $U_n=S_n-S_{n-1}$
+    \[\lim_{n \to \infty} U_n = \lim_{n \to \infty} (S_n - S_{n-1}) = \lim_{n \to \infty} S_n - \lim_{n \to \infty} S_{n-1} = S-S = 0\]
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+  \subsubsection*{Теорема 10.2.2}\label{th:10.2.2}
+  \par\noindent
+  Если ряды $\sum_{n=1}^{\infty} U_n' $ и $\sum_{n=1}^{\infty} U_n''$ сходятся, причём их суммы собственно равны S' и S'',
+  то $\forall \lambda',\lambda'' \in R$. Ряд $\sum^{\infty}_{n=1}(\lambda' u'_0+\lambda''u''_n)$ сходится и его
+  сумма $S=\lambda'S'+\lambda''S''$\\
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Расмотрим частичные суммы рядов:
+    \[\sum^{\infty}_{n=1} u'_n, \sum_{n=1}^{\infty}u''_n,\sum_{n=1}^{\infty}(\lambda'u'_n+\lambda''u''_n)\]
+    \[\text{Рассмотрим } S_n=
+    \sum_{k=1}^{n}(\lambda'u'_k+\lambda'u''_k)=
+    \lambda'\sum_{k=1}^{n}u'_k+\lambda''\sum_{k=1}^{n}u''_k=\lambda'S_n'+\lambda''S''_n\]
+    \[S=\lim_{n\to \infty} S_n=
+    \lim_{n \to \infty}(\lambda'S'_n+\lambda''S''_n)=
+    \lambda'\lim_{n\to \infty}S'_n+\lambda''\lim_{n \to \infty}S''_n=\lambda'S'+\lambda''S''\]
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \underline{Определение: } Для ряда $\sum_{n=1}^{\infty}u_n$ ряд $\sum_{k=1}^{\infty}u_{n+k}$ называется n-ым остатком ряда.\\
+  \subsubsection*{Теорема 10.2.3}\label{th:10.2.3.}
+  \par\noindent
+  Если ряд сходится, то $\forall$ его остаток сходится. Верно и обратное утверждение.\\
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Рассмотрим $S_i^{(n)}=u_{n+1}+u_{n+2}+\dots+u_{n+i}$ i-ая частичная сумма n-ого остатка ряда.\\
+    Зафиксируем n(n-конечное).
+    Пусть $m=n+1$\\
+    $S_m=S_n+S_i^{(n)}$\\
+    При фиксированным n и $m \to \infty(i \to \infty)$ одновременно $\exists$ или $\not \exists$ конечные
+    пределы $\lim_{m\to \infty}S_m=S\lim_{i\to \infty}S_i^{(n)}=r_n$, т.е. $S=S_n+r_n$
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+  \underline{Замечание:} Если ряд $\sum_{n=1}^{\infty}$ сходится, то $\lim_{n \to \infty}r_n=0$\\
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \begin{center}
+      $S=S_n+r_n$\\
+      $r_n=S-S_n$\\
+      $\lim_{n\to \infty}r_n=\lim_{n \to \infty}(S-S_n)=\lim_{n \to \infty}S-\lim_{n\to \infty}S_n=S-S=0$
+    \end{center}
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
 \end{document}
