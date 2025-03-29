@@ -2254,4 +2254,33 @@
   \begin{center}
     \textbf{Ч.т.д.}
   \end{center}
+  
+  \subsection{Критерий Коши сходимости числового ряда}
+  \subsubsection*{Теорема 10.3.1}\label{th:10.3.1}
+  \par\noindent
+  Для того, чтобы числовой ряд $\sum_{n=1}^{\infty}$ сходился $\Leftrightarrow$
+  \[\forall \varepsilon > 0 \exists n_0=n_0(\varepsilon):\forall n>n_0 \text{ и } \forall p \geq 0 |u_n+\dots+u_{n+p}|<\varepsilon\]
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Ряд сходится, если сходится $\{S_n\}$. Если $\{S_n\}$ фундаментальная $\Rightarrow$ она сходится.
+    Покажем, что $\{S_n\}$ фундамент. Последовательность фундамент, если $\forall \varepsilon >0 \exists
+    n_0=n_0(\varepsilon):\forall m,k>n_0 \Rightarrow |S_m-S_k|<\varepsilon$. Пусть $m=n+p,k=n-1:m,k>n_0=
+    |S_{n+p}-S_{n-1}|<\varepsilon |u_n+\dots+u_{n+p}|<\varepsilon$
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \underline{Пример:} Покажем, что гармоничный ряд является расходящимся\\
+  \[1+\frac{1}{2}+\dots+\frac{1}{n}+\dots\]
+  \[\text{Пусть } p=n. 
+  \text{ Рассмотрим} 
+  \underbracket{\frac{1}{n}+\frac{1}{n+1}+\dots+\frac{1}{2n-1}}_{n \text{ слагаемых}}>
+  \frac{1}{2n}+\frac{1}{2n}+\dots+\frac{1}{2n}=\frac{1}{2}\]
+  Для $\varepsilon:0<\varepsilon<\frac{1}{2}$ не $\exists n_0=n_0(\varepsilon)$: выполняется критерий коши 
+  $\Rightarrow$ ряд расходится.\\
+  Рассмотрим $\sum_{n=1}^{\infty}\frac{1}{n^2}$\\
+  \[\underbracket{\frac{1}{n^2}+\dots+\frac{1}{(2n-1)^2}}_{n\text{ слагаемых}}
+  <\frac{1}{n^2}+\dots+\frac{1}{n^2}=\frac{1}{n}\]
+  \[\exists n_0=n_0(\varepsilon):\forall n>n_0 \frac{1}{n}<\varepsilon\]
 \end{document}
