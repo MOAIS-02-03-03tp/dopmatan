@@ -125,7 +125,7 @@
         \item Вычислим $\rho(M_i)$
         \item Считаем, что на всём $\Delta l_i \rho=const=\rho(M_i)$
         \item Составим $\sigma_R=\sum_{i=0}^{n-1}\rho(M_i)\Delta l_i$
-        \item $\lim_{\lambda_R \to 0} \sigma_R = m = \int_{(l)} g dl$
+        \item $\lim_{\lambda_R \to 0} \sigma_R = m = \int_{(l)} \rho dl$
       \end{enumerate}
   \end{minipage}
   \vspace{1em}
@@ -148,7 +148,7 @@
   \vspace{1em}
   \par
   \underline{Определение: } Если существует конечный предел интегральной суммы $\sigma_R$, не 
-  зависящей от способа разбиения кривой и выбора $(.) M_i(\xi_i,\eta_i)$, то он называется
+  зависящий предел от способа разбиения кривой и выбора $(.) M_i(\xi_i,\eta_i)$, то он называется
   криволинейным интегралом I рода от функции f(x;y) по кривой l.\\
   \[m=\int_{(l)} f(x;y) dl\]\\
   \underline{Замечание:} Если кривая (AB) не замкнута: \[\int_{(AB)} f(x;y)dl = \int_{(BA)} f(x;y)dl\]
@@ -187,7 +187,7 @@
   \[\int_{(l)}f(x;y)dl=\int_{0}^{l} f(x(l);y(l))dl\]
   \begin{enumerate}
     \item Если кривая задана уравнением y=f(x) $a \leq x \leq b$\\
-    \[\int_{(l)} g(x;y)dl = \int_{a}^{b} f(x) \underbrace{\sqrt{1+f'(x)^2}dx}_{dl}\]
+    \[  \int_{(l)}g(x;y)dl=\int_{a}^{b}g(x,f(x))\sqrt{1+f'(x)^2}dx\]
     \item Если кривая задана параметрически\\
     \[\begin{cases}
       x=x(t)\\
@@ -224,7 +224,7 @@
   \end{minipage}
   \vspace{1em}
   \par
-  \underline{Определение: } Если существует конечный предел суммы $\sigma_R$, не зависящей от способа
+  \underline{Определение: } Если существует конечный предел суммы $\sigma_R$, не зависящий предел от способа
   разбиения кривой l и выбора (.) $M_i(\xi_i;\eta_i)$, то он называется криволинейным интегралом
   II рода от функции f(x;y) по кривой l\\
   \underline{Замечание:} Аналогично вводится\\
@@ -269,12 +269,9 @@
   Т.к. f(x;y) непрерывна вдоль кривой (AB)\\
   \[\forall \varepsilon >0 \exists \delta = \delta(\varepsilon):|\Delta t_i| < \delta \Rightarrow
   |f(\varphi(t_{i+1});\psi(t_{i+1}))-f(\varphi(t_i);\psi(t_i))|<\varepsilon\]\\
-  или $\begin{matrix}
-    [t_i;\tau_i] <[t_i;t_{i+1}]\\
-    [\tau_i;t_{i+1}] < [t_i;t_{i+1}]
-  \end{matrix} \hspace{20pt} \varphi'(t)$ непрерывна на $[t_i;t_{i+1}] \Rightarrow$ она ограничена на нём.\\
+  или $\tau_i \in [\tau_i;\tau_{i+1}] \hspace{20pt} \varphi'(t)$ непрерывна на $[t_i;t_{i+1}] \Rightarrow$ она ограничена на нём.\\
   Пусть $\forall i |\varphi'(t_i)|<L$\\
-  \boxed{<} $|\varepsilon L \sum_{i=1}^{n} \int_{t_i}^{t_{i+1}}dt|=\varepsilon L(b-a)\Rightarrow \lim_{\lambda_R \to 0}\sigma_R=I$
+  \boxed{<} $\varepsilon L \sum_{i=1}^{n} \int_{t_i}^{t_{i+1}}dt=\varepsilon L(b-a)\Rightarrow \lim_{\lambda_R \to 0}\sigma_R=I$
   \begin{center}
     \textbf{Ч.т.д.}
   \end{center}
@@ -286,10 +283,10 @@
   \end{cases} \hspace{20pt} a\leq t\leq b \Rightarrow \int_{(AB)}f(x;y)dx =\int_{a}^{b} f(t;y(t))dt=
   |x=t|=\int_{a}^{b}f(x;y(x))dx$\\
   \underline{Замечание:} $\int_{(AB)}f(x;y)dx=0,$ если AB-прямоугольный отрезок || оси OY. Аналогично \\
-  $\int_{(CD)}f(x;y)dy=0,$ если CD-прямоугольный отрезок || OX.\\
+  $\int_{(CD)}f(x;y)dy=0,$ если CD-отрезок || OX.\\
   Если L-замкнутый контур.\\
   \begin{minipage}{0.45\textwidth}
-    \includegraphics[scale=0.6]{8.4.2.png}
+    \includegraphics[scale=0.6]{8.4.2.png} 
   \end{minipage}
   \hspace{1em}
   \begin{minipage}{0.25\textwidth}
@@ -297,11 +294,12 @@
   \end{minipage}
   \vspace{1em}
   \par
-  Среди двух возможных обходов, L обход против часовой стрелки, причём за положительный обход. При обходе рассматриваемая область
-  находится слева.
+  Среди двух возможных обходов, в качестве положительного обхода, выбирается обход против часовой стрелки, то есть при обходе
+  рассматриваемая область находится слева.
+
   \subsection{Вычисление площади криволинейной трапеции с помощью криволинейного интеграла.}
   \begin{minipage}{0.45\textwidth}
-    \includegraphics[scale=0.6]{8.5.1.png}
+    \includegraphics[scale=0.6]{8.5.1.png} %TODO:стрелку справа 
   \end{minipage}
   \hspace{1em}
   \begin{minipage}{0.55\textwidth}
@@ -337,7 +335,7 @@
     % Первая колонка (левая картинка)
     \begin{minipage}{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{8.6.1.png} % путь к первой картинке
+        \includegraphics[width=\textwidth]{8.6.1.png} % путь к первой картинке %TODO стрелка сверху
         \vspace{0.5em} % небольшой отступ между картинкой и текстом
         $\Delta \overline{r}=\overline{r}(t_o+\Delta t)-\overline{r}(t_0)$\\
         $\frac{\Delta \overline{r}}{\Delta t}=\frac{1}{\Delta t}*\Delta \overline{r}$\\
@@ -348,7 +346,7 @@
     % Вторая колонка (правая картинка)
     \begin{minipage}{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{8.6.2.png} % путь ко второй картинке
+        \includegraphics[width=\textwidth]{8.6.2.png} % путь ко второй картинке TODO dr/dt сверху где дельты
         \vspace{0.5em} % небольшой отступ между картинкой и текстом
         $\overline{r}'(t)=\overline{x'(t);y'(t)}$\\
         $|\overline{r}'(t)=\sqrt{x'(t)^2+y'(t)^2}|$\\
@@ -359,7 +357,7 @@
   \par
   Пусть l-переменная длина дуги\\
   \[\frac{d \overline{r}}{dl} = \frac{d \overline{r}}{dt}* \frac{dt}{dl}=\frac{\frac{d \overline{r}}{dt}}{\frac{dl}{dt}}
-  \hspace{20pt} \Big| \frac{d \overline{r}}{dt} \Big| = \Big| \frac{r'(t)}{l'(t)} \Big| = 1\]\\
+  \hspace{20pt} \Big| \frac{d \overline{r}}{dl} \Big| = \Big| \frac{r'(t)}{l'(t)} \Big| = 1\]\\
   \underline{Замечание:} Если $|\overline{a}|=1 \Rightarrow \overline{a}(\cos(\alpha),\cos(\beta),\cos(\gamma))
   \hspace{20pt} \cos^2 \alpha+\cos^2 \beta+\cos^2 \gamma=1$\\
   \[\frac{d \overline{r}}{dl}=(\overline{\cos \alpha; \cos \beta})=(\overline{\frac{dx}{dl};\frac{dy}{dl}})\]
@@ -387,6 +385,7 @@
   дифференциалом от некоторой F(x;y).\\
   \subsubsection*{Теорема 8.7.1}\label{th:8.7.1}
   \par\noindent
+  Для того, чтобы (1) не зависел от пути интегрирования
   $\Leftrightarrow$ чтобы Pdx+Qdy было в рассматриваемой области дифференциалом от некоторой функции 
   F(x;y)\\
   \underline{Доказательство:}
@@ -402,9 +401,9 @@
       \includegraphics[scale=0.6]{8.7.1.png}
     \end{minipage}
     \par
-    \[F(x;y)=\int_{(x_0;y_0)}^{(x_1;y_1)}Pdx+Qdy\]\\
+    \[F(x_1;y_1)=\int_{(x_0;y_0)}^{(x_1;y_1)}Pdx+Qdy\]\\
     \[F(x_1+\Delta x;y_1)=\int_{(x_0;y_0)}^{(x_1+\Delta x;y_1)}Pdx+Qdy=\int_{(AB)}Pdx+qdy+
-    \int_{(CD)}Pdx+Qdy\]\\
+    \int_{(BC)}Pdx+Qdy\]\\
     Рассмотрим $F(x_1+\Delta x,y_1)-F(x_1;y_1)=\int_{(BC)}Pdx=\int_{x_1}^{x_1+\Delta x}P(x;y_1)dx=
     \Big| \text{\underline{Замечание:}} \int_{a}^{b}f(x)dx=f(\xi)(b-a)\Big| = \underset{\xi \in (x_1;x_1+\Delta x)}{P(\xi;y_1)}
     \Delta x = \underset{0<\theta<1}{P(x_1+\theta \Delta x;y_1)}\Delta x$\\
@@ -2146,4 +2145,142 @@
     \end{enumerate}
   \end{enumerate}
   %КОНЕЦ 3 СЕМЕСТРА ЛЮБИМОГО МАТ АНАЛИЗА ААААААААААААААААААААААА
+  \section{Числовые и функциональные ряды. Ряды Фурье}
+  \subsection{Выраженные виды}
+  \[  U_1+U_2+\dots+U_N+\dots=\sum_{n=1}^{\infty} U_n\]
+  Называется бесконечной суммой или числовым рядом.\\
+  $\{ U_n\}$ - числа члены ряда, в общем случае $U_n \in \mathcal{C}$\\
+  $U_n$ - общий член ряда\\
+  \underline{Определение: } Сумму $\begin{matrix}
+    S_1=U_1\\
+    S_2=U_1+U_2\\
+    S_3=U_+U_2+U_3\\
+    \dots\\
+    S_n=U_1+\dots+U_n
+  \end{matrix}$
+  называется частичными суммами ряда $\sum_{n=1}^{\infty} U_n$\\
+  
+  \underline{Определение: } Если $\exists$ конечный предел $\lim_{n \to \infty} S_n =S$, то он называется
+  суммой ряда. В этом случае ряд называется сходящимся. В противном случае ряд расходится.\\
+
+  \underline{Замечание:} Пусть известна $\{S_n\}$
+  \begin{center}
+    $u_1=S-1$\\
+    $u_2=S_2-S_1$
+    $\vdots$\\
+    $u_n=S_n-S_{n-1}$
+  \end{center}
+  Каждая из последовательностей $\{u_n\},\{S_n\}$ однозначно определяет другую.\\
+
+  \underline{Замечание:} Нумерация ряда может начинаться с любого натурального числа, а также с нуля ($\varnothing$).
+
+  \underline{Пример:} Бесконечно убывающая геометрическая прогрессия (Б. у. геом. прогрессия)
+  \begin{center}
+    $1+q+q^2+\dots+q^n+\dots=\sum^{\infty}_{n=0} q^n$\\
+    $S_n=1+\dots+q^n$\\
+    $S_n q=q+\dots+q^{n+1}$\\
+    $S_n(1-q)=1-q^{n+1}\Rightarrow S_n = \frac{1-q^{n+1}}{1-q}$
+  \end{center}
+
+  \[\lim_{n \to \infty} S_n =\Bigg\{ 
+    \begin{matrix}
+      \frac{1}{1-q}, & |q|<1\\
+      \infty, & |q|>1\\
+      \infty, & |q|=1\\
+      \not \exists, & |q|=-1
+    \end{matrix}\]
+
+
+
+  \subsection{Свойства сходящихся рядов}
+  \subsubsection*{Теорема 10.2.1(Необходимое условие сходимости рядов)}\label{th:10.2.1}
+  \par\noindent
+  Если ряд $\sum_{n=1}^{\infty} U_n$ сходится, то $\lim_{n \to \infty} U_n =0$\\
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Пусть ряд $\sum_{n=1}^{\infty} U_n$ сходится $\Rightarrow \exists$ конечный $\lim_{n \to \infty} S_n =S$.\\
+     $U_n=S_n-S_{n-1}$
+    \[\lim_{n \to \infty} U_n = \lim_{n \to \infty} (S_n - S_{n-1}) = \lim_{n \to \infty} S_n - \lim_{n \to \infty} S_{n-1} = S-S = 0\]
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+  \subsubsection*{Теорема 10.2.2}\label{th:10.2.2}
+  \par\noindent
+  Если ряды $\sum_{n=1}^{\infty} U_n' $ и $\sum_{n=1}^{\infty} U_n''$ сходятся, причём их суммы собственно равны S' и S'',
+  то $\forall \lambda',\lambda'' \in R$. Ряд $\sum^{\infty}_{n=1}(\lambda' u'_0+\lambda''u''_n)$ сходится и его
+  сумма $S=\lambda'S'+\lambda''S''$\\
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Расмотрим частичные суммы рядов:
+    \[\sum^{\infty}_{n=1} u'_n, \sum_{n=1}^{\infty}u''_n,\sum_{n=1}^{\infty}(\lambda'u'_n+\lambda''u''_n)\]
+    \[\text{Рассмотрим } S_n=
+    \sum_{k=1}^{n}(\lambda'u'_k+\lambda'u''_k)=
+    \lambda'\sum_{k=1}^{n}u'_k+\lambda''\sum_{k=1}^{n}u''_k=\lambda'S_n'+\lambda''S''_n\]
+    \[S=\lim_{n\to \infty} S_n=
+    \lim_{n \to \infty}(\lambda'S'_n+\lambda''S''_n)=
+    \lambda'\lim_{n\to \infty}S'_n+\lambda''\lim_{n \to \infty}S''_n=\lambda'S'+\lambda''S''\]
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \underline{Определение: } Для ряда $\sum_{n=1}^{\infty}u_n$ ряд $\sum_{k=1}^{\infty}u_{n+k}$ называется n-ым остатком ряда.\\
+  \subsubsection*{Теорема 10.2.3}\label{th:10.2.3.}
+  \par\noindent
+  Если ряд сходится, то $\forall$ его остаток сходится. Верно и обратное утверждение.\\
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Рассмотрим $S_i^{(n)}=u_{n+1}+u_{n+2}+\dots+u_{n+i}$ i-ая частичная сумма n-ого остатка ряда.\\
+    Зафиксируем n(n-конечное).
+    Пусть $m=n+1$\\
+    $S_m=S_n+S_i^{(n)}$\\
+    При фиксированным n и $m \to \infty(i \to \infty)$ одновременно $\exists$ или $\not \exists$ конечные
+    пределы $\lim_{m\to \infty}S_m=S\lim_{i\to \infty}S_i^{(n)}=r_n$, т.е. $S=S_n+r_n$
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+  \underline{Замечание:} Если ряд $\sum_{n=1}^{\infty}$ сходится, то $\lim_{n \to \infty}r_n=0$\\
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \begin{center}
+      $S=S_n+r_n$\\
+      $r_n=S-S_n$\\
+      $\lim_{n\to \infty}r_n=\lim_{n \to \infty}(S-S_n)=\lim_{n \to \infty}S-\lim_{n\to \infty}S_n=S-S=0$
+    \end{center}
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+  
+  \subsection{Критерий Коши сходимости числового ряда}
+  \subsubsection*{Теорема 10.3.1}\label{th:10.3.1}
+  \par\noindent
+  Для того, чтобы числовой ряд $\sum_{n=1}^{\infty}$ сходился $\Leftrightarrow$
+  \[\forall \varepsilon > 0 \exists n_0=n_0(\varepsilon):\forall n>n_0 \text{ и } \forall p \geq 0 |u_n+\dots+u_{n+p}|<\varepsilon\]
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Ряд сходится, если сходится $\{S_n\}$. Если $\{S_n\}$ фундаментальная $\Rightarrow$ она сходится.
+    Покажем, что $\{S_n\}$ фундамент. Последовательность фундамент, если $\forall \varepsilon >0 \exists
+    n_0=n_0(\varepsilon):\forall m,k>n_0 \Rightarrow |S_m-S_k|<\varepsilon$. Пусть $m=n+p,k=n-1:m,k>n_0=
+    |S_{n+p}-S_{n-1}|<\varepsilon |u_n+\dots+u_{n+p}|<\varepsilon$
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \underline{Пример:} Покажем, что гармоничный ряд является расходящимся\\
+  \[1+\frac{1}{2}+\dots+\frac{1}{n}+\dots\]
+  \[\text{Пусть } p=n. 
+  \text{ Рассмотрим} 
+  \underbracket{\frac{1}{n}+\frac{1}{n+1}+\dots+\frac{1}{2n-1}}_{n \text{ слагаемых}}>
+  \frac{1}{2n}+\frac{1}{2n}+\dots+\frac{1}{2n}=\frac{1}{2}\]
+  Для $\varepsilon:0<\varepsilon<\frac{1}{2}$ не $\exists n_0=n_0(\varepsilon)$: выполняется критерий коши 
+  $\Rightarrow$ ряд расходится.\\
+  Рассмотрим $\sum_{n=1}^{\infty}\frac{1}{n^2}$\\
+  \[\underbracket{\frac{1}{n^2}+\dots+\frac{1}{(2n-1)^2}}_{n\text{ слагаемых}}
+  <\frac{1}{n^2}+\dots+\frac{1}{n^2}=\frac{1}{n}\]
+  \[\exists n_0=n_0(\varepsilon):\forall n>n_0 \frac{1}{n}<\varepsilon\]
 \end{document}

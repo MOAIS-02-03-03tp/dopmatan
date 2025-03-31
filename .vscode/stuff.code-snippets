@@ -139,7 +139,7 @@
 		"scope": "tex,latex",
 		"prefix": "sn1",
 		"body": [
-			"\\sum_{i=0}^{n-1}"
+			"\\sum_{n=0}^{\\infty}"
 		],
 		"description": "stuff for mat"
 	},
