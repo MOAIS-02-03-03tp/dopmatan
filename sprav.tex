@@ -2283,4 +2283,558 @@
   \[\underbracket{\frac{1}{n^2}+\dots+\frac{1}{(2n-1)^2}}_{n\text{ слагаемых}}
   <\frac{1}{n^2}+\dots+\frac{1}{n^2}=\frac{1}{n}\]
   \[\exists n_0=n_0(\varepsilon):\forall n>n_0 \frac{1}{n}<\varepsilon\]
+
+  \subsection{Признак сходимости рядов с неотрицательными членами}
+  \[\sum_{n=1}^{\infty} u_n, \text{ где } u_n\geq 0\]
+  
+  \textbf{Лемма :} Если члены ряда $u_n \geq 0,$ то он сходится $\Leftrightarrow$ когда $\{S_n\}$ ограничена сверху.
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Рассмотрим $\sum_{n=1}^{\infty} u_n, u_n \geq 0$\\
+    Рассмотрим $S_{n+1}=S_n+u_{n+1}\geq S_n.$ Тогда $\{S_n\}$ неубывающая. Тогда она будет сходится $\Leftrightarrow$ когда она ограничена сверху.
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \subsubsection*{Теорема 10.4.1(интегральный признак Коши сходимости числового ряда)}\label{th:10.4.1}
+  \par\noindent
+  Пусть функция $f(x)$ неотрицательная и невозрастающая $\forall x \geq 1$. 
+  Тогда, для того чтобы ряд $\sum_{n=1}^{\infty} f(n)$ сходился $\Leftrightarrow$ чтобы сходился 
+  $\int^\infty_1 f(x)dx$.
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \begin{minipage}{0.45\textwidth}
+      \includegraphics[scale=0.45]{10.4.1.png}
+    \end{minipage}
+    \hspace{1em}
+    \begin{minipage}{0.35\textwidth}
+      Так как по условию $f(x)$ монотонна $\forall x \geq 1 \Rightarrow$ она была интегрируема $\forall [1;b] b \in [1;+\infty]$.
+      Т.е. имеет смысл несобственный интеграл I рода.
+    \end{minipage}
+    \vspace{1em}
+    \par
+    Рассмотрим $k \leq x \leq k+1$. Так как $f(x)$ невозрастающая, то 
+    $f(k)\geq f(x)\geq f(k+1)$. Проинтегрируем это неравенство на $[k;k+1]$.
+    \[\int_{k}^{k+1} f(k)dx \geq \int_{k}^{k+1} f(x)dx \geq \int_{k}^{k+1} f(k+1 dx)\]
+    \[f(k) \int_{k}^{k+1} dx \geq \int_{k}^{k+1} f(x)dx \geq f(k+1) \int_{k}^{k+1} dx\]
+    \[f(k)\geq \int_{k}^{k+1}f(x)dx \geq f(k+1)\]
+    Просуммируем по $k=\overline{1,n}.$
+    \[\sum_{k=1}^{n}f(k+1)\leq \sum_{k=1}^{n}f(x)dx \leq \sum_{k=1}^{n}f(k)\]
+    \[f(2)+f(3)+\dots+f(n+1)\leq \int_{1}^{n+1} f(x)dx \leq f(1)+f(2)+\dots+f(n)\]
+    \[S_{n+1}-f(1)\leq\int_{1}^{n+1}f(x)dx \leq S_n\]
+    
+    \boxed{\Rightarrow} Пусть $\sum_{n=1}^{\infty}f(n)$ сходится. \\
+    Тогда его сумма равна S. По лемме $S_n \leq S \forall n$. Тогда $\int_{1}^{n+1} f(x)dx \leq S_n \leq S.$
+    Выберем $b \leq n+1$. Тогда $\int_{1}^{b} f(x)dx \leq \int_{1}^{n+1}f(x)dx \leq S_n \leq S$.
+    Т.е. множество интегралов $\int_{1}^{b} f(x)dx, b\geq 1$ ограничены сверху $\Rightarrow \int_{1}^{\infty}f(x)dx$ сходится.\\
+    
+    \boxed{\Leftarrow} Пусть $\int_{1}^{\infty} f(x)dx $ сходится.\\
+    Тогда $S_{n+1} \leq f(1) + \int_{1}^{n+1}f(x)dx \leq f(1)+\int_{1}^{\infty}f(x)dx$\\
+    Т.е. $\{S_{n+1}\}$ ограничена сверху $\Rightarrow \exists \lim_{n \to \infty} S_{n+1}=S.$ А это значит $\sum_{n=1}^{\infty} f(x)$ сходится.
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \underline{Пример:} Рассмотрим $\sum_{n=1}^{\infty} \frac{1}{n^p}$
+  \[\text{Рассмотрим } \int_{1}^{\infty} \frac{dx}{x^p} = \Big| p \not = 1 \Big|=
+  \lim_{A \to \infty}\int_{1}^{A} \frac{dx}{x^p} 
+  = \lim_{A \to \infty} \Bigg[ \frac{x^{-p+1}}{-p+1}\Bigg|^A_1 \Bigg] =
+  \lim_{A \to \infty} \Bigg[ \frac{A^{1-p}}{1-p} - \frac{1}{1-p} \Bigg] =
+  \Bigg\{ \begin{matrix}
+    \frac{1}{p-1}, p>1\\
+    \infty, p<1
+  \end{matrix}\]
+  \[\text{Рассмотрим } \int_{1}^{\infty} \frac{dx}{x} = 
+  \lim_{A \to \infty} \int_{1}^{A} \frac{dx}{x} = 
+  \lim_{A \to \infty} \Big[ ln|x| \Big|^A_1 \Big] =
+  \lim_{A \to \infty} \Big[ ln A - ln1 \Big] = \infty\] 
+  \[\text{Вывод: } \sum_{n=1}^{\infty} \frac{1}{n^p} \hspace{10pt} \setlength{\arraycolsep}{1pt}\begin{matrix}
+    & \text{ сходится } p>1\\
+    \nearrow  \\
+    \searrow  \\
+    & \text{ расходится } p\leq 1
+  \end{matrix}\]
+
+  \subsubsection*{Теорема 10.4.2(I признак сравнения)}\label{th:10.4.2}
+  \par\noindent
+  Пусть $0\leq u_n \leq U_n$. Тогда 
+  \begin{enumerate}
+    \item Если $\sum_{n=1}^{\infty} U_n$ сходится $\Rightarrow \sum_{n=1}^{\infty} u_n$ сходится.
+    \item Если $\sum_{n=1}^{\infty} u_n$ расходится $\Rightarrow \sum_{n=1}^{\infty} U_n$ расходится.
+  \end{enumerate}
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \begin{enumerate}
+      \item Пусть $\sum_{n=1}^{\infty} U_n$ сходится. Тогда $\sigma = \sum_{n=1}^{\infty}U_n$\\
+      Рассмотрим $\sigma_n = \sum_{k=1}^{\infty} U_k$. Так как $U_n \geq 0 \Rightarrow \sigma_n \leq \sigma$\\
+      Рассмотрим $S_n = \sum_{k=1}^{\infty} u_k \leq \sum_{k=1}^{\infty} U_k = \sigma_n \leq \sigma$\\
+      $\{S_n\}$ невозрастающая и ограничена сверху $\Rightarrow$ по лемме $\sum_{n=1}^{\infty}u_n$ сходится.
+      \item Пусть $\sum_{n=1}^{\infty} u_n$ расходится. Тогда $\sum_{n=1}^{\infty} U_n$ расходится, потому что если бы он 
+      сходился, тогда по (1) $\sum_{n=1}^{\infty} u_n$ был бы сходящимся, а  это не так.
+    \end{enumerate}
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \subsubsection*{Теорема 10.4.3(Следствие признака сравнения. II признак сравнения)}\label{th:10.4.3}
+  \par\noindent
+  Пусть $u_n \geq 0, U_n >0 \; \forall n$ и $\lim_{n \to \infty} \frac{u_n}{U_n} = l$.
+  Тогда:
+  \begin{enumerate}
+    \item Если $\sum_{n=1}^{\infty} U_n$ сходится и $0\leq l \leq \infty,$ то $\sum_{n=1}^{\infty} u_n$ сходится\\
+    \item Если $\sum_{n=1}^{\infty} U_n$ расходится и $0\leq l \leq \infty$, то $\sum_{n=1}^{\infty}u_n$ расходится
+  \end{enumerate}
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \begin{enumerate}
+      \item Пусть $0\leq l \leq \infty $ и $\lim_{n \to \infty} \frac{u_n}{U_n}=l. $\[\exists N=N(\varepsilon): \forall n>N
+      \Big| \frac{u_n}{U_n}-l \Big| < \varepsilon, \frac{u_n}{U_n} \in U_\varepsilon (l)\]
+      А это значит $\forall n > N \frac{u_n}{U_n}<l+1$.\\
+      Рассмотрим $\sum_{A=N}^{\infty}U_n$ сходится $\Rightarrow \sum_{n=N}^{\infty}(l+1)U_n$ сходится $\Rightarrow \sum_{k=1}^{\infty} u_{N+k}$
+      сходится по I признаку сравнения.\\
+      Т.е. сходится исходный ряд $\sum_{n=1}^{\infty} u_n$, так как сходится его остаток.
+      
+      \item Пусть $0<l \leq \infty$
+      \[\exists l: 0 < l' < l. \exists n_0=n_0(\varepsilon): \forall n>n_0 \frac{u_n}{U_n} \in \varepsilon \text{ окрестности } (.) l\]
+      А это значит $\forall n>n_0 \frac{u_n}{U_n}> l' \Rightarrow u_n > l'U_n$.\\
+      Так как $\sum_{n=1}^{\infty}U_n$ расходится $\Rightarrow \sum_{n=1}^{\infty} l'U_n$ расходится 
+      $\Rightarrow \sum_{k=1}^{\infty} u_{n_0+k}$ расходится по I признаку сравнения.
+    \end{enumerate}
+    Тогда исходный $\sum_{n=1}^{\infty}u_n$ расходится, так как расходится его $n_0$-ый остаток
+  \end{adjustwidth}
+  
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \underline{Примеры:}
+  \begin{enumerate}
+    \item $\sum_{n=1}^{\infty} \frac{sin^2 \frac{n^2 \alpha^3}{\sqrt[3]{e^{n^2+ln n^2}}}}{n^2}$.
+    \\ Рассмотрим $\frac{sin^2 \frac{n^2 \alpha^3}{\sqrt[3]{e^{n^2+ln n^2}}}}{n^2} \leq \frac{1}{n^2}$\\
+    Рассмотрим $\sum_{n=1}^{\infty} \frac{1}{n^2}$ сходится (так как $m=2$) $\Rightarrow$ исходный ряд сходится по I признаку сравнения
+
+    \item $\sum_{n=1}^{\infty} \frac{1}{\sqrt{n}+1}$\\
+    Рассмотрим $\sum_{n=1}^{\infty}\frac{1}{\sqrt{n}}$-расходится($m=\frac{1}{2}$)\\
+    Рассмотрим $\lim_{n \to \infty} \frac{\frac{1}{\sqrt{n}+1}}{\frac{1}{\sqrt{n}}}=1\not=0 \Rightarrow$ исходный ряд расходится по II признаку сравнения.
+  \end{enumerate}
+
+  \subsubsection*{Теорема 10.4.4(Признак Даламбера)}\label{th:10.4.4}
+  \par\noindent
+  Если для ряда $\sum_{n=1}^{\infty} u_n \; u_n>0 \exists \lim_{n\to \infty} \frac{u_{n+1}}{u_n}=l$\\
+  Если $l<1 \Rightarrow \sum_{n=1}^{\infty} u_n$ сх\\
+  Если $l>1 \Rightarrow \sum_{n=1}^{\infty} u_n$ рсх\\
+  Если $l=1 \Rightarrow$ признак Даламбера не отвечает на вопрос о сходимости или расходимости исходного ряда
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \begin{minipage}{0.2\textwidth}
+      $1) l<1$
+    \end{minipage}
+    \hspace{1em}
+    \begin{minipage}{0.55\textwidth}
+      \includegraphics[scale=0.3]{10.4.2.png}
+    \end{minipage}
+    \vspace{1em}
+    \par
+
+    Пусть $l<q<1$. Тогда $\exists n_0=n_0(\varepsilon):\forall n>n_0 \frac{u_{n+1}}{u_n}\in \varepsilon$ окрестности (.) 
+    $l \Rightarrow \forall n>n_0 \frac{u_{n+1}}{u_n}<q \Rightarrow u_{n+1} < q*u_n$\\
+    \[u_{n_0+k}<qu_{n_0+k-1}<q^2 u_{n_0+k-2} < \dots < q^{k-1}u_{n_0+1}\]
+
+    Рассмотрим $\sum_{n=1}^{\infty} q^{n-1} u_{n_0+1}=u_{n_0+1}\sum_{n=1}^{\infty}q^{n-1},$ ряд
+    $\sum_{n=1}^{\infty}q^{n-1}$ сх как бесконечно убывающая геометрическая прогрессия.\\
+    Тогда ряд $u_{n_0+1}\sum_{n=1}^{\infty}q^{n-1}$ сх.\\
+    Тогда ряд $\sum_{n=1}^{\infty} u_{n_0+k}$- сх по первому признаку сравнения.\\
+    Тогда $\sum_{n=1}^{\infty} u_n$ сх, так как сходятся его $n_0$-ый остаток
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+    
+    \begin{minipage}{0.1\textwidth}
+      2)
+    \end{minipage}
+    \hspace{1em}
+    \begin{minipage}{0.55\textwidth}
+      \includegraphics[scale=0.6]{10.4.3.png}      
+    \end{minipage}
+    \vspace{1em}
+    \par
+
+    $\exists n_0=n_0(\varepsilon): \forall n>n_0 \frac{u_{n+1}}{u_n} \in \varepsilon$ - окрестности (.) $l$.\\
+    Тогда $\forall n > n_0 \frac{u_{n+1}}{u_n}>1$\\
+    \[u_{n+1}=u_n \text{ для } n>n_0\]
+    То есть: 
+    \[\begin{matrix}
+      u_{n_0+2}>u_{n_0+1}\\
+    u_{n_0+3}>u_{n_0+2}>u_{n_0+1}\\
+    u_{n_0+k}>\dots>u_{n_0+1}\\
+    \end{matrix}\]
+
+    Последовательность членов ряда не стремится к нулю.\\
+    Необходимое условие не выполняется, ряд расходится.\\
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+  \end{adjustwidth}
+
+  \subsubsection*{Теорема 4.5 (Радикальный признак Коши)}\label{th:10.4.5}
+  \par\noindent
+  Пусть для ряда $\sum_{n=1}^{\infty} u_n \; u_n>0$\\
+  $\exists \lim_{n \to \infty} \sqrt[n]{u_n}=l$\\
+  Тогда:
+  \begin{enumerate}
+    \item Если $l<1 \Rightarrow \sum_{n=1}^{\infty} u_n$ сх\\
+    \item Если $l>1 \Rightarrow \sum_{n=1}^{\infty} u_n$ рсх\\
+    \item Если $l=1$, то радикальный признак Коши не отвечает вопрос о сходимости/расходимости ряда. 
+  \end{enumerate}
+  
+  \pagebreak
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \begin{enumerate}
+    \item $\sqsupset l<1$ \includegraphics[scale=0.6]{10.4.4.png}. $\exists q:l<q<1$\\
+
+    \[ \exists n_0=n_0(\varepsilon):\forall n>n_0: \sqrt[n]{u_n} \in \varepsilon \text{- окрестности (.)} \]    
+    Тогда $\forall n>n_0 \sqrt[3]{u_n}<9.$ Тогда\\
+    $
+      u_n>n_0 \hspace{20pt} u_n<q\\
+      u_{n_0+1}<q^{\overline{n_0+1}}\\
+      u_{n_0+2}<q^{n_0+2}\\
+      u_{n_0+k}<q^{n_0+k}
+    $\\
+    Рассмотрим $\sum_{k=1}^{\infty} q^{n_0+k}$ сходится как бесконечно убывающая геометрическая прогрессия. Тогда
+    $\sum_{k=1}^{\infty} u_{n_0+k}$ сходится по I признаку сравнения. Тогда исходный ряд сходится, так как сходится его 
+    $n_0$ остаток
+
+    \item $\sqsupset l>1$ \includegraphics[scale=0.2]{10.4.5.png}\\
+    $\exists n_0=n_0(\varepsilon):\forall n>n_0 
+    \begin{matrix}
+      \sqrt[n]{u_n}\\
+      \sqrt{u_n}
+    \end{matrix}
+    \hspace{20pt}
+    \begin{matrix}
+      u_{n_0+1}>1\\
+      u_{n_0+2}>1\\
+      \vdots\\
+      u_{n_0+k}\\
+    \end{matrix}
+    $\\
+    Последовательность членов ряда не стремится к нулю. Ряд $\sum_{k=1}^{\infty} u_{n_0+k} \Rightarrow
+    \sum_{n=1}^{\infty} u_n$ расходится, так как расходится его $n_0$-ый остаток.
+    \end{enumerate}
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \underline{Замечание:} 
+  \begin{enumerate}
+    \item Если общий член ряда содержит факториал, рекомендуется использовать признак Даламбера:\\
+    Рассмотрим $\sum_{n=1}^{\infty} \dfrac{1}{n!}$
+    \[u_n = \frac{1}{n!} \hspace{20pt} u_{n+1}= \frac{1}{(n+1)!} \hspace{20pt} 
+    \lim_{n \to \infty} = \frac{u_{n+1}}{u_n}=\lim_{n \to \infty} \frac{1}{n+1} =0 <1\]
+    \begin{center}
+      \text{Исходный ряд сходится по Даламберу}
+    \end{center} 
+
+    \item Если общий член ряда возводится в $n$-ую степень, то рекомендуется использовать 
+    радикальный признак.\\
+    Рассмотрим $\sum_{n=1}^{\infty} \frac{1}{n^n}$
+    \[\lim_{n \to \infty} \sqrt[n]{u_n} = \lim_{n \to infty} \frac{1}{n}=0<1 \]
+    \begin{center}
+      Исходный ряд сходится по радикальному признаку Коши.
+    \end{center}
+
+    \pagebreak
+
+    \item Если общий член ряда-дробно-рациональная функция, то ни признак Даламбера, ни 
+    рациональный признак Коши не даст ответ на вопрос о сходимости(расходимости) ряда.\\
+    $\sum_{n=1}^{\infty} \frac{n+1}{n(n+3)}$
+    \[\lim_{n \to \infty} \frac{u_{n+1}}{u_n}=\lim_{n \to \infty}\frac{(n+2)n(n+3)}{(n+1)(n+4)(n+1)}=1\]
+    
+    \item Если один из признаков (Даламбер/Коши) не дал ответа на вопрос о 
+    сходимости (расходимости) ряда, не рекомендуется использовать другой признак (Коши/Даламбер).
+  \end{enumerate}
+
+  \subsection{Знакочередующиеся ряды}
+  \underline{Определение: } Ряд вида: $u_1-u_2+u_3-u_4+\dots+(-1)^{n+1} u_n =
+  \sum_{n=1}^{\infty} (-1)^{n+1} u_n $ называется знакочередующимся рядом.\\
+
+  \subsubsection*{Теорема 10.5.1(признак Лейбница)}\label{th:10.5.1}
+  \par\noindent
+  \begin{enumerate}
+    \item Если для знакочередующегося ряда $\sum_{n=1}^{\infty} (-1)^{n+1} u_n \hspace{10pt} u_n \geq 0$
+    последовательность $\{u_n\}$ убывающая или не возрастающая и $\lim_{n \to \infty} u_n =0$, то ряд сходится.
+
+    \item Если $S_n = \sum_{k=1}^{n} (-1)^{k+1}u_k, S = \sum_{n=1}^{\infty} u_n$, то $\forall n \in N$ 
+    выполняется:
+    \[|S_n-S|\leq u_{n+1}\]
+  \end{enumerate}
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \begin{enumerate}
+      \item
+      $\begin{matrix}
+        S_1=u_1 && S_2=u_1-u_2\\
+        S_3=u_1-u_2+u_3 && S_4 = u_1-u_2+u_3-u_4 \\
+        \dots && S_{2k} = (u_1-u_2)+(u_3-u_4)+\dots + (u_{2k-1}-u_{2k})
+      \end{matrix}$\\
+
+      \begin{center}
+              Так как по условию $\{u_n\}$ убывающая или невозрастающая,
+      \end{center}
+      \[u_1-u_2 > 0 (\geq 0)\dots  (u_{2k-1}-u_{2k}) > 0 (\geq 0)\] 
+      \begin{center}
+        Тогда
+      \end{center}
+      \[S_{2k+2}=S_{2k}+(u_{2k+1}-u_{2k+2})\geq S_{2k}\]
+      \begin{center}
+        То есть $\{S_{2k}\}$ неубывающая(возрастающая).
+      \end{center}
+      \begin{center}
+        С другой стороны
+      \end{center} 
+      \[s_{2k}=u_1-(u_2-u_3)-(u_4-u_5)-\dots-(u_{2k-2}-u_{2k-1})-u_{2k}\leq u_1\]
+      Получим $\{S_{2k}\}$ неубывающая(возрастающая) и ограничена сверху. \\
+      То есть 
+      $\exists \lim_{k \to \infty}S_{2k}=S$.\\
+
+
+
+      Рассмотрим последовательность с нечётными номерами
+      \[S_{2k+1}=S_{2k}+u_{2j+1}\]
+      \[\lim_{k \to \infty} S_{2k+1}=\lim_{k \to \infty} S_{2k}+\lim_{k \to \infty} u_{2k+1} = S\]\\
+      То есть $\forall n \lim_{n \to \infty} S_n =S$
+
+
+      \item Докажем, что $|S_n-S|\leq u_{n+1}$.\\
+      $\{S_{2n}\}$ неубывающая(возрастающая) $S_{2n}\leq S$\\
+      Рассмотрим $\{S_{2n+1}\}$ 
+      \[S_{2n+1}=S_{2n-1}-u_{2n}+u_{2n+1}=S_{2n-1}-(u_{2n}-u_{2n+1})\leq S_{2n-1}\]
+      То есть $\{S_{2n+1}\}$ невозрастающая (убывающая)
+      \[S_{2n+1}\geq S\]
+      Получим что $S_{2n}\leq S_{2n+2}\leq S\leq S_{2n+1}(-S_{2n})$
+      \[a) 0\leq S-S_{2n}\leq S_{2n-1}-S{2n}\]
+      \[0\leq S-S_{2n}\leq u_{2n+1}\]
+      \[b) S_{2n+2}-S_{2n+1}\leq S-S_{2n+1}\leq | \cdot (-1)\]
+      \[0\leq S_{2n+1}-S \leq S_{2n+1} - S_{2n+1}\]
+      \[0\leq S_{2n+1}-S \leq u_{2n+2}\]
+      $\forall n \hspace{10pt} 0\leq |S-S_n|\leq u_{n+1}$ 
+    \end{enumerate}
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \subsection{Абсолютно сходящиеся ряды}
+  \underline{Замечание:} В этом параграфе ряд $\sum_{n=1}^{\infty} u_n$ - знакочередующийся
+
+  \underline{Определение: } Ряд $\sum_{n=1}^{\infty} u_n$ сходится абсолютно, если сходится ряд $\sum_{n=1}^{\infty} |u_n|$
+
+  \subsubsection*{Теорема 10.6.1(Критерий Коши абсолютной сходимости знакочередующиегося ряда)}\label{th:10.6.1}
+  \par\noindent
+  Для того, чтобы ряд $\sum_{n=1}^{\infty} u_n$ абсолютно сходился необходимо и достаточно чтобы 
+  \[ \forall \varepsilon > 0 \exists n_0 = n_0(\varepsilon): \forall n > n_0 \forall p \geq 0 \Rightarrow \sum_{k=0}^{p} |u_{n+k}| < \varepsilon\]
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Следует из \hyperref[th:10.3.1]{критерия Коши сходимости числового ряда} и определения абсолютной 
+    сходимости ряда.
+  \end{adjustwidth}
+  
+  \subsubsection*{Теорема 10.6.2}\label{th:10.6.2}
+  \par\noindent
+  Если ряд абсолюнто сходится, то он сходится.
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Так как ряд сходится абсолютно, то согласно \hyperref[th:10.6.1]{Теореме 10.6.1}
+    \[\forall \varepsilon > 0 \exists n_0 = n_0(\varepsilon): \forall n>n_0 \text{ и } \forall p \geq 0
+    \sum_{k=0}^{p} |u_{n+k}| < \varepsilon\]
+    \[\sum_{k=0}^{p} u_{n+k} \leq \sum_{k=0}^{p} |u_{n+k}| < \varepsilon\]
+    Тогда ряд сходится по \hyperref[th:10.3.1]{Теореме 10.3.1}
+  \end{adjustwidth}
+
+  \subsubsection*{Теорема 10.6.3}\label{th:10.6.3}
+  \par\noindent
+  Если ряд $\sum_{n=1}^{\infty} u_n$ абсолютно сходится, то ряд $\sum_{m=1}^{\infty} \overset{*}{u_m}$,
+  составленный из тех же членов, что и исходный ряд, но взятых в другом порядке, также абсолютно сходится и 
+  имеет ту же сумму.
+  \[\sum_{n=1}^{\infty} u_n = \sum_{m=1}^{\infty} \overset{*}{u_m}\]
+
+  \subsubsection*{Теорема 10.6.4}\label{th:10.6.4}
+  \par\noindent
+  Если ряд $\sum_{n=1}^{\infty} u_n$ и $\sum_{n=1}^{\infty} V_n$ абсолютно сходятся, то ряд, составленный
+  из всевозможных произведений $u_n V_n$ членов этого ряда, также абсолютно сходятся.
+  Причем, если $S' = \sum_{n=1}^{\infty}u_n, S''=\sum_{n=1}^{\infty} V_n$, то сумма ряда, составленного
+  из всевозможных произведений $u_n V_n$, будет равна $S=S'\cdot S''$.
+
+  \begin{enumerate}
+    \item[(1)] $\underset{\text{сх по \hyperref[th:10.6.1]{Th. 10.6.1}}}{\sum_{n=1}^{\infty}} (-1)^n \cdot \frac{1}{n^2}$
+    Рассмотрим $\sum_{n=1}^{\infty} \frac{1}{n^2}$ - (2) сходится (m=2)\\
+    Тогда  (1) сходится абсолютно $\Rightarrow$ сходится по \hyperref[th:10.6.2]{Th. 10.6.2}
+  \end{enumerate}
+
+  \subsection{Условно сходящиеся ряды}
+  \underline{Определение: } Сходящийся, но не абсолютно ряд, называется условно сходящимся рядом.
+
+  \underline{Пример:}\\
+  \begin{minipage}{0.45\textwidth}
+    \[\sum_{n=1}^{\infty} (-1)^n \frac{1}{n}\]
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    \begin{enumerate}
+      \item $u_n>u_{n+1}$\\
+      \text{ } \hspace{60pt} Ряд сходится по Th. Лейбница\\
+      $\frac{1}{n}>\frac{1}{n+1}$
+      \item $\lim_{n \to \infty} u_n =0$ \hspace{40pt} $\measuredangle$ $\sum_{n=1}^{\infty} \frac{1}{n}$рсх(гармон.)\\
+      $\lim_{n \to \infty} \frac{1}{n}=0$ \hspace{40pt} Тогда исх ряд сх-ся условно
+    \end{enumerate}
+    
+  \end{minipage}
+  \vspace{1em}
+  \par
+  
+  Рассмотрим $\sum_{n=1}^{\infty} u_n$ - знакочередующийся. \\
+  Обозначим $
+  \begin{matrix}
+    \overset{+}{u_n} \text{-  неотрицательные слагаемые исходного ряда}\\
+    \overset{-}{u_n} \text{- отрицательные слагаемые}
+  \end{matrix}$
+
+  \underline{Замечание:} $\overset{+}{u_n},\overset{-}{u_n}$ взяты в том же порядке, в котором они расположены
+  в исходном ряде.
+
+  Рассмотрим ряды $\sum_{n=1}^{\infty} \overset{+}{u_0}(1) \hspace{10pt} \sum_{n=1}^{\infty}\overset{-}{u_n}(2)$
+  
+  \textbf{Лемма :} Если ряд $\sum_{n=1}^{\infty} u_n$ условно сходится, то (1) и (2) расходятся.
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    $\sqsupset S_n = \sum_{k=1}^{n} |u_k| -$ n-ая частичная сумма ряда из модулей\\
+    $\overset{+}{S_n} = \sum_{k=1}^{n} \overset{+}{u_n}$ - n-ая частичная сумма ряда (1)\\
+    $\overset{-}{S_n} = \sum_{k=1}^{n} \overset{-}{u_n}$ - n-ая частичная сумма ряда (2)\\
+    Суммы $S_n',\overset{+}{S_n}, \overset{-}{S_n}$ неотрицательны\\
+    Рассмотрим \Bigg\{
+    $
+    \begin{matrix}
+      S_n = \overset{+}{S_m} - \overset{-}{S_k}\\
+      S_n'=\overset{+}{S_m} + \overset{-}{S_k}\\
+      \overset{+}{S_m}, \overset{-}{S_k}
+    \end{matrix}
+    \hspace{20pt}  n=m+k$\\
+    Решение: 
+    \[\overset{+}{S_m} = \frac{S_n+S_n'}{2}, \overset{-}{S_k} = \frac{S_m'-S_m}{2}\]
+    \[\lim_{m \to \infty} \overset{+}{S_m} = \infty \Rightarrow \sum_{n=1}^{\infty} \overset{+}{u_n} \text{ расходится}\]
+    \[\lim_{k \to \infty} \overset{-}{S_k} = \infty \Rightarrow  \sum_{n=1}^{\infty} \overset{-}{u_n} \text{расходится}\]
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \subsubsection*{Теорема 10.7.1(Теорема Римана)}\label{th:10.7.1}
+  \par\noindent
+  Если ряд $\sum_{n=1}^{\infty} (-1)^n u_n$ условно сходится, то каково бы не было дейсвтительного числа
+  S можно так преставить члены этого ряда, что сумма получившегося ряда будет равна S.
+
+  \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+      \begin{tikzpicture}[scale=1.2]
+        \draw[->] (-4.5,0) -- (4.5,0);
+    
+        \filldraw (-2,0) circle (1pt) node[above] {$\overset{+}{u_1} + \dots + \overset{+}{u_{n_1}} - \overset{-}{u_1} - \dots - \overset{-}{u_{n_2}}$};
+        \filldraw (0,0) circle (1pt) node[below=2pt] {$S$};
+        \filldraw (1.5,0) circle (1pt) node[below] {$\overset{+}{u_1} + \dots + \overset{+}{u_{n_1}}$};
+    \end{tikzpicture}
+
+    Рассмотрим ряды
+    $
+    \begin{matrix}
+      \sum_{n=1}^{\infty} \overset{+}{u_n}(1)\\
+      \sum_{n=1}^{\infty} \overset{-}{u_n}(2)
+    \end{matrix}
+    $(1),(2) - расходятся\\
+    Выберем из ряда (1) подряд число слагаемых так, чтобы их сумма была $> S$, а сумма меньшего числа
+    этих слагаемых была не больше $S$. Обозначим через $n_1$ наименьшее натуральное число при котором
+    выполняется условие:
+    \[\overset{+}{u_1}+\overset{+}{u_2}+\dots+\overset{+}{u_{n_1}} > S\]
+    \[\overset{+}{u_1}+\overset{+}{u_2}+\dots+\overset{+}{u_{n_1-1}} \leq S\]
+
+    Выберем из ряда (2) подряд столько слагаемых, чтобы вычтя их сумму из суммы уже набранных из ряда
+    (1) слагаемых, получить значение $<S$ и чтобы меньшее число указанных слагаемых не обладало
+    этим свойством. Обозначим наименьшее натуральное число, обладающее этим свойством, $n_2$.
+
+    \[\overset{+}{u_1}+\overset{+}{u_2}+\dots+\overset{+}{u_{n_1}}-\overset{-}{u_1}-\overset{-}{u_2}-\dots-\overset{-}{u_{n_2}}<S\]
+
+    \[\overset{+}{u_1}+\overset{+}{u_2}+\dots+\overset{+}{u_{n_1}}-\overset{-}{u_1}-\overset{-}{u_2}-\dots-\overset{-}{u_{n_2-1}} \geq S\]
+
+    Обозначим через $n_3$ наименьшее натуральное числоm котором обладает свойством:
+    \[\overset{+}{u_1}+\dots\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots -\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3}} > S\]
+
+    \[\overset{+}{u_1}+\dots\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots -\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3-1}} \leq S\]
+
+    Обозначим через $n_4$ наименьшее натуральное число, обладающее свойсвтом:
+
+    \[\overset{+}{u_1}+\dots+\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots-\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3}}-\overset{-}{u_{n_2+1}}-\dots-\overset{-}{u_{n_4}} < S\]
+
+    \[\overset{+}{u_1}+\dots+\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots-\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3}}-\overset{-}{u_{n_2+1}}-\dots-\overset{-}{u_{n_4-1}} \geq S\]
+    
+
+    Продолжая этот процесс, получим ряд:
+
+    \[\overset{+}{u_1}+\dots+\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots-\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3}}-\overset{-}{u_{n_2+1}}-\dots-\overset{-}{u_{n_4}}+\dots\]
+  
+    Обозначим $S_n$ - частчичные суммы этого ряда
+
+    \[\begin{matrix}
+      S_{n_1}>S & S_{n_1-1}\leq S\\
+      S_{n_1+n_2}<S & S_{n_1+n_2-1}\geq S\\
+      S_{n_1+n_2+n_3} > S & S_{n_1+n_2+n_3-1} \leq S\\
+      S_{n_1+n_2+n_3+n_4} < S & S_{n_1+n_2+n_3+n_4-1} \geq S
+    \end{matrix}\]
+    Получим:
+    \[\begin{matrix}
+      S_{n_1+n_2+\dots+n_{2k-1}} > S & & S_{n_1+n_2+\dots+n_{2k-1}-1} \leq S\\
+      S_{n_1+n_2+\dots+n_{2k}} < S & &  S_{n_1+n_2+\dots+n_{2k-1}} \geq S\\
+      S_{n_1+n_2+n_{2k-1}-1} \leq & S & < s_{n_1+n_2+\dots+n_{2k-1}}(3)\\
+      S_{n_1+n_2+n_{2k}} < & S & \leq s_{n_1+n_2+\dots+n_{2k-1}-1}(4)\\
+    \end{matrix}\]
+    Рассмотрим (3). Вычтем из каждой части (3) $S_{n_1+\dots+n_{2k-1}-1}$\\
+    Получим $0\leq S - S_{n_1+\dots+n_{2k-1}-1} < S_{n_1+\dots+n_{2k-1}} - S_{n_1+\dots+n_{2k-1}-1}$
+    \[\lim_{k \to \infty} S_{n_1+\dots+n_{2k-1}-1} = S\]
+    Аналогично, рассмотрев (4) можно показать, что:
+    \[\forall k \lim_{k \to \infty} S_k =S \text{ (удовлетворяет условиям алгоритма)}\]
+    То есть $S$ - сумма ряда из перестановок
+  \end{adjustwidth}
+
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \underline{Замечание:} Теорема Римана показывает, что одно из основных свойств конечных сумм
+  (независимость суммы от порядка суммирования, коммунитативность сложения) не переносится на бесконечнные суммы:
+  если ряд сходится условно, то его сумма зависит от порядка слагаемых.
+
+  \subsection{Признаки сходимости рядов Дирихле и Абеля}
+  Рассмотрим конечную сумму
+  \[\sum_{i=1}^{\infty} a_i b_i \boxed{=} \]
+  Обозначим $
+  \begin{matrix}
+    B_i=b_1+\dots+b_i, i=1,\dots,a\\
+    b_1=B_1 \hspace{10pt} b_2=B_2 \hspace{10pt} b_i=B_i \hspace{10pt}
+  \end{matrix}\\
+  \boxed{=} a_1b_1+a_2b_2+\dots+a_nb_n=
+  $
+
 \end{document}
