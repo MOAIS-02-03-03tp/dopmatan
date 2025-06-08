@@ -2635,5 +2635,206 @@
   \begin{center}
     \textbf{Ч.т.д.}
   \end{center}
+
+  \subsection{Абсолютно сходящиеся ряды}
+  \underline{Замечание:} В этом параграфе ряд $\sum_{n=1}^{\infty} u_n$ - знакочередующийся
+
+  \underline{Определение: } Ряд $\sum_{n=1}^{\infty} u_n$ сходится абсолютно, если сходится ряд $\sum_{n=1}^{\infty} |u_n|$
+
+  \subsubsection*{Теорема 10.6.1(Критерий Коши абсолютной сходимости знакочередующиегося ряда)}\label{th:10.6.1}
+  \par\noindent
+  Для того, чтобы ряд $\sum_{n=1}^{\infty} u_n$ абсолютно сходился необходимо и достаточно чтобы 
+  \[ \forall \varepsilon > 0 \exists n_0 = n_0(\varepsilon): \forall n > n_0 \forall p \geq 0 \Rightarrow \sum_{k=0}^{p} |u_{n+k}| < \varepsilon\]
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Следует из \hyperref[th:10.3.1]{критерия Коши сходимости числового ряда} и определения абсолютной 
+    сходимости ряда.
+  \end{adjustwidth}
   
+  \subsubsection*{Теорема 10.6.2}\label{th:10.6.2}
+  \par\noindent
+  Если ряд абсолюнто сходится, то он сходится.
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Так как ряд сходится абсолютно, то согласно \hyperref[th:10.6.1]{Теореме 10.6.1}
+    \[\forall \varepsilon > 0 \exists n_0 = n_0(\varepsilon): \forall n>n_0 \text{ и } \forall p \geq 0
+    \sum_{k=0}^{p} |u_{n+k}| < \varepsilon\]
+    \[\sum_{k=0}^{p} u_{n+k} \leq \sum_{k=0}^{p} |u_{n+k}| < \varepsilon\]
+    Тогда ряд сходится по \hyperref[th:10.3.1]{Теореме 10.3.1}
+  \end{adjustwidth}
+
+  \subsubsection*{Теорема 10.6.3}\label{th:10.6.3}
+  \par\noindent
+  Если ряд $\sum_{n=1}^{\infty} u_n$ абсолютно сходится, то ряд $\sum_{m=1}^{\infty} \overset{*}{u_m}$,
+  составленный из тех же членов, что и исходный ряд, но взятых в другом порядке, также абсолютно сходится и 
+  имеет ту же сумму.
+  \[\sum_{n=1}^{\infty} u_n = \sum_{m=1}^{\infty} \overset{*}{u_m}\]
+
+  \subsubsection*{Теорема 10.6.4}\label{th:10.6.4}
+  \par\noindent
+  Если ряд $\sum_{n=1}^{\infty} u_n$ и $\sum_{n=1}^{\infty} V_n$ абсолютно сходятся, то ряд, составленный
+  из всевозможных произведений $u_n V_n$ членов этого ряда, также абсолютно сходятся.
+  Причем, если $S' = \sum_{n=1}^{\infty}u_n, S''=\sum_{n=1}^{\infty} V_n$, то сумма ряда, составленного
+  из всевозможных произведений $u_n V_n$, будет равна $S=S'\cdot S''$.
+
+  \begin{enumerate}
+    \item[(1)] $\underset{\text{сх по \hyperref[th:10.6.1]{Th. 10.6.1}}}{\sum_{n=1}^{\infty}} (-1)^n \cdot \frac{1}{n^2}$
+    Рассмотрим $\sum_{n=1}^{\infty} \frac{1}{n^2}$ - (2) сходится (m=2)\\
+    Тогда  (1) сходится абсолютно $\Rightarrow$ сходится по \hyperref[th:10.6.2]{Th. 10.6.2}
+  \end{enumerate}
+
+  \subsection{Условно сходящиеся ряды}
+  \underline{Определение: } Сходящийся, но не абсолютно ряд, называется условно сходящимся рядом.
+
+  \underline{Пример:}\\
+  \begin{minipage}{0.45\textwidth}
+    \[\sum_{n=1}^{\infty} (-1)^n \frac{1}{n}\]
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}{0.55\textwidth}
+    \begin{enumerate}
+      \item $u_n>u_{n+1}$\\
+      \text{ } \hspace{60pt} Ряд сходится по Th. Лейбница\\
+      $\frac{1}{n}>\frac{1}{n+1}$
+      \item $\lim_{n \to \infty} u_n =0$ \hspace{40pt} $\measuredangle$ $\sum_{n=1}^{\infty} \frac{1}{n}$рсх(гармон.)\\
+      $\lim_{n \to \infty} \frac{1}{n}=0$ \hspace{40pt} Тогда исх ряд сх-ся условно
+    \end{enumerate}
+    
+  \end{minipage}
+  \vspace{1em}
+  \par
+  
+  Рассмотрим $\sum_{n=1}^{\infty} u_n$ - знакочередующийся. \\
+  Обозначим $
+  \begin{matrix}
+    \overset{+}{u_n} \text{-  неотрицательные слагаемые исходного ряда}\\
+    \overset{-}{u_n} \text{- отрицательные слагаемые}
+  \end{matrix}$
+
+  \underline{Замечание:} $\overset{+}{u_n},\overset{-}{u_n}$ взяты в том же порядке, в котором они расположены
+  в исходном ряде.
+
+  Рассмотрим ряды $\sum_{n=1}^{\infty} \overset{+}{u_0}(1) \hspace{10pt} \sum_{n=1}^{\infty}\overset{-}{u_n}(2)$
+  
+  \textbf{Лемма :} Если ряд $\sum_{n=1}^{\infty} u_n$ условно сходится, то (1) и (2) расходятся.
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    $\sqsupset S_n = \sum_{k=1}^{n} |u_k| -$ n-ая частичная сумма ряда из модулей\\
+    $\overset{+}{S_n} = \sum_{k=1}^{n} \overset{+}{u_n}$ - n-ая частичная сумма ряда (1)\\
+    $\overset{-}{S_n} = \sum_{k=1}^{n} \overset{-}{u_n}$ - n-ая частичная сумма ряда (2)\\
+    Суммы $S_n',\overset{+}{S_n}, \overset{-}{S_n}$ неотрицательны\\
+    Рассмотрим \Bigg\{
+    $
+    \begin{matrix}
+      S_n = \overset{+}{S_m} - \overset{-}{S_k}\\
+      S_n'=\overset{+}{S_m} + \overset{-}{S_k}\\
+      \overset{+}{S_m}, \overset{-}{S_k}
+    \end{matrix}
+    \hspace{20pt}  n=m+k$\\
+    Решение: 
+    \[\overset{+}{S_m} = \frac{S_n+S_n'}{2}, \overset{-}{S_k} = \frac{S_m'-S_m}{2}\]
+    \[\lim_{m \to \infty} \overset{+}{S_m} = \infty \Rightarrow \sum_{n=1}^{\infty} \overset{+}{u_n} \text{ расходится}\]
+    \[\lim_{k \to \infty} \overset{-}{S_k} = \infty \Rightarrow  \sum_{n=1}^{\infty} \overset{-}{u_n} \text{расходится}\]
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \subsubsection*{Теорема 10.7.1(Теорема Римана)}\label{th:10.7.1}
+  \par\noindent
+  Если ряд $\sum_{n=1}^{\infty} (-1)^n u_n$ условно сходится, то каково бы не было дейсвтительного числа
+  S можно так преставить члены этого ряда, что сумма получившегося ряда будет равна S.
+
+  \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+      \begin{tikzpicture}[scale=1.2]
+        \draw[->] (-4.5,0) -- (4.5,0);
+    
+        \filldraw (-2,0) circle (1pt) node[above] {$\overset{+}{u_1} + \dots + \overset{+}{u_{n_1}} - \overset{-}{u_1} - \dots - \overset{-}{u_{n_2}}$};
+        \filldraw (0,0) circle (1pt) node[below=2pt] {$S$};
+        \filldraw (1.5,0) circle (1pt) node[below] {$\overset{+}{u_1} + \dots + \overset{+}{u_{n_1}}$};
+    \end{tikzpicture}
+
+    Рассмотрим ряды
+    $
+    \begin{matrix}
+      \sum_{n=1}^{\infty} \overset{+}{u_n}(1)\\
+      \sum_{n=1}^{\infty} \overset{-}{u_n}(2)
+    \end{matrix}
+    $(1),(2) - расходятся\\
+    Выберем из ряда (1) подряд число слагаемых так, чтобы их сумма была $> S$, а сумма меньшего числа
+    этих слагаемых была не больше $S$. Обозначим через $n_1$ наименьшее натуральное число при котором
+    выполняется условие:
+    \[\overset{+}{u_1}+\overset{+}{u_2}+\dots+\overset{+}{u_{n_1}} > S\]
+    \[\overset{+}{u_1}+\overset{+}{u_2}+\dots+\overset{+}{u_{n_1-1}} \leq S\]
+
+    Выберем из ряда (2) подряд столько слагаемых, чтобы вычтя их сумму из суммы уже набранных из ряда
+    (1) слагаемых, получить значение $<S$ и чтобы меньшее число указанных слагаемых не обладало
+    этим свойством. Обозначим наименьшее натуральное число, обладающее этим свойством, $n_2$.
+
+    \[\overset{+}{u_1}+\overset{+}{u_2}+\dots+\overset{+}{u_{n_1}}-\overset{-}{u_1}-\overset{-}{u_2}-\dots-\overset{-}{u_{n_2}}<S\]
+
+    \[\overset{+}{u_1}+\overset{+}{u_2}+\dots+\overset{+}{u_{n_1}}-\overset{-}{u_1}-\overset{-}{u_2}-\dots-\overset{-}{u_{n_2-1}} \geq S\]
+
+    Обозначим через $n_3$ наименьшее натуральное числоm котором обладает свойством:
+    \[\overset{+}{u_1}+\dots\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots -\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3}} > S\]
+
+    \[\overset{+}{u_1}+\dots\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots -\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3-1}} \leq S\]
+
+    Обозначим через $n_4$ наименьшее натуральное число, обладающее свойсвтом:
+
+    \[\overset{+}{u_1}+\dots+\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots-\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3}}-\overset{-}{u_{n_2+1}}-\dots-\overset{-}{u_{n_4}} < S\]
+
+    \[\overset{+}{u_1}+\dots+\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots-\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3}}-\overset{-}{u_{n_2+1}}-\dots-\overset{-}{u_{n_4-1}} \geq S\]
+    
+
+    Продолжая этот процесс, получим ряд:
+
+    \[\overset{+}{u_1}+\dots+\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots-\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3}}-\overset{-}{u_{n_2+1}}-\dots-\overset{-}{u_{n_4}}+\dots\]
+  
+    Обозначим $S_n$ - частчичные суммы этого ряда
+
+    \[\begin{matrix}
+      S_{n_1}>S & S_{n_1-1}\leq S\\
+      S_{n_1+n_2}<S & S_{n_1+n_2-1}\geq S\\
+      S_{n_1+n_2+n_3} > S & S_{n_1+n_2+n_3-1} \leq S\\
+      S_{n_1+n_2+n_3+n_4} < S & S_{n_1+n_2+n_3+n_4-1} \geq S
+    \end{matrix}\]
+    Получим:
+    \[\begin{matrix}
+      S_{n_1+n_2+\dots+n_{2k-1}} > S & & S_{n_1+n_2+\dots+n_{2k-1}-1} \leq S\\
+      S_{n_1+n_2+\dots+n_{2k}} < S & &  S_{n_1+n_2+\dots+n_{2k-1}} \geq S\\
+      S_{n_1+n_2+n_{2k-1}-1} \leq & S & < s_{n_1+n_2+\dots+n_{2k-1}}(3)\\
+      S_{n_1+n_2+n_{2k}} < & S & \leq s_{n_1+n_2+\dots+n_{2k-1}-1}(4)\\
+    \end{matrix}\]
+    Рассмотрим (3). Вычтем из каждой части (3) $S_{n_1+\dots+n_{2k-1}-1}$\\
+    Получим $0\leq S - S_{n_1+\dots+n_{2k-1}-1} < S_{n_1+\dots+n_{2k-1}} - S_{n_1+\dots+n_{2k-1}-1}$
+    \[\lim_{k \to \infty} S_{n_1+\dots+n_{2k-1}-1} = S\]
+    Аналогично, рассмотрев (4) можно показать, что:
+    \[\forall k \lim_{k \to \infty} S_k =S \text{ (удовлетворяет условиям алгоритма)}\]
+    То есть $S$ - сумма ряда из перестановок
+  \end{adjustwidth}
+
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \underline{Замечание:} Теорема Римана показывает, что одно из основных свойств конечных сумм
+  (независимость суммы от порядка суммирования, коммунитативность сложения) не переносится на бесконечнные суммы:
+  если ряд сходится условно, то его сумма зависит от порядка слагаемых.
+
+  \subsection{Признаки сходимости рядов Дирихле и Абеля}
+  Рассмотрим конечную сумму
+  \[\sum_{i=1}^{\infty} a_i b_i \boxed{=} \]
+  Обозначим $
+  \begin{matrix}
+    B_i=b_1+\dots+b_i, i=1,\dots,a\\
+    b_1=B_1 \hspace{10pt} b_2=B_2 \hspace{10pt} b_i=B_i \hspace{10pt}
+  \end{matrix}\\
+  \boxed{=} a_1b_1+a_2b_2+\dots+a_nb_n=
+  $
+
 \end{document}
