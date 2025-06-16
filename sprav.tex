@@ -2212,7 +2212,7 @@
   сумма $S=\lambda'S'+\lambda''S''$\\
   \underline{Доказательство:}
   \begin{adjustwidth}{1.5em}{1.5em}
-    Расмотрим частичные суммы рядов:
+    Рассмотрим частичные суммы рядов:
     \[\sum^{\infty}_{n=1} u'_n, \sum_{n=1}^{\infty}u''_n,\sum_{n=1}^{\infty}(\lambda'u'_n+\lambda''u''_n)\]
     \[\text{Рассмотрим } S_n=
     \sum_{k=1}^{n}(\lambda'u'_k+\lambda'u''_k)=
@@ -2641,7 +2641,7 @@
 
   \underline{Определение: } Ряд $\sum_{n=1}^{\infty} u_n$ сходится абсолютно, если сходится ряд $\sum_{n=1}^{\infty} |u_n|$
 
-  \subsubsection*{Теорема 10.6.1(Критерий Коши абсолютной сходимости знакочередующиегося ряда)}\label{th:10.6.1}
+  \subsubsection*{Теорема 10.6.1(Критерий Коши абсолютной сходимости знакочередующегося ряда)}\label{th:10.6.1}
   \par\noindent
   Для того, чтобы ряд $\sum_{n=1}^{\infty} u_n$ абсолютно сходился необходимо и достаточно чтобы 
   \[ \forall \varepsilon > 0 \exists n_0 = n_0(\varepsilon): \forall n > n_0 \forall p \geq 0 \Rightarrow \sum_{k=0}^{p} |u_{n+k}| < \varepsilon\]
@@ -2654,7 +2654,7 @@
   
   \subsubsection*{Теорема 10.6.2}\label{th:10.6.2}
   \par\noindent
-  Если ряд абсолюнто сходится, то он сходится.
+  Если ряд абсолютно сходится, то он сходится.
 
   \underline{Доказательство:}
   \begin{adjustwidth}{1.5em}{1.5em}
@@ -2745,8 +2745,8 @@
 
   \subsubsection*{Теорема 10.7.1(Теорема Римана)}\label{th:10.7.1}
   \par\noindent
-  Если ряд $\sum_{n=1}^{\infty} (-1)^n u_n$ условно сходится, то каково бы не было дейсвтительного числа
-  S можно так преставить члены этого ряда, что сумма получившегося ряда будет равна S.
+  Если ряд $\sum_{n=1}^{\infty} (-1)^n u_n$ условно сходится, то каково бы не было действительного числа
+  S можно так представить члены этого ряда, что сумма получившегося ряда будет равна S.
 
   \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
@@ -2779,12 +2779,12 @@
 
     \[\overset{+}{u_1}+\overset{+}{u_2}+\dots+\overset{+}{u_{n_1}}-\overset{-}{u_1}-\overset{-}{u_2}-\dots-\overset{-}{u_{n_2-1}} \geq S\]
 
-    Обозначим через $n_3$ наименьшее натуральное числоm котором обладает свойством:
+    Обозначим через $n_3$ наименьшее натуральное число m котором обладает свойством:
     \[\overset{+}{u_1}+\dots\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots -\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3}} > S\]
 
     \[\overset{+}{u_1}+\dots\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots -\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3-1}} \leq S\]
 
-    Обозначим через $n_4$ наименьшее натуральное число, обладающее свойсвтом:
+    Обозначим через $n_4$ наименьшее натуральное число, обладающее свойством:
 
     \[\overset{+}{u_1}+\dots+\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots-\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3}}-\overset{-}{u_{n_2+1}}-\dots-\overset{-}{u_{n_4}} < S\]
 
@@ -2795,7 +2795,7 @@
 
     \[\overset{+}{u_1}+\dots+\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots-\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3}}-\overset{-}{u_{n_2+1}}-\dots-\overset{-}{u_{n_4}}+\dots\]
   
-    Обозначим $S_n$ - частчичные суммы этого ряда
+    Обозначим $S_n$ - частичные суммы этого ряда
 
     \[\begin{matrix}
       S_{n_1}>S & S_{n_1-1}\leq S\\
@@ -2823,7 +2823,7 @@
   \end{center}
 
   \underline{Замечание:} Теорема Римана показывает, что одно из основных свойств конечных сумм
-  (независимость суммы от порядка суммирования, коммунитативность сложения) не переносится на бесконечнные суммы:
+  (независимость суммы от порядка суммирования, коммунитативность сложения) не переносится на бесконечные суммы:
   если ряд сходится условно, то его сумма зависит от порядка слагаемых.
 
   \subsection{Признаки сходимости рядов Дирихле и Абеля}
@@ -2834,7 +2834,123 @@
     B_i=b_1+\dots+b_i, i=1,\dots,a\\
     b_1=B_1 \hspace{10pt} b_2=B_2 \hspace{10pt} b_i=B_i \hspace{10pt}
   \end{matrix}\\
-  \boxed{=} a_1b_1+a_2b_2+\dots+a_nb_n=
+  \boxed{=} a_1b_1+a_2b_2+\dots+a_nb_n=a_1B_1-a_2(B_2-B_1)+a_3(B_3-B_2)+\dots+a_n(B_n-B_{n-1})=
   $
+  
+  $
+  B_1(a_1-a_2)+B_2(a_2-a_3)+\dots+B_{n-1}(a_{N-1}-a_n)+a_n B_n=  $
+
+  \[\sum_{i=1}^{n} a_ib_i = \sum_{i=1}^{n-1} (a_i-a_{i+1})B_i+a_nb_n\]
+  - преобразование Абеля конечной суммы $\sum_{i=1}^{n}a_ib_i$
+  \[a_1b_1+\sum_{i=2}^{n} a_ib_i=-\sum_{i=1}^{n-1}(a_{i+1}-a_i)B_i+a_nB_n\]
+
+  \[\sum_{i=2}^{n} a_ib_i=a_nB_n-a_1B_1-\sum_{i=1}^{n-1}(a_{i+1}-a_i)B_i\]
+  - дискретный аналог формулы интегрирования по частям
+
+  \textbf{Лемма :} Если $\forall i = \overline{1,n-1}$ выполняется $a_i\leq a_{i+1}$ или $a_i\geq a_{i+1}$,
+  а для $\forall k = \overline{1,n} \hspace{20pt}|b_1+\dots+b_k|\leq B$
+
+  \begin{center}
+    Тогда $|\sum_{i=1}^{n}a_ib_i| \leq B(|a_1|+2|a_n|)$
+  \end{center}
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Рассмотрим $|\sum_{i=1}^{n} a_ib_i|\leq \sum_{i=1}^{n} |a_ib_i| = \sum_{i=1}^{n-1} |a_i-a_{i+1}||B_i|+|a_nb_n| \leq 
+    B(\sum_{i=1}^{n-1} |a_i-a_{i+1}|+|a_n|)=$
+
+    $B(|a_1-a_n|+|a_n|)\leq \Bigg|
+    \begin{matrix}
+      1) a_1-a_n+a_n\\
+      2)a_n-a_1+a_n\\
+      a_i\geq 0
+    \end{matrix} \Bigg| \leq B(|a_1|+2|a_n|)$
+  \end{adjustwidth}
+
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \subsubsection*{Теорема 10.8.1 Признак Дирихле}\label{th:10.8.1}
+  \par\noindent
+  Если $\{a_n\}$ - монотонная и $\lim_{n \to \infty} a_n = 0,$ а последовательность $B_n=b_1+\dots+b_n$
+  ограничена, то ряд $\sum_{n=1}^{\infty} a_nb_n$ - сх
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    $\sqsupset |B_n| \leq B$ по условию
+    
+    Рассмотрим $|\sum_{k=0}^{p} b_{n+k}| = |B_{n+p}-B_{n-1}| \leq |B_{n+p}| + |B_{n-1}| \leq 2B$
+    
+    Рассмотрим $\lim_{n \to \infty} a_n =0 \Rightarrow \forall \varepsilon > 0 \exists n_0=n_0(\varepsilon): \forall n>n_0 \Rightarrow |a_n| < \frac{\varepsilon}{6B}$
+
+    Рассмотрим $|\sum_{k=0}^{p} a_{n+k}+b_{n+k}| \leq 2B(|a_n|+2|B_{n+p}|) < 2B(\frac{\varepsilon}{6B}+\frac{2\varepsilon}{6B})=\varepsilon$
+
+    Ряд сходится по критерию Коши
+  \end{adjustwidth}
+
+  \subsubsection*{Теорема 10.8.2 Признак Абеля}\label{th:10.8.2}
+  \par\noindent
+  Если $\{a_n\}$ монотонна и ограничена, а ряд $\sum_{n=1}^{\infty} b_n$ сходится, то ряд $\sum_{n=1}^{\infty} a_n b_n$ сходится.
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Рассмотрим $\{a_n\}$. Она ограниченна и монотонна $\Rightarrow \{a_n\}$ сходится,
+    т.е. $\exists \lim_{n \to \infty} a_n = a \Rightarrow a_n = a+\alpha_n$, где $\lim_{n \to \infty} \alpha_n = 0$
+    Так как $\{a_n\}$ монотонна $\Rightarrow \{\alpha_n\}$ - монотонна
+
+    Пусть $\sum_{n=1}^{\infty} b_n$ сходится $\Rightarrow \{B_n\}$ - ограниченна
+    
+    Рассмотрим $\sum_{n=1}^{\infty} a_n b_n = \sum_{n=1}^{\infty} (a_n +\alpha_n)b_n=a \sum_{n=1}^{\infty} b_n + \sum_{n=1}^{\infty}\alpha_n b_n$ - сходится
+  \end{adjustwidth}
+
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \subsection{Функциональные последовательности и ряды. Основные понятия.}
+
+  Пусть на некотором $\chi$ задана последовательность функций $f_n(x)$ где $n=1,2,\dots$, принимающая
+  $\forall x \in \chi$ числовые значения(в общем случае Комплексные). Тогда говорят, что на $\chi$ задана 
+  функциональная последовательность.
+  
+  \underline{Определение: } Последовательность $\{f_a(x)\}$ называется ограниченной на $\chi$, если 
+  \[\exists C>0 \forall n \in N u \forall (\cdot) x \in \chi |f_n(x)| \leq C\]
+
+  \underline{Определение: } Последовательность $\{f_n(x)\}$ называется сходящейся на множестве $\chi$, если
+  при $\forall$ фиксируемом $x \in \chi$ числовая последовательность $\{f_n(x)\}$ сходится.
+
+  \underline{Определение: }Если последовательность $\{f_n(x)\}$ сходится на множестве $\chi$, то функция $f(x)$
+  определенная $\forall x \in \chi$, равная $f(x)=\lim_{n \to \infty} f_n(x)$ называется пределом последовательности
+  $\{f_n(x)\}$
+
+  Пусть на множестве $\chi$ задана последовательность $\{u_n(x)\}$
+
+  \underline{Определение: } Множество всех числовых рядов $\sum_{n=1}^{\infty} u_n(x)$, в каждом из которых
+  точка $x \in \chi$ фиксирована, называется функциональным рядом на множестве $\chi$
+
+  $S_n(x)=\sum_{n=1}^{\infty}u_n(x)$-n-ая частичная сумма функционального ряда
+
+  $\sum_{k=1}^{\infty} u_{n+k}(x)$-n-ый остаток функционального ряда.
+
+  \underline{Определение: } Функциональный ряд называется сходящимся на множестве $\chi$, если
+  последовательность $\{S_n(x)\}$ сходится на этом множестве, т.е. $\exists \lim_{n \to \infty} S_n(x)=S(x)$.\\
+  $S(x)$- сумма ряда
+
+  В этом случае $S(x) = \sum_{n=1}^{\infty}u_n(x)$ и говорят, что функция $S(x)$ раскладывается в ряд $\sum_{n=1}^{\infty} u_n(x)$
+
+  \underline{Определение: } Если функция, ряд $\forall$ фиксируемом $x \in \chi$ сходится абсолютно, то он называется
+  абсолютно сходящимся на $\chi$
+
+  \underline{Пример:}
+  \begin{enumerate}
+    \item Рассмотрим $\sum_{n=1}^{\infty} \frac{x^n}{n!} x \in R$ \\%хех икс ин Р
+    Рассмотрим $|u_n| = |\frac{x^n}{n!}| \hspace{20pt} |u_{n+1}|=\frac{x^{n+1}}{(n+1)!}$\\
+    Рассмотрим $\lim_{n \to \infty} |\frac{u_{n+1}}{u_n}| = \lim_{n \to \infty} |\frac{x^{n+1}n!}{(n+1)!x^n}|=
+    \lim_{n \to \infty}|\frac{x}{n+1}| = 0 < 1$ сходится $\forall x \in R$ по признаку Даламбера\\
+    Тогда исходный ряд сходится абсолютно $\forall x \in R$
+    
+  \end{enumerate}
+  
 
 \end{document}
