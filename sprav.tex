@@ -2949,8 +2949,105 @@
     Рассмотрим $\lim_{n \to \infty} |\frac{u_{n+1}}{u_n}| = \lim_{n \to \infty} |\frac{x^{n+1}n!}{(n+1)!x^n}|=
     \lim_{n \to \infty}|\frac{x}{n+1}| = 0 < 1$ сходится $\forall x \in R$ по признаку Даламбера\\
     Тогда исходный ряд сходится абсолютно $\forall x \in R$
-    
+    \item Рассмотрим $x^2+\frac{x^2}{1+x^2}+\dots+\frac{x^2}{(1+x^2)^n}+\dots$\\
+    $\sqsupset x=0 \hspace{20pt} S(0)=0$\\
+    $\sqsupset x\not = 0 \hspace{20pt} \text{ Обозначим } q = \frac{1}{1+x^2} \hspace{20pt} 0<q<1$
+    \[x^2q^0+x^2q^1+\dots+x^2q^n+\dots=x^2(1+q+a^2+\dots+q^n+\dots)=x^2\frac{1}{1-q}=x^2 \frac{1}{1-\frac{1}{1+x^2}}
+    =\]
+    \[= x^2  \frac{1+x^2}{1+x^2-1}=1+x^2, x \not = 0\]\\
+    \pagebreak
+
+    Изобразим график функции S(x)
+    \begin{center}
+      \includegraphics[scale=0.5]{10.9.1.png}
+    \end{center}
+
+    Сумма сходящихся (даже абсолютно сходящихся) ряда, все члены которого являются непрерывными функциями
+    может оказаться разрывной функцией. Т.е. даже на абсолютно сходящиеся ряда не переносится свойство конечных
+    сумм: сумма конечного числа непрерывного на множестве функций также непрерывно на этом множестве.
+    Для описания рядов функций, на которые это свойство переносится, вводится понятие равномерно сходящегося
+    ряда.
   \end{enumerate}
   
 
+  \subsection{Равномерная сходимость функциональных последовательностей и рядов.}
+  \underline{Определение: } Функция последовательность $f_n(x)$ называется равномерно сходящейся к функции 
+  $f(x)$ на множестве $\chi$ если $\forall \varepsilon > 0 \exists n_0=n_0(\varepsilon): \forall x \in \chi$ и 
+  $\forall n > n_0 \Rightarrow |f_n(x)-f(x)| <\varepsilon$
+
+  \underline{Обозначение: }
+  $\begin{matrix}
+    f_n(x) \underset{\chi}{\rightarrow} f(x) \text{ - сходимость } \{f_n(x) \text{ к } f(x) \text{ на } \chi\}\\
+    f_n(x) \underset{\chi}{\rightrightarrows} f(x) \text{ - равномерная сходимость } \{f_n(x) \text{ к } f(x) \text{ на } \chi\}
+  \end{matrix}$
+
+  Разница между обычной сходимостью и равномерной состоит в том, что при обычной сходимости для каждой $(\cdot)$
+  $x \in \chi \exists$ свой номер $n_0=n_0(\varepsilon,x)\forall n>n_0 \Rightarrow |f_n(x)-f(x)|<\varepsilon$ и может оказаться
+  , что для всех $x \in \chi$ невозможно подобрать общий $n_0$, обладающий указанным свойством.
+  Равномерная сходимость функции последовательности на множестве $\chi$ означает, что такой номер 
+  $n_0$ подобрать возможно.
+  
+  \textbf{Лемма :} Для того чтобы $\{f_n(x)\}$ равномерно сходилась на $\chi$ к функции $f(x) \Leftrightarrow
+  \lim_{n \to \infty} \underset{\chi}{sup}|f_n(x)-f(x)|=0$
+  
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \circled{$\Rightarrow$} Пусть $f_n(x) \underset{\chi}{\rightrightarrows} f(x)$. Зададим $\varepsilon > 0$
+    . Тогда $\exists n_0 \forall x \in \chi$ и $\forall n>n_0 |f_n(x) - f(x)|<\varepsilon.$ Тогда это неравенство
+    будет выполняться для $x \in \chi$, при котором левая часть будет принимать наибольшее значение
+    $\underset{\chi}{sup}|f_n(x)-f(x)|<\varepsilon.$ Переходя к $\lim_{n \to \infty}$ получим
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \circled{$\Leftarrow$} Пусть $\lim_{n \to \infty} \underset{\chi}{sup} |f_n(x)-f(x)|=0$. Зафиксируем
+    $\varepsilon>0$. Тогда по определению предел числовой последовательности $\exists n_0 =n_0(\varepsilon)
+    \forall n>n_0 sup |f_n(x)-f(x)|<\varepsilon$. Т.е. 
+    \[\underset{\chi}{sup}|f_n(x)-f(x)|<\varepsilon \Rightarrow \forall x \in \chi |f_n(x) -f(x)|<\varepsilon\]
+    А это означает что $f_n(x) \underset{\chi}{\rightrightarrows} f(x)$
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \textbf{Следствие:} Если $\exists \{\alpha_n\}: \lim_{n \to \infty} \alpha_n =0:\forall x \in \chi$\\
+  \[|f_n(x)-f(x)|\leq \alpha_n, \text{ то } f_n(x) \underset{\chi}{\rightrightarrows} f(x)\]
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Так как $\forall x \in \chi |f_n(x)-f(x)|<\alpha_n$ тогда это неравенство выполнится при $ x \in \chi$
+    при котором левая часть примет наибольшее значение, т.е. $\underset{\chi}{sup} |f_n(x)-f(x)|\leq \alpha_n$.
+    Переходя к $\lim_{n \to \infty}$ получим что $\lim_{n \to \infty} \underset{\chi}{sup}|f_n(x)-f(x)|=0,$
+    т.е. $f_n(x)\underset{\chi}{\rightrightarrows} f(x)$ по лемме.
+  \end{adjustwidth}
+
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \underline{Примеры:}
+  \begin{enumerate}
+    \item $f_n(x)=x^n \hspace{20pt} \chi = [0,q] \hspace{20pt} 0<q<1$\\
+    Исследуем на равномерную непрерывность $\{f_n(x)\}$ на мн-ве $\chi$.\\
+    \[\lim_{n \to \infty} f_n(x)= \lim_{n \to \infty} x^n =0 \hspace{20pt} \lim_{n \to \infty} \underset{\chi}{sup} |f_n(x)-f(x)|=
+    \lim_{n \to \infty} q^n =0\]
+    \[|f_n(x) -f(x)|=|x^n-0|=x^n \hspace{20pt} \text{Лемма выполнилась}\]
+    \[\underset{\chi}{sup} |f_n(x)-f(x)|=\underset{\chi}{sup}x^n=q^n \hspace{20pt} f_n(x) \underset{x \in [0,q]}{\rightrightarrows} 0\]
+    \item $f_n(x)=x^n \hspace{10pt} \chi \in [0;1) \hspace{20pt} \lim_{n \to \infty} \underset{\chi}{sup}|f_0(x)-f(x)|=\lim_{n \to \infty} 1 =1$
+    \\ $\lim_{n \to \infty} f_n(x)=\lim_{n \to \infty}x^n=0$ \hspace{20pt} Лемма не выполнилась\\
+    Рассмотрим $|f_n(x)-f(x)|=|x^n-0|=x^n$ \hspace{20pt} $f_n(x)\underset{\chi \in [0;1)}{\rightarrow} 0$\\
+    $\underset{\chi}{sup} |f_n(x)-f(x)|=\underset{\chi}{sup \hspace{5pt}}x^n=1$
+    \item $f_n(x)=x^n \hspace{20pt} \chi=[0;1]$\\
+    $\lim_{n \to \infty} f_n(x) = \Bigg\{ 
+      \begin{matrix}
+        0, & x \not = 1\\
+        1, & x = 1
+      \end{matrix}$\\
+      Так как $f_n(x)$ не сходится равномерно к $f(x)$ на [0,1), то $f_n(x)$ не будет сходится равномерно
+      к $f(x)$ на [0,1], так как $[0,1) \subset [0,1]$
+  \end{enumerate}
+
+  \subsection{Критерий Коши равномерной сходимости функциональных последовательностей и рядов.}
 \end{document}
