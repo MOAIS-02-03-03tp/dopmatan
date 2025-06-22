@@ -2212,7 +2212,7 @@
   сумма $S=\lambda'S'+\lambda''S''$\\
   \underline{Доказательство:}
   \begin{adjustwidth}{1.5em}{1.5em}
-    Расмотрим частичные суммы рядов:
+    Рассмотрим частичные суммы рядов:
     \[\sum^{\infty}_{n=1} u'_n, \sum_{n=1}^{\infty}u''_n,\sum_{n=1}^{\infty}(\lambda'u'_n+\lambda''u''_n)\]
     \[\text{Рассмотрим } S_n=
     \sum_{k=1}^{n}(\lambda'u'_k+\lambda'u''_k)=
@@ -2641,7 +2641,7 @@
 
   \underline{Определение: } Ряд $\sum_{n=1}^{\infty} u_n$ сходится абсолютно, если сходится ряд $\sum_{n=1}^{\infty} |u_n|$
 
-  \subsubsection*{Теорема 10.6.1(Критерий Коши абсолютной сходимости знакочередующиегося ряда)}\label{th:10.6.1}
+  \subsubsection*{Теорема 10.6.1(Критерий Коши абсолютной сходимости знакочередующегося ряда)}\label{th:10.6.1}
   \par\noindent
   Для того, чтобы ряд $\sum_{n=1}^{\infty} u_n$ абсолютно сходился необходимо и достаточно чтобы 
   \[ \forall \varepsilon > 0 \exists n_0 = n_0(\varepsilon): \forall n > n_0 \forall p \geq 0 \Rightarrow \sum_{k=0}^{p} |u_{n+k}| < \varepsilon\]
@@ -2654,7 +2654,7 @@
   
   \subsubsection*{Теорема 10.6.2}\label{th:10.6.2}
   \par\noindent
-  Если ряд абсолюнто сходится, то он сходится.
+  Если ряд абсолютно сходится, то он сходится.
 
   \underline{Доказательство:}
   \begin{adjustwidth}{1.5em}{1.5em}
@@ -2745,8 +2745,8 @@
 
   \subsubsection*{Теорема 10.7.1(Теорема Римана)}\label{th:10.7.1}
   \par\noindent
-  Если ряд $\sum_{n=1}^{\infty} (-1)^n u_n$ условно сходится, то каково бы не было дейсвтительного числа
-  S можно так преставить члены этого ряда, что сумма получившегося ряда будет равна S.
+  Если ряд $\sum_{n=1}^{\infty} (-1)^n u_n$ условно сходится, то каково бы не было действительного числа
+  S можно так представить члены этого ряда, что сумма получившегося ряда будет равна S.
 
   \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
@@ -2779,12 +2779,12 @@
 
     \[\overset{+}{u_1}+\overset{+}{u_2}+\dots+\overset{+}{u_{n_1}}-\overset{-}{u_1}-\overset{-}{u_2}-\dots-\overset{-}{u_{n_2-1}} \geq S\]
 
-    Обозначим через $n_3$ наименьшее натуральное числоm котором обладает свойством:
+    Обозначим через $n_3$ наименьшее натуральное число m котором обладает свойством:
     \[\overset{+}{u_1}+\dots\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots -\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3}} > S\]
 
     \[\overset{+}{u_1}+\dots\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots -\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3-1}} \leq S\]
 
-    Обозначим через $n_4$ наименьшее натуральное число, обладающее свойсвтом:
+    Обозначим через $n_4$ наименьшее натуральное число, обладающее свойством:
 
     \[\overset{+}{u_1}+\dots+\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots-\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3}}-\overset{-}{u_{n_2+1}}-\dots-\overset{-}{u_{n_4}} < S\]
 
@@ -2795,7 +2795,7 @@
 
     \[\overset{+}{u_1}+\dots+\overset{+}{u_{n_1}}-\overset{-}{u_1}-\dots-\overset{-}{u_{n_2}}+\overset{+}{u_{n_1+1}}+\dots+\overset{+}{u_{n_3}}-\overset{-}{u_{n_2+1}}-\dots-\overset{-}{u_{n_4}}+\dots\]
   
-    Обозначим $S_n$ - частчичные суммы этого ряда
+    Обозначим $S_n$ - частичные суммы этого ряда
 
     \[\begin{matrix}
       S_{n_1}>S & S_{n_1-1}\leq S\\
@@ -2823,7 +2823,7 @@
   \end{center}
 
   \underline{Замечание:} Теорема Римана показывает, что одно из основных свойств конечных сумм
-  (независимость суммы от порядка суммирования, коммунитативность сложения) не переносится на бесконечнные суммы:
+  (независимость суммы от порядка суммирования, коммунитативность сложения) не переносится на бесконечные суммы:
   если ряд сходится условно, то его сумма зависит от порядка слагаемых.
 
   \subsection{Признаки сходимости рядов Дирихле и Абеля}
@@ -2834,7 +2834,651 @@
     B_i=b_1+\dots+b_i, i=1,\dots,a\\
     b_1=B_1 \hspace{10pt} b_2=B_2 \hspace{10pt} b_i=B_i \hspace{10pt}
   \end{matrix}\\
-  \boxed{=} a_1b_1+a_2b_2+\dots+a_nb_n=
+  \boxed{=} a_1b_1+a_2b_2+\dots+a_nb_n=a_1B_1-a_2(B_2-B_1)+a_3(B_3-B_2)+\dots+a_n(B_n-B_{n-1})=
   $
+  
+  $
+  B_1(a_1-a_2)+B_2(a_2-a_3)+\dots+B_{n-1}(a_{N-1}-a_n)+a_n B_n=  $
 
+  \[\sum_{i=1}^{n} a_ib_i = \sum_{i=1}^{n-1} (a_i-a_{i+1})B_i+a_nb_n\]
+  - преобразование Абеля конечной суммы $\sum_{i=1}^{n}a_ib_i$
+  \[a_1b_1+\sum_{i=2}^{n} a_ib_i=-\sum_{i=1}^{n-1}(a_{i+1}-a_i)B_i+a_nB_n\]
+
+  \[\sum_{i=2}^{n} a_ib_i=a_nB_n-a_1B_1-\sum_{i=1}^{n-1}(a_{i+1}-a_i)B_i\]
+  - дискретный аналог формулы интегрирования по частям
+
+  \textbf{Лемма :} Если $\forall i = \overline{1,n-1}$ выполняется $a_i\leq a_{i+1}$ или $a_i\geq a_{i+1}$,
+  а для $\forall k = \overline{1,n} \hspace{20pt}|b_1+\dots+b_k|\leq B$
+
+  \begin{center}
+    Тогда $|\sum_{i=1}^{n}a_ib_i| \leq B(|a_1|+2|a_n|)$
+  \end{center}
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Рассмотрим $|\sum_{i=1}^{n} a_ib_i|\leq \sum_{i=1}^{n} |a_ib_i| = \sum_{i=1}^{n-1} |a_i-a_{i+1}||B_i|+|a_nb_n| \leq 
+    B(\sum_{i=1}^{n-1} |a_i-a_{i+1}|+|a_n|)=$
+
+    $B(|a_1-a_n|+|a_n|)\leq \Bigg|
+    \begin{matrix}
+      1) a_1-a_n+a_n\\
+      2)a_n-a_1+a_n\\
+      a_i\geq 0
+    \end{matrix} \Bigg| \leq B(|a_1|+2|a_n|)$
+  \end{adjustwidth}
+
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \subsubsection*{Теорема 10.8.1 Признак Дирихле}\label{th:10.8.1}
+  \par\noindent
+  Если $\{a_n\}$ - монотонная и $\lim_{n \to \infty} a_n = 0,$ а последовательность $B_n=b_1+\dots+b_n$
+  ограничена, то ряд $\sum_{n=1}^{\infty} a_nb_n$ - сх
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    $\sqsupset |B_n| \leq B$ по условию
+    
+    Рассмотрим $|\sum_{k=0}^{p} b_{n+k}| = |B_{n+p}-B_{n-1}| \leq |B_{n+p}| + |B_{n-1}| \leq 2B$
+    
+    Рассмотрим $\lim_{n \to \infty} a_n =0 \Rightarrow \forall \varepsilon > 0 \exists n_0=n_0(\varepsilon): \forall n>n_0 \Rightarrow |a_n| < \frac{\varepsilon}{6B}$
+
+    Рассмотрим $|\sum_{k=0}^{p} a_{n+k}+b_{n+k}| \leq 2B(|a_n|+2|B_{n+p}|) < 2B(\frac{\varepsilon}{6B}+\frac{2\varepsilon}{6B})=\varepsilon$
+
+    Ряд сходится по критерию Коши
+  \end{adjustwidth}
+
+  \subsubsection*{Теорема 10.8.2 Признак Абеля}\label{th:10.8.2}
+  \par\noindent
+  Если $\{a_n\}$ монотонна и ограничена, а ряд $\sum_{n=1}^{\infty} b_n$ сходится, то ряд $\sum_{n=1}^{\infty} a_n b_n$ сходится.
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Рассмотрим $\{a_n\}$. Она ограниченна и монотонна $\Rightarrow \{a_n\}$ сходится,
+    т.е. $\exists \lim_{n \to \infty} a_n = a \Rightarrow a_n = a+\alpha_n$, где $\lim_{n \to \infty} \alpha_n = 0$
+    Так как $\{a_n\}$ монотонна $\Rightarrow \{\alpha_n\}$ - монотонна
+
+    Пусть $\sum_{n=1}^{\infty} b_n$ сходится $\Rightarrow \{B_n\}$ - ограниченна
+    
+    Рассмотрим $\sum_{n=1}^{\infty} a_n b_n = \sum_{n=1}^{\infty} (a_n +\alpha_n)b_n=a \sum_{n=1}^{\infty} b_n + \sum_{n=1}^{\infty}\alpha_n b_n$ - сходится
+  \end{adjustwidth}
+
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \subsection{Функциональные последовательности и ряды. Основные понятия.}
+
+  Пусть на некотором $\chi$ задана последовательность функций $f_n(x)$ где $n=1,2,\dots$, принимающая
+  $\forall x \in \chi$ числовые значения(в общем случае Комплексные). Тогда говорят, что на $\chi$ задана 
+  функциональная последовательность.
+  
+  \underline{Определение: } Последовательность $\{f_a(x)\}$ называется ограниченной на $\chi$, если 
+  \[\exists C>0 \forall n \in N u \forall (\cdot) x \in \chi |f_n(x)| \leq C\]
+
+  \underline{Определение: } Последовательность $\{f_n(x)\}$ называется сходящейся на множестве $\chi$, если
+  при $\forall$ фиксируемом $x \in \chi$ числовая последовательность $\{f_n(x)\}$ сходится.
+
+  \underline{Определение: }Если последовательность $\{f_n(x)\}$ сходится на множестве $\chi$, то функция $f(x)$
+  определенная $\forall x \in \chi$, равная $f(x)=\lim_{n \to \infty} f_n(x)$ называется пределом последовательности
+  $\{f_n(x)\}$
+
+  Пусть на множестве $\chi$ задана последовательность $\{u_n(x)\}$
+
+  \underline{Определение: } Множество всех числовых рядов $\sum_{n=1}^{\infty} u_n(x)$, в каждом из которых
+  точка $x \in \chi$ фиксирована, называется функциональным рядом на множестве $\chi$
+
+  $S_n(x)=\sum_{n=1}^{\infty}u_n(x)$-n-ая частичная сумма функционального ряда
+
+  $\sum_{k=1}^{\infty} u_{n+k}(x)$-n-ый остаток функционального ряда.
+
+  \underline{Определение: } Функциональный ряд называется сходящимся на множестве $\chi$, если
+  последовательность $\{S_n(x)\}$ сходится на этом множестве, т.е. $\exists \lim_{n \to \infty} S_n(x)=S(x)$.\\
+  $S(x)$- сумма ряда
+
+  В этом случае $S(x) = \sum_{n=1}^{\infty}u_n(x)$ и говорят, что функция $S(x)$ раскладывается в ряд $\sum_{n=1}^{\infty} u_n(x)$
+
+  \underline{Определение: } Если функция, ряд $\forall$ фиксируемом $x \in \chi$ сходится абсолютно, то он называется
+  абсолютно сходящимся на $\chi$
+
+  \underline{Пример:}
+  \begin{enumerate}
+    \item Рассмотрим $\sum_{n=1}^{\infty} \frac{x^n}{n!} x \in R$ \\%хех икс ин Р
+    Рассмотрим $|u_n| = |\frac{x^n}{n!}| \hspace{20pt} |u_{n+1}|=\frac{x^{n+1}}{(n+1)!}$\\
+    Рассмотрим $\lim_{n \to \infty} |\frac{u_{n+1}}{u_n}| = \lim_{n \to \infty} |\frac{x^{n+1}n!}{(n+1)!x^n}|=
+    \lim_{n \to \infty}|\frac{x}{n+1}| = 0 < 1$ сходится $\forall x \in R$ по признаку Даламбера\\
+    Тогда исходный ряд сходится абсолютно $\forall x \in R$
+    \item Рассмотрим $x^2+\frac{x^2}{1+x^2}+\dots+\frac{x^2}{(1+x^2)^n}+\dots$\\
+    $\sqsupset x=0 \hspace{20pt} S(0)=0$\\
+    $\sqsupset x\not = 0 \hspace{20pt} \text{ Обозначим } q = \frac{1}{1+x^2} \hspace{20pt} 0<q<1$
+    \[x^2q^0+x^2q^1+\dots+x^2q^n+\dots=x^2(1+q+a^2+\dots+q^n+\dots)=x^2\frac{1}{1-q}=x^2 \frac{1}{1-\frac{1}{1+x^2}}
+    =\]
+    \[= x^2  \frac{1+x^2}{1+x^2-1}=1+x^2, x \not = 0\]\\
+    \pagebreak
+
+    Изобразим график функции S(x)
+    \begin{center}
+      \includegraphics[scale=0.5]{10.9.1.png}
+    \end{center}
+
+    Сумма сходящихся (даже абсолютно сходящихся) ряда, все члены которого являются непрерывными функциями
+    может оказаться разрывной функцией. Т.е. даже на абсолютно сходящиеся ряда не переносится свойство конечных
+    сумм: сумма конечного числа непрерывного на множестве функций также непрерывно на этом множестве.
+    Для описания рядов функций, на которые это свойство переносится, вводится понятие равномерно сходящегося
+    ряда.
+  \end{enumerate}
+  
+
+  \subsection{Равномерная сходимость функциональных последовательностей и рядов.}
+  \underline{Определение: } Функция последовательность $f_n(x)$ называется равномерно сходящейся к функции 
+  $f(x)$ на множестве $\chi$ если $\forall \varepsilon > 0 \exists n_0=n_0(\varepsilon): \forall x \in \chi$ и 
+  $\forall n > n_0 \Rightarrow |f_n(x)-f(x)| <\varepsilon$
+
+  \underline{Обозначение: }
+  $\begin{matrix}
+    f_n(x) \underset{\chi}{\rightarrow} f(x) \text{ - сходимость } \{f_n(x) \text{ к } f(x) \text{ на } \chi\}\\
+    f_n(x) \underset{\chi}{\rightrightarrows} f(x) \text{ - равномерная сходимость } \{f_n(x) \text{ к } f(x) \text{ на } \chi\}
+  \end{matrix}$
+
+  Разница между обычной сходимостью и равномерной состоит в том, что при обычной сходимости для каждой $(\cdot)$
+  $x \in \chi \exists$ свой номер $n_0=n_0(\varepsilon,x)\forall n>n_0 \Rightarrow |f_n(x)-f(x)|<\varepsilon$ и может оказаться
+  , что для всех $x \in \chi$ невозможно подобрать общий $n_0$, обладающий указанным свойством.
+  Равномерная сходимость функции последовательности на множестве $\chi$ означает, что такой номер 
+  $n_0$ подобрать возможно.
+  
+  \textbf{Лемма :} Для того чтобы $\{f_n(x)\}$ равномерно сходилась на $\chi$ к функции $f(x) \Leftrightarrow
+  \lim_{n \to \infty} \underset{\chi}{sup}|f_n(x)-f(x)|=0$
+  
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \circled{$\Rightarrow$} Пусть $f_n(x) \underset{\chi}{\rightrightarrows} f(x)$. Зададим $\varepsilon > 0$
+    . Тогда $\exists n_0 \forall x \in \chi$ и $\forall n>n_0 |f_n(x) - f(x)|<\varepsilon.$ Тогда это неравенство
+    будет выполняться для $x \in \chi$, при котором левая часть будет принимать наибольшее значение
+    $\underset{\chi}{sup}|f_n(x)-f(x)|<\varepsilon.$ Переходя к $\lim_{n \to \infty}$ получим
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \circled{$\Leftarrow$} Пусть $\lim_{n \to \infty} \underset{\chi}{sup} |f_n(x)-f(x)|=0$. Зафиксируем
+    $\varepsilon>0$. Тогда по определению предел числовой последовательности $\exists n_0 =n_0(\varepsilon)
+    \forall n>n_0 sup |f_n(x)-f(x)|<\varepsilon$. Т.е. 
+    \[\underset{\chi}{sup}|f_n(x)-f(x)|<\varepsilon \Rightarrow \forall x \in \chi |f_n(x) -f(x)|<\varepsilon\]
+    А это означает что $f_n(x) \underset{\chi}{\rightrightarrows} f(x)$
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \textbf{Следствие:} Если $\exists \{\alpha_n\}: \lim_{n \to \infty} \alpha_n =0:\forall x \in \chi$\\
+  \[|f_n(x)-f(x)|\leq \alpha_n, \text{ то } f_n(x) \underset{\chi}{\rightrightarrows} f(x)\]
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    Так как $\forall x \in \chi |f_n(x)-f(x)|<\alpha_n$ тогда это неравенство выполнится при $ x \in \chi$
+    при котором левая часть примет наибольшее значение, т.е. $\underset{\chi}{sup} |f_n(x)-f(x)|\leq \alpha_n$.
+    Переходя к $\lim_{n \to \infty}$ получим что $\lim_{n \to \infty} \underset{\chi}{sup}|f_n(x)-f(x)|=0,$
+    т.е. $f_n(x)\underset{\chi}{\rightrightarrows} f(x)$ по лемме.
+  \end{adjustwidth}
+
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \underline{Примеры:}
+  \begin{enumerate}
+    \item $f_n(x)=x^n \hspace{20pt} \chi = [0,q] \hspace{20pt} 0<q<1$\\
+    Исследуем на равномерную непрерывность $\{f_n(x)\}$ на мн-ве $\chi$.\\
+    \[\lim_{n \to \infty} f_n(x)= \lim_{n \to \infty} x^n =0 \hspace{20pt} \lim_{n \to \infty} \underset{\chi}{sup} |f_n(x)-f(x)|=
+    \lim_{n \to \infty} q^n =0\]
+    \[|f_n(x) -f(x)|=|x^n-0|=x^n \hspace{20pt} \text{Лемма выполнилась}\]
+    \[\underset{\chi}{sup} |f_n(x)-f(x)|=\underset{\chi}{sup}x^n=q^n \hspace{20pt} f_n(x) \underset{x \in [0,q]}{\rightrightarrows} 0\]
+    \item $f_n(x)=x^n \hspace{10pt} \chi \in [0;1) \hspace{20pt} \lim_{n \to \infty} \underset{\chi}{sup}|f_0(x)-f(x)|=\lim_{n \to \infty} 1 =1$
+    \\ $\lim_{n \to \infty} f_n(x)=\lim_{n \to \infty}x^n=0$ \hspace{20pt} Лемма не выполнилась\\
+    Рассмотрим $|f_n(x)-f(x)|=|x^n-0|=x^n$ \hspace{20pt} $f_n(x)\underset{\chi \in [0;1)}{\rightarrow} 0$\\
+    $\underset{\chi}{sup} |f_n(x)-f(x)|=\underset{\chi}{sup \hspace{5pt}}x^n=1$
+    \item $f_n(x)=x^n \hspace{20pt} \chi=[0;1]$\\
+    $\lim_{n \to \infty} f_n(x) = \Bigg\{ 
+      \begin{matrix}
+        0, & x \not = 1\\
+        1, & x = 1
+      \end{matrix}$\\
+      Так как $f_n(x)$ не сходится равномерно к $f(x)$ на [0,1), то $f_n(x)$ не будет сходится равномерно
+      к $f(x)$ на [0,1], так как $[0,1) \subset [0,1]$
+  \end{enumerate}
+
+  \subsection{Критерий Коши равномерной сходимости функциональных \\ последовательностей и рядов.}
+
+  \subsubsection*{Теорема 10.11.1 Критерий Коши равномерной сходимости функциональных последовательностей}\label{th:10.11.1}
+  \par\noindent
+  Для того, чтобы $\{f_n(x)\}$ равномерно сходилось на $\chi$ к $f(x) \Leftrightarrow$
+  \[\forall \varepsilon > 0 \exists n_0=n_0(\varepsilon): \forall x \in \chi, \forall n > n_0, \forall p \geq 0 \Rightarrow |f_{n+p}(x)-f_n(x)|< \varepsilon\]
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \circled{$\Rightarrow$} Пусть $f_n(x) \underset{\chi}{\rightrightarrows} f(x).$ Зафиксируем $\varepsilon>0$. Тогда
+    по определению равномерной сходимости функциональных последовательностей
+    \[\exists n_0 \forall n>n_0 \forall x \in \chi |f_n(x)-f(x)|<\frac{\varepsilon}{2}\]
+    \[\measuredangle  |f_{n+p}(x)-f_n(x)| = |f_{n+p}(x)-f(x)+f(x)-f_n(x)|\leq |f_{n+p}(x)-f(x)|+|f_n(x)-f(x)| < \varepsilon\]
+    \circled{$\Leftarrow$} Пусть выполняется $|f_{n+p}(x)-f(x)|<\varepsilon$\\
+    Тогда $\forall$ фиксированного $x \in \chi$ числовая последовательность удовлетворяет критерию Коши сходимости
+    этой последовательности. Следовательно $\exists f(x) \lim_{n \to \infty}f_n(x)=f(x)$\\
+    \[\text{ Т.е.} \forall x \in \chi \forall \varepsilon > 0 \exists n_0 \forall n>n_0 |f_n(x)-f(x)|<\varepsilon\]
+    А это значит $f_n(x) \underset{\chi}{\rightrightarrows} f(x)$
+  \end{adjustwidth}
+
+  \underline{Определение: } Ряд $\sum_{n=1}^{\infty} u_n(x)$ называется равномерно сходящимся на $\chi$ если на этом
+  множестве равномерно сходится последовательность его частичная сумма. Т.е. если 
+  \[S(x)=\sum_{n=1}^{\infty}u_n(x),S_n(x)=\sum_{k=1}^{\infty}u_k(x), S_n(x)\underset{\chi}{\rightrightarrows} S(x)\]
+
+  \[\text{ или } r_n(x)=S(x)-S_n(x)=\sum_{k=n+1}^{\infty}u_k(x) \text{ - n-ый остаток ряда.}\]
+  
+  Т.е. условие равномерной сходимости функционального ряда можно записать в трех вариантах
+
+  \[S_n(x)-S(x) \underset{\chi}{\rightrightarrows}0\]
+  \[r_n(x)\underset{\chi}{\rightrightarrows} 0\]
+  \[\lim_{n \to \infty} \underset{\chi}{sup}|r_n(x)|=0\]
+
+  \subsubsection*{Теорема 10.11.2 Необходимое условие равномерности сходимости функционального ряда}\label{th:10.11.2}
+  \par\noindent
+  Если ряд $\sum_{n=1}^{\infty} u_n(x)$ равномерно сходится на $\chi,$ то $u_n(x)\underset{\chi}{\rightrightarrows} 0$
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \[u_n(x)=S_n(x)-S_{n-1}(x)\]
+    По условию ряд $\sum_{n=1}^{\infty} u_n(x)$ равномерно сходится на $\chi \Rightarrow S_n(x) \underset{\chi}{\rightrightarrows} S(x)$
+    но будет выполняться $S_{n+1}(x)\underset{\chi}{\rightrightarrows} S(x)$. Тогда 
+    \[S_n(x)-S{n-1}(x)\underset{\chi}{\rightrightarrows} 0 \Rightarrow u_n(x)\underset{\chi}{\rightrightarrows} 0\]
+
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \subsubsection*{Теорема 10.11.3 Критерий Коши равномерной сходимости функционального ряда}\label{th:10.11.3}
+  \par\noindent
+  Для того чтобы $\sum_{n=1}^{\infty}u_n(x)$ равномерно сходился на $\chi \Leftrightarrow$
+  \[\forall \varepsilon> 0 \exists n_0: \forall n>n_0 \forall x \in \chi \forall p \geq 0 \Rightarrow |u_n(x)+u_{n+p}(x)|<\varepsilon\]
+  
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \circled{$\Rightarrow$} Пусть $\sum_{n=1}^{\infty} u_n(x)$ равномерно сходится на $\chi$ Тогда на этом множестве
+    по определению
+    $S_n(x)\underset{\chi}{\rightrightarrows} S(x),$ т.е.\\
+    \[S_{n+p}(x)\underset{\chi}{\rightrightarrows} S(x) u S_{n-1}\underset{\chi}{\rightrightarrows} S(x),t.e. S_{n+p}(x)-S_{n-1}(x)
+    \underset{\chi}{\rightrightarrows} 0 \overset{\hyperref[th:10.11.1]{Th 11.1}}{\Rightarrow} 
+    |u_n(x)+\dots+u_{n+p}|<\varepsilon\]
+    \[\forall x \in \chi \forall p \geq 0\]\\
+
+    \circled{$\Leftarrow$} Пусть $|u_n(x)+\dots+u_{n+p}(x)|<\varepsilon \forall x \in \chi \forall p \geq 0$\\
+    Тогда \[u_n(x)+\dots+u_{n+p}(x)=S_{n+p}(x)-S_{n-1}(x) u |S_{n+p}(x)+S_{n-1}(x)|<\varepsilon \forall x \in \chi
+    \forall p\geq0 \Rightarrow\]
+    $S_n(x)$ равномерно сходится на $\chi \underset{\hyperref[th:10.11.3]{\text{опр}}}{\Rightarrow}
+    \sum_{n=1}^{\infty} u_n(x)$ равномерно сходится на $\chi$. \\
+  \end{adjustwidth}
+
+  \textbf{Свойство: } Если $\sum_{n=1}^{\infty} u_n(x)$ равномерно сходится на $\chi$, а $f(x)$
+    ограничена на этом множестве, то $\sum_{n=1}^{\infty} f(x)u_n(x)$ также равномерно сходится на $\chi$
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    \[\forall x \in \chi |f(x)|\leq C\]
+    \[\forall p \geq 0 \forall x \in \chi \measuredangle |f(x)u_n(x)+f(x)u_{n+1}(x)+\dots+f(x)u_{n+p}(x)|
+    =|f(x)(u_n(x)+\dots+u_{n+p}(x))| < C \cdot \varepsilon = \varepsilon_1\]
+    Т.е. $\sum_{n=1}^{\infty} f(x)u_n(x)$ удовлетворяет критерию Коши равномерной сходимости ряда на $\chi$
+  \end{adjustwidth}
+  \begin{center}
+    \textbf{Ч.т.д.}
+  \end{center}
+
+  \subsubsection*{Теорема 10.11.4 Признак Вейерштрасса равномерной сходимости функционального ряда}\label{th:}
+  \par\noindent
+  Если числовой ряд $\sum_{n=1}^{\infty} \alpha_n, \alpha_n \geq 0$ сходится и $\forall x \in \chi$ и 
+  $\forall n \in N$ выполняется $|u_n(x)|\leq \alpha_n$, то ряд $\sum_{n=1}^{\infty} u_n(x)$ сходится 
+  абсолютно равномерно на $\chi$.
+
+  \underline{Доказательство:}
+  \begin{adjustwidth}{1.5em}{1.5em}
+    По условию $\sum_{n=1}^{\infty} \alpha_n$ сходится, тогда так как 
+    $\forall x \in \chi$ и $\forall n \in N |u_n(x)|\leq \alpha_n \Rightarrow \sum_{n=1}^{\infty} |u_n(x)|$
+    сходится по I признаку сравнения\\
+    Тогда $\sum_{n=1}^{\infty} u_n(x)$ абсолютно сходится. Так как числовой ряд $\sum_{n=1}^{\infty} \alpha_n$
+    сходится то \[\exists n_0:\forall n>n_0 \sum_{k=n+1}^{\infty}\alpha_k < \varepsilon (\lim_{n \to \infty} r_n =0)\]
+    \[\measuredangle |r_n(x)|=|\sum_{k=n+1}^{\infty} u_k(x)| \leq \sum_{k=n+1}^{\infty} \alpha_k<\varepsilon\]
+    Т.е.
+    \[\forall x \in \chi \forall n >n_0 |r_n(x)| < \varepsilon \Rightarrow r_n(x) \underset{\chi}{\rightrightarrows}
+    0 \Rightarrow \sum_{n=1}^{\infty} u_n(x) \text{ равномерно сходится на } \chi\]
+  \end{adjustwidth}
+  \subsection{Свойства равномерно сходящихся последовательностей}
+    \subsection*{Свойство 1(формулировка для функциональных рядов)}
+    Если функция $u_n(x)$ непрерывна в $(\cdot) x_0 \in \chi$ и 
+    ряд $\sum_{n=1}^{\infty} u_n(x)$ равномерно сходится на $\chi$, то его сумма
+    $S(x)=\sum_{n=1}^{\infty}u_n(x)$ также непрерывна в $(\cdot) x_0$   
+
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+      Зафиксируем $\varepsilon >0$. Пусть $S_n(x)=\sum_{k=1}^{n} u_k(x)$-частичные суммы ряда.
+      Так как $\sum_{n=1}^{\infty} u_n(x)$ равномерно сходится на $\chi \Rightarrow S_n(x) \underset{\chi}{\rightrightarrows}S(x)$
+      Это значит, что
+      \[\exists n_0 \forall n>n_0 \forall x \in \chi \Rightarrow |S(x)-S_n(x)|< \dfrac{\varepsilon}{3}\]
+      Это значит, что будет выполняться 
+      \[|S(x_0)-S_n(x_0)|< \dfrac{\varepsilon}{3} \text{ т.к. } x_0 \in \chi\]
+      Рассмотрим $S_n(x)=\sum_{k=1}^{n} u_k(x)$ - конечная сумма непрерывной в $(\cdot) x_0$
+      функции. Значит $S_n(x)$ непрерывна $\forall x \in \chi,$ т.е. и в $(\cdot) x_0 \in \chi$.
+      Т.е. по определению Коши непрерывности функции в ($\cdot$) получим
+      \[\forall \varepsilon > 0 \exists \delta = \delta(\varepsilon) >0: \forall x:|x-x_0|< \delta \Rightarrow |S_n(x)-S_n(x_0)|<\dfrac{\varepsilon}{3} \]
+      Рассмотрим $|S(x)-S(x_0)| = |S(x)-S_n(x_0)+S_n(x_0)-S_n(x)+S_n(x)-S(x_0)|\leq
+      |S(x)-S_n(x)|+|S_n(x)-S_n(x_0)|+|S_n(x_0)-S(x_0)|\leq \dfrac{\varepsilon}{3}+\dfrac{\varepsilon}{3}+\dfrac{\varepsilon}{3}=\varepsilon$\\
+      Это значит, что $\lim_{x \to x_0} S(x)=S(x_0)$ Т.е. по определению функция непрерывна в $(\cdot) x_0$
+    \end{adjustwidth}
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+
+    \subsection*{Формулировка свойства в терминах последовательностей}
+    Если последовательность $f_n(x) x \in \chi$ равномерно сходится на этом множестве
+    к функции $f(x)$ и $\forall n \in N f_n(x)$ непрерывна в $\cdot x_0 \in \chi,$ то $f(x)$ непрерывна
+    в $(\cdot) x_0$
+
+    \subsection*{Свойство 2}
+    Пусть функция $u_n(x) x \in [a;b]$ непрерывна на этом отрезке и ряд $\sum_{n=1}^{\infty} u_n(x)$ равномерно
+    сходится на $[a,b]$. Тогда какова не была бы $(\cdot) x_0 \in [a;b]$ ряд $\sum_{n=1}^{\infty} \int^x_{x_0} u_n(t)
+    dt^*$ также равномерно сходится на отрезке $[a;b]$ и $\int^x_{x_0} (\sum_{n=1}^{\infty}u_n(t))dt=
+    \sum_{n=1}^{\infty}\int^x_{x_0}u_n(t)dt$(ряд можно почленно интегрировать)
+
+    \subsection*{Свойство 2 в терминах последовательностей}
+    Если $f_n(x)$ непрерывна $\forall x \in [a;b]$ и последовательность $\{f_n(x)\}$ равномерно сходится на 
+    $[a;b]$ к функции $f(x)$ то какова бы не была $(\cdot) x_0 \in [a;b]$ последовательность
+    $\int_{x_0}^x f_n(t)dt=\int_{x_0}^{x} \lim_{n \to \infty} f_n(t)dt = \int_{x_0}^{x} f(t)dt$
+
+    \subsection*{Свойство 3} 
+    Пусть функции $u_n(x)$ непрерывно дифференцируемы на $[a;b]$ и ряд $\sum_{n=1}^{\infty} u_n'(x)$ равномерно
+    сходится на $[a;b]$. Тогда если ряд $\sum_{n=1}^{\infty} u_n(x)$ сходится хотя бы в одной
+    $(\cdot) x_0 \in [a;b]$ то он равномерно сходится на $[a;b]$ и его сумма $S(x)=\sum_{n=1}^{\infty}u_n(x)$
+    является непрерывно дифференцируемой функцией и $S(x)=\sum_{n=1}^{\infty}u'_n$ или
+    $(\sum_{n=1}^{\infty}u_n(x))'=\sum_{n=1}^{\infty}u_n'(x)$
+
+    \subsection*{Свойство 3 в терминах последовательностей}
+    Если последовательность непрерывно дифференцируемых функций $\{f_n(x)\}$ на $[a;b]$ сходится в 
+    некоторой $(\cdot) x_0 \in [a;b], a \{f_n'(x)\}$ равномерно сходится на $[a;b]$ к некоторой функции
+    $\varphi(x),$ то $\{f_n(x)\}$ равномерно сходится на $[a;b]$ к непрерывной дифференцируемой функции $f(x)$ и
+    $f'(x)=\varphi(x)$
+
+    \subsection{Степенные ряды}
+
+    \underline{Определение: } Степенным рядом называется ряд вида 
+    $\begin{matrix}
+      \sum_{n=0}^{\infty} a_n(x-x_0)^n (*)\\
+      \sum_{n=0}^{\infty} a_n x^n (**) - \text{ частный случай функц. ряда}
+    \end{matrix}$
+
+    \subsubsection*{Теорема 10.13.1 Теорема Абеля}\label{th:10.13.1}
+    \par\noindent
+    \begin{enumerate}
+      \item Если $\sum_{n=0}^{\infty} a_n x^n (**)$ сходится в некоторой $(\cdot) x=x_0,$ То
+      \[\forall x: |x|< |x_0|(**)\text{ сходятся абсолютно}\]
+      \item Если (**) рсх в некоторой $(\cdot) x=x_0,$ то
+      \[\forall x: |x|>|x_0| (**)\text{ также рсх}\]
+    \end{enumerate}
+
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+      \begin{enumerate}
+        \item Пусть $\sum_{n=0}^{\infty}a_n x^n_0$ сходится $\Rightarrow$ необходимый признак выполняется,
+        т.е. $\lim_{n \to \infty} a_n x_0^n=0$. Так как числовая последовательность сходится $\Rightarrow$ она ограничена.
+        Это значит \[\exists c: |a_n x_0^n|\leq C \forall n=0,1,2\]
+        Рассмотрим $|a_n x^n|=|a_n x^n|\cdot |\frac{x_0}{x_0}|^n = |a_n x_0^n|\cdot |\frac{x}{x_0}|^n\leq C |\frac{x}{x_0}|^n=Cq^n \hspace{20pt} q= |\frac{x}{x_0}|$\\
+        Рассмотрим $\sum_{n=0}^{\infty} q^n$ сходится как б.у. геометрическая прогрессия $\Rightarrow \sum_{n=0}^{\infty}
+        C q^n сходится \Rightarrow \sum_{n=0}^{\infty} |a_n x^n|$ сходится по I признаку сравнения.
+        Тогда $\sum_{n=0}^{\infty} a_n x^n$ сходится абсолютно
+        \item  Пусть в $\cdot x=x_0(**)$ рсх\\
+        Тогда при $|x|>|x_0|$ он не может сходится в $(\cdot)x$, так как если бы он сходился в 
+        $(\cdot)x$, то по п.1 он сходился бы в $(\cdot) x=x_0$, а это не так. Т.е. при $|x|>|x_0|$ ряд (**) рсх
+      \end{enumerate}
+    \end{adjustwidth}
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+
+    \textbf{Обозначим}\\
+    $\chi$ - множество всех действительных неотрицательных x', при которых (**) сходится. Обозначим $R=\underset{\chi}{\sup}
+    \chi 0 \leq R \leq \infty$.\\
+    Если $R>0$ и $|x|<R$, тогда $\exists x':|x|<x'<R$\\
+    В $(\cdot) x=x'(**)$ сходится $\Rightarrow$ по th. Абеля он будет сходится абсолютно в $(\cdot) x$,
+    т.е. получим $\forall x: |x|<R$ ряд сх\\
+    Если $R< \infty$ и $|x|>R$ тогда $\exists x': R<x'<|x|$\\
+    В $(\cdot) x'(**)$ рсх $\Rightarrow$ по th Абеля (**) будет рсх $\forall x: |x|>R$.\\
+    Аналогично, если рассмотреть $\sum_{n=0}^{\infty}a_n(x-x_0)^n(*),$ то
+    $\begin{matrix}
+      \forall x:|x-x_0|<R \text{ ряд сх}\\
+      \forall x:|x-x_0|>R \text{ ряд рсх}
+    \end{matrix}$ \\
+
+    \underline{Определение: } Число $R\geq 0$ называется радиусом сходимости ряда $\sum_{n=0}^{\infty} a_n(x-x_0)^n$,
+    \\
+    если 
+    $\begin{matrix}
+      \forall x:|x-x_0|<R \text{ ряд сх}\\
+      \forall x:|x-x_0|>R \text{ ряд рсх}
+    \end{matrix}$. Интервал вида $(x_0-R;x_0+R)$ называется интервалом сходимости ряда (*). Аналогично (-R;R)-
+    интервал сходимости ряда (**)
+
+    \subsubsection*{Теорема 10.13.2}\label{th:10.13.2}
+    \par\noindent
+    Для любого степенного ряда $\exists$ радиус сходимости $0\leq R\leq\infty$ при
+    этом если $|x-x_0|<R$, то $(\cdot) x$ ряд сходится абсолютно,
+    а если $0<r<R,$ то $\forall x:|x-x_0|\leq r$ ряд сходится равномерно.
+    
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+      \begin{enumerate}
+        \item $R=\underset{\chi}{\sup}\chi$
+        \[|x|<R \text{ ряд абсолютно сходится по th 13.1(th Абеля)}\]
+        \item Пусть $x=r$, тогда 
+        \[|a_nx^n|\leq|a_nr^n|, \measuredangle \sum_{n=0}^{\infty} |a_nr^n|(1)\text{ сх } (r<R,R=\underset{\chi}{\sup}\chi)\]
+        Тогда $\sum_{n=0}^{\infty} |a_n x^n|$ сходится равномерно по правилу Вейерштрасса
+      \end{enumerate}
+    \end{adjustwidth}
+    
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+
+    \subsection{Определение радиуса сходимости степенного ряда}
+    Рассмотрим $\sum_{n=0}^{\infty}a_nx^n$. Рассмотрим $\sum_{n=0}^{\infty} |a_nx^n|$
+
+    \begin{enumerate}
+      \item Воспользуемся признаком Даламбера\\
+      Рассмотрим
+      \[\lim_{n \to \infty} |\frac{a_{n+1}x^{n+1}}{a_nx^n}|=\lim_{n \to \infty} |\frac{a_{n+1}}{a_n}||x|=
+      \Big| \sqsupset \lim_{n \to \infty}\frac{a_{n+1}}{a_n}=q\Big|=
+      \begin{matrix}
+        ю\\
+        q|x|<1\\
+        ю\\
+        |x|<\frac{1}{q} \hspace{5pt} R=\frac{1}{q}\Rightarrow R=\lim_{n \to \infty} |\frac{a_n}{a_{n+1}}|
+      \end{matrix}\]
+
+      \item Воспользуемся радикальным признаком Коши\\
+      Рассмотрим 
+      \[\lim_{n \to \infty} \sqrt[n]{|a_nx^n|}=\lim_{n \to \infty}|x|q\circled{=} q=\sqrt[n]{a_n}\circled{=}
+      \begin{matrix}
+        ю\\
+        q|x|<1\\
+        ю\\
+        |x|<\frac{1}{q}= R
+      \end{matrix}\]
+      \[R=\lim_{n \to \infty} \frac{1}{\sqrt[n]{a_n}}\]
+    \end{enumerate}
+
+    \subsubsection*{Теорема 10.14.1}\label{th:10.14.1}
+    \par\noindent
+    Пусть $F(x)=\sum_{n=0}^{\infty} a_n(x-x_0)^n(1)$. Если функция $f(x)$ раскладывается в $u(x_0)$
+    в степенной ряд с радиусом сходимости R>0, то
+    \begin{enumerate}
+      \item функция $f(x) $ имеет на $(x_0-R;x_0+R)$ производные всех порядков которые находятся
+      почленным дифференцированием.
+      \[f^{(m)}(x)=\sum_{n=m}^{\infty} n(n-1)(n-m+1)a_nx^{n-m}(2)\]
+      \item \[\forall x \in (x_0-R;x_0+R) \int_{x_0}^{x}f(t)dt=\sum_{n=0}^{\infty} \dfrac{a_n}{n+1}(x-x_0)^{n+1}(3)\]
+      Т.е. (1) можно почленно интегрировать на $(x_0-R;x_0+R)$
+      \item Ряды (1),(2),(3) имеют одинаковые радиусы сходимости, $т.е. R=R_1=R_2$
+    \end{enumerate}
+
+    \subsection{Формула Тейлора}
+    \subsubsection*{Теорема 10.15.1}\label{th:10.15.1}
+    \par\noindent
+    Если f(x) раскладывается в некоторой окрестности $(\cdot) x_0$ в ряд $f(x)=\sum_{n=0}^{\infty}a_n(x-x_0)^n$,
+    то $a_n=\frac{f^{(n)}(x_0)}{n!}$ и справедлива формула
+    $f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n$
+
+    \underline{Определение: } Пусть действительная функция $f(x)$ определена в некоторой $u(x_0)$ и
+    имеет в этой $(\cdot)$ производные всех порядков. Тогда ряд $\sum_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n!}
+    (x-x_0)^n$ называется рядом Тейлора. Если $x_n=0$, то называется рядом Маклорена.\\
+
+    \underline{Замечание(!!!):}
+    Любая бесконечно дифференцируемая функция в некоторой $(\cdot)$ раскладывается в этой $(\cdot)$ в ряд Тейлора.
+    Но может случиться так, что она не будет равна сумме своего ряда ни в одной $(\cdot)$ некоторой $u(x_0)$
+
+    \subsection*{Сходимость рядов Тейлора}
+    Пусть $f(x)$ - бесконечно дифференцируемая в $(\cdot) x_0$ функция и 
+    \[\sum_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n \text{ - ее ряд Тейлора}\]
+    \[S_n(x)=\sum_{k=1}^{n} \frac{f^{(k)}}{k!}(x-x_0)^k\text{ - n-ая частичная сумма}\]
+    \[r_n(x)=f(x)-S_n(x)\]
+    
+    \textbf{Утверждение:}Для того, чтобы $f(x)$ равнялась сумме своего ряда Тейлора в некоторой
+    $u(x_0)$ необходимо чтобы $\lim_{n \to \infty}r_n(x)=0$
+
+    \subsection*{Запись остаточного члена формулы Тейлора}
+    \begin{enumerate}
+      \item Формы Лагранжа
+      \[r_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}\]
+      \item Форма Теано
+      \[r_n(x)=o((x-x_0)^n), x \to x_0\]
+      \item Интегральная форма
+      \[r_n(x)=\frac{1}{n!}\int_{x_0}^{x}f^{(n+1)}(t)(x-t)^ndt\]
+      \item Форма Коши
+      \[r_n(x)=\frac{f^{(n+1)}(x_0+\theta(x-x_0))}{n!}\]
+    \end{enumerate}
+
+    \underline{Доказательство: п.3}
+    \begin{adjustwidth}{1.5em}{1.5em}
+      \begin{enumerate}
+        \item n=0
+        \[f(x)=f(x_0)+r_0(x)=f(x_0)+\int_{x_0}^{x}f'(t)dt \circled{=}f(x_0)+f'(\xi)(x-x_0)\]
+        \[\circled{=} f(x_0)-\int_{x_0}^{x}f'(t)d(x-t)=\Bigg| 
+        \begin{matrix}
+          u=f'(t) & du =f''(t)dt\\
+          dv=d(x-t) & V=x-t
+        \end{matrix}\Bigg| =\]
+        \[= f(x_0)-(f'(t)(x-t)|^x_{x_0}-\int_{x_0}^{x}f''(t)(x-t)dt)=
+        f(x_0)+f'(x_0)(x-x_0)+\int_{x_0}^{x}f''(t)(x-t)dt\]
+        \item Предположение индукции\\
+        Пусть формула верна для некоторого $n=m=1$. Т.е. пусть справедливо $f(x)=\sum_{k=0}^{m=0}
+        \frac{f^{(k)}(x_0)}{k!}(x-x_0)^k+\frac{1}{(m+1)!}\int_{x_0}^{x}f^{(m)}(t)(x-t)^{m-1}dt$
+
+        \item Шаг индукции\\
+        Докажем справедливость формулы для $n=m$.\\
+        \underline{Доказательство:}
+        \begin{adjustwidth}{1.5em}{1.5em}
+          Рассмотрим $\frac{1}{(m-1)!}\int_{x_0}^{x}f^{(m)}(x-t)^{m-1}dt=-\frac{1}{(m-1)!}-\frac{1}{m}
+          \int_{x_0}^{x}f^{(m)}(t)d((x-t)^m)=
+          -\frac{1}{m!} \int_{x_0}^{x}f^{(m)}(t)d((x-t)^n)=\Bigg|
+          \begin{matrix}
+            u=f^{(m)}(t) & du =f^{(m+1)}(t)dt\\
+            dv=d((x-t)^m) & V=(x-t)^m
+          \end{matrix} \Bigg|=$
+          \\ $=-\frac{1}{m!}(f^{(m)}(t)(x-t)^m|^x_{x_0}-\int_{x_0}^{x}f^{(m+1)}(t)(x-t)^m dt)=
+          \frac{1}{m!}f^{(m)}(x_0)(x-x_0)^m+\frac{1}{m!}\int_{x_0}^{x}f^{(m+1)}(t)(x-t)^m dt$
+        \end{adjustwidth}
+      \end{enumerate}
+    \end{adjustwidth}
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+    \pagebreak
+
+    \underline{Доказательство: п.4}
+    \begin{adjustwidth}{1.5em}{1.5em}
+      Рассмотрим $r_n(x)$ в интегральной форме
+      \[r_n(x)=\frac{1}{n!}\int_{x_0}^{x}f^{(n-1)}(t)(x-t)^n dt = \frac{f^{(n+1)}(\xi)(x-\xi)^n}{n!}(x-x_0) \circled{=}\]
+      (*)$\xi=x_0+\theta(x-x_0)$\\
+      Вычтем левую и правую часть * из x
+      \[\begin{matrix}
+        x-\xi=(x-x_0)-\theta(x-x_0)\\
+        x-\xi=(x-x_0)(1-\theta)
+      \end{matrix}
+      \circled{=}\dfrac{f^{(n+1)}(x_0+\theta(x-x_0))(x-x_0)^n (1-\theta)^n}{n!}(x-x_0)=\]
+      \[= \dfrac{f^{(n+1)}(x_0+\theta(x-x_0))}{n!}(1-\theta)^n(x-x_0)^{n+1}\]
+    \end{adjustwidth}
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+
+    \subsubsection*{Теорема 10.15.2 Достаточно условие разложимости функции в ряд Тейлора}\label{th:10.15.2}
+    \par\noindent
+    Если функция в окрестности $(\cdot) x_0$ имеет все производные ограниченные в этой окрестности, то функция
+    $f(x)$ раскладывается в степенной ряд в окрестности $(\cdot) x_0$.
+
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+      Пусть $f(x)$ на $(x_0-h;x_0+h)$ имеет производные всех порядков и существует.
+      \[C>0:\forall n =0,1,2,\dots |f^{(n)}(x)|\leq C\]
+      \underline{Замечание:} 
+      \[\lim_{n \to \infty} \frac{a^n}{n!}=0\]
+      Рассмотрим $\sum_{n=0}^{\infty}\frac{a^n}{n!}$. Рассмотрим $\lim_{n \to \infty} \frac{a^{n+1}n!}{(n+1)!a^n}=
+      \lim_{n\to\infty} \frac{a}{n+1}=0<1 \Rightarrow (1)$ сходится по признаку Даламбера $\Rightarrow$
+      необходимый признак выполняется $\Rightarrow \lim_{n \to \infty }\frac{a^n}{n!}=0$.\\
+      Рассмотрим $|r_n(x)|=|\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}|\leq C |\frac{(x-x_0)^{n+1}}{(n+1)!}|$
+      \[\lim_{n \to \infty} |r_n(x)|=\lim_{n \to \infty} |C \frac{(x-x_0)^{n+1}}{(n+1)!}|= 0\]
+      Т.е. степенной ряд сходится
+    \end{adjustwidth}
+
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+
+    \subsection{Разложение функций в ряд Тейлора}
+    \begin{enumerate}
+      \item Используя формулу суммы членов б. у. геометрической прогрессии
+      \[a+aq+aq^2+\dots+aq^n+\dots=\sum_{n=0}^{\infty}aq^n=\frac{a}{1-q}\]
+      \[1. \frac{1}{1-x}=1+x+x^2+\dots+x^n+\dots\]
+      \[2. \frac{1}{1-x^2}=\frac{1}{1-(-x^2)}=1-x^2+x^4-x^6+\dots=\sum_{n=0}^{\infty}(-1)^n x^{2n} |x|\leq 1\]
+      \[3. ln(1+x)=\int_{0}^{x}\frac{dt}{1+t}=\int_{0}^{x}(1-t+t^2-t^3+\dots)dt=t|^x_0-\frac{t^2}{2}|^x_0+\frac{t^3}{3}|^x_0-\dots=\]
+      \[x-\frac{x^2}{2}+\frac{x^3}{3}-\dots+(-1)^{n+1}\frac{x^n}{n}+\dots \hspace{20pt} x \in (-1;1)\]
+
+      \item Используя формулу Тейлора непосредственно
+      \[e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}\]
+      \[\sin(x)=\sum_{n=1}^{\infty}(-1)^{n+1}\frac{x^{2n-1}}{(2n-1)!}\]
+      \[\cos(x)=\sum_{n=0}^{\infty}(-1)^n \frac{x^{2n}}{(2n)!}\]
+
+      \item Используя известные разложения функций
+      \[e^x=\sum_{n=0}^{\infty} \frac{x^{2n}}{n!}\]
+
+      \item Биноминальный ряд
+      \[(1+x)^m=1+mx+\frac{m(m-1)}{2!}x^2+\dots+\frac{m(m-1)\dots(m-n+1)}{n!}x^n+\dots\]
+    \end{enumerate}
+
+    \underline{Замечание:} Если $m \in N$, то биноминальный ряд имеет конечное число слагаемых.
+
+    Исследуем ряд на сходимость по признаку Даламбера:
+    \[\lim_{n \to \infty} |\frac{u_{n+1}}{u_n}|=
+    \lim_{n \to \infty}|\frac{m(m-1)\dots(m-n+1)(m-n)x^{n+1}n!}{(n+1)!m(m-1)\dots(m-n+1)x^n}|=
+    \lim_{n \to \infty} |\frac{(m-n)x}{n+1}|=|x|<1\]
+
+    \subsection*{Приближенное вычисление функций}
+    Задача: вычислить $\approx f(x)$ в $(\cdot) x=x_0$\\
+    
+    $
+     f(x_0)=\sum_{k=0}^{n} a_k x_0^k+r_n(x_0) \hspace{30pt}
+     f(x_0) \approx \sum_{k=0}^{n} a_k x_0^k 
+    $
+
+    \underline{Замечание:} Для знакочередующегося ряда\\
+    $
+    |S_n-S|\leq u_{n+1}\\
+    |r_n(x)|\leq u_{n+1}
+    $
+    
+    
 \end{document}
