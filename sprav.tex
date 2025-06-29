@@ -113,11 +113,11 @@
   \underline{Определение: } Кривая называется непрерывной кусочно-гладкой кривой, если она состроит из конечного числа
   гладких кривых.\\
   Рассмотрим непрерывную кусочно-гладкую кривую:\\
-  \begin{minipage}{0.45\textwidth} % Левая колонка — для изображения
+  \begin{minipage}{0.45\textwidth} 
       \includegraphics[width=\linewidth]{8.1.1.png}
-  \end{minipage}%
-  \hspace{1em} % Горизонтальный отступ между колонками
-  \begin{minipage}{0.65\textwidth} % Правая колонка — для текста
+  \end{minipage}
+  \hspace{1em} 
+  \begin{minipage}{0.65\textwidth} 
       Пусть кривая имеет массу $\rho=\frac{\mathrm{kg}}{\mathrm{m}}$.
       \begin{enumerate}
         \item R
@@ -134,8 +134,8 @@
   \begin{minipage}{0.45\textwidth}
     \includegraphics[scale=0.6]{8.1.2.png}
   \end{minipage}
-  \hspace{1em} % Горизонтальный отступ между колонками
-  \begin{minipage}{0.65\textwidth} % Правая колонка — для текста
+  \hspace{1em} 
+  \begin{minipage}{0.65\textwidth} 
       Пусть кривая имеет массу $\rho=\frac{\mathrm{kg}}{\mathrm{m}}$.
       \begin{enumerate}
         \item R
@@ -332,22 +332,20 @@
   \end{flushright}
   \begin{figure}[h!]
     \centering
-    % Первая колонка (левая картинка)
     \begin{minipage}{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{8.6.1.png} % путь к первой картинке %TODO стрелка сверху
-        \vspace{0.5em} % небольшой отступ между картинкой и текстом
+        \includegraphics[width=\textwidth]{8.6.1.png} %TODO стрелка сверху
+        \vspace{0.5em} 
         $\Delta \overline{r}=\overline{r}(t_o+\Delta t)-\overline{r}(t_0)$\\
         $\frac{\Delta \overline{r}}{\Delta t}=\frac{1}{\Delta t}*\Delta \overline{r}$\\
         $\lim_{\Delta t \to 0} \frac{\Delta \overline{r}}{\Delta t}=r(t_0)$\\
         $|\overline{r}'(t)|=l'(t)$
     \end{minipage}
     \hfill
-    % Вторая колонка (правая картинка)
     \begin{minipage}{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{8.6.2.png} % путь ко второй картинке TODO dr/dt сверху где дельты
-        \vspace{0.5em} % небольшой отступ между картинкой и текстом
+        \includegraphics[width=\textwidth]{8.6.2.png} %TODO dr/dt сверху где дельты
+        \vspace{0.5em}
         $\overline{r}'(t)=\overline{x'(t);y'(t)}$\\
         $|\overline{r}'(t)=\sqrt{x'(t)^2+y'(t)^2}|$\\
         $dl=\sqrt{x'(t)^2+y'(t)^2}dt|:dt$\\
@@ -2944,7 +2942,7 @@
 
   \underline{Пример:}
   \begin{enumerate}
-    \item Рассмотрим $\sum_{n=1}^{\infty} \frac{x^n}{n!} x \in R$ \\%хех икс ин Р
+    \item Рассмотрим $\sum_{n=1}^{\infty} \frac{x^n}{n!} x \in R$ \\
     Рассмотрим $|u_n| = |\frac{x^n}{n!}| \hspace{20pt} |u_{n+1}|=\frac{x^{n+1}}{(n+1)!}$\\
     Рассмотрим $\lim_{n \to \infty} |\frac{u_{n+1}}{u_n}| = \lim_{n \to \infty} |\frac{x^{n+1}n!}{(n+1)!x^n}|=
     \lim_{n \to \infty}|\frac{x}{n+1}| = 0 < 1$ сходится $\forall x \in R$ по признаку Даламбера\\
@@ -3479,6 +3477,387 @@
     |S_n-S|\leq u_{n+1}\\
     |r_n(x)|\leq u_{n+1}
     $
+    Если $\lim_{n \to \infty} u_{n+1} = 0 \implies |r_n(x)| = 0 \implies$ ряд сходится абсолютно и равно.
+    \subsection{Ряды Фурье. Основные понятия}\noindent
+    Рассмотрим периодическую функцию:
+    \[ \varphi (t+T) = \varphi(t), T > 0 \]
+    \underline{Определение:} Если $\exists$ $T>0$ такая, что $\varphi(t+T)=\varphi(t)$, то такая функция называется периодической.\\
+    Простейшей из периодических функций является синусоидальная.
+    \[ \omega = \frac{2 \pi}{T} \text{ - частота} \]
+    \underline{Замечание:} Если сложить $y_0 = A_0$, $y_1 = A_1\sin(\omega t + \alpha_1)$, $y_2 = A_2\sin(2\omega t + \alpha_2)$, $y_3 = A_3\sin(3\omega t + \alpha_3)$ и так далее с частотами $\omega$, $2\omega$, $3\omega$ и так далее и периодами $T$, $\frac{1}{2}T$, $\frac{1}{3}T$, и так далее соответственно, то мы получим периодическую функцию с периодом $T$, график которой будет сильно отличаться от синусоиды (уже даже для 3-х функций).\\
+    Ещё больше это отличие будет для суммы бесконечного ряда.\par\noindent
+    \underline{Обратная задача:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+      Можно ли заданную периодическую функцию $\varphi(t)$ с периодом $T$ представить в виде суммы конечного или бесконечного ряда?
+    \end{adjustwidth}
+    Для довольно широкого класса функций имеет место разложение в тригонометрический ряд:
+    \[ \varphi(t) = A_0 + A_1 \sin(\omega t + \alpha_1) + A_2 \sin(2\omega t + \alpha_2) + \dots = A_0 + \sum_{n=1}^{\infty} A_n \sin(n\omega t + \alpha_n) \]
+    Если $x = \omega t$, то
+    \[ f(x) = \varphi\Big(\frac{x}{\omega}\Big) = A_0 + \sum_{n=1}^{\infty} A_n \sin(n\omega t + \alpha_n) \circled{=} \]
+    \[ \sin(\alpha + \beta) = \sin \alpha \cos \beta + \sin \beta \cos \alpha \]
+    \[ \sin(nx + \alpha_n) = \sin(nx) \cos \alpha_n + \sin \alpha_n \cos (nx) \]
+    Пусть $A_0 = \frac{a_0}{2}$, $a_n = A_n \sin \alpha_n$, $b_n = A_n * \cos \alpha_n$.
+    \[ \circled{=} \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos nx + b_n \sin nx \indent (*) \]
+    Это разложение периодической функции $f(x)$ с периодом $T = 2\pi$ в тригонометрический ряд Фурье.
     
+    \subsection{Метод Эйлера-Фурье. Определение коэффициентов Фурье}\noindent
+    Пусть $f(x)$ интегрируема на $[-\pi, \pi]$.\\
+    Пусть имеет место разложение в триг. ряд Фурье $(*)$.
+    \[ f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos nx + b_n \sin nx \]
+    Проинтегрируем $(*)$ на $[-\pi, \pi]$.
+    \[ \int_{-\pi}^{\pi} f(x)dx = \int_{-\pi}^{\pi} \frac{a_0}{2} dx + \sum_{n=1}^{\infty} a_n \int_{-\pi}^{\pi} \cos nx dx + b_n \int_{-\pi}^{\pi} \sin nx dx \]
+    \[ \int_{-\pi}^{\pi} f(x)dx = \frac{a_0}{2} 2\pi \]
+    Рассмотрим:
+    \[ \int_{-\pi}^{\pi} \cos nx dx = \frac{1}{n} \sin nx \Big|^{\pi}_{-\pi} = \frac{1}{n} (\sin \pi n - \sin (-\pi n)) = 0 \]
+    Рассмотрим:
+    \[ \int_{-\pi}^{\pi} \sin nx dx = -\frac{1}{n} \cos nx \Big|^{\pi}_{-\pi} = 0 \]
+    Этот интеграл $=0$, так как нечётная функция на симметричном отрезке.
+    \[ a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) dx \]
+    Умножим $(*)$ на $\cos mx$ и проинтегрируем на $[-\pi, \pi]$.\\
+    Получим:
+    \[ \int_{-\pi}^{\pi} f(x) \cos mx dx = \int_{-\pi}^{\pi} \frac{a_0}{2} \cos mx dx + \sum_{n=1}^{\infty} \int_{-\pi}^{\pi} a_n [ \cos nx \cos mx + b_n \sin nx \cos mx ]dx \]
+    Рассмотрим:
+    \[ \int_{-\pi}^{\pi} \cos mx dx = 0 \]
+    Рассмотрим:
+    \[ \int_{-\pi}^{\pi} \sin nx \cos mx dx = \frac{1}{2} \int_{-\pi}^{\pi} [ \sin(n+m)x + sin(n-m)x ]dx = 0 \]
+    Рассмотрим:
+    \[ \int_{-\pi}^{\pi} \cos nx \cos mx dx = \frac{1}{2} \int_{-\pi}^{\pi} [\cos (n+m)x + \cos (n-m)x ]dx = 0 \indent (n \neq m) \]
+    Рассмотрим при $n = m$: 
+    \[ \int_{-\pi}^{\pi} \cos^2 mx dx = \int_{-\pi}^{\pi} \frac{1+\cos 2mx}{2}dx = \pi \]
+    Получим, что 
+    \[ \int_{-\pi}^{\pi} f(x) \cos mx dx = a_m \pi \]
+    \[ a_m = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos mx dx \]
+    \begin{center}
+      или
+    \end{center}
+    \[ a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx dx \]
+    Аналогично, умножая $(*)$ на $\sin mx$, получим
+    \[ b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx dx \]
+    $(*)$ называется тригонометрический ряд Фурье функции $f(x)$ с периодом $2\pi$.\\
+    $a_0$, $a_n$, $b_n$ - коэффициенты Фурье.
+  
+    \subsection{Ортогональные системы функций}
+    \underline{Определение:} Пространство называется Евклидовым, если в нём определена операция скалярного произведения, удовлетворяющего свойствам:
+    \begin{enumerate}
+      \item $xy = yx$
+      \item $x(y+z) = xy + xz$
+      \item $(\lambda x)y = \lambda (xy) = x (\lambda y)$
+      \item $x * x \geq 0 \indent x * x = 0 \Leftrightarrow x = 0$
+    \end{enumerate}
+    В пространстве кусочно-непрерывных функций скалярное произведение можно ввести следующим образом:
+    \[ f * g = \int_{a}^{b} f(x) g(x) dx \]
+    \underline{Определение:} Пространство называется нормированным, если каждому его элементу ставится в соответствие число, называемое \underline{нормой}, удовлетворяющее аксиомам:
+    \begin{enumerate}
+      \item $||f|| > 0, ||f|| = 0 \Leftrightarrow f = 0$
+      \item $|| \lambda f|| = |\lambda| ||f||$
+      \item $||f + g|| \leq ||f|| + ||g||$ - неравенство треугольника
+      \item $||f|| = \sqrt{f * f}$
+    \end{enumerate}
+    \underline{Замечание:} В пространстве кусочно-непрерывных функций $||f|| = \sqrt{\int_{a}^{b} f^2(x)dx}$.
+    \underline{Определение:} Два элемента Евклидова пространства называются ортогональными, если их скалярное произведение равно $\varnothing$.
+    \[ \int_{a}^{b} f * g dx = 0 \]
+    \underline{Определение:} Система функций $\varphi_1(x), \dots, \varphi_n(x)$, определённая на $[a, b]$, называется ортогональной, если все $\varphi_i(x), i = \overline{1,n}$ попарно ортогональны.
+    \[ \int_{a}^{b} \varphi_i(x) \varphi_j(x) dx = 0 \indent \forall i \neq j \]
+    \underline{Определение:} Если система функций ортогональна и каждая функция имеет норму, равную единице, такая система функций называется ортонормированной.
+  
+    \subsection{Метод Грама-Шмидта ортогонализации системы функций}\noindent
+    Пусть $f_1, \dots, f_n$ - линейно независимая система функций.\\
+    $g_1, \dots, g_n$ - ортогональная система функций.\\
+    $g_1 = f_1$\\
+    $g_2 = f_2 - \lambda_{21}g_1$ \indent $g_1 g_2 = 0$ \indent $f_1 f_2 - \lambda_{21}g_1 g_1 = 0$ \indent $\lambda_{21} = \frac{f_2 g_1}{||g_1||^2}$\\
+    \[ g_n = f_n - \sum_{i=1}^{n-1}\lambda_{ni}g_i \indent g_n g_j = 0 \indent \forall j = \overline{1, n-1} \]
+    \[ g_n g_j = f_n g_j - \underbrace{\sum_{i=1}^{n-1}\lambda_{ni}g_i g_j}_{i=j} = f_n g_j - \lambda_{nj}||g_j||^2 \implies \lambda_{nj} = \frac{f_n g_j}{||g_j||^2} \indent \forall j = \overline{1, n-1} \]
+    $1$; $\cos x$; $\sin x$; $\cos 2x$; $\sin 2x$; $\dots$; $\cos nx$; $\sin nx$; $\dots$ \indent $[-\pi; \pi]$ - основная ортогональная тригонометрическая система функций.
+    \begin{align*}
+      ||1||^2 &= \int_{\sqrt{\pi}}^{\pi} 1^2 dx = 2\pi & ||\sin nx||^2 &= \int_{\sqrt{\pi}}^{\pi} \sin^2 nx dx = \pi \\
+      ||1|| &= \sqrt{2\pi} & ||\sin nx|| &= \sqrt{\pi} \dots
+    \end{align*}
+    \[ \frac{1}{\sqrt{2\pi}}; \frac{\cos x}{\sqrt{\pi}}; \frac{\sin x}{\sqrt{\pi}}; \dots; \frac{\cos nx}{\sqrt{\pi}}; \frac{\sin nx}{\sqrt{\pi}}; \dots \text{ - беск. ортонорм. триг. система функций} \]
+    Многочлены Лежандра:
+    \[ P_0(x) = 1 \indent P_n(x) = \frac{1}{2^n * n!}\frac{d^n}{dx^n} [(x^2 - 1)^n] \indent n = 1, 2 \dots \indent [-1; 1] \]
+    
+    \subsection{Ряд Фурье по ортогональной системе функций}\noindent
+    Пусть на $[a; b]$ задана ортогональная система функций ${\varphi_n (x)}$\\
+    Рассмотрим $f(x)$:
+    \[ f(x) = C_1 \varphi_1(x) + C_2 \varphi_2(x) + \dots + C_n \varphi_n(x) + \dots \indent (*) \]
+    Для определения коэффициентов $C_k$ умножаем $(*)$ на $\varphi_m(x)$ скалярно:
+    \[ f(x) \varphi_m(x) = C_1 \varphi_1(x) \varphi_m(x) + C_2 \varphi_1(x) \varphi_m(x) + \dots + C_n \varphi_n(x) \varphi_m(x) + \dots \]
+    \[ f(x) \varphi_m(x) = C_m \varphi_m(x) \varphi_m(x) \]
+    \[ C_m = \frac{f(x) \varphi_m(x)}{||\varphi_m||^2} \]
+    Ряд вида $\sum_{k=1}^{\infty} \frac{f \varphi_k}{||\varphi_k||^2}\varphi_k$ называется рядом Фурье по ортогональной системе функций ${\varphi_k(x)}$.\\
+    $C_k = \frac{f \varphi_k}{||\varphi_k||^2}$ - коэффициенты Фурье.
+  
+    \subsection{Ряд Фурье по тригонометрической системе функций}\noindent
+    \underline{Определение:} Ряд вида $f(x) ~ \frac{a_0}{2} + \sum_{k=1}^{m} a_k \cos kx + b_k \sin kx$ называется рядом Фурье по тригонометрической системе функций.
+    \[ a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi}f(x)dx \indent a_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos kx dx \indent b_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x)\sin kx dx \]
+    Случай произвольного отрезка $[-b; b]$:
+    \begin{adjustwidth}{1.5em}{1.5em}
+      Замена $x = \frac{ly}{\pi}$ $(-\pi \leq y \leq \pi)$. Получим функцию $f(\frac{ly}{\pi})$ от $y$ на $[-\pi; \pi]$, которая раскладывается в ряд Фурье.
+      \[ f(\frac{yl}{\pi}) ~ \frac{a_0}{2} + \sum_{k=1}^{\infty} a_k \cos ky + b_k \sin ky \]
+      \[ a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} f(\frac{ly}{\pi})dy \indent a_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f(\frac{ly}{\pi})\cos ky dy \indent b_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f(\frac{ly}{\pi})\sin ky dy \]
+      Если вернуться к прежней переменной $x$, т.е. $y = \frac{\pi x}{l}$, то
+      \[ f(x) ~ \frac{a_0}{2} + \sum_{k=1}^{\infty}a_k\cos \frac{k \pi x}{l} + b_k \sin \frac{k\pi x}{l} \]
+      \[ a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x)dx \indent a_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x)\cos \frac{k\pi x}{l} dx \indent b_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x)\sin \frac{k \pi x}{l} dx \]
+    \end{adjustwidth}
+    \underline{Ряды Фурье для чётных и нечётных функций:}
+    \begin{enumerate}
+      \item Если $f(x)$ на $[-\pi; \pi]$ нечётная, то $\int_{-\pi}^{\pi}f(x) dx = 0$; если чётная, то $\int_{-\pi}^{\pi}f(x) dx = 2 \int_{0}^{\pi}f(x)dx$
+      \item Если $f(x)$ нечётная на $[-l; l]$, то $a_0 = a_n = 0$, $b_n = \frac{2}{l} \int_{0}^{l} f(x) \sin \frac{n \pi x}{l} dx$; если чётная, то $b_n = 0$, $a_0 = \frac{2}{l} \int_{0}^{l} f(x) dx$, $a_n = \frac{2}{l} \int_{0}^{l} f(x) \cos \frac{n \pi x}{l}dx$.
+    \end{enumerate}
+    \underline{Случай непериодической функции:}
+    \begin{enumerate}
+      \item Функция задана на $[-b; b]$
+      \begin{minipage}{0.45\textwidth}
+        \includegraphics[scale=0.6]{10.22.1.png}
+      \end{minipage}
+      \hspace{1em}
+      \begin{minipage}{0.55\textwidth}
+        
+      \end{minipage}
+      \vspace{1em}
+      \par
+      Продлеваем $f(x)$ на все оставшиеся вещественные $x$ по закону периодичности.
+      \item Функция задана на $[0; l]$
+      \begin{minipage}{0.45\textwidth}
+        \includegraphics[scale=0.6]{10.22.2.png}
+      \end{minipage}
+      \hspace{1em}
+      \begin{minipage}{0.55\textwidth}
+        
+      \end{minipage}
+      \vspace{1em}
+      \par
+      \begin{enumerate}
+          \item Продлеваем функцию на $[-l; 0]$ чётным, нечётным или произвольным образом.
+          \item Продлеваем на все оставшиеся $x$ по закону периодичности.
+      \end{enumerate}
+    \end{enumerate}
+    Если в точке $x = a$ функция $f(x)$, которую раскладываем в ряд Фурье, терпит разрыв I рода, то ряд Фурье в точке $x = a$ будет сходится к значению $\frac{f(a - 0) + f(a + 0)}{2}$
+  
+    \subsection{Понятие сходимости по норме и сходимости в среднем. Минимальное свойство коэффициентов Фурье}\noindent
+    \underline{Определение:} Если в линейном пространстве задана норма и $f_n(x) \in L$ и $\lim_{n \to \infty} ||f_n(x) - f(x)|| = 0$, то функциональная последовательность ${f_n(x)}$ сходится к $f(x)$ по данной норме.\par\noindent
+    \underline{Определение:} Пусть $f^2(x)$ и $f^2_n(x)$ интегрируемы на $[a;b]$. Функциональная последовательность ${f_n(x)}$ сходится в среднем к функции $f(x)$ на $[a; b]$, если 
+    \[\lim_{n \to \infty} \int_{a}^{b} [ f_n(x) - f(x) ]^2 dx = 0\]
+    Функциональный ряд $\sum_{n = 1}^{\infty} f_n(x)$ называется сходящимся в среднем к функции $f(x)$ на $[a; b]$, если к этой функции в среднем сходится последовательность его частичных сумм, т.е. 
+    \[\lim_{n \to \infty} \int_{a}^{b} [ f(x) - \sum_{k = 1}^{n} f_k(x) ]^2 dx = 0\]
+    \underline{Определение:} Величина $\Delta_n = \int_{a}^{b} (f(x) - \sum_{k=1}^{n} f_k(x))^2dx$ - среднее квадратическое отклонение.\\
+    \underline{Замечание:} Если $||f(x)|| = \sqrt{\int_{a}^{b} f^2(x)dx}$, то понятия сходимости по норме и сходимости в среднем совпадают.\par\noindent
+    Пусть $f(x) ~ \sum_{k=1}^{\infty} C_k \varphi_k$ - ряд Фурье по ортогональной системе функций $\varphi_k(x)$. $C_k$ - коэффициент Фурье.\\
+    \[C_k = \frac{f \varphi_k}{||\varphi_k||^2}\]
+    Пусть $\sum_{k=1}^{n} \alpha_k \varphi_k$ - произвольная линейная комбинация первых $n$ функций ортогональной системы.\par\noindent
+    \subsubsection*{Теорема 10.23.1}\label{th:10.23.1}
+    Среди всевозможных линейных комбинаций первых $n$ функций ортогональной системы $\varphi_i$ наименьшее отклонение от функции $f(x)$ по норме данного Евклидова пространства имеет $n$-ая частичная сумма ряда Фурье.\\
+    Т.е. \[ \Big|\Big|\sum_{k=1}^{n}\alpha_k \varphi_k - f(x)\Big|\Big| \underset{\text{min}}{\to} \text{ если } \varphi_k = C_k \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+      Рассмотрим
+      \begin{gather*}
+          \Big|\Big|\sum_{k=1}^{n} \alpha_k \varphi_k - f(x)\Big|\Big|^2 = (\sum_{k=1}^{n}\alpha_k \varphi_k - f(x))(\sum_{k=1}^{n}\alpha_k \varphi_k - f(x)) =\\
+          = \underset{(\sum) * (\sum)}{(\sum_{k=1}^{n} \alpha_k \varphi_k)^2} - 2 \sum_{k=1}^{n}\alpha_k \varphi_k * f(x) + f(x) * f(x) = \sum_{k=1}^{n}\alpha^2_k ||\varphi_k||^2 - 2 \sum_{k=1}^{n} \alpha_k C_k ||\varphi_k||^2 +\\
+          + ||f(x)||^2 + \sum_{k=1}^{n}C^2_k ||\varphi_k||^2 - \sum_{k=1}^{n}C^2_k ||\varphi_k||^2 = \sum_{k_1}^{n} ||\varphi_k||^2 [ \alpha_k - C_k ]^2 + ||f||^2 - \sum_{k=1}^{n}C^2_k ||\varphi_k||^2
+      \end{gather*}
+      Последние два слагаемых от $\alpha$ не зависят. Поэтому минимизация будет происходить только за счёт первого слагаемого. А это будет тогда и только тогда, когда $\alpha_k = C_k$.\\
+      Т.е. можно получить
+      \[ \Big|\Big| \sum_{k=1}^{n} C_k \varphi_k - f(x)\Big|\Big|^2 = ||f||^2 - \sum_{k=1}^{n}C^2_k ||\varphi_k||^2 \text{ - тождество Бесселя } (\geq 0) \]
+      Тогда $||f||^2 \geq \sum_{k=1}^{n}C^2_k ||\varphi_k||^2$, или $\sum_{k=1}^{n} C^2_k ||\varphi_k||^2 \leq \int_{a}^{b} f^2(x)dx$ - неравенство Бесселя.
+      \begin{center}
+          \textbf{Ч.т.д.}
+      \end{center}
+    \end{adjustwidth}
+    \underline{Замечание:} Рассмотрим $\Delta_n = ||f(x) - \sum_{k=1}^{n}\alpha_k \varphi_k ||^2$ - оно минимально, когда $\alpha_k = C_k$, т.е. наилучшее приближение к $f(x)$ по норме данного Евклидова пространства имеет комбинация $\sum_{k=1}^{n} C_k \varphi_K$.
+  
+    \subsection{Запись рядов Фурье в комплексной форме. Формула Эйлера}
+    \begin{gather*}
+      e^{in\varphi} = \cos n \varphi + i \sin n \varphi\\
+      \cos nx = \frac{e^{inx} + e^{-inx}}{2} \indent \sin nx = -i\frac{e^{inx} - e^{-inx}}{2}\\
+      f ~ \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos nx + b_n \sin nx = \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \frac{e^{inx} + e^{-inx}}{2} - b_n i \frac{e^{inx} - e^{-inx}}{2} =\\
+      = \frac{a_0}{2} + \sum_{n=1}^{\infty} \Big(\frac{a_n - b_n i}{2}\Big)e^{inx} + \Big(\frac{a_n + b_n i}{2}\Big)e^{-inx} \circled{=}
+    \end{gather*}
+    Обозначим $\frac{a_0}{2} = C_0$, $C_n = \frac{a_n - b_n i}{2}$, $C_{-n} = \frac{a_n + b_n i}{2}$.
+    \begin{gather*}
+      \circled{=} \sum_{n=-\infty}^{\infty} C_n e^{inx} ~ f(x)\\
+      C_0 = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) dx\\
+      C_n = \frac{a_n - b_n i}{2} = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) [ \cos nx - i \sin nx ]dx = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x)e^{-inx}dx\\
+      C_{-n} = \frac{a_n + i b_n}{2} = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)[\cos nx + i \sin nx]dx = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) e^{inx}dx
+    \end{gather*}
+    Общая формула:
+    \[ \boxed{C_n = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) e^{-inx}dx} \indent n = 0; \pm 1; \pm 2; \dots \]
+    \underline{Замечание:} $C_n$ и $C_{-n}$ - комплексно-сопряженные числа.
+  
+    \subsection{Интеграл Фурье. Главное значение интеграла}
+    Пусть $f(x)$ задана на всей числовой прямой и интегрируема на ней. Сопоставим функции $f(x)$ интеграл:
+    \[ \int_{0}^{\infty} [ a(y) \cos xy + b(y) \sin xy ]dy \indent (*) \]
+    где
+    \[ a(y) = \frac{1}{\pi}\int_{-\infty}^{\infty}f(t)\cos ty dt \]
+    \[ b(y) = \frac{1}{\pi}\int_{-\infty}^{\infty}f(t)\sin ty dt\]
+    Подставим $a(y)$ и $b(y)$ в $(*)$. Получим:
+    \begin{gather*}
+      \frac{1}{\pi} \int_{0}^{\infty} dy \int_{-\infty}^{\infty} f(t) [ \cos xy \cos ty + \sin xy \sin ty ] dt =\\
+      = \frac{1}{\pi} \int_{0}^{\infty} dy \int_{-\infty}^{\infty} f(t) \cos [ y(x-t) ] dt \text{ - интеграл Фурье функции } f(x)
+    \end{gather*}
+    Подобно тому, как при определённых условиях периодическая функция раскладывается в ряд Фурье, так и функция на всей числовой оси представляется своим интегралом Фурье.\\
+    \underline{Замечание:} В интеграле Фурье интеграл берётся в смысле главного значения.\par\noindent
+    \underline{Определение:} Пусть $f(x)$ интегрируема (в собственном или несобственном смысле) на всем $[a; b] \subset R$. Тогда её главным значением называется 
+    \[ v.p. \int_{-\infty}^{\infty} f(x) dx = \lim_{A \to \infty} \int_{-A}^{A} f(x)dx \]
+    Отличие этого интеграла от несобственного $\int_{-\infty}^{\infty} f(x)dx$ состоит в том, что несобственный интеграл является $\lim_{a \to -\infty, b \to \infty} \int_{a}^{b} f(x)dx$ при произвольном стремлении $a \to -\infty$, $b \to \infty$, а главное значение интеграла - это случай, когда $a = -b$.\par\noindent
+    \underline{Замечание:} Если существует несобственный интеграл ($-\infty$, $\infty$ - произвольные), то существует и интеграл в смысле главного значения. Обратное утверждение неверно.
+    \begin{adjustwidth}{1.5em}{1.5em}
+      Рассмотрим $v. p. \int_{-\infty}^{\infty} xdx = 0$.\\
+      Рассмотрим 
+      \begin{gather*}
+          \int_{-\infty}^{\infty} xdx = \int_{-\infty}^{c} xdx + \int_{c}^{\infty} xdx = \lim_{a \to -\infty} \int_{a}^{c} xdx + \lim_{b \to \infty} \int_{c}^{b} xdx = \lim_{a \to -\infty}\frac{x^2}{2}\Big|^c_a + \lim_{b\to\infty}\frac{x^2}{2}\Big|^b_c =\\
+          = \lim_{a\to -\infty} \Big( \frac{c^2}{2} - \frac{a^2}{2} \Big) + \lim_{b \to \infty} \Big( \frac{b^2}{2} - \frac{c^2}{2} \Big) = \infty - \infty \indent ?
+      \end{gather*}
+    \end{adjustwidth}
+    
+    \section{Интегралы, зависящие от параметра}
+    \subsection{Основные понятия. Интегрируемость и дифференцируемость по параметру}
+    \underline{Определение:} Пусть $f(x, y)$ определены на множестве $X$ и $Y$, а $\varphi(x)$ на множестве $X$. При каждом фиксированном $y \in Y$, функция $f(x, y)$ является функцией от $x$. Функцию $f(x, y)$ называют функцией от $x$ с параметром $y$.\par\noindent
+    \underline{Интегрируемость по параметру}\par\noindent
+    Если $f(x, y)$ непрерывна в прямоугольнике $[a; b] x [c; d]$, то
+    \[ \int_{c}^{d} I(y)dy = \int_{c}^{d}dy \int_{a}^{b} f(x, y) dx \]
+    Если $f(x, y)$ непрерывна в области $D: \begin{cases*}
+      a \leq x \leq b \\
+      y_1(x) \leq y \leq y_2(x)
+    \end{cases*}$, то
+    \[ \int_{a}^{b} dx \int_{y_1(x)}^{y_2(x)}f(x, y)dy = \int_{a}^{b}dx I(x) \]\noindent
+    \underline{Дифференцируемость по параметру}\par\noindent
+    \subsubsection*{Теорема 11.1.1 (Правило Лейбница)}\label{th:11.1.1}
+    Если $f(x, y)$ и $\frac{\partial f}{\partial y}$ непрерывны в $[a; b]x[c; d]$, то
+    \[ \frac{d}{dy} \int_{a}^{b}f(x, y)dx = \int_{a}^{b} \frac{\partial f}{\partial y} dx \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+      Рассмотрим $I(y) = \int_{a}^{b} f(x, y)dx$.
+      \[ \Delta I = I(y + \Delta y) - I(y) = \int_{a}^{b}f(x, y + \Delta y)dx - \int_{a}^{b}f(x, y)dx \]
+      \[ \frac{\Delta T}{\Delta y} = \frac{1}{\Delta y} \Big[ \int_{a}^{b}f(x, y + \Delta y)dx - \int_{a}^{b} f(x, y) dx \Big] = \frac{1}{\Delta y} \int_{a}^{b} [ f(x, y + \Delta y) - f(x, y) ] \circled{=} \]
+      Th. Лагранжа: $f(b) - f(a) = f'(\xi)(b-a)$.
+      \[ f(x + \Delta x) - f(x) = f'(x + \theta \Delta x)\Delta x \indent 0 < \theta < 1 \]
+      \[ \circled{=} \frac{1}{\Delta y}\int_{a}^{b} \Big[ \frac{\partial f(x, y + \theta \Delta y)}{\partial y} \Delta y \Big] dx = \int_{a}^{b} \frac{\partial f(x, y + \theta \Delta y)}{\partial y} dx \]
+      \[ \lim_{\Delta y \to 0} \frac{\Delta I}{\Delta y} = I'(y) = \int_{a}^{b} \frac{\partial f(x, y)}{\partial y} dx \]
+      \begin{center}
+          \textbf{Ч.т.д.}
+      \end{center} 
+    \end{adjustwidth}
+    \subsubsection*{Теорема 11.1.2}\label{th:11.1.2}
+    Рассмотрим $I(y) = \int_{\varphi(y)}^{\psi(y)}f(x,y)dx$.\\
+    Если $\varphi(y)$, $\psi(y)$ дифференцируемы на $[c; d]$, а $f(x,y)$ и $\frac{\partial f}{\partial y}$ непрерывны на $\begin{cases*}
+      c \leq y \leq d\\
+      \varphi(y) \leq x \leq \psi(y)
+    \end{cases*}$, то
+    \[ I'(y) = \psi'(y)f(\psi(y), y) - \varphi'(y) f(\varphi(y), y) + \int_{\varphi(y)}^{\psi(y)}\frac{\partial f}{\partial y}dx \]
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+      \begin{gather*}
+          I'(y) = \lim_{\Delta y \to 0} \frac{\Delta I}{\Delta y} = \lim_{\Delta y \to 0} \frac{1}{\Delta y} \Big[ I(y + \Delta y) - I(y) \Big] =\\
+          = \lim_{\Delta y \to 0} \frac{1}{\Delta y} \Big[ \int_{\varphi(y + \Delta y)}^{\psi(y + \Delta y)}f(x, y + \Delta y) dx - \int_{\varphi(y)}^{\psi(y)}f(x, y)dx \Big] =\\
+          = \lim_{\Delta y \to 0} \frac{1}{\Delta y} \Big[ \int_{\varphi(y + \Delta y)}^{\varphi(y)} f(x, y + \Delta y)dx + \int_{\varphi(y)}^{\psi(y)}f(x, y + \Delta y)dx + \int_{\psi(y)}^{\psi(y + \Delta y)} - \int_{\varphi(y)}^{\psi(y)}f(x, y)dx\Big] \circled{=}
+      \end{gather*}
+      Th. о среднем: $\int_{a}^{b}f(x)dx = f(\xi)(b-a)$
+      \begin{gather*}
+          \circled{=} \lim_{\Delta y \to 0} \frac{1}{\Delta y} \underset{\text{Th. Лагранжа}}{\Big[ \int_{\varphi(y)}^{\psi(y)}(f(x, y+\Delta y) - f(x, y))dx \Big]} + \underset{\text{Th. о среднем}}{\lim_{\Delta y \to 0} \frac{1}{\Delta y} \int_{\varphi(y + \Delta y)}^{\varphi(y)}f(x, y + \Delta y)dx} +\\
+          + \underset{\text{Th. о среднем}}{\lim_{\Delta y \to 0} \frac{1}{\Delta y} \int_{\psi(y)}^{\psi(y + \Delta y)}f(x, y + \Delta y)dx} =\\
+          = \lim_{\Delta y \to 0} \frac{1}{\Delta y} \int_{\varphi(y)}^{\psi(y)} \frac{\partial f(x, y + \theta \Delta y)}{\partial y} \Delta y dx + \lim_{\Delta y \to 0} \frac{1}{\Delta y}f(\xi, y + \Delta y) [ \varphi(y) - \varphi(y + \Delta y) ] +\\
+          + \lim_{\Delta y \to 0}\frac{1}{\Delta y}f(\eta, y + \Delta y)[ \psi(y + \Delta y) - \psi(y)] \circled{=}
+      \end{gather*}
+      При $\Delta y \to 0$
+      \begin{align*}
+          \varphi(y) < &\xi < \varphi(y + \Delta y) & \xi &\to \varphi(y)\\
+          \psi(y) < &\eta < \psi(y + \Delta y) & \eta &\to \psi(y)
+      \end{align*}
+      \[ \circled{=} \int_{\varphi(y)}^{\psi(y)} \frac{\partial f(x, y)}{\partial y}dx + f(\psi(y), y)\psi'(y) - f(\varphi(y), y)\varphi'(y) \]
+      \begin{center}
+          \textbf{Ч.т.д.}
+      \end{center}
+    \end{adjustwidth}
+  
+    \subsection{Интегралы Эйлера}
+    Рассмотрим $\Gamma(S) = \int_{a}^{\infty}x^{S-1}e^{-x}dx$ - гамма-функция.\par\noindent
+    Рассмотрим $B(p,q) = \int_{0}^{1}x^{p-1}(1-x)^{q-1}dx$ - бета-функция.
+    
+    \begin{enumerate}
+      \item Сходимость.
+      \begin{enumerate}
+          \item Гамма-функция
+          \[ \Gamma(S) = \int_{0}^{\infty}x^{S-1}e^{-x}dx = \int_{0}^{1}x^{S-1}e^{-x}dx + \int_{1}^{\infty}x^{S-1}e^{-x}dx = \Gamma_1(S) + \Gamma_2(S) \]
+          Рассмотрим $\int_{0}^{1}x^{S-1}dx \circled{=}$\\
+          $\frac{x^S}{S}\Big|_0^1 = \frac{1}{S}$, сх. $S \neq 0$. Если $S > 0$ - сх. Если $S < 0$, рассмотрим отдельно:
+          \[ \int_{0}^{1}\frac{dx}{x^p} = \frac{x^{-p+1}}{1-p}\Big|^1_0 = \frac{1}{1-p} \]
+          При $1 - p > 0$ сх. для $p < 1$.\\
+          При $1 - p < 0$ рсх. для $p > 1$.\\
+          Для $p = 1$ $\int_{0}^{1}\frac{dx}{x} = \infty$, следовательно рсх.
+          \[ \circled{=} \int_{0}^{1}\frac{dx}{x^{1-S}} \]
+          Если $1 - S < 1$ ($S > 0$), то сх.\par\noindent
+          Рассмотрим $\lim_{x \to 0} \frac{x^{S-1}e^{-x}}{x^{S-1}} = \lim_{x \to 0} e^{-x} = 1$.\\
+          Это значит, что $\int_{0}^{1} x^{S-1}e^{-x}dx$ и $\int_{0}^{1}x^{S-1}dx$ сх. или рсх. одновременно.\\
+          Тогда $\int_{0}^{1}x^{S-1}e^{-x}dx$ сх. при $S > 0$.\par\noindent
+          Рассмотрим 
+          \[ \int_{1}^{\infty} e^{-\frac{x}{2}}dx = \lim_{A \to +\infty} \int_{1}^{A}e^{\frac{x}{2}}dx = \lim_{A \to +\infty} (-2) e^{-\frac{x}{2}} \Big|^A_1 = \lim_{A \to +\infty} (-2)[ \underset{\to 0}{e^{-\frac{A}{2}}} - e^{-\frac{1}{2}} ] = 2e^{-\frac{1}{2}} \indent \text{сх.} \] 
+          Рассмотрим 
+          \[ \lim_{x \to \infty} \frac{x^{S-1}e^{-x}}{e^{-\frac{x}{2}}} = \lim_{x \to \infty} x^{S-1} e^{-\frac{x}{2}} = \lim_{x \to \infty} \frac{x^{S-1}}{e^{\frac{x}{2}}} = \lim_{x \to \infty} \frac{(S-1)x^{S-2}}{\frac{1}{2}e^{\frac{x}{2}}} = \dots = 0 \]
+          Т.е. $\int_{1}^{\infty} x^{S-1} e^{-x} dx$ сх. по II признаку сравнения $\forall$ $S$.\par\noindent
+          \underline{Итог:} $\Gamma(S)$ сх. при $S > 0$.
+  
+          \item Бета-функция\par\noindent
+          Рассмотрим
+          \[ B(p,q) = \int_{0}^{1} x^{p-1} (1-x)^{q-1} dx = \int_{0}^{\frac{1}{2}}x^{p-1}(1-x)^{q-1}dx + \int_{\frac{1}{2}}^{1}x^{p-1}(1-x)^{q-1} dx = B_1(p, q) + B_2(p, q) \]
+          Рассмотрим $\int_{0}^{\frac{1}{2}} x^{p-1}dx$ сх. при $p > 0$.\\
+          Рассмотрим $\lim_{x \to 0}\frac{x^{p-1}(1-x)^{q-1}}{x^{p-1}} = \lim_{x \to 0}(1 - x)^{q-1} = 1$.\\
+          Т.е. $\int_{0}^{\frac{1}{2}}x^{p-1}(1-x)^{q-1}dx$ сх. при $p > 0$.\par\noindent
+          Рассмотрим $\int_{\frac{1}{2}}^{1}(1-x)^{q-1}dx$ сх. при $q > 0$.\\
+          Рассмотрим $\lim_{x \to 1}\frac{x^{p-1}(1-x)^{q-1}}{(1-x)^{q-1}} = \lim_{x \to 1}x^{p-1} = 1$.\\
+          Т.е. $\int_{\frac{1}{2}}^{1}x^{p-1}(1-x)^{q-1}dx$ сх. при $q > 0$.\par\noindent
+          \underline{Итог:} Бета-функция сходится при $p > 0$, $q > 0$.
+      \end{enumerate}
+  
+      \item Непрерывность. $\Gamma(S)$ и $B(p, q)$.\par\noindent
+      \textbf{Утверждение 1:} Гамма-функция непрерывна при $S > 0$.\par\noindent
+      \underline{Доказательство:}
+      \begin{adjustwidth}{1.5em}{1.5em}
+          Докажем непрерывность гамма-функции при $S > 0$, показав, что она равномерно непрерывна при $S > 0$.\par\noindent
+          Пусть $0 < S_0 \leq S \leq S_1$ $\forall S_0, S_1$.\\
+          Рассмотрим $e^{-x} x^{S-1} \leq e^{-x} (\underbrace{x^{S_0-1}}_{x \to 0} + \underbrace{x^{S_1 - 1}}_{x \to \infty})$, $x > 0$.\\
+          $\int_{0}^{\infty}e^{-x}(x^{S_0 - 1} + x^{S_1 - 1})dx$ сх. при $S_0$ и $S_1$ $ > 0$.\\
+          Поэтому $\Gamma(S) = \int_{0}^{\infty}x^{S-1}e^{-x}dx$ сх. равномерно при $S > 0$ по принципу Вейерштрасса. 
+      \end{adjustwidth}
+      \textbf{Утверждение 2:} Бета-функция непрерывна при $p > 0$, $q > 0$.\par\noindent
+      \underline{Доказательство:}
+      \begin{adjustwidth}{1.5em}{1.5em}
+          Докажем непрерывность бета-функции при $p > 0$, $q > 0$, показав, что она равномерно непрерывна при $p > 0$, $q > 0$.\par\noindent
+          Пусть $p_0 - 1 \leq p - 1$, $q_0 - 1 \leq q - 1$.\\
+          Тогда $x^{p-1}(1-x)^{q-1} \leq x^{p_0-1}(1-x)^{q_0-1}$.\\
+          Рассмотрим $\int_{0}^{1} x^{p_0-1}(1-x)^{q_0-1}dx$. $B(p_0, q_0)$ сх. при $p_0 > 0$, $q_0 > 0$.\\
+          Тогда $\int_{0}^{1}x^{p-1}(1-x)^{q-1}dx$ равномерно сх. при $p > 0$, $q > 0$ по принципу Вейерштрасса.
+      \end{adjustwidth}
+      \item Дифференцируемость гамма-функции\par\noindent
+      \textbf{Утверждение:} Гамма-функция дифференцируема при $S > 0$.\par\noindent
+      \underline{Доказательство:}
+      \begin{adjustwidth}{1.5em}{1.5em}
+          Рассмотрим $\Gamma(S) = \int_{0}^{\infty}e^{-x}x^{S-1}dx$.
+          \[ \Gamma'(S) = \int_{0}^{\infty}e^{-x}x^{S-1}\ln(x)dx \]
+          Докажем, что $\Gamma'(S)$ сходится.\\
+          Рассмотрим
+          \begin{gather*}
+              \int_{0}^{1}x^{S-1}\ln(x)dx = \begin{vmatrix*}
+                  u &= ln(x) & du &= \frac{dx}{x} \\
+                  dv &= x^{S-1}dx & v &= \frac{x^S}{S}
+              \end{vmatrix*}
+              = \ln (x) \frac{x^S}{S}\Big|^1_0 - \frac{1}{S}\int_{0}^{1}x^{S-1}dx =\\
+              = \lim_{\varepsilon \to 0} \Big[ - \underset{= 0}{\frac{\ln (\varepsilon) \varepsilon^{S}}{S}} + 0 \Big] - \frac{1}{S^2}x^S\Big|^1_0 = -\frac{1}{S^2} \text{ сх. при }S>0
+          \end{gather*}
+          Рассмотрим $\lim_{x \to 0}\frac{e^{-x}x^{S-1}\ln (x)}{x^{S-1}ln(x)} = 1 \implies \int_{0}^{1}e^{-x}x^{S-1}\ln(x)dx$ сх. при $S > 0$.\\
+          Рассмотрим $\int_{1}^{\infty}\frac{dx}{x^2}$ сх.\\
+          Рассмотрим
+          \[ \lim_{x \to \infty} \frac{e^{-x}x^{S-1}\ln x}{\frac{1}{x^2}} = \lim_{x \to \infty} \frac{x^{S+1}\ln (x)}{e^x} \overset{\text{пр. Лап.}}{=} \dots = 0 \implies \int_{1}^{\infty}e^{-x}x^{S-1}\ln(x) dx \text{ сх. при }\forall S \]
+          \underline{Итог:} $\int_{0}^{\infty}e^{-x}x^{S-1}\ln(x)dx$ сх. при $S > 0$.
+      \end{adjustwidth}
+      \item Формула приведения для гамма-функции
+      \[ \Gamma(S) = \int_{0}^{\infty}x^{S-1}e^{-x}dx \]
+      \[ \Gamma(S+1) = \int_{0}^{\infty}x^S e^{-x} dx = \begin{vmatrix*}
+          u &= x^S & du &= Sx^{S-1}dx\\
+          dv &= e^{-x}dx & v &= e^{-x}
+      \end{vmatrix*} = -x^S e^{-x}\Big|^\infty_0 + S\int_{0}^{\infty}x^{S-1}e^{-x}dx = \]
+      \[ = S\Gamma(S) \]
+      \[ \boxed{\Gamma(S+1) = S\Gamma(S)} \]
+    \end{enumerate}
     
 \end{document}
