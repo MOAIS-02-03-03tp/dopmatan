@@ -2385,8 +2385,8 @@
   Пусть $u_n \geq 0, U_n >0 \; \forall n$ и $\lim_{n \to \infty} \frac{u_n}{U_n} = l$.
   Тогда:
   \begin{enumerate}
-    \item Если $\sum_{n=1}^{\infty} U_n$ сходится и $0\leq l \leq \infty,$ то $\sum_{n=1}^{\infty} u_n$ сходится\\
-    \item Если $\sum_{n=1}^{\infty} U_n$ расходится и $0\leq l \leq \infty$, то $\sum_{n=1}^{\infty}u_n$ расходится
+    \item Если $\sum_{n=1}^{\infty} U_n$ сходится и $0\leq l < \infty,$ то $\sum_{n=1}^{\infty} u_n$ сходится\\
+    \item Если $\sum_{n=1}^{\infty} U_n$ расходится и $0 < l \leq \infty$, то $\sum_{n=1}^{\infty}u_n$ расходится
   \end{enumerate}
 
   \underline{Доказательство:}
@@ -3330,6 +3330,21 @@
     то $a_n=\frac{f^{(n)}(x_0)}{n!}$ и справедлива формула
     $f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n$
 
+    \textbf{Следствие: } Если в некоторой окружности ($\cdot$) функция раскладывается в степенной ряд,
+    то это разложение единственно.
+
+    \underline{Доказательство:}
+    \begin{adjustwidth}{1.5em}{1.5em}
+      $f^{(m)}(x)=m(m-1)\dots2*a_m+(m+1)m*\dots*2a_{m+1}(x-x_0)+(m+2)(m+1)m\dots 3a_{m+1}(x-x_0)^2+\dots$\\
+      $f^{(m)}=m!a_m \hspace{20pt} a_m=\frac{f^{(m)}(x_0)}{m!}$
+    \end{adjustwidth}
+    \begin{center}
+      \textbf{Ч.т.д.}
+    \end{center}
+
+    \textbf{Следствие:} Единственность разложения следует из того, что коэффициенты $a_m$ задаются
+    именно этими формулами $\forall m$
+
     \underline{Определение: } Пусть действительная функция $f(x)$ определена в некоторой $u(x_0)$ и
     имеет в этой $(\cdot)$ производные всех порядков. Тогда ряд $\sum_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n!}
     (x-x_0)^n$ называется рядом Тейлора. Если $x_n=0$, то называется рядом Маклорена.\\
@@ -3554,6 +3569,9 @@
       \item $||f|| = \sqrt{f * f}$
     \end{enumerate}
     \underline{Замечание:} В пространстве кусочно-непрерывных функций $||f|| = \sqrt{\int_{a}^{b} f^2(x)dx}$.
+
+    \pagebreak
+
     \underline{Определение:} Два элемента Евклидова пространства называются ортогональными, если их скалярное произведение равно $\varnothing$.
     \[ \int_{a}^{b} f * g dx = 0 \]
     \underline{Определение:} Система функций $\varphi_1(x), \dots, \varphi_n(x)$, определённая на $[a, b]$, называется ортогональной, если все $\varphi_i(x), i = \overline{1,n}$ попарно ортогональны.
@@ -3858,6 +3876,135 @@
       \end{vmatrix*} = -x^S e^{-x}\Big|^\infty_0 + S\int_{0}^{\infty}x^{S-1}e^{-x}dx = \]
       \[ = S\Gamma(S) \]
       \[ \boxed{\Gamma(S+1) = S\Gamma(S)} \]
+      \[ \boxed{\Gamma(S)=\frac{\Gamma(S-1)}{S}}\]
+      \[ \boxed{\Gamma(0)=\frac{\Gamma(1)}{0} \rightarrow \infty}\]
+      \[ \boxed{\Gamma(-1)=\frac{\Gamma(0)}{-1} \rightarrow \infty}\]
     \end{enumerate}
+
+    \subsection{Свойства бета-функции}
+    \[ \beta(p,q)=\int_{0}^{1}x^{p-1}(1-x)^{q-1}dx\]
+    \begin{enumerate}
+      \item Симметрия\\
+      \[\beta(p,q)=\beta(q,p)\]
+      \[\beta(p,q)=\int_{0}^{1}x^{p-1}(1-x)^{q-1}dx 
+      = \Bigg| 
+      \begin{matrix}
+        1-x=t\\
+        x=1-t\\
+        x=0 \Rightarrow t=1\\
+        x=1 \Rightarrow t=0\\
+        dx=dt
+      \end{matrix}
+      \Bigg|=
+      -\int_{1}^{0}(1-t)^{p-1}t^{q-1}dt=\int_{0}^{1}t^{q-1}(1-t)^{p-1}dt=\]
+      \[= |t=x|=\int_{0}^{1}x^{q-1}(1-x)^{p-1}dx\]
+
+      \item Формулы приведения\\
+      Рассмотрим $\beta(p+1,q)=\int_{0}^{1}x^p(1-x)^{q-1}dx=
+      \Bigg| 
+      \begin{matrix}
+        u=x^p & du=px^{p-1}dx\\
+        dV=(1-x)^{q-1}dx & V=-\frac{(1-x)^q}{q}
+      \end{matrix}
+      \Bigg|=$\\
+      $=-\frac{x^p(1-x)^q}{q}\Big|^1_0+ \frac{p}{q}\int_{0}^{1}x^{p-1}(1-x)^qdx=\frac{p}{q}
+      \int_{0}^{1}x^{p-1}(1-x)^{q-1}(1-x)^1dx=\\$
+      $=\frac{p}{q}\int_{0}^{1}x^{p-1}(1-x)^{q-1}dx-\frac{p}{q}x^p(1-x)^{q-1}dx=\frac{p}{q}\beta(p,q)-
+      \frac{p}{q}\beta(p+1,q)$
+      \[(1+\frac{p}{q})\beta(p+1,q)=\frac{p}{q}\beta(p,q) \hspace{20pt} \frac{p+q}{q}\beta(p+1,q)=\frac{p}{q}\beta(p,q)\]
+      \[\boxed{\beta(p+1,q)=\frac{p}{p+q}\beta(p,q)} \hspace{20pt} \boxed{\beta(p,q+1)=\frac{q}{p+q}\beta(p,q)}\]
+    \end{enumerate}
+
+    \subsection{Связь между гамма и бета-функциями.}
+    \[\beta(p,q)=\int_{0}^{1}x^{p-1}(1-x)^{q-1}dx = 
+    \Bigg|
+    \begin{matrix}
+      x=\frac{t}{t+1}\\
+      dx=\frac{t+1-t}{(t+1)^2} & dt=\frac{dt}{(t+1)^2}\\
+      xt+t=t\\
+      t(x-1)=x & x=0 \rightarrow t=0\\
+      t=\frac{x}{1-x} & x=1 \rightarrow t= \infty\\
+      1-x=1-\frac{t}{t+1}=\frac{1}{t+1}
+    \end{matrix}
+    \Bigg|
+    =\]
+    \[=\int_{0}^{\infty}\frac{t^{p-1}}{(t+1)^{p-1}}\cdot \frac{1}{(t+1)^{q-1}}\frac{dt}{(1+t)^2}=
+    \int_{0}^{\infty}\frac{t^{p-1}dt}{(1+t)^{p+q}}=\beta(q,p)=\int_{0}^{\infty}\frac{t^{q-1}dt}{(1+t)^{p+q}}\]
+
+    Рассмотрим $\Gamma(S)=\int_{0}^{\infty} e^{-x}x^{s-1}dx=\Bigg|
+    \begin{matrix}
+      x=Vt\\
+      dx=Vdt\\
+      x=0\rightarrow t=0\\
+      x=\infty \rightarrow t=\infty
+    \end{matrix}
+    \Bigg|
+    =\int_{0}^{\infty} e^{-Vt}V^{S-1}t^{S-1}Vdt=V^S\int_{0}^{\infty}e^{-Vt}t^{S-1}dt$
+
+    \[\frac{\Gamma(S)}{V^S}=\int_{0}^{\infty}e^{-Vt}t^{S-1}dt (*)\]
+
+    Переобозначим: $S=p+q, V=u+1$\\
+    Из (*) $\frac{\Gamma(p+1)}{(u+1)^{p+q}}=\int_{0}^{\infty}e^{-(u+1)t}t^{p+q-1}dt$\\
+    Умножим полученноe равенство слева и справа на $u^{p-1}$ и проинтегрируем по $u$ от 0 до
+    $\infty$($xu^{p-1}\int_{0}^{\infty}du$)
+    \[\int_{0}^{\infty} \frac{\Gamma(p+q)}{(u+1)^{p+q}}u^{p-1}du = \int_{0}^{\infty}
+    du \int_{0}^{\infty}e^{-(u-1)t} t^{p+q-1}u^{p-1}dt\]
+    \[ \underbracket{\Gamma(p+q)\beta(p,q)}=\int_{0}^{\infty}t^{p+q-1}e^{-t}dt \int_{0}^{\infty} e^{-ut}u^{p-1}du=
+    \int_{0}^{\infty} t^{p+q-1}e^{-t}dt \cdot \frac{\Gamma(p)}{t^p}=\Gamma(P)\int_{0}^{\infty}
+    e^{-t}t^{q-1}dt=\underbracket{\Gamma(p)\Gamma(q)}\]
+
+
+    \[\boxed{\beta(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}}\]
     
+
+    \subsection{Применение интегралов, зависящих от параметра к вычислению определенных интегралов}
+    \begin{enumerate}
+      \item Интеграл Дирихле\\ 
+      Рассмотрим $\int_{0}^{\infty}\frac{\sin(x)}{x}dx$\\
+      Рассмотрим $\int_{0}^{\infty}\frac{\sin(\alpha x)}{x}dx$\\
+      \[I'(\alpha)=\int_{0}^{\infty}\cos(\alpha x)dx=\not \exists = \frac{1}{\alpha} \lim_{A \to \infty} \sin(\alpha x)\Big|^A_0 = \not \exists\]
+
+      Рассмотрим $\int_{0}^{\infty}e^{-\beta x} \frac{\sin(\alpha x)}{x}dx=I(\alpha,\beta)$.
+      Тогда $\int_{0}^{\infty}\frac{\sin(x)}{x}dx=I(1,0)$
+      \[\frac{\delta I}{\delta \alpha}=\int_{0}^{\infty}e^{-\beta x}\cos(\alpha x)dx = \frac{\beta}{\alpha^2+\beta^2}\]
+
+      \[I(\alpha,\beta)=\int_{0}^{\alpha}\frac{\beta dt}{t^2+\beta^2}=\arctg(\frac{\alpha}{\beta}) + C(\beta) \hspace{20pt} I(0,\beta)=0\]
+      
+      \[I(0,\beta)=0+C(\beta)=0 \Rightarrow C(\beta)=0\]
+      
+      \[I(\alpha,\beta)=\arctg(\frac{\alpha}{\beta})\]
+
+      Рассмотрим $\int_{0}^{\infty}\frac{\sin(x)}{x}dx=I(1,0)=\lim_{\beta \to 0}\arctg(\frac{\alpha}{\beta})=
+      \Bigg\{ 
+        \begin{matrix}
+          \frac{\pi}{2}, & \alpha>0\\
+          0, & \alpha=0\\
+          -\frac{\pi}{2}, & \alpha<0
+        \end{matrix}
+        \Bigg\}
+        =\frac{\pi}{2}$
+
+      \item Интеграл Пуассона\\
+      Рассмотрим $A=\int_{0}^{\infty}e^{-x^2}dx=\Big| 
+      \begin{matrix}
+        x=ty\\
+        dx=ydt
+      \end{matrix}
+      \Big|=\int_{0}^{\infty}e^{-t^2y^2}dt$\\
+      Умножим обе части равенства на $e^{-y^2}$ и проинтегрируем по $y$ от $0$ до $\infty$
+
+      \[\int_{0}^{\infty} A e^{-y^2}dy=\int_{0}^{\infty}\int_{0}^{\infty} e^{-t^2y^2}ydt \hspace{5pt}e^{-y^2}dy\]
+
+      \[A^2=\int_{0}^{\infty}dt\int_{0}^{\infty}e^{-y^2(t^2+1)}ydy =\int_{0}^{\infty}
+      \Bigg[-\frac{1}{2(t^2+1)} e^{-y^2(t^2+1)} \Big|^\infty_0 \Bigg]
+      \int_{0}^{\infty} dt \Big[\frac{1}{2(t^2+1)}\Big] = \frac{1}{2}\arctg(t)\Big|_0^\infty= \frac{\pi}{4}\]
+
+      \[A=\int_{0}^{\infty}e^{-x^2}dx = \frac{\sqrt{\pi}}{2}\]
+
+      \item Использование гамма и бета функций в вычислении интегралов
+      
+      \[\int_{0}^{1}\sqrt{x-x^2}dx=\int_{0}^{1}x^{1/2} (1-x)^{1/2}dx=\beta(\frac{3}{2},\frac{3}{2})=
+      \frac{\Gamma(\frac{3}{2})\Gamma(\frac{3}{2})}{\Gamma(3)}=\frac{(\Gamma(1+\frac{1}{2}))^2}{2!}=
+      \frac{(\frac{\sqrt{\pi}}{2})^2}{2}=\frac{\pi}{8}\]
+    \end{enumerate}
 \end{document}
