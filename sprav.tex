@@ -2232,7 +2232,7 @@
   \begin{adjustwidth}{1.5em}{1.5em}
     Рассмотрим $S_i^{(n)}=u_{n+1}+u_{n+2}+\dots+u_{n+i}$ i-ая частичная сумма n-ого остатка ряда.\\
     Зафиксируем n(n-конечное).
-    Пусть $m=n+1$\\
+    Пусть $m=n+i$\\
     $S_m=S_n+S_i^{(n)}$\\
     При фиксированным n и $m \to \infty(i \to \infty)$ одновременно $\exists$ или $\not \exists$ конечные
     пределы $\lim_{m\to \infty}S_m=S\lim_{i\to \infty}S_i^{(n)}=r_n$, т.е. $S=S_n+r_n$
@@ -2371,7 +2371,7 @@
       \item Пусть $\sum_{n=1}^{\infty} U_n$ сходится. Тогда $\sigma = \sum_{n=1}^{\infty}U_n$\\
       Рассмотрим $\sigma_n = \sum_{k=1}^{\infty} U_k$. Так как $U_n \geq 0 \Rightarrow \sigma_n \leq \sigma$\\
       Рассмотрим $S_n = \sum_{k=1}^{\infty} u_k \leq \sum_{k=1}^{\infty} U_k = \sigma_n \leq \sigma$\\
-      $\{S_n\}$ невозрастающая и ограничена сверху $\Rightarrow$ по лемме $\sum_{n=1}^{\infty}u_n$ сходится.
+      $\{S_n\}$ неубывающая и ограничена сверху $\Rightarrow$ по лемме $\sum_{n=1}^{\infty}u_n$ сходится.
       \item Пусть $\sum_{n=1}^{\infty} u_n$ расходится. Тогда $\sum_{n=1}^{\infty} U_n$ расходится, потому что если бы он 
       сходился, тогда по (1) $\sum_{n=1}^{\infty} u_n$ был бы сходящимся, а  это не так.
     \end{enumerate}
@@ -3060,7 +3060,7 @@
     по определению равномерной сходимости функциональных последовательностей
     \[\exists n_0 \forall n>n_0 \forall x \in \chi |f_n(x)-f(x)|<\frac{\varepsilon}{2}\]
     \[\measuredangle  |f_{n+p}(x)-f_n(x)| = |f_{n+p}(x)-f(x)+f(x)-f_n(x)|\leq |f_{n+p}(x)-f(x)|+|f_n(x)-f(x)| < \varepsilon\]
-    \circled{$\Leftarrow$} Пусть выполняется $|f_{n+p}(x)-f(x)|<\varepsilon$\\
+    \circled{$\Leftarrow$} Пусть выполняется $|f_{n+p}(x)-f_n(x)|<\varepsilon$\\
     Тогда $\forall$ фиксированного $x \in \chi$ числовая последовательность удовлетворяет критерию Коши сходимости
     этой последовательности. Следовательно $\exists f(x) \lim_{n \to \infty}f_n(x)=f(x)$\\
     \[\text{ Т.е.} \forall x \in \chi \forall \varepsilon > 0 \exists n_0 \forall n>n_0 |f_n(x)-f(x)|<\varepsilon\]
@@ -3069,7 +3069,7 @@
 
   \underline{Определение: } Ряд $\sum_{n=1}^{\infty} u_n(x)$ называется равномерно сходящимся на $\chi$ если на этом
   множестве равномерно сходится последовательность его частичная сумма. Т.е. если 
-  \[S(x)=\sum_{n=1}^{\infty}u_n(x),S_n(x)=\sum_{k=1}^{\infty}u_k(x), S_n(x)\underset{\chi}{\rightrightarrows} S(x)\]
+  \[S(x)=\sum_{n=1}^{\infty}u_n(x),S_n(x)=\sum_{k=1}^{n}u_k(x), S_n(x)\underset{\chi}{\rightrightarrows} S(x)\]
 
   \[\text{ или } r_n(x)=S(x)-S_n(x)=\sum_{k=n+1}^{\infty}u_k(x) \text{ - n-ый остаток ряда.}\]
   
@@ -3088,7 +3088,7 @@
     \[u_n(x)=S_n(x)-S_{n-1}(x)\]
     По условию ряд $\sum_{n=1}^{\infty} u_n(x)$ равномерно сходится на $\chi \Rightarrow S_n(x) \underset{\chi}{\rightrightarrows} S(x)$
     но будет выполняться $S_{n+1}(x)\underset{\chi}{\rightrightarrows} S(x)$. Тогда 
-    \[S_n(x)-S{n-1}(x)\underset{\chi}{\rightrightarrows} 0 \Rightarrow u_n(x)\underset{\chi}{\rightrightarrows} 0\]
+    \[S_n(x)-S_{n-1}(x)\underset{\chi}{\rightrightarrows} 0 \Rightarrow u_n(x)\underset{\chi}{\rightrightarrows} 0\]
 
   \end{adjustwidth}
   \begin{center}
@@ -3098,7 +3098,7 @@
   \subsubsection*{Теорема 10.11.3 Критерий Коши равномерной сходимости функционального ряда}\label{th:10.11.3}
   \par\noindent
   Для того чтобы $\sum_{n=1}^{\infty}u_n(x)$ равномерно сходился на $\chi \Leftrightarrow$
-  \[\forall \varepsilon> 0 \exists n_0: \forall n>n_0 \forall x \in \chi \forall p \geq 0 \Rightarrow |u_n(x)+u_{n+p}(x)|<\varepsilon\]
+  \[\forall \varepsilon> 0 \exists n_0: \forall n>n_0 \forall x \in \chi \forall p \geq 0 \Rightarrow |u_n(x)+\dots+u_{n+p}(x)|<\varepsilon\]
   
   \underline{Доказательство:}
   \begin{adjustwidth}{1.5em}{1.5em}
