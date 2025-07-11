@@ -3371,7 +3371,7 @@
       \item Интегральная форма
       \[r_n(x)=\frac{1}{n!}\int_{x_0}^{x}f^{(n+1)}(t)(x-t)^ndt\]
       \item Форма Коши
-      \[r_n(x)=\frac{f^{(n+1)}(x_0+\theta(x-x_0))}{n!}\]
+      \[r_n(x)=\dfrac{f^{(n+1)}(x_0+\theta(x-x_0))}{n!}(1-\theta)^n(x-x_0)^{n+1}\]
     \end{enumerate}
 
     \underline{Доказательство: п.3}
@@ -3665,7 +3665,7 @@
     Пусть $\sum_{k=1}^{n} \alpha_k \varphi_k$ - произвольная линейная комбинация первых $n$ функций ортогональной системы.\par\noindent
     \subsubsection*{Теорема 10.23.1}\label{th:10.23.1}
     Среди всевозможных линейных комбинаций первых $n$ функций ортогональной системы $\varphi_i$ наименьшее отклонение от функции $f(x)$ по норме данного Евклидова пространства имеет $n$-ая частичная сумма ряда Фурье.\\
-    Т.е. \[ \Big|\Big|\sum_{k=1}^{n}\alpha_k \varphi_k - f(x)\Big|\Big| \underset{\text{min}}{\to} \text{ если } \varphi_k = C_k \]
+    Т.е. \[ \Big|\Big|\sum_{k=1}^{n}\alpha_k \varphi_k - f(x)\Big|\Big| \underset{\text{min}}{\to} \text{ если } \alpha_k = C_k \]
     \underline{Доказательство:}
     \begin{adjustwidth}{1.5em}{1.5em}
       Рассмотрим
